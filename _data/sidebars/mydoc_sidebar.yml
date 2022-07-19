@@ -1,0 +1,43 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  #product: About MiMoTextBase
+  #version: 6.0
+  folders:
+
+  - title: About MiMoTextBase
+    output: web, pdf
+
+    #url: /index.html
+    folderitems:
+    - title: About MiMoTextBase
+      output: web
+      url: /aboutMiMoTextBase.html
+
+    - title: Semantic Web, RDF, Linked Open Data, Wikidata
+      output: web
+      url: /semanticweb.html
+
+    - title: The Wikibase ecosystem
+      output: web
+      url: /wikibaseEcosystem.html
+    
+    - title: The MiMoText project
+      output: web
+      url: /mydoc_about_ruby_gems_etc.html
+
+    - title: Our source types and our modeling approach
+      output: web, pdf
+      url: /mydoc_about_ruby_gems_etc.html
+      subfolders:
+
+      - title: Overview of our sources
+        output: web, pdf
+
+        subfolderitems:
+        - title: etc
+          output: web
+          #url: /index.html
+
+

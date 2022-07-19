@@ -1,0 +1,49 @@
+<div class="container"><!-- style="background-image: url('images/mimo-header_projekt_960x292.jpeg'); background-repeat: no-repeat;">--> 
+<img src="images/mimo-header_projekt_960x292.jpeg" alt="" style="width:100%; opacity:0.5;">
+
+ <div style="clear: both;">
+        <h1>{{include.title_1}}</h1>
+        <p>{{ include.content_1 | markdownify }}</p>
+    </div>
+</div>
+<br/>
+<div style="clear: both;">
+    <div style="float: right; margin-left: 1cm;">
+        <img src="images/mimo-masthead.jpg" alt="">
+    </div>
+    <div>
+        <h2><a href="/about/">{{ include.title_2 }}</a></h2>
+        {{ include.content_2 | markdownify }}
+        <a href="/aboutMiMoTextBase.html">
+        <button type="button">About</button>
+        </a>
+    </div>
+</div>
+<br/>
+<div style="clear: both;">
+    <div style="float: left; margin-right: 1cm;">
+        <img src="images/graph.png" alt="">
+    </div>
+    <div>
+        <h2><a href="/tutorial/">{{ include.title_3 }}</a></h2>
+        {{ include.content_3 | markdownify }}
+        <button type="button">Tutorial</button>
+    </div>
+</div>
+<br/>
+<div style="clear: both;">
+    <div style="float: right; margin-left: 1cm;">
+        <img src="images/sparql.png" alt="">
+    </div>
+    <div>
+        <h2><a href="/sparql/">{{ include.title_4 }}</a></h2>
+        {{ include.content_4 | markdownify }}
+        <button type="button">SPARQL-Endpoint</button>
+    </div>
+</div>
+<br/>
+<div style="clear: both;">
+        <h2><a href="/help/">{{ include.title_5 }}</a></h2>
+        {{ include.content_5 | markdownify }}
+       <!-- <button type="button">Help</button>-->
+</div>
