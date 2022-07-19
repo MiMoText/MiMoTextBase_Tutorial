@@ -2,9 +2,9 @@
 title: Tutorial
 tags: [getting_started]
 keywords:
-summary: 
+summary:
 sidebar: mydoc_sidebar_tutorial
-permalink: TutorialWelcome.html
+permalink: tutorial_index.html
 folder: tutorial
 toc: false
 ---

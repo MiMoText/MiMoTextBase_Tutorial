@@ -52,7 +52,7 @@ template {
 }
 
 a {
-    background-color: transparent
+    background-color:  #319596;
 }
 
 a:active,
@@ -239,7 +239,6 @@ th {
     :before {
         /*color:#000!important;*/
         /*background:0 0!important*/
-        ;
     }
     a,
     a:visited {
@@ -3589,25 +3588,15 @@ textarea.form-group-lg .form-control {
 }
 
 .btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
+    background-color: #319596;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 15px;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .btn.active.focus,
@@ -3624,7 +3613,7 @@ textarea.form-group-lg .form-control {
 .btn.focus,
 .btn:focus,
 .btn:hover {
-    color: #333;
+    color: white;
     text-decoration: none
 }
 
@@ -3643,9 +3632,9 @@ fieldset[disabled] .btn {
 }
 
 .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc
+    color: #319596;
+    background-color: #319596;;
+    border-color: #319596;
 }
 
 .btn-default.active,
@@ -3942,10 +3931,22 @@ fieldset[disabled] .btn-danger:hover {
     background-color: #fff
 }
 
+.btn-type {
+    background-color: #319596;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .btn-link {
     font-weight: 400;
     color: #337ab7;
-    border-radius: 0
+    border-radius: 0;
 }
 
 .btn-link,
@@ -5020,7 +5021,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-nav>li>a {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     line-height: 20px
 }
 
