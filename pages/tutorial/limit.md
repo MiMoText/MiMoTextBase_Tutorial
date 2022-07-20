@@ -24,6 +24,6 @@ Second Term
 : This is another definition of the second term.
 ```
 
-[Previous](/select.html){: .btn} [Next](/union.html){: .btn}
+[Previous](./select.html){: .btn-primary} [Next](./union.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
