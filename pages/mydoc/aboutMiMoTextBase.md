@@ -3,13 +3,12 @@ title: About MiMoTextBase
 tags: [getting_started]
 keywords:
 summary:
-sidebar: mydoc_sidebar
+sidebar: false #mydoc_sidebar
 permalink: aboutMiMoTextBase.html
 folder: mydoc
+toc: false
 ---
-
-## About MiMoTextBase
 
 {% include about.html %}
 
-{% include links.html %}
+

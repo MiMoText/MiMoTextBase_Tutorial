@@ -14,10 +14,13 @@ entries:
     - title: About MiMoTextBase
       output: web
       url: /aboutMiMoTextBase.html
+      #id: 0
 
     - title: Semantic Web, RDF, Linked Open Data, Wikidata
       output: web
-      url: /semanticweb.html
+      #url: /semanticweb.html
+      url: /aboutMiMoTextBase.html
+      id: 1
 
     - title: The Wikibase ecosystem
       output: web

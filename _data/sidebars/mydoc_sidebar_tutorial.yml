@@ -6,6 +6,11 @@ entries:
       - title: Introduction
         output: web
 
+        folderitems: 
+          - title: "Section 1: Getting Started"
+            #url: /getting_started.html
+            output: web
+            
       - title: Getting Started
         output: web
         folderitems:
@@ -111,5 +116,17 @@ entries:
 
           - title: Sample 7
             url: /p1_sample7.html
+            output: web, pdf
+
+      - title: Going Further
+        output: web, pdf
+
+        folderitems:
+          - title: Sample 4
+            url: /p1_sample4.html
+            output: web, pdf
+
+          - title: Sample 5
+            url: /p1_sample5.html
             output: web, pdf
 # Copyright 2021 Google LLC
