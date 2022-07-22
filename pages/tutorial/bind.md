@@ -18,7 +18,8 @@ As the dates of publication needed to be imported in DateTime-Format, we always 
 
 ```
 BIND
-: The BIND form allows a value to be assigned to a variable from a basic graph pattern or property path expression. Use of BIND ends the preceding basic graph pattern.
+: The BIND form allows a value to be assigned to a variable from a basic graph pattern or property path expression.
+Use of BIND ends the preceding basic graph pattern.
 ```
 
 [Previous](./union.html){: .btn-primary} [Next](./federated.html){: .btn-primary}
