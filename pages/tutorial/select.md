@@ -9,7 +9,7 @@ folder: tutorial
 toc: false
 ---
 
-### **SELECT**
+### **The simplest query: SELECT WHERE**
 
 We can start by a very basic SPARQL query, which lists all of the novels of a certain author. We `SELECT` all items `WHERE` the condition 'has author' has the value 'Tiphaigne de la Roche'.The `WHERE` defines which data should be picked, and the `SELECT` defines which data should be displayed.
 
