@@ -23,3 +23,4 @@ LIMIT
 [Previous](./select.html){: .btn-primary} [Next](./union.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
+ {% include help.html %}
