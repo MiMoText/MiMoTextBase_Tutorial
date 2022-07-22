@@ -23,7 +23,7 @@ toc: false
 >Note:
 The name of the variables can be chosen freely, but they always need the “?” at the beginning and need to stay the same in the whole query.
 After a triple pattern you should use the “.”
-In a basic SELECT-WHERE-Query, you can add as many variables in the SELECT part as you wish as long as they appear in the WHERE-part (otherwise they won’t contain any information and stay empty).
+In a basic <code>SELECT-WHERE</code> -Query, you can add as many variables in the <code>SELECT</code>  part as you wish as long as they appear in the <code>WHERE</code-part (otherwise they won’t contain any information and stay empty).
 
 ```
 First Term
