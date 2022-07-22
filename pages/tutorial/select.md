@@ -33,4 +33,4 @@ SELECT
 
 [Previous](./tutorial_index.html){: .btn-primary} [Next](./limit.html){: .btn-primary}
 
-<!-- {% include links.html %} -->
+ {% include help.html %} 
