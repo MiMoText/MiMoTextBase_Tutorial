@@ -1,13 +1,16 @@
 ---
-title: About MiMoTextBase
-tags: [getting_started]
+title: # About MiMoTextBase
 keywords:
 summary:
-sidebar: false #mydoc_sidebar
+hide_sidebar: true
 permalink: aboutMiMoTextBase.html
 folder: mydoc
 toc: false
 ---
+
+## About MiMoTextBase
+
+Text here
 
 {% include about.html %}
 
