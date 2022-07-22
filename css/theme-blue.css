@@ -58,6 +58,7 @@ a[data-toggle="tooltip"] {
 .navbar-inverse {
     background-color: white;
     border-color: #319596;
+    margin-bottom: -40px;
 }
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
     color: #319596;

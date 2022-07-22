@@ -10,8 +10,4 @@ toc: false
 
 ## About MiMoTextBase
 
-Text here
-
 {% include about.html %}
-
-
