@@ -14,7 +14,7 @@ toc: false
 One major advantage of linked open data is that we can use not only the information stored within our graph. Instead, because we have matched most of our values to existing WikiData-Items (where possible), we are able to write queries linking to different Knowledge Bases like WikiData [or others that also link to WikiData-Items].
 As we have location information like places of publication or narrative locations of the novels and WikiData provides coordinates to many locations, we can write a federated query to retrieve those and visualize the locations on a map.
 
-We plan to change the prefixes in our MiMoTextBase soon (see future work [LINK]), so that the wikidata prefixes do not have to be changed. However, the default setting for each Wikibase instance are the Wikidata prefixes, so we have so far changed the actual Wikidata prefixes as shown below. First you need to define the Prefixes you are going to use for the other knowledge base in the query as:
+We plan to change the prefixes in our MiMoTextBase soon, so that the wikidata prefixes do not have to be changed. However, the default setting for each Wikibase instance are the Wikidata prefixes, so we have so far changed the actual Wikidata prefixes as shown below. First you need to define the Prefixes you are going to use for the other knowledge base in the query as:
 
 `PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd
 PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt`
