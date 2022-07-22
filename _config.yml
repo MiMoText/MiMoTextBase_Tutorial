@@ -109,7 +109,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 baseurl: "MiMoTextBase_Tutorial"
 url: ""
 
-#github: [metadata]
+github: [metadata]
 
 plugins:
 - jekyll-feed

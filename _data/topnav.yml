@@ -4,9 +4,8 @@ topnav:
   - title: Topnav
     items:
       - title: About
-        #external_url: https://github.com/tomjoht/documentation-theme-jekyll
         url: /aboutMiMoTextBase.html
       - title: Tutorial
         url: /tutorial_index.html
       - title: SPARQL-Endpoint
-        external_url: to_come
+        external_url: http://query.mimotext.uni-trier.de 
