@@ -9,7 +9,7 @@ folder: tutorial
 toc: false
 ---
 
-### **Federated Queries**
+### **Federated queries**
 
 One major advantage of linked open data is that we can use not only the information stored within our graph. Instead, because we have matched most of our values to existing WikiData-Items (where possible), we are able to write queries linking to different Knowledge Bases like WikiData [or others that also link to WikiData-Items].
 As we have location information like places of publication or narrative locations of the novels and WikiData provides coordinates to many locations, we can write a federated query to retrieve those and visualize the locations on a map.
@@ -33,15 +33,10 @@ Next using the `SERVICE` referring to the WikiData-SPARQL-Endpoint, we can get a
  Example: Show all narrative places in Europe (using the coordinate locations property of Wikidata)   
 
 
-<iframe class="" src="<iframe style="width: 80vw; height: 50vh; border: none;" src="http://zora.uni-trier.de:11100/embed.html#%23defaultView%3AMap%7B%22hide%22%3A%20%5B%22%3Fnar_loc%22%5D%2C%20%22markercluster%22%3A%22true%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0A%0ASelect%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3Fnar_loc%20%3Fnar_locLabel%20%3FwikidataEntityLink%20%3FcoordinateLocation%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP52%20%3Fnar_loc.%0A%20%20%3Fnar_loc%20wdt%3AP30%20%3FWikiLink.%0A%20%20%0A%20%20BIND%28IRI%28REPLACE%28%20STR%28%3FWikiLink%29%2C%22https%3A%2F%2Fwww.wikidata.org%2Fwiki%22%2C%22http%3A%2F%2Fwww.wikidata.org%2Fentity%22%20%29%29%20AS%20%3FwikidataEntityLink%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FwikidataEntityLink%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>" style="width:100%;max-width:100%;height:450px" frameborder="0"></iframe>
-
 ```
-First Term
-: This is the definition of the first term.
+Federated query
+: SPARQL can be used to express queries across diverse data sources, whether the data is stored natively as RDF or viewed as RDF via middleware.
 
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
 ```
 
 [Previous](./bind.html){: .btn-primary} [Next](./errors.html){: .btn-primary}
