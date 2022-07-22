@@ -3,7 +3,7 @@ title: Impressum
 tags: 
 keywords:
 summary: 
-sidebar: 
+hide_sidebar: True
 permalink: impressum.html
 folder: extrapages
 toc: false

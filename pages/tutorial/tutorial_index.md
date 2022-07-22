@@ -11,4 +11,6 @@ toc: false
 
 ## Tutorial
 
-<!-- {% include links.html %} -->
+
+
+{% include help.html %} 
