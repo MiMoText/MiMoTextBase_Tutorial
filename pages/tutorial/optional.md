@@ -26,3 +26,4 @@ OPTIONAL
 [Previous](./limit.html){: .btn-primary} [Next](./bind.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
+ {% include help.html %}

@@ -42,3 +42,4 @@ Federated query
 [Previous](./bind.html){: .btn-primary} [Next](./errors.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
+ {% include help.html %}

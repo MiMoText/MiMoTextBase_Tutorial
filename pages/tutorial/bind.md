@@ -24,3 +24,4 @@ BIND
 [Previous](./union.html){: .btn-primary} [Next](./federated.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
+ {% include help.html %}

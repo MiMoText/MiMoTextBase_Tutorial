@@ -27,3 +27,4 @@ Second Term
 [Previous](./federated.html){: .btn-primary} [Next](./authors.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
+ {% include help.html %}
