@@ -21,10 +21,6 @@ Example: Get all novels written by François-Thomas-Marie de Baculard d’ARNAUD
 ```
 OPTIONAL
 : If the optional part does not match, it creates no bindings but does not eliminate the solution.
-
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
 ```
 
 [Previous](./limit.html){: .btn-primary} [Next](./bind.html){: .btn-primary}
