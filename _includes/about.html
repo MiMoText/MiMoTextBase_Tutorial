@@ -34,12 +34,19 @@ One of the biggest hubs for **linked open data** worldwide at the moment is **Wi
   <div class="panel-heading">
       <h4 class="panel-title">
           <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-            <b>Aenean consequat lorem ut felis ullamcorper?</b></a>
+            <b>The Wikibase ecosystem</b></a>
       </h4>
   </div>
   <div id="collapseThree" class="panel-collapse collapse noCrossRef">
       <div class="panel-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        The software behind Wikidata is Wikibase, a set of MediaWiki extensions developed by Wikimedia Germany. Just like Wikidata, Wikibase is free and open for everyone. It is used for example by the project ArtBase [ArtBase](https://artbase.rhizome.org/wiki/Query), the project [Enslaved.org](https://enslaved.org/)or the [German National Library](https://www.dnb.de/EN/Home/home_node.html).
+        We chose a local instance of Wikibase as the infrastructure for our data in “Mining and Modeling Text” for several reasons:
+        - Wikibase is suitable for storing the necessary amount of triples and comes with a SPARQL endpoint with numerous visualization possibilities.
+        - The software is open and free and as with the whole Wikimedia universe, there is a lively community always eager to help and a multitude of communication channels (Wiki conferences, Telegram group, Wikis).
+        - Wikibase enables us to store a multilingual knowledge graph (French/German/English), which was a feature we intended to use.
+        - As we match a part of our graph to Wikidata and intend to export a part of our graph to Wikidata too, the use of the same infrastructure as well as the reuse of existing properties was thought to facilitate data integration later.
+        - We see MiMoTextBase as part of the Wikibase ecosystem. Accordingly, we hope to make interesting data available to other projects and, conversely, to repurpose data made available elsewhere. The more projects in this ecosystem share the same infrastructure, the denser and more significant the whole graph becomes.
+
       </div>
   </div>
 </div>
