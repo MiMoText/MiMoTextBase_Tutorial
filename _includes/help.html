@@ -6,18 +6,16 @@ body {
 }
 
 #help-button{
- text-align: center;
- padding-top: 5px;
- font-size: 25px;
- font-weight: bolder;
- background: #319596;
- color: #ffffff;
- width: 40px;
- height: 160px;
- border-radius: 15px 0px 0px 15px;
- position: fixed;
- right:5px;
-
+    height: 80%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
 .overlay {
@@ -74,7 +72,9 @@ body {
 }
 </style>
 </head>
+
 <body>
+    <button style="cursor:pointer" onclick="openNav()" id="help-button">H<br/>E<br/>L<br/>P</button>
 
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -85,7 +85,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit? <p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
@@ -98,7 +98,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus? <p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
@@ -111,7 +111,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Aenean consequat lorem ut felis ullamcorper?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Aenean consequat lorem ut felis ullamcorper? <p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
@@ -124,7 +124,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Lorem ipsum dolor sit amet, consectetur adipiscing elit? <p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseFour" class="panel-collapse collapse">
@@ -137,7 +137,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?<p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseFive" class="panel-collapse collapse">
@@ -150,7 +150,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Aenean consequat lorem ut felis ullamcorper?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Aenean consequat lorem ut felis ullamcorper?<p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseSix" class="panel-collapse collapse">
@@ -163,7 +163,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Lorem ipsum dolor sit amet, consectetur adipiscing elit? <p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseSeven" class="panel-collapse collapse">
@@ -176,7 +176,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?<p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseEight" class="panel-collapse collapse">
@@ -189,7 +189,7 @@ body {
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Aenean consequat lorem ut felis ullamcorper?</a>
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Aenean consequat lorem ut felis ullamcorper?<p style="float: right">&#9660;</p></a>
             </h4>
         </div>
         <div id="collapseNine" class="panel-collapse collapse">
@@ -208,7 +208,7 @@ body {
 
 
 
-<span style="cursor:pointer" onclick="openNav()" id="help-button">H<br/>E<br/>L<br/>P</span>
+
 
 <script>
 function openNav() {
