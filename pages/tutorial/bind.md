@@ -9,7 +9,7 @@ folder: tutorial
 toc: false
 ---
 
-### **Bind**
+### **BIND**
 
 > If you want to assign some value based on known properties (e.g. based on some calculations done in the query) to a new variable, you can use the BIND-operation. It follows the syntax BIND(SOME-OPERTION-WITH-KNOWN-VARIABLES AS ?new-variable).
 > As the dates of publication needed to be imported in DateTime-Format, we always get the First of January as the days and month for this information. We can use <code>BIND</code> to extract the <code>YEAR</code> of <code>P7</code> (date of publication) to assign the year to a new variable named ?year which then will be displayed in the result table.
