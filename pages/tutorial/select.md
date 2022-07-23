@@ -20,6 +20,8 @@ If you have a look at the results, you see the items, but you might be looking f
 
 In order to display labels, we have to use `SERVICE wikibase:label { bd:serviceParam wikibase:language "en”. }`. The “`en`” specifies that we want to display the English labels. Our graph is multilingual (French, English and German), so the results can differ depending on the chosen output language. Use “`fr`” for French or “`de`” for German labels. This is the same query with English labels:
 
+Example: [SELECT all the items and their labels WHERE the author is Tiphaigne de la Roche ](https://tinyurl.com/23pzmwxq)
+
 Note:
 The name of the variables can be chosen freely, but they always need the “?” at the beginning and need to stay the same in the whole query.
 After a triple pattern you should use the “.”
