@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: #Introduction
 tags: [getting_started]
 keywords:
 summary:
@@ -8,6 +8,8 @@ permalink: tutorial_index.html
 folder: tutorial
 toc: false
 ---
+
+### **Introduction**
 
 The aim of this tutorial is to give users, including those without any prior knowledge, an impression of our graph, our corpus of French Enlightenment novels and the potential of Linked Open Data. If you don’t know SPARQL, you can enter the “Getting started”-section to get to know SPARQL. To learn more about the data within the [MiMoTextBase](http://data.mimotext.uni-trier.de/wiki/Main_Page) using SPARQL, you can enter authors, novels, spaces or themes. If you need more context on the project and on linked data, please read the ABOUT MiMoTextBase section first. 
 
