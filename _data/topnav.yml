@@ -11,4 +11,5 @@ topnav:
         external_url: http://data.mimotext.uni-trier.de
       - title: SPARQL-Endpoint
         external_url: http://query.mimotext.uni-trier.de
-
+      - title: Help
+        url: /help.html

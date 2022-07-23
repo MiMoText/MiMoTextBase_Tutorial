@@ -20,7 +20,8 @@ LIMIT
 : The LIMIT clause puts an upper bound on the number of solutions returned.
 ```
 
-[Previous](./select.html){: .btn-primary} [Next](./union.html){: .btn-primary}
+[Previous](./count.html){: .btn-primary} [Next](./filter.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}

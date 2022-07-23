@@ -1,46 +1,35 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: sidebar
-  #product: About MiMoTextBase
-  #version: 6.0
-  folders:
-
-  - title: About MiMoTextBase
-    output: web, pdf
-
-    #url: /index.html
-    folderitems:
-    - title: About MiMoTextBase
-      output: web
-      url: /aboutMiMoTextBase.html
-      #id: 0
-
-    - title: Semantic Web, RDF, Linked Open Data, Wikidata
-      output: web
-      #url: /semanticweb.html
-      url: /aboutMiMoTextBase.html
-      id: 1
-
-    - title: The Wikibase ecosystem
-      output: web
-      url: /wikibaseEcosystem.html
-    
-    - title: The MiMoText project
-      output: web
-      url: /mydoc_about_ruby_gems_etc.html
-
-    - title: Our source types and our modeling approach
-      output: web, pdf
-      url: /mydoc_about_ruby_gems_etc.html
-      subfolders:
-
-      - title: Overview of our sources
+  - title: sidebar
+    folders:
+      - title: How to use the data for my research
         output: web, pdf
+        folderitems:
+          - title: Get an overview
+            output: web
+            url: /overview.html
 
-        subfolderitems:
-        - title: etc
-          output: web
-          #url: /index.html
+          - title: Write your own queries
+            output: web
+            url: /.html
+            id: 1
 
+          - title: Export query results
+            output: web
+            url: /.html
 
+          - title: License
+            output: web
+            url: /.html
+
+      - title: How to reuse the data
+        output: web, pdf
+        folderitems:
+          - title: Where to find the MiMoText data
+            output: web
+            url: /find.html
+          - title: Downloading a dump of the whole graph
+            output: web
+            url: /dump.html
+            id: 1

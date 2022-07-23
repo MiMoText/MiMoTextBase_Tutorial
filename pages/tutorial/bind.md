@@ -22,7 +22,8 @@ BIND
 Use of BIND ends the preceding basic graph pattern.
 ```
 
-[Previous](./union.html){: .btn-primary} [Next](./federated.html){: .btn-primary}
+[Previous](./select.html){: .btn-primary} [Next](./count.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}
