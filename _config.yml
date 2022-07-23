@@ -106,7 +106,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 
-baseurl: "MiMoTextBase_Tutorial"
+baseurl: "" #"MiMoTextBase_Tutorial"
 url: ""
 
 github: [metadata]

@@ -1,132 +1,95 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-  - title: sidebar
-    folders:
-      - title: Introduction
-        output: web
+- title: Tutorial
+  #product: About MiMoTextBase
+  #version: 6.0
+  folders:
+    - title: Tutorial
+      output: web, pdf
+      #url: /aboutMiMoTextBase.html
 
-        folderitems: 
-          - title: "Section 1: Getting Started"
-            #url: /getting_started.html
+      folderitems:
+        - title: Welcome 
+          output: web
+          url: /tutorial_index.html
+    
+          subfolders:
+          - title: Introduction
             output: web
+            #url: /aboutMiMoTextBase.html
+            subfolderitems:
+              - title: "Section 1: Getting Started"
+                output: web
+                url: /intro_sec_1.html
+              - title: "Section 2: MiMoText data (authors, novels, spaces, themes)"
+                output: web
+                url: /intro_sec_2.html
+              - title: "Section 3: Going further – Using the MiMoTextBase for research"
+                output: web
+                url: /intro_sec_3.html
+
+          - title: Getting Started
+            output: web
+            #url: /semanticweb.html
+            url: /getting_started.html
+            subfolderitems:
+            #- title: Searching
+            #  output: web
+            #  url: /searching.html
+            - title: "The simplest query: SELECT WHERE"
+              output: web
+              url: /select.html
+            - title: "BIND"
+              output: web
+              url: /bind.html
+            - title: "COUNT"
+              output: web
+              url: /count.html
+            - title: "LIMIT"
+              output: web
+              url: /limit.html
+            - title: "FILTER"
+              output: web
+              url: /filter.html
+            - title: "OPTIONAL"
+              output: web
+              url: /optional.html
+            - title: Federated Queries
+              output: web
+              url: /fed_queries.html
+
+
+        - title: Authors
+          output: web
+          url: /authors.html
+    
+        - title: Novels
+          output: web
+          url: /novels.html
+
+        - title: Spaces
+          output: web, pdf
+          url: /spaces.html
+
+        - title: Themes
+          output: web
+          url: /themes.html
+          
+          subfolders:
+
+          - title: Going Further
+            output: web, pdf
+
+            subfolderitems:
+            - title: Change over Time
+              output: web
+              url: /change_over_time.html
             
-      - title: Getting Started
-        output: web
-        folderitems:
-          - title: Select
-            url: /select.html
-            output: web
-
-          - title: Limit
-            url: /limit.html
-            output: web, pdf
-
-          - title: Union
-            url: /union.html
-            output: web, pdf
-
-          - title: Bind
-            url: /bind.html
-            output: web, pdf
-
-          - title: Federated Queries
-            url: /federated.html
-            output: web, pdf
-
-          - title: Errors & Problems
-            url: /errors.html
-            output: web, pdf
-
-      - title: Authors
-        output: web, pdf
-
-        folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
-
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
-
-          - title: Sample 6
-            url: /p1_sample6.html
-            output: web, pdf
-
-          - title: Sample 7
-            url: /p1_sample7.html
-            output: web, pdf
-
-      - title: Novels
-        output: web, pdf
-
-        folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
-
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
-
-          - title: Sample 6
-            url: /p1_sample6.html
-            output: web, pdf
-
-          - title: Sample 7
-            url: /p1_sample7.html
-            output: web, pdf
-
-      - title: Space
-        output: web, pdf
-
-        folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
-
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
-
-          - title: Sample 6
-            url: /p1_sample6.html
-            output: web, pdf
-
-          - title: Sample 7
-            url: /p1_sample7.html
-            output: web, pdf
-
-      - title: Themes
-        output: web, pdf
-
-        folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
-
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
-
-          - title: Sample 6
-            url: /p1_sample6.html
-            output: web, pdf
-
-          - title: Sample 7
-            url: /p1_sample7.html
-            output: web, pdf
-
-      - title: Going Further
-        output: web, pdf
-
-        folderitems:
-          - title: Sample 4
-            url: /p1_sample4.html
-            output: web, pdf
-
-          - title: Sample 5
-            url: /p1_sample5.html
-            output: web, pdf
-# Copyright 2021 Google LLC
+            - title: Comparing
+              output: web
+              url: /comparing.html
+            
+            - title: Now it is up to you
+              output: web
+              url: /up_to_you.html
