@@ -23,7 +23,8 @@ OPTIONAL
 : If the optional part does not match, it creates no bindings but does not eliminate the solution.
 ```
 
-[Previous](./limit.html){: .btn-primary} [Next](./bind.html){: .btn-primary}
+[Previous](./filter.html){: .btn-primary} [Next](./federated.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}

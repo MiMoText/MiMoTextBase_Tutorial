@@ -4,12 +4,12 @@ tags: [getting_started]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
-permalink: errors.html
+permalink: filter.html
 folder: tutorial
 toc: false
 ---
 
-### **Errors & Problems**
+### **Filter**
 
 > Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
 
@@ -24,7 +24,8 @@ Second Term
 : This is another definition of the second term.
 ```
 
-[Previous](./federated.html){: .btn-primary} [Next](./authors.html){: .btn-primary}
+[Previous](./limit.html){: .btn-primary} [Next](./optional.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}
