@@ -37,7 +37,7 @@ Those interested in the tonality of the novels will find an overview of this pro
 
 Those interested in book history will find data on publishing places of first editions and also distribution formats of first editions (property `P26`).
 
-[In which distribution formats were the novels published?](https://tinyurl.com/2dzfqpl8)
+[Query: In which distribution formats were the novels published?](https://tinyurl.com/2dzfqpl8)
 
 We can observe a diversification of small formats: in-12 and even in-18 and in-24. Smaller book formats enable the reader to read in a clandestine setting, on travels and individually, making their way out of the libraries and reading cabinets (cf. Sacquin n.d.).
 

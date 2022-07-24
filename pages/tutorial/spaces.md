@@ -19,4 +19,8 @@ The mining of places in the bibliographic metadata comprehends publication place
 
 As the first publication date of all novels is fed into the graph, we can also analyze the publication places in a diachronic perspective.
 
+[Query: How did publication places change over time?](https://tinyurl.com/2anmw82t?)
+
+What strikes here is the abrupt break in places of publication concerning the Netherlands (Amsterdam, The Hague) with the year 1789. Not only the Dutch production sites, but also Switzerland (Neuchâtel, Genève) as a place of publication of French novels breaks off with the year of the revolution. The graphic output of the query shows that there was a change in the production conditions of French novels.
+
 [Previous](./novels.html){: .btn-primary} [Next](./themes.html){: .btn-primary}
