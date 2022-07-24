@@ -39,7 +39,7 @@ Or, we could also ask for statements referenced by both sources at the same time
 
 [ NO LINK YET: Statements on consistent topics in novels from both sources: Topic Modeling & bibliographic me](google.com)
 
-![biblio](/images/comparing_biblio.png)
+![biblio](./images/comparing_biblio.png)
 
 For _Émile ou de l’éducation_ (1762), the topic modeling algorithm and the metadata agree, that the novel is about education or for _Claire d’Albe_ (1799) both sources agree that the novel is about sentiment.
 
