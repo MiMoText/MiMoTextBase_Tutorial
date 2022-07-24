@@ -16,22 +16,17 @@ As we have location information like places of publication or narrative location
 
 We plan to change the prefixes in our MiMoTextBase soon, so that the wikidata prefixes do not have to be changed. However, the default setting for each Wikibase instance are the Wikidata prefixes, so we have so far changed the actual Wikidata prefixes as shown below. First you need to define the Prefixes you are going to use for the other knowledge base in the query as:
 
-`PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd
-PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt`
+`PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt`
 
-Within the `WHERE`-part you can query all items you want to as long as they have a `P13`  (exact match with WikiData) property.
+Within the `WHERE`-part you can query all items you want to as long as they have a `P13` (exact match with WikiData) property.
 So in our example
-`?item wdt:P10 ?pub_place.    #a novel has a place of publication
-?pub_place wdt:P13 ?WikiLink.    #the place of publication has an exact match.`
+`?item wdt:P10 ?pub_place. #a novel has a place of publication ?pub_place wdt:P13 ?WikiLink. #the place of publication has an exact match.`
 
 Next using the `SERVICE` referring to the WikiData-SPARQL-Endpoint, we can get all information listed on the matching WikiData-entry. To write the triple, we now need to use the property-values of WikiData. Here `P625` is the coordinate location of the WikiData entity.
 
-`SERVICE <https://query.wikidata.org/sparql> {
-   ?wikidataEntityLink widt:P625 ?coordinateLocation.
- }   `
+`SERVICE <https://query.wikidata.org/sparql> { ?wikidataEntityLink widt:P625 ?coordinateLocation. } `
 
- Example: Show all narrative places in Europe (using the coordinate locations property of Wikidata)   
-
+Example: [Show all narrative places in Europe (using the coordinate locations property of Wikidata)](https://tinyurl.com/29unj2kn)
 
 ```
 Federated query
@@ -42,4 +37,5 @@ Federated query
 [Previous](./bind.html){: .btn-primary} [Next](./errors.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}

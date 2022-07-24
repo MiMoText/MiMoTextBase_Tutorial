@@ -15,4 +15,6 @@ Here we would like to exhibit the value and potential of the knowledge graph for
 
 We believe the tutorial is useful for Digital Humanists with an interest in linked open data (especially from Computational Literary Studies, but also all other fields, such as Digital History or Cultural Studies), but also for literary scholars or scholars interested in Book Studies, especially those interested in the Enlightenment as a period and/or the French novel or fictional prose as a genre.
 
+[Previous](./intro_sec_2.html){: .btn-primary} [Next](./getting_started.html){: .btn-primary}
+
 {% include help.html %}

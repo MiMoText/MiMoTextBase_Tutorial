@@ -28,7 +28,6 @@ As places of publication per novel are part of our properties, we could also com
 [Show all the places of publication of novels which are about “travel”](https://tinyurl.com/2q24hdlb)
 ![IMG](images/themes_per_narrative_loc.png)
 
-
 Combining themes and spaces in the graph, there is the property `P32` `narrative_location`, which can show interesting patterns of correlations of spaces with themes in the French novel of that period.
 
 Let’s see how the rather abstract location “rural area” is intertwined with concise thematic concepts in aggregating all novels and all themes with narrative location “rural area” in the graph.
@@ -37,5 +36,6 @@ Let’s see how the rather abstract location “rural area” is intertwined wit
 
 ![rural](images/themes_rural.png)
 
-
 As a result, we see that the thematic concepts “sentimentalism”, “sentiment” and “unhappiness” are linked to the narrative location “rural area” (in aggregating all novels).
+
+[Previous](./spaces.html){: .btn-primary} [Next](./change_over_time.html){: .btn-primary}
