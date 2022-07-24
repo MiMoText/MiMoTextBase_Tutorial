@@ -15,7 +15,9 @@ Comparing is a central methodological and epistemological paradigm in the (digit
 
 For instance, we can compare different narrative perspectives and narrative places:
 
--emb img
+[Where are epistolary novels set?](https://tinyurl.com/22hk74cw)
+
+[Where are heterodiegetic novels set?](https://tinyurl.com/29fqaume)
 
 There are narrative places dominant in the corpus as a whole (France/England/rural area), but also differences: epistolary novels are more often set in Switzerland then heterodiegetic novels, whereas heterodiegetic novels are more often set in imaginary places then epistolary novels.
 
