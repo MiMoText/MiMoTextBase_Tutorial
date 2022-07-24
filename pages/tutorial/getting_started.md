@@ -22,7 +22,8 @@ SPARQL
 :  SPARQL stands for SPARQL Protocol and RDF Query Language.
 ```
 
-[Previous](./select.html){: .btn-primary} [Next](./union.html){: .btn-primary}
+<!-- [Previous](./tutorial_index.html){: .btn-primary}--> [Next](./select.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
- {% include help.html %}
+
+{% include help.html %}

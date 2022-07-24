@@ -13,7 +13,6 @@ toc: false
 
 We can start by a very basic SPARQL query, which lists all of the novels of a certain author. We `SELECT` all items `WHERE` the condition 'has author' has the value 'Tiphaigne de la Roche'.The `WHERE` defines which data should be picked, and the `SELECT` defines which data should be displayed.
 
-
 Example: [SELECT all the items WHERE the author is Tiphaigne de la Roche ](https://tinyurl.com/235c7uen).
 
 If you have a look at the results, you see the items, but you might be looking for the names of the novels, which are the labels of the items.
@@ -33,6 +32,6 @@ SELECT
 
 ```
 
-[Previous](./research.html){: .btn-primary} [Next](./bind.html){: .btn-primary}
+[Previous](./getting_started.html){: .btn-primary} [Next](./bind.html){: .btn-primary}
 
 {% include help.html %}
