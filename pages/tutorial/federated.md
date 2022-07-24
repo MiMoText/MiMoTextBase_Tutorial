@@ -34,7 +34,7 @@ Federated query
 
 ```
 
-[Previous](./bind.html){: .btn-primary} [Next](./errors.html){: .btn-primary}
+[Previous](./bind.html){: .btn-primary} [Next](./authors.html){: .btn-primary}
 
 <!-- {% include links.html %} -->
 
