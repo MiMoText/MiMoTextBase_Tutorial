@@ -9,7 +9,7 @@ folder: tutorial
 toc: false
 ---
 
-### **Count**
+### **COUNT**
 
 The `COUNT`-operation lets you, as the name suggests, count specified items in the graph. In order to get the sum of all novels in the MiMoText graph written by Tiphaigne de la Roche, you can change your `SELECT`-part of the query to `SELECT (count(?item) as ?count)`.
 The variable in brackets of COUNT represents the item you want to sum up; the variable behind the `AS` will be shown as a new column in the results table.
