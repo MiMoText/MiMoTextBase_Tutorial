@@ -60,7 +60,7 @@ entries:
                     url: /optional.html
                   - title: Federated Queries
                     output: web
-                    url: /fed_queries.html
+                    url: /federated.html
 
           - title: Authors
             output: web
