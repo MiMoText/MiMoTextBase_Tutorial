@@ -8,8 +8,7 @@
             dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
     </div-->
 
-
- <div class="panel-group" id="accordion">
+<div class="panel-group" id="accordion">
 
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -55,10 +54,9 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   </div>
 <!-- /.panel -->
 
-
 <!-- more panel classes to come -->
 
-  <div class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -78,9 +76,6 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         </div>
     </div>
 </div>
-
-
-
  <!-- /.panel -->
  <div class="panel panel-default">
   <div class="panel-heading">
@@ -162,23 +157,16 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   <div id="collapseSix" class="panel-collapse collapse">
       <div class="panel-body">
         <p>In total, there are now (May 2022) <b>236.237 triples</b> in our graph.</p>
-
         <p>You find information on 621 authors and on 1750 novels.</p>
-        
         <p>For example, for a property like “narrative location” (P32), there are <b>2183 statements</b> in the graph. </p>
-        
         <p>Concerning the properties in our graph, <a href="https://tinyurl.com/29xnw6rt ">this query </a> gives you an overview: </p>
-        
         <iframe style="width: 80vw; height: 50vh; border: none;" src="http://query.mimotext.uni-trier.de/embed.html#SELECT%20%3Fproperty%20%3FpropertyLabel%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-        <p>There are properties and items with a close match (P16) or an exact match (P13) on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: 
-        
+        <p>There are properties and items with a close match (P16) or an exact match (P13) on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: </p>
         <p><a href="https://tinyurl.com/29n5xhrd">Query to items with a close match (P58) on Wikidata, dimensions view</a></p> 
-        
         <p><a href="https://tinyurl.com/293f4j84">Query to items with exact match (P30) on Wikidata, limited to 40 results, dimensions view</a></p> 
+        </div>     
       </div>
-  </div>
-  </div>        
-     
+  </div>      
 <!-- /.panel -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -203,7 +191,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         </li>
         </ul>
         <p>The default setting for each Wikibase instance are the Wikidata prefixes. We will soon change these prefixes currently available in Wikibase, to avoid (among other) confusion in the context of 'federated queries' [LINK]. We will stay within the Wikidata logic of the prefix  labeling to increase usability for those who are already familiar with the Wikidata prefies (e.g. 'mmd' for the 'entities' with the prefix 'wd', 'mmdt' for the 'properties' with 'wdt').</p>
-        
+        <br/>
         <h4>Extensions of the MiMoTextBase & further modules</h4>
         <p>In the further course of the project until the end of 2023 (consolidation and evaluation phase), further statement types will be modeled step by step, for which there is data in at least two of our three source types. We also plan to LODify additional data from our central source  that we have initially imported only as strings (e.g., distribution format, number of pages). Furthermore, we will increase interoperability with ELTeC and Wikidata by importing data on reusable properties ("language of work or name").</p>
         <p>Furthermore, we plan to add the module "scholarly publication" and thus import data that have been manually annotated in INCEpTION so far, as well as automatically extracted statements (machine learning based on the annotated training data) in the future.
@@ -216,8 +204,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         - [Wikidata as Hub]
         - [serb. ELTeC]
         - [...]
-      </p>
-        
+      </p><br/>
         <h4>Further features, explanation and documentation</h4>
         <p>Multilinguality: Our vocabularies are already all trilingual (@en | @fr | @de). In the descriptions of our central Q-items and properties, we have currently limited these to English, but we do plan to make them trilingual as well.
         </p>
@@ -247,20 +234,20 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   </div>
   <div id="collapseEight" class="panel-collapse collapse">
       <div class="panel-body">
-        For References have a look 
-        <a href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition">here</a>
+        For references, take a look 
+        <a href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition">here</a>.
       </div>
   </div>
 </div>
 <!-- /.panel -->
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                 <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
-                  <b>Data & further MiMoText resources</b></a>
-             </h4>
-        </div>
-     <div id="collapseNine" class="panel-collapse collapse noCrossRef">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+          <b>Data & further MiMoText resources</b></a>
+          </h4>
+  </div>
+  <div id="collapseNine" class="panel-collapse collapse">
     <div class="panel-body">
 <p>For the provision of data as well as the infrastructure in the project, Open Science principles are fundamental. This concerns, among other things, the publication of FAIR data as well as the use of open source tools and software – in particular Wikibase.
 </p>
@@ -325,10 +312,10 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
 </table>
 
   <div class="row" style="background-color: none; padding: 10px">
-           <!-- <h4><b>Sources & Data</b></h4> -->
           </div>
           <div class="row">
-            <div class="column" style="background-color: #f5f5f5">
+            <h4 style="margin-left: 20px;">Further resources</h4>
+            <div class="column" style="background-color: #f5f5f5; margin-left: 15px;">
               <h4><a href="/">MiMoTextBot</a></h4>
               <p>
                 We use the Python library Pywikibot for inclusion of the RDF (Resource Description Framework) triples in our Wikibase instance. Pywikibot is a tool for automating work
@@ -338,7 +325,7 @@ each TSV file has a self defined header. This header makes the import expandable
               </p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: none">
+            <div class="column" style="background-color: none;">
               <h4><a href="/">RDF Dump</a></h4>
               <p>
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
@@ -347,12 +334,12 @@ each TSV file has a self defined header. This header makes the import expandable
               </p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: none">
+            <div class="column" style="background-color: none; margin-left: 15px;">
               <h4><a href="/">Licence</a></h4>
        <p>All texts are in the public domain and can be reused without restrictions. We don’t claim any copyright or other rights on the transcription, markup or metadata. If you use our texts, for example in research or teaching, please reference this collection using the citation suggestion below.</p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: #f5f5f5">
+            <div class="column" style="background-color: #f5f5f5;">
               <h4><a href="/">Citation suggestion</a></h4>
               <p>
                 <i>Collection de romans français du dix-huitième siècle (1750-1800) / Eighteenth-Century French Novels (1750-1800)</i>, edited by Julia Röttgermann, with contributions from Julia Dudar, Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL: <a href="https://github.com/mimotext/roman18">https://github.com/mimotext/roman18</a>. DOI: <a href="http://doi.org/10.5281/zenodo.5040855"></a>http://doi.org/10.5281/zenodo.5040855</a>.
@@ -360,10 +347,6 @@ each TSV file has a self defined header. This header makes the import expandable
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
           </div>
-
         </div>
-
-
       </div>
-    </div>
-  </div>
+</div>

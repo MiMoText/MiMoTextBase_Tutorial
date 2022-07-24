@@ -11,9 +11,9 @@
 .column {
     box-sizing: border-box;
     float: left;
-    width: 50%;
+    width: 45%;
     padding: 10px;
-    height: 250px;
+    height: 300px;
 }
 
 /* Clear floats after the columns */
