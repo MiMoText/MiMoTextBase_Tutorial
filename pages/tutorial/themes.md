@@ -15,13 +15,13 @@ A first module within our knowledge graph focused on the extraction of topics in
 
 To get an overview of thematic concepts within the whole domain of French novels 1751-1800 within the knowledge graph, we can formulate a query for all themes and visualize the results in a bubble chart.
 
-[All thematic concepts per novels, visualization in a bubble chart](https://tinyurl.com/29pewcw2)
+[All thematic concepts per novels, visualization in a bubble chart](https://tinyurl.com/232phv97)
 
 <img src="images/graph.png" alt="drawing" height="600" width="800"/>
 
 If a researcher is interested in compiling a corpus of novels on a certain [theme](https://github.com/MiMoText/vocabularies/blob/main/thematic_vocabulary.tsv), for example “travel”, “melancholy”, “philosophy” or “sentimentalism”, one can formulate this in a query and get all novels matching this criteria. We could also ask for all the authors which cover a certain theme, for example:
 
-[Which authors write about “sentimentalism”?](https://tinyurl.com/yam3drud)
+[Which authors write about “sentimentalism”?](https://tinyurl.com/29rkz3hx)
 
 As places of publication per novel are part of our properties, we could also combine the property of themes (`P36 about`) and `place of publication` (`P10` place of publication), resulting in the visual output of a map:
 
