@@ -17,6 +17,8 @@ All novels are stored as items in our graph, comparable to a Wikidata item in th
 
 Follow the URL and let the query run by clicking on the "play"-Button. The results are visualized in a table as a default. Above the table, you can click on the arrow next to the eye. In the drop-down menu that pops up, you can choose different visualization options from the menu in order to display the results on a timeline, as a barchart, as a bubble chart and so on. Another way to display the results in a certain view is to specify it in the query itself. You can simply insert `#defaultView:Timeline` (for a timeline) or `#defaultView:BarChart` (for a barchart) or `#defaultView:Bubblechart` (for a bubble chart) in your SPARQL query.
 
+![searching](images/searching.png)
+
 ```
 SPARQL
 :  SPARQL stands for SPARQL Protocol and RDF Query Language.
