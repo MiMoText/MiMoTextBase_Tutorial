@@ -157,9 +157,13 @@ body {
                 </p>
                 <p>Query to retrieve count of published works per author<br/>
                 </p>
+                <p><iframe  style="width:50%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe>
+                </p>
                 <p>The solution is easy: We have to aggregate <code>?authorName</code> by grouping. We now can order the results descending via <code>order by desc(?count)</code> and set a limit of 20 to get the top 20.
                 </p>
-                <p>[Query to retrieve authors with most novels published (top 20)](https://tinyurl.com/2b9af2zt)
+                <p><a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20)</a>https://tinyurl.com/2b9af2zt
+                </p>
+                  <p><iframe  style="width:50%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Agroup%20by%20%3FauthorName%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe>
                 </p>
             </div>
         </div>
@@ -199,183 +203,25 @@ body {
 <h5>List of properties</h5>
 
 <p>Query: [This is a list of all the properties used in this graph](https://tinyurl.com/28wfbxdf)</p>
+<p><iframe  style="width:50%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#SELECT%20%3Fproperty%20%3FpropertyLabel%20%3Fprop%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%22.%20%7D%0A%20%20%20%20BIND(STRAFTER(STR(%3Fproperty)%2C%20%22entity%2F%22)%20as%20%3Fprop)%0A%7D%0AORDER%20BY%20ASC(xsd%3Ainteger(STRAFTER(STR(%3Fproperty)%2C%20'P')))"></iframe>
+</p>
 
 <h5>List of themes</h5>
 
 <p>For a list of all thematic concepts in the graph, see this query which lists all thematic concepts and their Q-Identifier, ordered by occurence.</p>
 
-<p>Query: [Show all themes with corresponding Q-Identifier and occurence in the graph](https://tinyurl.com/27a2yrtz)</p>
-<table>
-  <tr>
-  </tr>
-  <tr>
-</tr>
-<tr>
-</tr>
-- <http://zora.uni-trier.de:11000/entity/Q3063> sentimentalism 401
-- <http://zora.uni-trier.de:11000/entity/Q3065> sentiment 357
-- <http://zora.uni-trier.de:11000/entity/Q3104> travel 247
-- <http://zora.uni-trier.de:11000/entity/Q2757> love 208
-- <http://zora.uni-trier.de:11000/entity/Q2958> unhappiness 187
-- <http://zora.uni-trier.de:11000/entity/Q2899> gallantary 160
-- <http://zora.uni-trier.de:11000/entity/Q3018>
-  philosophy
-  78
-- <http://zora.uni-trier.de:11000/entity/Q3098>
-  virtue
-  78
-- <http://zora.uni-trier.de:11000/entity/Q2887>
-  family
-  73
-- <http://zora.uni-trier.de:11000/entity/Q3027>
-  politics
-  61
-- <http://zora.uni-trier.de:11000/entity/Q2964>
-  melancholia
-  54
-- <http://zora.uni-trier.de:11000/entity/Q3128>
-  court
-  54
-- <http://zora.uni-trier.de:11000/entity/Q2970>
-  miracle
-  48
-- <http://zora.uni-trier.de:11000/entity/Q2785>
-  happiness
-  35
-- <http://zora.uni-trier.de:11000/entity/Q2985>
-  nature
-  34
-- <http://zora.uni-trier.de:11000/entity/Q2949>
-  libertinism
-  34
-- <http://zora.uni-trier.de:11000/entity/Q2876>
-  eroticism
-  32
-- <http://zora.uni-trier.de:11000/entity/Q2863>
-  education
-  30
-- <http://zora.uni-trier.de:11000/entity/Q2978>
-  morality
-  30
-- <http://zora.uni-trier.de:11000/entity/Q2932>
-  interaction
-  28
-- <http://zora.uni-trier.de:11000/entity/Q3004>
-  passion
-  26
-- <http://zora.uni-trier.de:11000/entity/Q2845>
-  mourning
-  25
-- <http://zora.uni-trier.de:11000/entity/Q2992>
-  night
-  25
-- <http://zora.uni-trier.de:11000/entity/Q2771>
-  attraction
-  24
-- <http://zora.uni-trier.de:11000/entity/Q3013>
-  personality
-  24
-- <http://zora.uni-trier.de:11000/entity/Q2910>
-  war
-  23
-- <http://zora.uni-trier.de:11000/entity/Q2979>
-  death
-  18
-- <http://zora.uni-trier.de:11000/entity/Q2798>
-  chivalry
-  17
-- <http://zora.uni-trier.de:11000/entity/Q2986>
-  shipwrecking
-  17
-- <http://zora.uni-trier.de:11000/entity/Q2825>
-  correspondence
-  13
-- <http://zora.uni-trier.de:11000/entity/Q2829>
-  crime
-  12
-- <http://zora.uni-trier.de:11000/entity/Q3043>
-  romantic relationship
-  11
-- <http://zora.uni-trier.de:11000/entity/Q3048>
-  revolution
-  11
-</table>
+<p>Query: <a href="https://tinyurl.com/27a2yrtz" target="_blank" rel="noopener">Show all themes with corresponding Q-Identifier and occurence in the graph</a></p>
 
-#### List of locations
 
-For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurence.
+<h5>>List of locations</h5>
 
-Query: [Show all narrative locations with corresponding Q-Identifier & occurrence](https://tinyurl.com/2ymyqm8e)
+<p>For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurence.</p>
 
-Q-Identifier
-place
-count
+<p>Query: <a href="https://tinyurl.com/2ymyqm8e" target="_blank" rel="noopener">Show all narrative locations with corresponding Q-Identifier & occurrence</a>
+</p>
 
-- <http://zora.uni-trier.de:11000/entity/Q3508>
-  Paris
-  367
-- <http://zora.uni-trier.de:11000/entity/Q3179>
-  France
-  246
-- <http://zora.uni-trier.de:11000/entity/Q3223>
-  rural area
-  219
-- <http://zora.uni-trier.de:11000/entity/Q3255>
-  England
-  133
-- <http://zora.uni-trier.de:11000/entity/Q3350>
-  Italy
-  49
-- <http://zora.uni-trier.de:11000/entity/Q3495>
-  London
-  39
-- <http://zora.uni-trier.de:11000/entity/Q3305>
-  Spain
-  35
-- <http://zora.uni-trier.de:11000/entity/Q3367>
-  Greece
-  29
-- <http://zora.uni-trier.de:11000/entity/Q3233>
-  Germany
-  29
-- <http://zora.uni-trier.de:11000/entity/Q3355>
-  imaginary place
-  25
-- <http://zora.uni-trier.de:11000/entity/Q3267>
-  Rome
-  22
-- <http://zora.uni-trier.de:11000/entity/Q3213>
-  Constantinople
-  20
-- <http://zora.uni-trier.de:11000/entity/Q3356>
-  Switzerland
-  19
-- <http://zora.uni-trier.de:11000/entity/Q3492>
-  Americas
-  18
-- <http://zora.uni-trier.de:11000/entity/Q3345>
-  Persis
-  17
-- <http://zora.uni-trier.de:11000/entity/Q3457>
-  India
-  15
-- <http://zora.uni-trier.de:11000/entity/Q3481>
-  Egypte
-  15
-- <http://zora.uni-trier.de:11000/entity/Q3384>
-  Lyon
-  14
-- <http://zora.uni-trier.de:11000/entity/Q3201>
-  Normandy
-  12
-- <http://zora.uni-trier.de:11000/entity/Q3130>
-  fictional country
-  12
-- <http://zora.uni-trier.de:11000/entity/Q3385>
-  Europe
-  12
 
-These queries list themes or locations ordered by occurence. We would recommend items or properties which have a certain number of connections in the graph, in order to get good results (with enough data points in it).
+<p>These queries list themes or locations ordered by occurence. We would recommend items or properties which have a certain number of connections in the graph, in order to get good results (with enough data points in it).</p>
 
             </div>
         </div>
@@ -390,9 +236,10 @@ These queries list themes or locations ordered by occurence. We would recommend 
         </div>
         <div id="collapseEight" class="panel-collapse collapse">
             <div class="panel-body">
-                There are several possibilities for a slowdown or a time out of your query. It could be that the quantity of results is very high, so you might limit the results to check if the syntax of the query is ok. This is done by using the LIMIT parameter [LINK]. The LIMIT tells the algorithm where to stop, so if you insert for example LIMIT 100 at the end of your query, it will stop after 100 results. This can be helpful for debugging. 
-Parameters which potentially slow down the query are DISTINCT or ORDER BY. A strategy might be to comment them out to see if these slow down your query.
-
+                <p>There are several possibilities for a slowdown or a time out of your query. It could be that the quantity of results is very high, so you might limit the results to check if the syntax of the query is ok. This is done by using the <a href="./limit.html">LIMIT</a> parameter . The <code>LIMIT</code> tells the algorithm where to stop, so if you insert for example <code>LIMIT 100</code> at the end of your query, it will stop after 100 results. This can be helpful for debugging. </p>
+                <p>
+Parameters which potentially slow down the query are <code>DISTINCT</code> or <code>ORDER BY</code>. A strategy might be to comment them out to see if these slow down your query.
+</p>
             </div>
         </div>
     </div>
@@ -406,30 +253,34 @@ Parameters which potentially slow down the query are DISTINCT or ORDER BY. A str
         </div>
         <div id="collapseNine" class="panel-collapse collapse">
             <div class="panel-body">
-                Get an overview
+                <h5>Get an overview</h5>
 
-First, you can get an overview of the data in the MiMoTextGraph to find out which information and entities are relevant to your research interests and how to classify and interpret your query results. You have several options to do this:
+<p>First, you can get an overview of the data in the MiMoTextGraph to find out which information and entities are relevant to your research interests and how to classify and interpret your query results. You have several options to do this:</p>
 
-The section The MiMoText project [LINK] provides a summary of the project's contents and goals. A more detailed description of the project can be found in our paper Smart Modelling for Literary History (2022). For further information, we also recommend the resources listed under References [LINK].
+<p>The section The MiMoText project provides a summary of the project's contents and goals. A more detailed description of the project can be found in our paper <a href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278" style="display: inline;" target="_blank" rel="noopener">Smart Modelling for Literary History (2022)</a>. For further information, we also recommend the resources listed under References, see <a href="./aboutMiMoTextBase.html">ABOUT</a>.
+</p>
+<p>The section How / Where to find the right item / right property is also helpful as it leads you to various overview lists.
+</p>
 
-The section How / Where to find the right item / right property [LINK] is also helpful as it leads you to various overview lists.
+<h5>Writing your own queries</h5>
 
-Writing your own queries
+<p>With the help of the <a href="./intro_sec_1.html" style="display: inline;">tutorial</a>, you can now query the Wikibase with your own queries to obtain information on your own research questions. The simpler queries from the section <a href="./getting_started.html" style="display: inline;">Getting Started</a> can be combined and extended to more complex search queries (cf. <a href="./spaces.html" style="display: inline;">Spaces</a>, <a href="./themes.html" style="display: inline;">Themes</a>, <a href="./going_further.html" style="display: inline;">Going Further</a>).
+</p>
+<p>To do this, either call the <a href="http://query.mimotext.uni-trier.de" style="display: inline;" target="_blank" rel="noopener">SPARQL endpoint</a> directly and enter your query or use one of the examples listed in the tutorial as a starting point and modify it as desired.
+</p>
+<h5>Export query results</h5>
+<p>To share the result of a query or save it for later recall, you can display and copy the URL. It is also possible to embed the result in your own website. You will find the functions under the menu item “Link” on the right-hand side in the bar above the result display:
+</p>
 
-With the help of the tutorial [LINK], you can now query the Wikibase with your own queries to obtain information on your own research questions. The simpler queries from the section Getting Started [LINK] can be combined and extended to more complex search queries (cf. Spaces, Themes, Getting Further [LINKS]).
-To do this, either call the SPARQL endpoint [LINK: query.mimotext.uni-trier.de] directly and enter your query or use one of the examples listed in the tutorial as a starting point and modify it as desired.
-Export query results
-To share the result of a query or save it for later recall, you can display and copy the URL. It is also possible to embed the result in your own website. You will find the functions under the menu item “Link” on the right-hand side in the bar above the result display:
-
-
-Furthermore, it is possible to export the visualized results as an SVG file and the tabular results in various file formats and to process them for further analyses.
+<p>Furthermore, it is possible to export the visualized results as an SVG file and the tabular results in various file formats and to process them for further analyses.
+</p>
 
 
 
-
-Licence
-The project is committed to the principles of Open Science. All data of “Mining and Modeling Text” is made open with a (CC-0. Data can be reused for any purpose.
-If you use want to cite our data, please credit it with:
+<h5>Licence</h5>
+<p>The project is committed to the principles of Open Science. All data of “Mining and Modeling Text” is made open with a (CC-0. Data can be reused for any purpose.</p>
+<p>
+If you use want to cite our data, please credit it with:</p>
 ZITIERHINWEIS
 
             </div>
