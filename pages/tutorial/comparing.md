@@ -37,7 +37,7 @@ If you are interested in comparing the different sources (`Q21` for `Topic Model
 
 Or, we could also ask for statements referenced by both sources at the same time:
 
-[ NO LINK YET: Statements on consistent topics in novels from both sources: Topic Modeling & bibliographic me](google.com)
+[ NO LINK YET: Statements on consistent topics in novels from both sources: Topic Modeling & bibliographic me](https://tinyurl.com/235l6rjd)
 
 ![biblio](./images/comparing_biblio.png)
 
