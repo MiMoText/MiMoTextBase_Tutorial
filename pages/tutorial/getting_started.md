@@ -12,6 +12,7 @@ toc: false
 ### **Searching**
 
 All novels are stored as items in our graph, comparable to a Wikidata item in the Wikidata graph. You can have a look at an individual novel item by using [data.mimotext.uni-trier.de](http://data.mimotext.uni-trier.de/wiki/Main_Page) and the search function. Type in the title of the novel you are looking for, hit enter and you see all properties stored on that novel (title, publication date, distribution format, number of pages, characters, style_attitude_tonality, plot_theme, author, narrative perspective, narrative location, place of publication):
+![searching](images/searching.png)
 
 ### **How to run a query**
 
