@@ -12,16 +12,16 @@ entries:
 
           - title: Write your own queries
             output: web
-            url: /.html
+            url: /write.html
             id: 1
 
           - title: Export query results
             output: web
-            url: /.html
+            url: /export.html
 
           - title: License
             output: web
-            url: /.html
+            url: /license.html
 
       - title: How to reuse the data
         output: web, pdf
@@ -32,4 +32,3 @@ entries:
           - title: Downloading a dump of the whole graph
             output: web
             url: /dump.html
-            id: 1
