@@ -34,6 +34,7 @@ Julia Röttgermann
 ### conceptual design / technical implementation
 Johanna Konstanciak  
 Marte Wulff  
+Mircea-Luchian Pojoni  
 [documentation theme Jekyll](https://idratherbewriting.com/documentation-theme-jekyll/)  
 
 ### design elements
