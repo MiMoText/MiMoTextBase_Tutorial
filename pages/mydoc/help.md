@@ -9,11 +9,12 @@ toc: false
 ---
 
 ### **FAQs**
+
 > MiMoTextBase: [data.mimotext.uni-trier.de](http://data.mimotext.uni-trier.de/wiki/Main_Page)
 
 > SPARQL-Endpoint: [query.mimotext.uni-trier.de](http://query.mimotext.uni-trier.de/)
 
-> MiMoText project site: [mimotext.uni-trier.de](https://mimotext.uni-trier.de)"
+> MiMoText project site: [mimotext.uni-trier.de](https://mimotext.uni-trier.de)
 
 ### **_Am I right here or Where do I start?_**
 
