@@ -22,7 +22,7 @@ As we only want to retrieve the authors that published a novel in 1800 we will u
 Example: [Get all authors that published a novel in 1800](https://tinyurl.com/2cfajx6w)
 
 Another example for the `FILTER` would be searching for a substring within a string-Item (like the Label). If you are interested in all authors whose names contain “beau”, you need to retrieve the label of all authors and add the phrase `FILTER(CONTAINS(LCASE(?authorName), "beau"))`.
-As the function `CONTAINS` is a String-Matching-Function that is sensible to upper and lower case strings it is important to set the characters in ?authorName to lowercase characters.
+As the function `CONTAINS` is a String-Matching-Function that is sensible to upper and lower case strings it important to set the characters in ?authorName to lowercase characters.
 
 Example: [Get all authors whose name contains “beau”](https://tinyurl.com/2yqdlt4w)
 
