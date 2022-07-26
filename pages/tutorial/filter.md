@@ -16,12 +16,13 @@ toc: false
 
 As we only want to retrieve the authors that published a novel in 1800 we will use the `DISTINCT `-Method to get each author once.
 
-<iframe class="" src="https://query.wikidata.org/#%23Locations%20of%20aviation%20accidents%0A%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fcoords%0AWHERE%0A%7B%0A%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ744913.%20%20%20%20%20%20%23%20item%20is%20an%20instance%20of%20an%20aviation%20accident%0A%20%20%20%3Fitem%20wdt%3AP625%20%3Fcoords.%20%20%20%20%20%20%20%20%23%20item%27s%20coordinates%20are%20collected%20by%20the%20%3Fcoords%20variable%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D" style="width:100%;max-width:100%;height:450px" frameborder="0"></iframe>
+<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/embed.html#%23%20Filter%20for%20all%20auhtors%20%20whose%20name%20contains%20%22beau%22%0Aprefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3FauthorName%20%28YEAR%28%3Fpubdate%29%20as%20%3Fyear%29%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%3B%20wdt%3AP9%20%3Fpubdate.%20%23%20work%20has%20author%20and%20a%20publication%20date%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20%28not%20only%20Link%20to%20author%29%0A%20%20%20FILTER%28LANG%28%3FauthorName%29%20%3D%20%22en%22%29.%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20%28language%20dependent%29%0A%20%20%20FILTER%28YEAR%28%3Fpubdate%29%20%3D%201800%29%20%0A%20%20%20%23%20filter%20for%20the%20publication%20date%20of%20interest%0A%20%7D%20%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+                </p>
 
 Example: [Get all authors that published a novel in 1800](https://tinyurl.com/2cfajx6w)
 
 Another example for the `FILTER` would be searching for a substring within a string-Item (like the Label). If you are interested in all authors whose names contain “beau”, you need to retrieve the label of all authors and add the phrase `FILTER(CONTAINS(LCASE(?authorName), "beau"))`.
-As the function `CONTAINS` is a String-Matching-Function that is sensible to upper and lower case strings it is important to set the characters in ?authorName to lowercase characters.
+As the function `CONTAINS` is a String-Matching-Function that is sensible to upper and lower case strings it important to set the characters in ?authorName to lowercase characters.
 
 Example: [Get all authors whose name contains “beau”](https://tinyurl.com/2yqdlt4w)
 

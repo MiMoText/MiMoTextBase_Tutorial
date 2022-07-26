@@ -40,6 +40,7 @@ To see in comparison of how many authors have a mapping with Wikidata vs. those 
 As described in the section above, federated queries allow querying several knowledge graphs at once. We can explore federated queries by querying the MiMoText graph and the Wikidata knowledge graph, making use of the Wikidata property date of birth and of the property image which allows us to see the date of birth of the authors in a timeline.
 
 [Show all authors in a timeline of birth dates](https://tinyurl.com/28x5ajjy)
+<img src="images/timeline_authors.PNG" alt="timeline" height="600" width="800"/>
 
 [Please note, that only the authors of the full text corpus are mapped to Wikidata yet.]
 
