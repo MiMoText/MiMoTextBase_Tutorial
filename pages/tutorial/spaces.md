@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: [mimotext_data]
+#tags: [mimotext_data]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: spaces.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Spaces**
@@ -24,3 +25,5 @@ As the first publication date of all novels is fed into the graph, we can also a
 What strikes here is the abrupt break in places of publication concerning the Netherlands (Amsterdam, The Hague) with the year 1789. Not only the Dutch production sites, but also Switzerland (Neuchâtel, Genève) as a place of publication of French novels breaks off with the year of the revolution. The graphic output of the query shows that there was a change in the production conditions of French novels.
 
 [Previous](./novels.html){: .btn-primary} [Next](./themes.html){: .btn-primary}
+
+{% include help.html %}

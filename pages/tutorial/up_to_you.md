@@ -7,6 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: up_to_you.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Now it is up to you**
@@ -32,3 +33,5 @@ Now hit the “Play”-Button and you can explore the change over time of the th
  You could try out for example <code>“sentiment”</code>, <code>“philosophy”</code>, <code>“education”</code> and so on.  
 
 [Previous](./comparing.html){: .btn-primary}
+
+{% include help.html %}

@@ -1,0 +1,13 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+  - title: Topnav
+    items:
+      - title: About
+        url: /aboutMiMoTextBase.html
+      - title: Tutorial
+        url: /tutorial_index.html
+      - title: MiMoTextBase
+        external_url: http://data.mimotext.uni-trier.de
+      - title: SPARQL-Endpoint
+        external_url: http://query.mimotext.uni-trier.de

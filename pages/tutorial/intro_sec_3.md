@@ -1,12 +1,13 @@
 ---
 title: #"Section 3: Going further – Using the MiMoTextBase for research"
-tags: [getting_started]
+#tags: [getting_started]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: intro_sec_3.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Section 3: Going further – using MiMoTextBase for research**

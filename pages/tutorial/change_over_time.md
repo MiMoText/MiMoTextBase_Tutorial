@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: # add
+#tags: # add
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: change_over_time.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Change Over Time**
@@ -38,3 +39,5 @@ We can also query for narrative form in a diachronic perspective:
 ![nar_form](images/change_nar_forms.png)
 
 [Previous](./themes.html){: .btn-primary} [Next](./comparing.html){: .btn-primary}
+
+{% include help.html %}

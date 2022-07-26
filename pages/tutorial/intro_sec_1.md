@@ -1,12 +1,13 @@
 ---
 title: #"Section 1: Getting Started"
-tags: [getting_started]
+#tags: [getting_started]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: intro_sec_1.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Section 1: Getting Started**

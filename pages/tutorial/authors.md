@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: [mimotext_data]
+#tags: [mimotext_data]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: authors.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Authors**
@@ -43,3 +44,5 @@ Please note that only the authors of the full text corpus are mapped to Wikidata
 <br>
 
 [Previous](./federated.html){: .btn-primary} [Next](./novels.html){: .btn-primary}
+
+{% include help.html %}
