@@ -8,8 +8,8 @@ topnav:
       - title: Tutorial
         url: /tutorial_index.html
       - title: MiMoTextBase
-        external_url: http://data.mimotext.uni-trier.de
+        external_url: https://data.mimotext.uni-trier.de
       - title: SPARQL-Endpoint
-        external_url: http://query.mimotext.uni-trier.de
+        external_url: https://query.mimotext.uni-trier.de
       - title: Help
         url: /help.html
