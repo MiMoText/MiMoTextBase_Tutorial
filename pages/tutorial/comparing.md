@@ -15,9 +15,9 @@ Comparing is a central methodological and epistemological paradigm in the (digit
 
 For instance, we can compare different narrative perspectives and narrative places:
 
-[Where are epistolary novels set?](https://tinyurl.com/22hk74cw)
+[Where are epistolary novels set?](https://tinyurl.com/22hk74cw){:target="\_blank", rel: "noopener noreferrer"}
 
-[Where are heterodiegetic novels set?](https://tinyurl.com/29fqaume)
+[Where are heterodiegetic novels set?](https://tinyurl.com/29fqaume){:target="\_blank", rel: "noopener noreferrer"}
 
 There are narrative places dominant in the corpus as a whole (France/England/rural area), but also differences: epistolary novels are more often set in Switzerland then heterodiegetic novels, whereas heterodiegetic novels are more often set in imaginary places then epistolary novels.
 
@@ -31,13 +31,13 @@ For example, concerning the narrative locations, we have two complementary sourc
 
 If you are interested in comparing the different sources (`Q21` for `Topic Modeling` / `Q1` for _`Bibliographie du genre romanesque français`_ / `Q27` for `NER_novels locations`) of RDF statements within the graph, for example concerning thematic statements, the following queries would elucidate that:
 
-[Most common topics in novels, referenced by Topic Modeling ](https://tinyurl.com/2c9syem8)
+[Most common topics in novels, referenced by Topic Modeling ](https://tinyurl.com/2c9syem8){:target="\_blank", rel: "noopener noreferrer"}
 
-[Most common topics in novels, referenced by the Bibliographie du genre romanesque français, 1751-1800 (Martin, Mylne, und Frautschi 1977)](https://tinyurl.com/23jcg5v8)
+[Most common topics in novels, referenced by the Bibliographie du genre romanesque français, 1751-1800 (Martin, Mylne, und Frautschi 1977)](https://tinyurl.com/23jcg5v8){:target="\_blank", rel: "noopener noreferrer"}
 
 Or, we could also ask for statements referenced by both sources at the same time:
 
-[ Statements on consistent topics in novels from both sources: Topic Modeling & bibliographic me](https://tinyurl.com/235l6rjd)
+[ Statements on consistent topics in novels from both sources: Topic Modeling & bibliographic me](https://tinyurl.com/235l6rjd){:target="\_blank", rel: "noopener noreferrer"}
 
 ![biblio](./images/comparing_biblio.png)
 
