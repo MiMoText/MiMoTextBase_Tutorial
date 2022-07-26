@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: # add
+#tags: # add
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: comparing.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Comparing**
@@ -44,3 +45,5 @@ Or, we could also ask for statements referenced by both sources at the same time
 For _Émile ou de l’éducation_ (1762), the topic modeling algorithm and the metadata agree, that the novel is about education or for _Claire d’Albe_ (1799) both sources agree that the novel is about sentiment.
 
 [Previous](./change_over_time.html){: .btn-primary} [Next](./up_to_you.html){: .btn-primary}
+
+{% include help.html %}

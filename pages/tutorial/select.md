@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: [getting_started]
+#tags: [getting_started]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: select.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **The simplest query: SELECT WHERE**

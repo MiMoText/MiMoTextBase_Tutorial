@@ -1,12 +1,14 @@
 ---
 #title: Count
-tags: [getting_started]
+#tags: [getting_started]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: count.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
+
 ---
 
 ### **COUNT**

@@ -1,12 +1,13 @@
 ---
 #title: Tutorial
-tags: [mimotext_data]
+#tags: [mimotext_data]
 keywords:
 summary:
 sidebar: mydoc_sidebar_tutorial
 permalink: novels.html
 folder: tutorial
 toc: false
+topnav: topnav_tut
 ---
 
 ### **Novels**
@@ -56,3 +57,5 @@ BnF, Musique, fonds estampes, Rousseau J.-J.
 
 
 [Previous](./authors.html){: .btn-primary} [Next](./spaces.html){: .btn-primary}
+
+{% include help.html %}
