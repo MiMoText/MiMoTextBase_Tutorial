@@ -54,6 +54,7 @@ Gravure d'Hippolyte Huet d'après un tableau de Joseph Albrier
 XVIIIe siècle.        
 BnF, Musique, fonds estampes, Rousseau J.-J.    
 © Bibliothèque nationale de France</p>
+<br>
 
 [Previous](./authors.html){: .btn-primary} [Next](./spaces.html){: .btn-primary}
 
