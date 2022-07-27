@@ -64,7 +64,7 @@ collections:
 defaults:
   -
     scope:
-      path: "pages"
+      path: ""
       type: "pages"
     values:
       layout: "page"
@@ -73,17 +73,6 @@ defaults:
       search: true
       sidebar: home_sidebar
       topnav: topnav
-
-  -
-    scope:
-      path: "pages/tutorial"
-      type: "pages"
-    values:
-      layout: "page"
-      comments: false
-      search: true
-      sidebar: home_sidebar
-      topnav: topnav_tut
   
   -
     scope:
