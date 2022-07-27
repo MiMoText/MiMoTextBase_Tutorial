@@ -28,7 +28,7 @@ If a researcher is interested in compiling a corpus of novels on a certain [them
 
 As places of publication per novel are part of our properties, we could also combine the property of themes (`P36 about`) and `place of publication` (`P10` place of publication), resulting in the visual output of a map:
 
-[Show all the places of publication of novels which are about “travel”](https://tinyurl.com/2q24hdlb){:target="\_blank", rel: "noopener noreferrer"}
+[Show all the places of publication of novels which are about “travel”](https://tinyurl.com/22xurtqc){:target="\_blank", rel: "noopener noreferrer"}
 ![IMG](images/themes_per_narrative_loc.png)
 
 Combining themes and spaces in the graph, there is the property `P32` `narrative_location`, which can show interesting patterns of correlations of spaces with themes in the French novel of that period.
