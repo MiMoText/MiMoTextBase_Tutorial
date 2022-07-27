@@ -20,7 +20,7 @@ To get an overview of thematic concepts within the whole domain of French novels
 
 <img src="images/graph.png" alt="drawing" height="600" width="800"/>
 
-If a researcher is interested in compiling a corpus of novels on a certain [theme](https://github.com/MiMoText/vocabularies/blob/main/thematic_vocabulary.tsv), for example “travel”, “melancholy”, “philosophy” or “sentimentalism”, one can formulate this in a query and get all novels matching this criteria. We could also ask for all the authors which cover a certain theme, for example:
+If a researcher is interested in compiling a corpus of novels on a certain [theme](https://github.com/MiMoText/vocabularies/blob/main/thematic_vocabulary.tsv){:target="\_blank", rel: "noopener noreferrer"}, for example “travel”, “melancholy”, “philosophy” or “sentimentalism”, one can formulate this in a query and get all novels matching this criteria. We could also ask for all the authors which cover a certain theme, for example:
 
 [Which authors write about “sentimentalism”?](https://tinyurl.com/29rkz3hx){:target="\_blank", rel: "noopener noreferrer"}
 
