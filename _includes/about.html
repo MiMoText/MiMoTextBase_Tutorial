@@ -69,7 +69,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
               <a href=" https://www.uni-trier.de/en/" target="_blank"> University of Trier</a>. The project is funded by the Research Initiative (2019–2023) of the federal state of Rhineland-Palatinate (Forschungsinitiative Rheinland-Pfalz).</p>
 
             <p>We are dealing with new ways to model and analyze literary history and literary historiography. The overall aim is to establish a <b>knowledge graph</b> that aggregates statements relevant to literary history extracted from various sources. Our application domain is the French novel of the second half of the 18th century – the transfer to other domains and disciplines (other philologies, but also, for example, Philosophy, History and Art) has been planned and conceived from the beginning.</p>
-            <p>On the basis of the three different types of information sources shown in figure 1, methods of text mining and data modeling are intertwined and used to combine several kinds of information: bibliographic metadata from reference works, text features derived from primary texts, and information extracted from scholarly publications. 
+            <p>On the basis of the three different types of information sources shown in figure 1, methods of text mining and data modeling are intertwined and used to combine several kinds of information: bibliographic metadata from reference works, text features derived from primary texts, and information extracted from scholarly publications.
               This approach significantly expands the research horizon, because although digitization activities at libraries and archives are now increasing the amount of texts and data available digitally, it is far from possible to capture them systematically through individual human reading. We integrate heterogeneous data into the knowledge graph, link it with other resources in the Linked Open Data universe and enable innovative research on the French Enlightenment novel that can take into account significantly more data than was previously the case.
               The general vision of “Mining and Modeling Text” is to take steps toward a history and historiography of literature based on data and is inspired by researchers such as Franco Moretti, Matthew Jockers, Katherine Bode or Ted Underwood. For a more detailed description of the project, see our paper Smart Modelling for Literary History (2022). </p>
 
@@ -89,7 +89,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <p>We construct our knowledge graph from three different types of sources (see fig. 1): bibliographic metadata, primary sources (novels) and scholarly publications.</p>
         <ol>
           <li>Bibliographic metadata: For our domain, the <i>Bibliographie du genre romanesque français 1751-1800</i> (BGRF, Mylne et al. 1977) is central, as it defines the population of about 2000 French Enlightenment novels. The BGRF has been extensively analyzed and modeled (Lüschow 2020) and contains rich metadata (including places of publication, narrative locations, narrative form, characters, themes, style).</li>
-        
+
           <li>Novels: In MiMoText, the <i>Collection of Eighteenth-Century French Novels</i> (Röttgermann 2021) is being created. This corpus already includes about <a href="https://github.com/MiMoText/roman18">180 novels</a>, which are available as full texts (modeled according to the TEI standard). A subset is available as an extension of the <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2">European Literary Text Collection (ELTeC)</a>. The results of various quantitative analysis methods applied to primary works serve as the basis for new statements as well. So far, we have applied topic modeling (Schöch et al. 2022; Röttgermann et al. 2022), text mining of places (Hinzmann et al. 2022) as well as text matching. Further planned mining methods include sentiment analysis and keyword analysis.</li>
           <li>Scholarly publications: We examine scholarly literature and annotate statements about literary works and authors of our domain. We have already systematically and quite extensively annotated thematic statements and exploratively annotated other statement types. Currently, we are working on a pipeline that will feed statements annotated in <a href="https://inception-project.github.io/">INCEpTION</a> into our Wikibase. Based on this, future work concerns extracting statements automatically and adding statements from scholarly publications to the Wikibase instance.</li>
         </ol>
@@ -109,23 +109,24 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <h4><i>Some aspects of the Wikibase data model and our modeling approach</i></h4>
 
         <p>We have already outlined above that in the Linked Open Data paradigm, every statement is mapped onto the structure of RDF triples. The Wikibase infrastructure brings with it some special features that affect the data modeling: In Wikibase, 'items' are central. Items can be in subject or object position. Subjects are always 'items', whereas objects can be 'items' or 'values'. The relation or edge that links subject and object is called ‘property’.</p>
-        
-        
+
+        <img src="images/subject_predicate_object.PNG" alt="subject predicate object" height="378" width="669"/>
+
         <p>In general, 'statements' in RDF are synonymous with triples (i.e. subject, predicate, object), but in Wikibase the term 'statement' has a slightly different meaning. Statement means not just a triple, but a bundle of multiple triples that refer to a core triple, which is called <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim">claim</a>. For an overview of the Wikidata & Wikibase terminology, take a look at the visual comments on item <a href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg">Q42 (Douglas Adams)</a>. The ‘core triple’ or ‘claim’ in Wikibase can be ‘referenced’, ‘qualified’ and ‘ranked’, a feature that is very useful in terms of transparency, comprehensibility and comparability.</p>
-        
+
         <p>The concept of such a bundle of triples constituting a Wikibase statement is based on the fact that statements in the RDF can themselves become the subject of other triples, creating 'statements about statements'. The technical term for this is ‘reification’.</p>
-        
-        
-        
-        
-        
+
+
+
+
+
         <p>Within our MiMoText graph, the possibility of referencing is particularly important. Every triple imported into the graph is referenced by the corresponding source via the property <code>stated in (P18)</code>. </p>
         <p>According to our three source types, the references can be a bibliographic work (Q1 in our case) or, alternatively, specific runs of certain analytical methods performed on the novels, e.g. Topic Modeling (Q21) for Named Entity Recognition (Q27). In the future, scholarly publications will also be used as references for triples.</p>
-        
+
         <p>If users are interested in comparing the different sources (Q# for Topic Modeling / Q1 for <i>Bibliographie du genre romanesque français</i> / Q27 for NER_novels locations) of RDF triples within the graph, they can query those triples only referenced by one specific source or alternatively get to see statements respectively ‘core triples’ referenced by two sources at the same time.</p>
-        
+
         <p>Considering the diversity of sources, there are consistent and concurring statements integrated in the graph. Some statements differ in granularity regarding the entities: For example, we often find larger spatial concepts (continents) in the bibliography, but rather smaller ones (cities etc.) as results of Named Entity Recognition. In addition, by using 'federated queries' [LINK], information in other knowledge bases can be reused to buffer the heterogeneity and create comparability.</p>
-        
+
         <p>By diversifying our sources (bibliographic metadata, primary sources, scholarly publications), we hope to build a knowledge graph worthy of investigation and exploration. As a side effect, one can explore different outcomes of computational methods and human inquiry in epistemic processes. Generally speaking, the Linked Open Data paradigm and the Wikibase infrastructure offer the possibility to represent the plurality of perspectives and heterogeneous sources that are typical within the humanities. Moreover, uncertain information can also be taken into account, as the reliability level of the 'core triple' can be qualified or ranked.</p>
         <br/>
         <h4><i>Modeling decisions briefly outlined</i></h4>
@@ -136,11 +137,11 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         </li>
         <li>We use controlled vocabularies to formulate standardized statements. Our vocabularies [LINK] are built up step by step with concepts that are relevant to all three source types. They are also multilingual (FR, EN, DE). In the case of our thematic vocabulary, we have chosen a domain-specific resource as a starting point, the Dictionnaire européen des Lumières (Delon 1997). The spatial vocabulary was created by named entities found in the resources. The general approach for these and all other vocabularies in development is that we create the concepts as items and, if possible, match them to Wikidata items.
         </li>
-        <li>As we consider MiMoTextBase a part of the Wikibase ecosystem, we have focused on mappings and matchings with Wikidata identifiers where possible. We intend to establish further links with the LOD cloud in the future (VIAF, BNF, GND etc.). 
+        <li>As we consider MiMoTextBase a part of the Wikibase ecosystem, we have focused on mappings and matchings with Wikidata identifiers where possible. We intend to establish further links with the LOD cloud in the future (VIAF, BNF, GND etc.).
         </li>
         <li>For MiMoText, works and authors are the central classes, i.e. item types, in the Wikibase. We have so far focused on those statement types for which we can extract statements from at least two source types, because this enables comparability and goes hand in hand with relevance for the domain. In a first pilot project we concentrated on thematic statements, followed by spatial statements.
         The emphasis on the literary work implies that we partially reduce complexity (and thus increase interoperability and reusability) by also modeling the data from the bibliography exclusively on the work level and avoiding differentiations according to bibliographic standards (FRBR, SPAR ontologies). As with any reduction in complexity, you win some and you lose some, but for us the gain is more important.</li>
-        
+
         <li>In order to increase comprehensibility and usability, we have structured the ontology in modules. [LINK]</li>
       </ol>
       </div>
@@ -163,11 +164,11 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/#%23%20This%20query%20lists%20all%20the%20properties%0ASELECT%20%20%3FpropertyLabel%20%3FpropertyDescription%20%3Fproperty%20%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
         <p>There are properties and items with a close match (P16) or an exact match (P13) on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: </p>
-        <p><a href="https://tinyurl.com/29n5xhrd">Query to items with a close match (P58) on Wikidata, dimensions view</a></p> 
-        <p><a href="https://tinyurl.com/293f4j84">Query to items with exact match (P30) on Wikidata, limited to 40 results, dimensions view</a></p> 
-        </div>     
+        <p><a href="https://tinyurl.com/29n5xhrd">Query to items with a close match (P58) on Wikidata, dimensions view</a></p>
+        <p><a href="https://tinyurl.com/293f4j84">Query to items with exact match (P30) on Wikidata, limited to 40 results, dimensions view</a></p>
+        </div>
       </div>
-  </div>      
+  </div>
 <!-- /.panel -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -187,7 +188,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <li>mapping of author and work items (in progress)</li>
         <li>creation of a MiMoText ID in Wikidata (future)</li>
         <li>linking the literary works we could map from Wikidata to the work items in our MiMoTextBase (future)
-        </li> 
+        </li>
         <li>Importing the work items not yet available in Wikidata into Wikidata and also linking them to our MiMoTextBase. (future) An interesting model project for this approach is the WeChangEd project.
         </li>
         </ul>
@@ -214,7 +215,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         Documentation: We will gradually improve the documentation of the different resources and workflows in our project.
         Analyses with the MiMoTextBase
         The concrete value for research in literary studies and the humanities in general is very important in our view. We hope that researchers will be able to use the data for their studies, and at the same time we would like to examine the potentials of such data storage in our project by systematically exploring and statistically evaluating the relationships and interdepencies within the network (e.g. clustering, correlations).
-        
+
         </p>
       </div>
   </div>
@@ -224,13 +225,13 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   <div class="panel-heading">
       <h4 class="panel-title">
           <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
-            <b>References 
+            <b>References
             </b></a>
       </h4>
   </div>
   <div id="collapseEight" class="panel-collapse collapse">
       <div class="panel-body">
-        For references, take a look 
+        For references, take a look
         <a href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition">here</a>.
       </div>
   </div>
@@ -254,7 +255,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   </p>
 <p><b>Data</b><br/>
   Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann, Christof Schöch, Moritz Steffes: MiMoTextBase, Trier Center for Digital Humanities, data.mimotext.uni-trier.de, 07/2022.
-  
+
   </p>
   <p>
   <b>Reference paper</b><br/>
@@ -262,7 +263,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   <br/>
   <h4>The full corpus of roman18</h4>
   <p>
-    Our full corpus of french novels in full text is available on GitHub in plaintext and in XML/TEI. The plaintext version is normalized and modernized.   
+    Our full corpus of french novels in full text is available on GitHub in plaintext and in XML/TEI. The plaintext version is normalized and modernized.
   </p>
   <table>
     <tr>
@@ -279,7 +280,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
     <td>This folder contains the current corpus of French novels in full text 1751-1800</td>
     <td><a href="https://github.com/MiMoText/roman18/tree/master/plain/files">https://github.com/MiMoText/roman18/tree/master/plain/files </a></td>
     <td>TXT</td>
-  </tr>  
+  </tr>
   <tr>
     <td>This list contains metadata on the full texts. </td>
     <td><a href="https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv">https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv</a></td>
@@ -304,7 +305,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
     <td>Metadata for the subset of 100 novels in “European Literary Text Collection”</td>
     <td><a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv">https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv </a></td>
     <td>TSV</td>
-  </tr>  
+  </tr>
 </table>
 
   <div class="row" style="background-color: none; padding: 10px">
