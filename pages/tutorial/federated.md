@@ -21,7 +21,7 @@ We plan to change the prefixes in our MiMoTextBase soon, so that the wikidata pr
 
 Within the `WHERE`-part you can query all items you want to as long as they have a `P13` (exact match with WikiData) property.
 So in our example
-`?item wdt:P10 ?pub_place. #a novel has a place of publication ?pub_place wdt:P13 ?WikiLink. #the place of publication has an exact match.`
+`?item wdt:P32 ?nar_loce. #a novel has a narrative location ?pub_place wdt:P13 ?WikiLink. #the narrative location has an exact match.`
 
 Next using the `SERVICE` referring to the WikiData-SPARQL-Endpoint, we can get all information listed on the matching WikiData-entry. To write the triple, we now need to use the property-values of WikiData. Here `P625` is the coordinate location of the WikiData entity.
 
