@@ -10,48 +10,48 @@ toc: false
 
 ### **FAQs**
 
-> MiMoTextBase: [data.mimotext.uni-trier.de](http://data.mimotext.uni-trier.de/wiki/Main_Page)
+> MiMoTextBase: [data.mimotext.uni-trier.de](http://data.mimotext.uni-trier.de/wiki/Main_Page){:target="\_blank", rel: "noopener noreferrer"}
 
-> SPARQL-Endpoint: [query.mimotext.uni-trier.de](http://query.mimotext.uni-trier.de/)
+> SPARQL-Endpoint: [query.mimotext.uni-trier.de](http://query.mimotext.uni-trier.de/){:target="\_blank", rel: "noopener noreferrer"}
 
-> MiMoText project site: [mimotext.uni-trier.de](https://mimotext.uni-trier.de)
+> MiMoText project site: [mimotext.uni-trier.de](https://mimotext.uni-trier.de){:target="\_blank", rel: "noopener noreferrer"}
 
 ### **_Am I right here or Where do I start?_**
 
-If you are new to SPARQL, you can go through the [Tutorial](./tutorial_index.html), which will give you an overview of how to write basic queries based on examples in MiMoTextBase. It’s supposed to give newbies an introduction to SPARQL; if you're looking for more advanced knowledge of SPARQL, check out these [helpful resources](LINK).
+If you are new to SPARQL, you can go through the [Tutorial](./tutorial_index.html){:target="\_blank", rel: "noopener noreferrer"}, which will give you an overview of how to write basic queries based on examples in MiMoTextBase. It’s supposed to give newbies an introduction to SPARQL; if you're looking for more advanced knowledge of SPARQL, check out these [helpful resources](LINK){:target="\_blank", rel: "noopener noreferrer"}.
 
-If you are interested in MiMoTextBase and its content on [authors](./authors.html), [novels](./novels.html), [spaces](./spaces.html) or [themes](./themes.html) of the French novel in 1751-1800, and you already have some SPARQL knowledge, you can focus on the later sections of the Tutorial.
+If you are interested in MiMoTextBase and its content on [authors](./authors.html){:target="\_blank", rel: "noopener noreferrer"}, [novels](./novels.html){:target="\_blank", rel: "noopener noreferrer"}, [spaces](./spaces.html){:target="\_blank", rel: "noopener noreferrer"} or [themes](./themes.html){:target="\_blank", rel: "noopener noreferrer"} of the French novel in 1751-1800, and you already have some SPARQL knowledge, you can focus on the later sections of the Tutorial.
 
-Within [Going Further](./change_over_time.html) there are some queries on data containing overviews of items like dates of publication or themes changing over time as well as queries that compare the different sources of data in MiMoTextBase. Together with some interpretation on the outcome, these queries show the potential of initial questions on further research.
+Within [Going Further](./change_over_time.html){:target="\_blank", rel: "noopener noreferrer"} there are some queries on data containing overviews of items like dates of publication or themes changing over time as well as queries that compare the different sources of data in MiMoTextBase. Together with some interpretation on the outcome, these queries show the potential of initial questions on further research.
 
-If you want more detailed information about the structure and the aims of our tutorial, you can find this in the [introduction](./tutorial_index.html). For information on the infrastructure and the models behind MiMoTextBase see "Our sources" and "Our modeling approach" in [About](./aboutMiMoTextBase.html).
+If you want more detailed information about the structure and the aims of our tutorial, you can find this in the [introduction](./tutorial_index.html){:target="\_blank", rel: "noopener noreferrer"}. For information on the infrastructure and the models behind MiMoTextBase see "Our sources" and "Our modeling approach" in [About](./aboutMiMoTextBase.html){:target="\_blank", rel: "noopener noreferrer"}.
 
 ### **_I have no results. What can I do?_**
 
 Getting no results in the result table can have different reasons. A simple solution is to make sure you reference the same variables in the `SELECT` and the `WHERE` part of the query.
 
-Another reason could be being too specific in the query. Not all items in MiMoTextBase contain all information on all properties due to its sources. So it can be helpful to add the [`OPTIONAL`](./optional.html) function on some of the properties in your query.
+Another reason could be being too specific in the query. Not all items in MiMoTextBase contain all information on all properties due to its sources. So it can be helpful to add the [`OPTIONAL`](./optional.html){:target="\_blank", rel: "noopener noreferrer"} function on some of the properties in your query.
 
 ### **_Error message: Bad aggregate_**
 
 If you run into this error message, you probably have to group items. In the example below, we use the `COUNT` function, but did not add `GROUP BY`:
 
-<p><iframe  style="width:50%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe></p>
+<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe></p>
 
 The solution is easy: We have to aggregate <code>?authorName</code> by grouping. We now can order the results descending via <code>order by desc(?count)</code> and set a limit of 20 to get the top 20.
 
-<p><a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20)</a>https://tinyurl.com/2b9af2zt</p>
-<p><iframe  style="width:50%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Agroup%20by%20%3FauthorName%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe></p>
+<p><a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener noreferrer">Query to retrieve authors with most novels published (top 20)</a></p>
+<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" src="http://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Agroup%20by%20%3FauthorName%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"></iframe></p>
 
 ### **_Query to retrieve count of published works per author_**
 
-The solution is easy: We have to aggregate ?authorName by grouping. We now can order the results descending via order by desc(?count) and set a limit of 20 to get the top 20.
+The solution is easy: We have to aggregate ?authorName by grouping. We now can order the results descending via `order by desc(?count)` and set a `limit` of 20 to get the top 20.
 
-[Query to retrieve authors with most novels published (top 20)](https://tinyurl.com/2fp2hf7d)
+[Query to retrieve authors with most novels published (top 20)](https://tinyurl.com/2fp2hf7d){:target="\_blank", rel: "noopener noreferrer"}
 
 ### **_I have too many results. What can I do?_**
 
-Sometimes you can get many results on a query which can slow down the result generation or impair the readability of some visualizations. In those cases you could add the LIMIT-operation [LINK] to only get the TOP x-items or the HAVING COUNT-operation [LINK] if you want only results that lie above a certain threshold. If some of the items appear more often in the results than they should, make sure that you filter all labels for one language (FR, EN, DE) separately as the graph is multilingual and the output will represent all languages within the graph [LINK zu The simplest query].
+Sometimes you can get many results on a query which can slow down the result generation or impair the readability of some visualizations. In those cases you could add the `LIMIT` operation to only get the TOP x-items or the `HAVING COUNT` operation if you want only results that lie above a certain threshold. If some of the items appear more often in the results than they should, make sure that you filter all labels for one language (FR, EN, DE) separately as the graph is multilingual and the output will represent all languages within the graph.
 
 ### **_How to find the right item / right property?_**
 
@@ -61,7 +61,7 @@ For your ease, we also provide you here with lists of themes, locations and prop
 
 #### List of properties
 
-Query: [This is a list of all the properties used in this graph](https://tinyurl.com/2pjvgwle)
+Query: [This is a list of all the properties used in this graph](https://tinyurl.com/2pjvgwle){:target="\_blank", rel: "noopener noreferrer"}
 
 #### List of themes
 
@@ -161,7 +161,7 @@ Query: [Show all themes with corresponding Q-Identifier and occurence in the gra
 
 For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurence.
 
-Query: [Show all narrative locations with corresponding Q-Identifier & occurrence](https://tinyurl.com/29w2ulyv)
+Query: [Show all narrative locations with corresponding Q-Identifier & occurrence](https://tinyurl.com/29w2ulyv){:target="\_blank", rel: "noopener noreferrer"}
 
 Q-Identifier
 place
