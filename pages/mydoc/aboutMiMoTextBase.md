@@ -6,6 +6,7 @@ hide_sidebar: true
 permalink: aboutMiMoTextBase.html
 folder: mydoc
 toc: false
+topnav: topnav_tut
 ---
 
 ## About MiMoTextBase
