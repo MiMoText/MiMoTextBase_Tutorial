@@ -18,9 +18,13 @@ To get an overview of thematic concepts within the whole domain of French novels
 
 [All thematic concepts per novels, visualization in a bubble chart](https://tinyurl.com/232phv97){:target="\_blank", rel: "noopener noreferrer"}
 
-<img src="images/graph.png" alt="drawing" height="600" width="800"/>
+<img src="images/graph_reup.png" style="height:80%; width:80%" />
 
-If a researcher is interested in compiling a corpus of novels on a certain [theme](https://github.com/MiMoText/vocabularies/blob/main/thematic_vocabulary.tsv){:target="\_blank", rel: "noopener noreferrer"}, for example “travel”, “melancholy”, “philosophy” or “sentimentalism”, one can formulate this in a query and get all novels matching this criteria. We could also ask for all the authors which cover a certain theme, for example:
+<!---
+![concepts_bubble](images/graph_reup.png)
+-->
+
+If a researcher is interested in compiling a corpus of novels on a certain [theme](https://github.com/MiMoText/vocabularies/blob/main/thematic_vocabulary.tsv){:target="\_blank", rel: "noopener noreferrer"}d, for example “travel”, “melancholy”, “philosophy” or “sentimentalism”, one can formulate this in a query and get all novels matching this criteria. We could also ask for all the authors which cover a certain theme, for example:
 
 [Which authors write about “sentimentalism”?](https://tinyurl.com/29rkz3hx){:target="\_blank", rel: "noopener noreferrer"}
 
