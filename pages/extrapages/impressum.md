@@ -7,6 +7,7 @@ hide_sidebar: True
 permalink: impressum.html
 folder: extrapages
 toc: false
+topnav: topnav_tut
 ---
 
 #### Legal Notice
