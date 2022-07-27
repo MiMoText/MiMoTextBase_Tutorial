@@ -31,7 +31,7 @@ Example: [Get all authors whose name contains “beau”](https://tinyurl.com/22
 In our graph the labels of authors are structured in `SURNAME` (in upper case) and first name (in lower case). So if you only want to retrieve authors whose surname contains “beau”, you also could replace the FILTER part as follows: FILTER(contains(?authorName, "BEAU")).
 But be careful, you need to know the data in order to get the desired (or if any at all) output. `FILTER(contains(?authorName, "beau"))`would not give you any result, because the only author whose first name contains “beau” is “SAINT-AULAIRE, Yrieix Beaupoil, marquis de” and here the “B” in “Beaupoil” also is upper case so it is not a match.
 
-If you are interested in other string functions, have a look at the section "Functions on strings" in the [SPARQL Wikibook](https://en.wikibooks.org/wiki/SPARQL/Expressions_and_Functions#Functions_on_strings).
+If you are interested in other string functions, have a look at the section "Functions on strings" in the [SPARQL Wikibook](https://en.wikibooks.org/wiki/SPARQL/Expressions_and_Functions#Functions_on_strings){:target="_blank", rel: "noopener noreferrer"}.
 
 ```
 Filter
