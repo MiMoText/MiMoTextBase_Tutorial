@@ -10,7 +10,7 @@ toc: false
 topnav: topnav_tut
 ---
 
-### **Now it is up to you**
+### **Now it is up to you!**
 
 
 
@@ -18,7 +18,7 @@ Take this query as a starting point:
 
 [Query to retrieve the theme 'travel' over time in French novels 1750-1800](https://tinyurl.com/2cab44h4){:target="\_blank", rel: "noopener noreferrer"}
 
-Open the [SPARQL endpoint](http://query.mimotext.uni-trier.de) by clicking on the link above. Now you can try out changing the query. We have a closer look at line 11:
+Open the [SPARQL endpoint](http://query.mimotext.uni-trier.de) by clicking on the link above. Now you can try out changing the query. We have a closer look at line 13:
 
  <code>filter(lcase(?topicLabel) = "travel"@en)</code>
 
