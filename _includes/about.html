@@ -1,12 +1,3 @@
-<!--div class="row" style="padding: 10px;">
-    <div class="column" style="background-color: none">
-        <img src="/mimo-header_projekt_960x292.jpeg" alt="" style="height: 200px; width: fit-content">
-    </div>
-    <div class="column" style="background-color: none">
-        <h4><b>Our Graph</b></h4>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
-    </div-->
 
 <div class="panel-group" id="accordion">
 
@@ -22,9 +13,9 @@
           <p>The idea of the <b>Semantic</b> Web was first put forward in 2009 by Tim Berners-Lee, one of the founders of the world wide web (Berners-Lee 2009). Instead of documents, the Semantic Web was to link entities (like names of people, places, things or ideas, etc.), enabling a new way of search and organization of knowledge in the world wide web.
 In the context of the Semantic Web, the <b>Resource Description Framework (RDF)</b>  has established itself as a standard method for formulating simple statements following the structure ‘subject-predicate-object’. These statements are known as <b>RDF triples</b> (Hitzler et al. 2009; Dengel 2012). Each triple consists of two nodes (‘subject’ or ‘object’) and an edge connecting the nodes (‘predicate’ or ‘relation’). Some examples of triples ([Voltaire] -> [author_of] -> [Candide]; [Candide] -> [is_about] -> [philosophy]) are illustrated in figure 1.</p>
 <img src="images/MiMoTextBase.png" alt="RDF triples as elements of the MiMoText knowledge graph">
-<p>RDF triples as elements of the MiMoText knowledge graph</p>
+<p>Fig. 1: RDF triples as elements of the MiMoText knowledge graph</p>
 
-<p>One of the biggest hubs for <b>linked open data</b> worldwide at the moment is <b>Wikidata</b> , which was started in 2012 by the Wikimedia Foundation. Wikidata is an attempt to centralize and to structure human knowledge available in the online encyclopedia Wikipedia in a datafied form as **RDF triples**. With about 8 million SPARQL queries being run every day (Pintscher and Alipio 2021), Wikidata is an open, free and collaborative knowledge base that is readable by humans and machines. All content is published under a Creative Commons Zero License.</p>
+<p>One of the biggest hubs for <b>linked open data</b> worldwide at the moment is <b>Wikidata</b> , which was started in 2012 by the Wikimedia Foundation. Wikidata is an attempt to centralize and to structure human knowledge available in the online encyclopedia Wikipedia in a datafied form as <b>RDF triples</b>. With about 8 million SPARQL queries being run every day (Pintscher and Alipio 2021), Wikidata is an open, free and collaborative knowledge base that is readable by humans and machines. All content is published under a Creative Commons Zero License.</p>
 
         </div>
     </div>
@@ -49,6 +40,8 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <li> As we match a part of our graph to Wikidata and intend to export a part of our graph to Wikidata too, the use of the same infrastructure as well as the reuse of existing properties was thought to facilitate data integration later.</li>
         <li> We see <a href="http://data.mimotext.uni-trier.de" target="_blank">MiMoTextBase </a> as part of the Wikibase ecosystem. Accordingly, we hope to make interesting data available to other projects and, conversely, to repurpose data made available elsewhere. The more projects in this ecosystem share the same infrastructure, the denser and more significant the whole graph becomes.</li>
         </ul>
+        <img src="images/wikibase_ecosystem_neu.png" style="width:40%; height:40%; display: block; margin-left: auto; margin-right: auto;" alt="A view of the MiMoTextBase within the Wikimedia Linked Open Data web.">
+        <p>A view of the MiMoTextBase within the Wikimedia Linked Open Data web. Credit original visualization: <a href="https://blogs.tib.eu/wp/tib/2021/11/05/tib-at-wikidatacon-part-1/" style="display: inline;" target="_blank" rel="noopener">Dan Shick (WMDE) / CC-BY-SA 4.0.</a></p>
       </div>
   </div>
   </div>
@@ -69,9 +62,12 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
               <a href=" https://www.uni-trier.de/en/" target="_blank"> University of Trier</a>. The project is funded by the Research Initiative (2019–2023) of the federal state of Rhineland-Palatinate (Forschungsinitiative Rheinland-Pfalz).</p>
 
             <p>We are dealing with new ways to model and analyze literary history and literary historiography. The overall aim is to establish a <b>knowledge graph</b> that aggregates statements relevant to literary history extracted from various sources. Our application domain is the French novel of the second half of the 18th century – the transfer to other domains and disciplines (other philologies, but also, for example, Philosophy, History and Art) has been planned and conceived from the beginning.</p>
+            <p>
+            <img src="images/wissensnetzwerk_en.jpg" style="width: 40%; height: 40%; display: block; margin-left: auto; margin-right: auto;" alt="Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure."></p>
+            <p>Figure 1: Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure</p>
             <p>On the basis of the three different types of information sources shown in figure 1, methods of text mining and data modeling are intertwined and used to combine several kinds of information: bibliographic metadata from reference works, text features derived from primary texts, and information extracted from scholarly publications.
               This approach significantly expands the research horizon, because although digitization activities at libraries and archives are now increasing the amount of texts and data available digitally, it is far from possible to capture them systematically through individual human reading. We integrate heterogeneous data into the knowledge graph, link it with other resources in the Linked Open Data universe and enable innovative research on the French Enlightenment novel that can take into account significantly more data than was previously the case.
-              The general vision of “Mining and Modeling Text” is to take steps toward a history and historiography of literature based on data and is inspired by researchers such as Franco Moretti, Matthew Jockers, Katherine Bode or Ted Underwood. For a more detailed description of the project, see our paper Smart Modelling for Literary History (2022). </p>
+              The general vision of “Mining and Modeling Text” is to take steps toward a history and historiography of literature based on data and is inspired by researchers such as Franco Moretti, Matthew Jockers, Katherine Bode or Ted Underwood. For a more detailed description of the project, see our paper <a href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278" style="display: inline;" target="_blank" rel="noopener">Smart Modelling for Literary History (2022)</a>.</p>
 
         </div>
     </div>
@@ -115,17 +111,14 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <p>In general, 'statements' in RDF are synonymous with triples (i.e. subject, predicate, object), but in Wikibase the term 'statement' has a slightly different meaning. Statement means not just a triple, but a bundle of multiple triples that refer to a core triple, which is called <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim">claim</a>. For an overview of the Wikidata & Wikibase terminology, take a look at the visual comments on item <a href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg">Q42 (Douglas Adams)</a>. The ‘core triple’ or ‘claim’ in Wikibase can be ‘referenced’, ‘qualified’ and ‘ranked’, a feature that is very useful in terms of transparency, comprehensibility and comparability.</p>
 
         <p>The concept of such a bundle of triples constituting a Wikibase statement is based on the fact that statements in the RDF can themselves become the subject of other triples, creating 'statements about statements'. The technical term for this is ‘reification’.</p>
-
-
-
-
+        <img src="images/about_wealth.png" style="width:50%; height:50%;">
 
         <p>Within our MiMoText graph, the possibility of referencing is particularly important. Every triple imported into the graph is referenced by the corresponding source via the property <code>stated in (P18)</code>. </p>
         <p>According to our three source types, the references can be a bibliographic work (Q1 in our case) or, alternatively, specific runs of certain analytical methods performed on the novels, e.g. Topic Modeling (Q21) for Named Entity Recognition (Q27). In the future, scholarly publications will also be used as references for triples.</p>
 
         <p>If users are interested in comparing the different sources (Q# for Topic Modeling / Q1 for <i>Bibliographie du genre romanesque français</i> / Q27 for NER_novels locations) of RDF triples within the graph, they can query those triples only referenced by one specific source or alternatively get to see statements respectively ‘core triples’ referenced by two sources at the same time.</p>
 
-        <p>Considering the diversity of sources, there are consistent and concurring statements integrated in the graph. Some statements differ in granularity regarding the entities: For example, we often find larger spatial concepts (continents) in the bibliography, but rather smaller ones (cities etc.) as results of Named Entity Recognition. In addition, by using 'federated queries' [LINK], information in other knowledge bases can be reused to buffer the heterogeneity and create comparability.</p>
+        <p>Considering the diversity of sources, there are consistent and concurring statements integrated in the graph. Some statements differ in granularity regarding the entities: For example, we often find larger spatial concepts (continents) in the bibliography, but rather smaller ones (cities etc.) as results of Named Entity Recognition. In addition, by using <a href="./federated.html">'federated queries'</a>, information in other knowledge bases can be reused to buffer the heterogeneity and create comparability.</p>
 
         <p>By diversifying our sources (bibliographic metadata, primary sources, scholarly publications), we hope to build a knowledge graph worthy of investigation and exploration. As a side effect, one can explore different outcomes of computational methods and human inquiry in epistemic processes. Generally speaking, the Linked Open Data paradigm and the Wikibase infrastructure offer the possibility to represent the plurality of perspectives and heterogeneous sources that are typical within the humanities. Moreover, uncertain information can also be taken into account, as the reliability level of the 'core triple' can be qualified or ranked.</p>
         <br/>
@@ -133,18 +126,18 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
 
         <img src="images/comparing_nar_loc.png" alt="modeling decisions" height="318" width="701"/>
         <ol>
-        <li>As already outlined, we reference via the property "stated in" (orange), whereby statements can also be referenced by more than one source. For example, the statement that 'Paris' is a place of action in 'La religieuse' is referenced here by two sources (BGRF = Bibliographie du genre romanesque français and the NER, i.e. Named Entity Recognition related to locations).
+        <li>As already outlined, we reference via the property "stated in" (orange), whereby statements can also be referenced by more than one source. For example, the statement that 'Paris' is a place of action in 'La religieuse' is referenced here by two sources (BGRF = <i>Bibliographie du genre romanesque français</i> and the NER, i.e. Named Entity Recognition related to locations).
         </li>
-        <li>Our approach relies on importing both the text strings as found in the information source (green) and the abstract spatial items (blue) into the MiMoTextBase. Combined with the fact that we reference all statements, this ensures a high degree of verifiability of our data. For example, it can be traced that the statement that 'rural area' can also be considered a narrative location of 'La religieuse' is documented in the BGRF, where it goes back to the original string 'province'.
+        <li>Our approach relies on importing both the text strings as found in the information source (green) and the abstract spatial items (blue) into the <a href="http://data.mimotext.uni-trier.de/wiki/Main_Page" target="_blank" rel="noopener">MiMoTextBase</a>. Combined with the fact that we reference all statements, this ensures a high degree of verifiability of our data. For example, it can be traced that the statement that 'rural area' can also be considered a narrative location of 'La religieuse' is documented in the BGRF, where it goes back to the original string 'province'.
         </li>
-        <li>We use controlled vocabularies to formulate standardized statements. Our vocabularies [LINK] are built up step by step with concepts that are relevant to all three source types. They are also multilingual (FR, EN, DE). In the case of our thematic vocabulary, we have chosen a domain-specific resource as a starting point, the Dictionnaire européen des Lumières (Delon 1997). The spatial vocabulary was created by named entities found in the resources. The general approach for these and all other vocabularies in development is that we create the concepts as items and, if possible, match them to Wikidata items.
+        <li>We use controlled vocabularies to formulate standardized statements. Our <a href="https://github.com/MiMoText/vocabularies" target="_blank" rel="noopener">vocabularies</a> are built up step by step with concepts that are relevant to all three source types. They are also multilingual (FR, EN, DE). In the case of our thematic vocabulary, we have chosen a domain-specific resource as a starting point, the <i>Dictionnaire européen des Lumières</i> (Delon 1997). The spatial vocabulary was created by named entities found in the resources. The general approach for these and all other vocabularies in development is that we create the concepts as items and, if possible, match them to Wikidata items.
         </li>
-        <li>As we consider MiMoTextBase a part of the Wikibase ecosystem, we have focused on mappings and matchings with Wikidata identifiers where possible. We intend to establish further links with the LOD cloud in the future (VIAF, BNF, GND etc.).
+        <li>As we consider <a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener">MiMoTextBase</a> a part of the Wikibase ecosystem, we have focused on mappings and matchings with Wikidata identifiers where possible. We intend to establish further links with the LOD cloud in the future (VIAF, BNF, GND etc.).
         </li>
         <li>For MiMoText, works and authors are the central classes, i.e. item types, in the Wikibase. We have so far focused on those statement types for which we can extract statements from at least two source types, because this enables comparability and goes hand in hand with relevance for the domain. In a first pilot project we concentrated on thematic statements, followed by spatial statements.
         The emphasis on the literary work implies that we partially reduce complexity (and thus increase interoperability and reusability) by also modeling the data from the bibliography exclusively on the work level and avoiding differentiations according to bibliographic standards (FRBR, SPAR ontologies). As with any reduction in complexity, you win some and you lose some, but for us the gain is more important.</li>
 
-        <li>In order to increase comprehensibility and usability, we have structured the ontology in modules. [LINK]</li>
+        <li>In order to increase comprehensibility and usability, we have structured the ontology in modules, see <a href="https://github.com/MiMoText/ontology" target="_blank" rel="noopener">https://github.com/MiMoText/ontology</a></li>
       </ol>
       </div>
   </div>
@@ -165,7 +158,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         <p>Concerning the properties in our graph, <a href="https://tinyurl.com/29br7evr" target="\_blank" rel="noopener noreferrer">this query </a> gives you an overview: </p>
         <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/#%23%20This%20query%20lists%20all%20the%20properties%0ASELECT%20%20%3FpropertyLabel%20%3FpropertyDescription%20%3Fproperty%20%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
-        <p>There are properties and items with a close match (P16) or an exact match (P13) on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: </p>
+        <p>There are properties and items with a <code>close match (P16)</code> or an <code>exact match (P13)</code> on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: </p>
         <p><a href="https://tinyurl.com/2b2vhk76" target="\_blank" rel="noopener noreferrer">Query to items with a close match (P58) on Wikidata, dimensions view</a></p>
         <p><a href="https://tinyurl.com/26fvhrl9" target="\_blank" rel="noopener noreferrer">Query to items with exact match (P30) on Wikidata, limited to 40 results, dimensions view</a></p>
         </div>
@@ -202,7 +195,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
         </p>
         <p>We would like to further increase the usability and accessibility of our MiMoTextBase, for example by importing the wordles for the respective topics.
         </p>
-          <p>For the future work concerning the MiMoText ontology, see: github.com/MiMoText/ontology</p>
+          <p>For the future work concerning the MiMoText ontology, see: <a href="https://github.com/MiMoText/ontology" target="_blank" rel="noopener">github.com/MiMoText/ontology</a></p>
         <br/>
         <h4>Further features, explanation and documentation</h4>
         <p>Multilinguality: Our vocabularies are already all trilingual (@en | @fr | @de). In the descriptions of our central Q-items and properties, we have currently limited these to English, but we do plan to make them trilingual as well.
@@ -250,7 +243,7 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
     <div class="panel-body">
 <p>For the provision of data as well as the infrastructure in the project, Open Science principles are fundamental. This concerns, among other things, the publication of FAIR data as well as the use of open source tools and software – in particular Wikibase.
 </p>
- <p>All data of “Mining and Modeling Text” is made open as Public Domain (CC-0). Data can be reused for any purpose.
+ <p>All data of “Mining and Modeling Text” is made open as <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">Public Domain (CC-0)</a>. Data can be reused for any purpose.
   </p>
   <p>
   If you want to cite our knowledge graph, please credit it with:
