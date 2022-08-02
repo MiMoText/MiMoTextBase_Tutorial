@@ -23,7 +23,7 @@ mail: schoech@uni-trier.de
 
 
 Responsible (§ 55 Abs. 2 RSt):  
-Prof. Dr. Christof Schöch, UniversityTrier, FB II,  Universitätsring 15, 54296 Trier
+Prof. Dr. Christof Schöch, University Trier, FB II,  Universitätsring 15, 54296 Trier
  
 ### editorial staff
 Prof. Dr. Christof Schöch  
@@ -31,6 +31,7 @@ Dr. Maria Hinzmann
 Anne Klee  
 Johanna Konstanciak  
 Julia Röttgermann  
+Moritz Steffes
 
 ### conceptual design / technical implementation
 Johanna Konstanciak  
