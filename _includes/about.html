@@ -52,13 +52,13 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+            <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" >
               <b>The MiMoText project</b></a>
         </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
         <div class="panel-body">
-            <p>MiMoText stands for <a href="https://www.mimotext.uni-trier.de/en" target="_blank">"Mining and Modeling Text: Interdisciplinary applications, informational development, legal perspectives"</a>. It is an interdisciplinary project in computational literary studies conducted at the  <a href="https://tcdh.uni-trier.de/en" target="_blank">Trier Center for Digital Humanities (TCDH)</a>  at the
+            <p id="MiMoTextProject">MiMoText stands for <a href="https://www.mimotext.uni-trier.de/en" target="_blank">"Mining and Modeling Text: Interdisciplinary applications, informational development, legal perspectives"</a>. It is an interdisciplinary project in computational literary studies conducted at the  <a href="https://tcdh.uni-trier.de/en" target="_blank">Trier Center for Digital Humanities (TCDH)</a>  at the
               <a href=" https://www.uni-trier.de/en/" target="_blank"> University of Trier</a>. The project is funded by the Research Initiative (2019–2023) of the federal state of Rhineland-Palatinate (Forschungsinitiative Rheinland-Pfalz).</p>
 
             <p>We are dealing with new ways to model and analyze literary history and literary historiography. The overall aim is to establish a <b>knowledge graph</b> that aggregates statements relevant to literary history extracted from various sources. Our application domain is the French novel of the second half of the 18th century – the transfer to other domains and disciplines (other philologies, but also, for example, Philosophy, History and Art) has been planned and conceived from the beginning.</p>
@@ -304,11 +304,11 @@ In the context of the Semantic Web, the <b>Resource Description Framework (RDF)<
   </tr>
 </table>
 
-  <div class="row" style="background-color: none; padding: 10px">
+  <div class="row" style="background-color: none; padding: 10px;">
           </div>
           <div class="row">
             <h4 style="margin-left: 20px;">Further resources</h4>
-            <div class="column" style="background-color: #f5f5f5; margin-left: 15px;">
+            <div class="column" style="background-color: #f5f5f5; margin-left: 15px; min-height: 415px;">
               <h4 style="color:  #005CA9;">MiMoTextBot</h4>
               <p>
                 We use the Python library Pywikibot for inclusion of the RDF (Resource Description Framework) triples in our Wikibase instance. Pywikibot is a tool for automating work
@@ -318,22 +318,22 @@ each TSV file has a self defined header. This header makes the import expandable
               </p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: none;">
+            <div class="column" style="background-color: none; min-height: 415px;">
               <h4 style="color:  #005CA9;">RDF Dump</h4>
               <p>
 To come!
               </p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: none; margin-left: 15px;">
+            <div class="column" style="background-color: none; margin-left: 15px; min-height: 415px;">
               <h4 style="color:  #005CA9;">Licence</h4>
        <p>All texts are in the public domain and can be reused without restrictions. We don’t claim any copyright or other rights on the transcription, markup or metadata. If you use our texts, for example in research or teaching, please reference this collection using the citation suggestion below.</p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
-            <div class="column" style="background-color: #f5f5f5;">
+            <div class="column" style="background-color: #f5f5f5; min-height: 415px;">
               <h4 style="color:  #005CA9;">Citation suggestion</h4>
               <p>
-                <i>Collection de romans français du dix-huitième siècle (1750-1800) / Eighteenth-Century French Novels (1750-1800)</i>, edited by Julia Röttgermann, with contributions from Julia Dudar, Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL: <a href="https://github.com/mimotext/roman18">https://github.com/mimotext/roman18</a>. DOI: <a href="http://doi.org/10.5281/zenodo.5040855"></a>http://doi.org/10.5281/zenodo.5040855</a>.
+                <i>Collection de romans français du dix-huitième siècle (1750-1800) / Eighteenth-Century French Novels (1750-1800)</i>, edited by Julia Röttgermann, with contributions from Julia Dudar, Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL: <a href="https://github.com/mimotext/roman18">https://github.com/mimotext/roman18</a>. DOI: <a href="http://doi.org/10.5281/zenodo.5040855">http://doi.org/10.5281/zenodo.5040855</a>.
               </p>
               <!-- <button class="btn-primary">Learn more</button> -->
             </div>
@@ -341,3 +341,26 @@ To come!
         </div>
       </div>
 </div>
+
+
+<!-- 
+  if ( window.location.hash != '' ) {
+  openval = window.location.hash.slice(1);
+  $('.' + openval).addClass('show');
+  
+  }
+-->
+  <script>
+$(function(){
+
+  if ( window.location.hash != '' )
+  {
+      // remove any accordion panels that are showing (they have a class of 'in')
+      $('.collapse').removeClass('in');
+
+      // show the panel based on the hash now:
+      $(window.location.hash + '.collapse').collapse('show');
+  }
+
+});
+</script>
