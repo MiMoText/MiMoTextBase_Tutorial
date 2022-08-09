@@ -869,6 +869,7 @@ span.soft {
 
     ul#mysidebar {
         width: 225px;
+        position: fixed;
     }
 }
 
