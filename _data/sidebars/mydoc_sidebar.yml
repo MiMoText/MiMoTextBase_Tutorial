@@ -6,6 +6,9 @@ entries:
       - title: How to use the data for my research
         output: web, pdf
         folderitems:
+          - title: Where to find...
+            output: web
+            url: /faq.html#where_to_find
           - title: Get an overview
             output: web
             url: /overview.html

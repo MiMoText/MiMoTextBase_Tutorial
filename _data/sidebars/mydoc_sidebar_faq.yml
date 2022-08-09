@@ -1,0 +1,50 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+  - title: sidebar
+    folders:
+      - title: FAQ
+        output: web, pdf
+        folderitems:
+          - title: Where to find...
+            output: web
+            url: /faq.html#where_to_find
+
+          - title: Am I right here or Where do I start?
+            output: web
+            url: /faq.html#where_to_start
+
+            subfolders:
+              - title: How to use the data for my research?
+                output: web
+                url: /faq.html#
+
+                subfolderitems:
+                  - title: Get an overview
+                    output: web
+                    url: /faq.html#overview
+
+                  - title: Writing you own queries
+                    output: web
+                    url: /faq.html#writing_own_queries
+                  
+                  - title: Export query results
+                    output: web
+                    url: /faq.html#export_results
+
+                  - title: License
+                    output: web
+                    url: /faq.html#licence
+
+              - title: How to reuse the data
+                output: web, pdf
+                subfolderitems:
+                - title: Where to find the MiMoText data
+                  output: web
+                  url: /faq.html#mimotext_data
+                - title: Downloading a dump of the whole graph
+                  output: web
+                  url: /faq.html#download_dump
+          - title: Other helpful tutorials
+            output: web
+            url: /faq.html#other_tutorials
