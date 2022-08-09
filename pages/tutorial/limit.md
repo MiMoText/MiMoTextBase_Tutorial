@@ -8,7 +8,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: limit.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **LIMIT**

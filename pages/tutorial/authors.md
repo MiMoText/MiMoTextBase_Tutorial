@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: authors.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav
 ---
 
 ### **Authors**

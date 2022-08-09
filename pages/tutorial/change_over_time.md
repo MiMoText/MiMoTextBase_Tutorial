@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: change_over_time.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Change Over Time**

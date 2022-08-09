@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: themes.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Themes**

@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: intro_sec_2.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Section 2: MiMoText data (authors, novels, spaces, themes)**

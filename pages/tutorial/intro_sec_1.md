@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: intro_sec_1.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Section 1: Getting Started**

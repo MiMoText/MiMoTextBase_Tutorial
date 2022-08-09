@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: bind.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav
 ---
 
 ### **BIND**

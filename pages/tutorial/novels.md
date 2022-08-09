@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: novels.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Novels**

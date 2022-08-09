@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: up_to_you.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Now it is up to you!**

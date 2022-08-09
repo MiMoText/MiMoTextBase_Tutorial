@@ -7,7 +7,7 @@ sidebar: mydoc_sidebar_tutorial
 permalink: intro_sec_3.html
 folder: tutorial
 toc: false
-topnav: topnav_tut
+#topnav: topnav_tut
 ---
 
 ### **Section 3: Going further – using MiMoTextBase for research**
