@@ -15,7 +15,7 @@ toc: false
 
 Take this query as a starting point:
 
-[Query to retrieve the theme 'travel' over time in French novels 1750-1800](https://tinyurl.com/2gphn6tq){:target="\_blank", rel: "noopener noreferrer"}
+[Query to retrieve the theme 'travel' over time in French novels 1750-1800](https://tinyurl.com/2mo4y9g2){:target="\_blank", rel: "noopener noreferrer"}
 
 Open the SPARQL endpoint by clicking on the link above. Now you can try out changing the query. We have a closer look at line 13:
 
