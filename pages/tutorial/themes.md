@@ -39,7 +39,7 @@ Combining themes and spaces in the graph, there is the property `P32` `narrative
 
 Let’s see how the rather abstract location “rural area” is intertwined with concise thematic concepts in aggregating all novels and all themes with narrative location “rural area” in the graph.
 
-[Thematic concepts linked to the narrative location “rural area”](https://tinyurl.com/2ywgh5nx){:target="\_blank", rel: "noopener noreferrer"}
+[Thematic concepts linked to the narrative location “rural area”](https://tinyurl.com/2zcyhwbb){:target="\_blank", rel: "noopener noreferrer"}
 
 ![rural](images/themes_rural.png)
 
