@@ -27,9 +27,9 @@ Next using the `SERVICE` referring to the WikiData-SPARQL-Endpoint, we can get a
 
 `SERVICE <https://query.wikidata.org/sparql> { ?wikidataEntityLink widt:P625 ?coordinateLocation. } `
 
-Example: [Show all narrative places (using the coordinate locations property of Wikidata)](https://tinyurl.com/2z2rsagy){:target="\_blank", rel: "noopener noreferrer"}
+Example: [Show all narrative places (using the coordinate locations property of Wikidata)](https://tinyurl.com/2m4g32my){:target="\_blank", rel: "noopener noreferrer"}
 
-<p><iframe style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen  src="https://tinyurl.com/2z2rsagy" referrerpolicy="origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" ></iframe></p>
+<p><iframe style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen  src="https://tinyurl.com/2m4g32my" referrerpolicy="origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" ></iframe></p>
 
 ```
 Federated query
