@@ -53,10 +53,10 @@ We can observe a diversification of small formats: in-12 and even in-18 and in-2
 <img src="images/rousseau_reading.png" style="height:35%; width:35%" />
 -->
 
-<p>Jean-Jacques Rousseau<br>
+<p><b>Jean-Jacques Rousseau</b><br>
 Gravure d'Hippolyte Huet d'après un tableau de Joseph Albrier<br>
 XVIIIe siècle.<br>
-BnF, Musique, fonds estampes, Rousseau J.-J.    
+BnF, Musique, fonds estampes, Rousseau J.-J.<br>    
 © Bibliothèque nationale de France</p>
 <br>
 
