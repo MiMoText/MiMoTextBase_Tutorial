@@ -12,7 +12,7 @@ toc: false
 
 ### **Novels**
 
-With the information covered by the Bibliographie du genre romanesque français (Martin, Mylne, and Frautschi 1977) within the MiMoText graph, we can not only query which novels were published between 1751 and 1800, but dive much deeper into the novels themselves.
+With the information covered by the _Bibliographie du Genre Romanesque Français_ (Martin, Mylne, and Frautschi 1977) within the MiMoText graph, we can not only query which novels were published between 1751 and 1800, but dive much deeper into the novels themselves.
 
 Because we are planning on integrating statements from scholarly publications into MiMoTextBase, it is important to add `wdt:P2` (instance of) `wd:Q2` (literary work) to the query to retrieve results concerning only the “novels”.
 
