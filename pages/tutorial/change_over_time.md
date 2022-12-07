@@ -12,7 +12,7 @@ toc: false
 
 ### **Change Over Time**
 
-The MiMoText graph contains information on first publication dates of all of the work items (novels) referenced by the _Bibliographie du genre romanesque français_ (Martin, Mylne, and Frautschi 1977). This enables us to retrieve change over time, optionally combining it with other properties.
+The MiMoText graph contains information on first publication dates of all of the work items (novels) referenced by the _Bibliographie du Genre Romanesque Français_ (Martin, Mylne, and Frautschi 1977). This enables us to retrieve change over time, optionally combining it with other properties.
 
 Let’s start with a simple example: The following query shows the `first publication date` (`P9`) of all the novel items in the corpus.
 
@@ -22,7 +22,7 @@ Let’s start with a simple example: The following query shows the `first public
 
 We can observe an [augmentation of novel production](https://tinyurl.com/2xonar28){:target="\_blank", rel: "noopener noreferrer"} in the later decades, a finding also backed by secondary literature (see for example Franco Moretti on the rise of the novel: Moretti 2005: 9).
 
-Furthermore, we can also combine information on first publications dates and a certain topic. Let's see how the thematic concept "travel" evolved over time:
+Furthermore, we can also combine information on first publication dates and a certain topic. Let's see how the thematic concept "travel" evolved over time:
 
 [Query to retrieve the theme 'travel' over time in French novels 1751-1800](https://tinyurl.com/2429zfwe){:target="\_blank", rel: "noopener noreferrer"}
 
