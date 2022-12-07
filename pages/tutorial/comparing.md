@@ -20,7 +20,7 @@ For instance, we can compare different narrative perspectives and narrative plac
 
 [Where are heterodiegetic novels set?](https://tinyurl.com/29fqaume){:target="\_blank", rel: "noopener noreferrer"}
 
-There are narrative places dominant in the corpus as a whole (France/England/rural area), but also differences: epistolary novels are more often set in Switzerland then heterodiegetic novels, whereas heterodiegetic novels are more often set in imaginary places then epistolary novels.
+There are narrative places dominant in the corpus as a whole (France/England/rural area), but also differences: epistolary novels are more often set in Switzerland than heterodiegetic novels, whereas heterodiegetic novels are more often set in imaginary places than epistolary novels.
 
 Moreover, as we use different sources of data [LINK], we can have a look at thematic statements referenced by `Topic Modeling` (`Q21`) vs. thematic statements referenced by the `bibliographic metadata` (`Q1`).
 
