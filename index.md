@@ -19,7 +19,8 @@ permalink: index.html
 
 ## You also may watch an introduction to MiMoTextBase:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kQj7tkWCNMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p style="text-align:center;">
+<br/><iframe  width="560" height="315" src="https://www.youtube.com/embed/kQj7tkWCNMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 
 <!---If you don’t know where to start or if you get stuck with the queries, click our HELP-Button which you find on the right sight of every tutorial page. -->
