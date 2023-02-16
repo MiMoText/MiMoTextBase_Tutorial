@@ -1,364 +1,990 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="CrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseOne"
+        >
+          <b>Semantic Web, RDF, Linked Open Data, Wikidata</b></a
+        >
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse CrossRef">
+      <div class="panel-body">
+        <p>
+          The idea of the <b>Semantic</b> Web was first put forward in 2009 by
+          Tim Berners-Lee, one of the founders of the world wide web
+          (Berners-Lee 2009). Instead of documents, the Semantic Web was to link
+          entities (like names of people, places, things or ideas, etc.),
+          enabling a new way of search and organization of knowledge in the
+          world wide web. In the context of the Semantic Web, the
+          <b>Resource Description Framework (RDF)</b> has established itself as
+          a standard method for formulating simple statements following the
+          structure ‘subject-predicate-object’. These statements are known as
+          <b>RDF triples</b> (Hitzler et al. 2009; Dengel 2012). Each triple
+          consists of two nodes (‘subject’ or ‘object’) and an edge connecting
+          the nodes (‘predicate’ or ‘relation’). Some examples of triples
+          ([Voltaire] -> [author_of] -> [Candide]; [Candide] -> [is_about] ->
+          [philosophy]) are illustrated in figure 1.
+        </p>
+        <img
+          src="images/MiMoTextBase.png"
+          alt="RDF triples as elements of the MiMoText knowledge graph"
+        />
+        <p>Fig. 1: RDF triples as elements of the MiMoText knowledge graph</p>
+
+        <p>
+          One of the biggest hubs for <b>linked open data</b> worldwide at the
+          moment is <b>Wikidata</b> , which was started in 2012 by the Wikimedia
+          Foundation. Wikidata is an attempt to centralize and to structure
+          human knowledge available in the online encyclopedia Wikipedia in a
+          datafied form as <b>RDF triples</b>. With about 8 million SPARQL
+          queries being run every day (Pintscher and Alipio 2021), Wikidata is
+          an open, free and collaborative knowledge base that is readable by
+          humans and machines. All content is published under a Creative Commons
+          Zero License.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseThree"
+        >
+          <b>The Wikibase ecosystem</b></a
+        >
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse noCrossRef">
+      <div class="panel-body">
+        <p>
+          The software behind Wikidata is Wikibase, a set of MediaWiki
+          extensions developed by Wikimedia Germany. Just like Wikidata,
+          Wikibase is free and open for everyone. It is used for example by the
+          project <a href="https://artbase.rhizome.org/wiki/Query">ArtBase</a>,
+          the project <a href="https://enslaved.org/">Enslaved.org</a> or the
+          <a href="https://www.dnb.de/EN/Home/home_node.html"
+            >German National Library</a
+          >. We chose a local instance of Wikibase as the infrastructure for our
+          data in “Mining and Modeling Text” for several reasons:
+        </p>
+        <ul>
+          <li>
+            Wikibase is suitable for storing the necessary amount of triples and
+            comes with a SPARQL endpoint with numerous visualization
+            possibilities.
+          </li>
+          <li>
+            The software is open and free and as with the whole Wikimedia
+            universe, there is a lively community always eager to help and a
+            multitude of communication channels (Wiki conferences, Telegram
+            group, Wikis).
+          </li>
+          <li>
+            Wikibase enables us to store a multilingual knowledge graph
+            (French/German/English), which was a feature we intended to use.
+          </li>
+          <li>
+            As we match a part of our graph to Wikidata and intend to export a
+            part of our graph to Wikidata too, the use of the same
+            infrastructure as well as the reuse of existing properties was
+            thought to facilitate data integration later.
+          </li>
+          <li>
+            We see
+            <a href="http://data.mimotext.uni-trier.de" target="_blank"
+              >MiMoTextBase
+            </a>
+            as part of the Wikibase ecosystem. Accordingly, we hope to make
+            interesting data available to other projects and, conversely, to
+            repurpose data made available elsewhere. The more projects in this
+            ecosystem share the same infrastructure, the denser and more
+            significant the whole graph becomes.
+          </li>
+        </ul>
+        <img
+          src="images/wikibase_ecosystem_neu.png"
+          style="
+            width: 40%;
+            height: 40%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+          alt="A view of the MiMoTextBase within the Wikimedia Linked Open Data web."
+        />
+        <p>
+          A view of the MiMoTextBase within the Wikimedia Linked Open Data web.
+          Credit original visualization:
+          <a
+            href="https://blogs.tib.eu/wp/tib/2021/11/05/tib-at-wikidatacon-part-1/"
+            style="display: inline"
+            target="_blank"
+            rel="noopener"
+            >Dan Shick (WMDE) / CC-BY-SA 4.0.</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- /.panel -->
+
+  <!-- more panel classes to come -->
 
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="CrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-              <b>Semantic Web, RDF, Linked Open Data, Wikidata</b></a>
-        </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse CrossRef">
-        <div class="panel-body">
-          <p>The idea of the <b>Semantic</b> Web was first put forward in 2009 by Tim Berners-Lee, one of the founders of the world wide web (Berners-Lee 2009). Instead of documents, the Semantic Web was to link entities (like names of people, places, things or ideas, etc.), enabling a new way of search and organization of knowledge in the world wide web.
-In the context of the Semantic Web, the <b>Resource Description Framework (RDF)</b>  has established itself as a standard method for formulating simple statements following the structure ‘subject-predicate-object’. These statements are known as <b>RDF triples</b> (Hitzler et al. 2009; Dengel 2012). Each triple consists of two nodes (‘subject’ or ‘object’) and an edge connecting the nodes (‘predicate’ or ‘relation’). Some examples of triples ([Voltaire] -> [author_of] -> [Candide]; [Candide] -> [is_about] -> [philosophy]) are illustrated in figure 1.</p>
-<img src="images/MiMoTextBase.png" alt="RDF triples as elements of the MiMoText knowledge graph">
-<p>Fig. 1: RDF triples as elements of the MiMoText knowledge graph</p>
-
-<p>One of the biggest hubs for <b>linked open data</b> worldwide at the moment is <b>Wikidata</b> , which was started in 2012 by the Wikimedia Foundation. Wikidata is an attempt to centralize and to structure human knowledge available in the online encyclopedia Wikipedia in a datafied form as <b>RDF triples</b>. With about 8 million SPARQL queries being run every day (Pintscher and Alipio 2021), Wikidata is an open, free and collaborative knowledge base that is readable by humans and machines. All content is published under a Creative Commons Zero License.</p>
-
-        </div>
-    </div>
-</div>
-
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
       <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-            <b>The Wikibase ecosystem</b></a>
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseTwo"
+        >
+          <b>The MiMoText project</b></a
+        >
       </h4>
-  </div>
-  <div id="collapseThree" class="panel-collapse collapse noCrossRef">
-      <div class="panel-body">
-        <p>The software behind Wikidata is Wikibase, a set of MediaWiki extensions developed by Wikimedia Germany. Just like Wikidata, Wikibase is free and open for everyone. It is used for example by the project <a href="https://artbase.rhizome.org/wiki/Query">ArtBase</a>, the project <a href="https://enslaved.org/">Enslaved.org</a> or the  <a href="https://www.dnb.de/EN/Home/home_node.html">German National Library</a>.
-        We chose a local instance of Wikibase as the infrastructure for our data in “Mining and Modeling Text” for several reasons:</p>
-        <ul>
-        <li> Wikibase is suitable for storing the necessary amount of triples and comes with a SPARQL endpoint with numerous visualization possibilities.</li>
-        <li>The software is open and free and as with the whole Wikimedia universe, there is a lively community always eager to help and a multitude of communication channels (Wiki conferences, Telegram group, Wikis).</li>
-        <li>Wikibase enables us to store a multilingual knowledge graph (French/German/English), which was a feature we intended to use.</li>
-        <li> As we match a part of our graph to Wikidata and intend to export a part of our graph to Wikidata too, the use of the same infrastructure as well as the reuse of existing properties was thought to facilitate data integration later.</li>
-        <li> We see <a href="http://data.mimotext.uni-trier.de" target="_blank">MiMoTextBase </a> as part of the Wikibase ecosystem. Accordingly, we hope to make interesting data available to other projects and, conversely, to repurpose data made available elsewhere. The more projects in this ecosystem share the same infrastructure, the denser and more significant the whole graph becomes.</li>
-        </ul>
-        <img src="images/wikibase_ecosystem_neu.png" style="width:40%; height:40%; display: block; margin-left: auto; margin-right: auto;" alt="A view of the MiMoTextBase within the Wikimedia Linked Open Data web.">
-        <p>A view of the MiMoTextBase within the Wikimedia Linked Open Data web. Credit original visualization: <a href="https://blogs.tib.eu/wp/tib/2021/11/05/tib-at-wikidatacon-part-1/" style="display: inline;" target="_blank" rel="noopener">Dan Shick (WMDE) / CC-BY-SA 4.0.</a></p>
-      </div>
-  </div>
-  </div>
-<!-- /.panel -->
-
-<!-- more panel classes to come -->
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" >
-              <b>The MiMoText project</b></a>
-        </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
-        <div class="panel-body">
-            <p id="MiMoTextProject">MiMoText stands for <a href="https://www.mimotext.uni-trier.de/en" target="_blank">"Mining and Modeling Text: Interdisciplinary applications, informational development, legal perspectives"</a>. It is an interdisciplinary project in computational literary studies conducted at the  <a href="https://tcdh.uni-trier.de/en" target="_blank">Trier Center for Digital Humanities (TCDH)</a>  at the
-              <a href=" https://www.uni-trier.de/en/" target="_blank"> University of Trier</a>. The project is funded by the Research Initiative (2019–2023) of the federal state of Rhineland-Palatinate (Forschungsinitiative Rheinland-Pfalz).</p>
-
-            <p>We are dealing with new ways to model and analyze literary history and literary historiography. The overall aim is to establish a <b>knowledge graph</b> that aggregates statements relevant to literary history extracted from various sources. Our application domain is the French novel of the second half of the 18th century – the transfer to other domains and disciplines (other philologies, but also, for example, Philosophy, History and Art) has been planned and conceived from the beginning.</p>
-            <p>
-            <img src="images/wissensnetzwerk_en.jpg" style="width: 40%; height: 40%; display: block; margin-left: auto; margin-right: auto;" alt="Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure."></p>
-            <p>Figure 1: Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure</p>
-            <p>On the basis of the three different types of information sources shown in figure 1, methods of text mining and data modeling are intertwined and used to combine several kinds of information: bibliographic metadata from reference works, text features derived from primary texts, and information extracted from scholarly publications.
-              This approach significantly expands the research horizon, because although digitization activities at libraries and archives are now increasing the amount of texts and data available digitally, it is far from possible to capture them systematically through individual human reading. We integrate heterogeneous data into the knowledge graph, link it with other resources in the Linked Open Data universe and enable innovative research on the French Enlightenment novel that can take into account significantly more data than was previously the case.
-              The general vision of “Mining and Modeling Text” is to take steps toward a history and historiography of literature based on data and is inspired by researchers such as Franco Moretti, Matthew Jockers, Katherine Bode or Ted Underwood. For a more detailed description of the project, see our paper <a href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278" style="display: inline;" target="_blank" rel="noopener">Smart Modelling for Literary History (2022)</a>.</p>
-
-        </div>
-    </div>
-</div>
- <!-- /.panel -->
- <div class="panel panel-default">
-  <div class="panel-heading">
-      <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-            <b>Our sources</b></a>
-      </h4>
-  </div>
-  <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
-        <p>We construct our knowledge graph from three different types of sources (see fig. 1): bibliographic metadata, primary sources (novels) and scholarly publications.</p>
-        <ol>
-          <li>Bibliographic metadata: For our domain, the <i>Bibliographie du genre romanesque français 1751-1800</i> (BGRF, Mylne et al. 1977) is central, as it defines the population of about 2000 French Enlightenment novels. The BGRF has been extensively analyzed and modeled (Lüschow 2020) and contains rich metadata (including places of publication, narrative locations, narrative form, characters, themes, style).</li>
+        <p id="MiMoTextProject">
+          MiMoText stands for
+          <a href="https://www.mimotext.uni-trier.de/en" target="_blank"
+            >"Mining and Modeling Text: Interdisciplinary applications,
+            informational development, legal perspectives"</a
+          >. It is an interdisciplinary project in computational literary
+          studies conducted at the
+          <a href="https://tcdh.uni-trier.de/en" target="_blank"
+            >Trier Center for Digital Humanities (TCDH)</a
+          >
+          at the
+          <a href=" https://www.uni-trier.de/en/" target="_blank">
+            University of Trier</a
+          >. The project is funded by the Research Initiative (2019–2023) of the
+          federal state of Rhineland-Palatinate (Forschungsinitiative
+          Rheinland-Pfalz).
+        </p>
 
-          <li>Novels: In MiMoText, the <i>Collection of Eighteenth-Century French Novels</i> (Röttgermann 2021) is being created. This corpus already includes about <a href="https://github.com/MiMoText/roman18">180 novels</a>, which are available as full texts (modeled according to the TEI standard). A subset is available as an extension of the <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2">European Literary Text Collection (ELTeC)</a>. The results of various quantitative analysis methods applied to primary works serve as the basis for new statements as well. So far, we have applied topic modeling (Schöch et al. 2022; Röttgermann et al. 2022), text mining of places (Hinzmann et al. 2022) as well as text matching. Further planned mining methods include sentiment analysis and keyword analysis.</li>
-          <li>Scholarly publications: We examine scholarly literature and annotate statements about literary works and authors of our domain. We have already systematically and quite extensively annotated thematic statements and exploratively annotated other statement types. Currently, we are working on a pipeline that will feed statements annotated in <a href="https://inception-project.github.io/">INCEpTION</a> into our Wikibase. Based on this, future work concerns extracting statements automatically and adding statements from scholarly publications to the Wikibase instance.</li>
+        <p>
+          We are dealing with new ways to model and analyze literary history and
+          literary historiography. The overall aim is to establish a
+          <b>knowledge graph</b> that aggregates statements relevant to literary
+          history extracted from various sources. Our application domain is the
+          French novel of the second half of the 18th century – the transfer to
+          other domains and disciplines (other philologies, but also, for
+          example, Philosophy, History and Art) has been planned and conceived
+          from the beginning.
+        </p>
+        <p>
+          <img
+            src="images/wissensnetzwerk_en.jpg"
+            style="
+              width: 40%;
+              height: 40%;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            "
+            alt="Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure."
+          />
+        </p>
+        <p>
+          Figure 1: Overview of the project structure with four research areas
+          (RA 1–4) on mining, modeling, legal aspects and infrastructure
+        </p>
+        <p>
+          On the basis of the three different types of information sources shown
+          in figure 1, methods of text mining and data modeling are intertwined
+          and used to combine several kinds of information: bibliographic
+          metadata from reference works, text features derived from primary
+          texts, and information extracted from scholarly publications. This
+          approach significantly expands the research horizon, because although
+          digitization activities at libraries and archives are now increasing
+          the amount of texts and data available digitally, it is far from
+          possible to capture them systematically through individual human
+          reading. We integrate heterogeneous data into the knowledge graph,
+          link it with other resources in the Linked Open Data universe and
+          enable innovative research on the French Enlightenment novel that can
+          take into account significantly more data than was previously the
+          case. The general vision of “Mining and Modeling Text” is to take
+          steps toward a history and historiography of literature based on data
+          and is inspired by researchers such as Franco Moretti, Matthew
+          Jockers, Katherine Bode or Ted Underwood. For a more detailed
+          description of the project, see our paper
+          <a
+            href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278"
+            style="display: inline"
+            target="_blank"
+            rel="noopener"
+            >Smart Modelling for Literary History (2022)</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseFour"
+        >
+          <b>Our sources</b></a
+        >
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>
+          We construct our knowledge graph from three different types of sources
+          (see fig. 1): bibliographic metadata, primary sources (novels) and
+          scholarly publications.
+        </p>
+        <ol>
+          <li>
+            Bibliographic metadata: For our domain, the
+            <i>Bibliographie du genre romanesque français 1751-1800</i> (BGRF,
+            Mylne et al. 1977) is central, as it defines the population of about
+            2000 French Enlightenment novels. The BGRF has been extensively
+            analyzed and modeled (Lüschow 2020) and contains rich metadata
+            (including places of publication, narrative locations, narrative
+            form, characters, themes, style).
+          </li>
+
+          <li>
+            Novels: In MiMoText, the
+            <i>Collection of Eighteenth-Century French Novels</i> (Röttgermann
+            2021) is being created. This corpus already includes about
+            <a href="https://github.com/MiMoText/roman18">180 novels</a>, which
+            are available as full texts (modeled according to the TEI standard).
+            A subset is available as an extension of the
+            <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2"
+              >European Literary Text Collection (ELTeC)</a
+            >. The results of various quantitative analysis methods applied to
+            primary works serve as the basis for new statements as well. So far,
+            we have applied topic modeling (Schöch et al. 2022; Röttgermann et
+            al. 2022), text mining of places (Hinzmann et al. 2022) as well as
+            text matching. Further planned mining methods include sentiment
+            analysis and keyword analysis.
+          </li>
+          <li>
+            Scholarly publications: We examine scholarly literature and annotate
+            statements about literary works and authors of our domain. We have
+            already systematically and quite extensively annotated thematic
+            statements and exploratively annotated other statement types.
+            Currently, we are working on a pipeline that will feed statements
+            annotated in
+            <a href="https://inception-project.github.io/">INCEpTION</a> into
+            our Wikibase. Based on this, future work concerns extracting
+            statements automatically and adding statements from scholarly
+            publications to the Wikibase instance.
+          </li>
         </ol>
       </div>
+    </div>
   </div>
-</div>
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-            <b>Our modeling approach</b></a>
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseFive"
+        >
+          <b>Our modeling approach</b></a
+        >
       </h4>
-  </div>
-  <div id="collapseFive" class="panel-collapse collapse">
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
-        <h4><i>Some aspects of the Wikibase data model and our modeling approach</i></h4>
+        <h4>
+          <i
+            >Some aspects of the Wikibase data model and our modeling
+            approach</i
+          >
+        </h4>
 
-        <p>We have already outlined above that in the Linked Open Data paradigm, every statement is mapped onto the structure of RDF triples. The Wikibase infrastructure brings with it some special features that affect the data modeling: In Wikibase, 'items' are central. Items can be in subject or object position. Subjects are always 'items', whereas objects can be 'items' or 'values'. The relation or edge that links subject and object is called ‘property’.</p>
+        <p>
+          We have already outlined above that in the Linked Open Data paradigm,
+          every statement is mapped onto the structure of RDF triples. The
+          Wikibase infrastructure brings with it some special features that
+          affect the data modeling: In Wikibase, 'items' are central. Items can
+          be in subject or object position. Subjects are always 'items', whereas
+          objects can be 'items' or 'values'. The relation or edge that links
+          subject and object is called ‘property’.
+        </p>
 
-        <img src="images/subject_predicate_object.PNG" alt="subject predicate object" height="378" width="669"/>
+        <img
+          src="images/subject_predicate_object.PNG"
+          alt="subject predicate object"
+          height="378"
+          width="669"
+        />
 
-        <p>In general, 'statements' in RDF are synonymous with triples (i.e. subject, predicate, object), but in Wikibase the term 'statement' has a slightly different meaning. Statement means not just a triple, but a bundle of multiple triples that refer to a core triple, which is called <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim">claim</a>. For an overview of the Wikidata & Wikibase terminology, take a look at the visual comments on item <a href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg">Q42 (Douglas Adams)</a>. The ‘core triple’ or ‘claim’ in Wikibase can be ‘referenced’, ‘qualified’ and ‘ranked’, a feature that is very useful in terms of transparency, comprehensibility and comparability.</p>
+        <p>
+          In general, 'statements' in RDF are synonymous with triples (i.e.
+          subject, predicate, object), but in Wikibase the term 'statement' has
+          a slightly different meaning. Statement means not just a triple, but a
+          bundle of multiple triples that refer to a core triple, which is
+          called
+          <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim"
+            >claim</a
+          >. For an overview of the Wikidata & Wikibase terminology, take a look
+          at the visual comments on item
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg"
+            >Q42 (Douglas Adams)</a
+          >. The ‘core triple’ or ‘claim’ in Wikibase can be ‘referenced’,
+          ‘qualified’ and ‘ranked’, a feature that is very useful in terms of
+          transparency, comprehensibility and comparability.
+        </p>
 
-        <p>The concept of such a bundle of triples constituting a Wikibase statement is based on the fact that statements in the RDF can themselves become the subject of other triples, creating 'statements about statements'. The technical term for this is ‘reification’.</p>
-        <img src="images/about_wealth.PNG" style="width:50%; height:50%;">
+        <p>
+          The concept of such a bundle of triples constituting a Wikibase
+          statement is based on the fact that statements in the RDF can
+          themselves become the subject of other triples, creating 'statements
+          about statements'. The technical term for this is ‘reification’.
+        </p>
+        <img src="images/about_wealth.PNG" style="width: 50%; height: 50%" />
 
-        <p>Within our MiMoText graph, the possibility of referencing is particularly important. Every triple imported into the graph is referenced by the corresponding source via the property <code>stated in (P18)</code>. </p>
-        <p>According to our three source types, the references can be a bibliographic work (Q1 in our case) or, alternatively, specific runs of certain analytical methods performed on the novels, e.g. Topic Modeling (Q21) for Named Entity Recognition (Q27). In the future, scholarly publications will also be used as references for triples.</p>
+        <p>
+          Within our MiMoText graph, the possibility of referencing is
+          particularly important. Every triple imported into the graph is
+          referenced by the corresponding source via the property
+          <code>stated in (P18)</code>.
+        </p>
+        <p>
+          According to our three source types, the references can be a
+          bibliographic work (Q1 in our case) or, alternatively, specific runs
+          of certain analytical methods performed on the novels, e.g. Topic
+          Modeling (Q21) for Named Entity Recognition (Q27). In the future,
+          scholarly publications will also be used as references for triples.
+        </p>
 
-        <p>If users are interested in comparing the different sources (Q# for Topic Modeling / Q1 for <i>Bibliographie du genre romanesque français</i> / Q27 for NER_novels locations) of RDF triples within the graph, they can query those triples only referenced by one specific source or alternatively get to see statements respectively ‘core triples’ referenced by two sources at the same time.</p>
+        <p>
+          If users are interested in comparing the different sources (Q# for
+          Topic Modeling / Q1 for
+          <i>Bibliographie du genre romanesque français</i> / Q27 for NER_novels
+          locations) of RDF triples within the graph, they can query those
+          triples only referenced by one specific source or alternatively get to
+          see statements respectively ‘core triples’ referenced by two sources
+          at the same time.
+        </p>
 
-        <p>Considering the diversity of sources, there are consistent and concurring statements integrated in the graph. Some statements differ in granularity regarding the entities: For example, we often find larger spatial concepts (continents) in the bibliography, but rather smaller ones (cities etc.) as results of Named Entity Recognition. In addition, by using <a href="./federated.html">'federated queries'</a>, information in other knowledge bases can be reused to buffer the heterogeneity and create comparability.</p>
+        <p>
+          Considering the diversity of sources, there are consistent and
+          concurring statements integrated in the graph. Some statements differ
+          in granularity regarding the entities: For example, we often find
+          larger spatial concepts (continents) in the bibliography, but rather
+          smaller ones (cities etc.) as results of Named Entity Recognition. In
+          addition, by using <a href="./federated.html">'federated queries'</a>,
+          information in other knowledge bases can be reused to buffer the
+          heterogeneity and create comparability.
+        </p>
 
-        <p>By diversifying our sources (bibliographic metadata, primary sources, scholarly publications), we hope to build a knowledge graph worthy of investigation and exploration. As a side effect, one can explore different outcomes of computational methods and human inquiry in epistemic processes. Generally speaking, the Linked Open Data paradigm and the Wikibase infrastructure offer the possibility to represent the plurality of perspectives and heterogeneous sources that are typical within the humanities. Moreover, uncertain information can also be taken into account, as the reliability level of the 'core triple' can be qualified or ranked.</p>
-        <br/>
+        <p>
+          By diversifying our sources (bibliographic metadata, primary sources,
+          scholarly publications), we hope to build a knowledge graph worthy of
+          investigation and exploration. As a side effect, one can explore
+          different outcomes of computational methods and human inquiry in
+          epistemic processes. Generally speaking, the Linked Open Data paradigm
+          and the Wikibase infrastructure offer the possibility to represent the
+          plurality of perspectives and heterogeneous sources that are typical
+          within the humanities. Moreover, uncertain information can also be
+          taken into account, as the reliability level of the 'core triple' can
+          be qualified or ranked.
+        </p>
+        <br />
         <h4><i>Modeling decisions briefly outlined</i></h4>
 
-        <img src="images/comparing_nar_loc.png" alt="modeling decisions" height="318" width="701"/>
+        <img
+          src="images/comparing_nar_loc.png"
+          alt="modeling decisions"
+          height="318"
+          width="701"
+        />
         <ol>
-        <li>As already outlined, we reference via the property "stated in" (orange), whereby statements can also be referenced by more than one source. For example, the statement that 'Paris' is a place of action in 'La religieuse' is referenced here by two sources (BGRF = <i>Bibliographie du genre romanesque français</i> and the NER, i.e. Named Entity Recognition related to locations).
-        </li>
-        <li>Our approach relies on importing both the text strings as found in the information source (green) and the abstract spatial items (blue) into the <a href="http://data.mimotext.uni-trier.de/wiki/Main_Page" target="_blank" rel="noopener">MiMoTextBase</a>. Combined with the fact that we reference all statements, this ensures a high degree of verifiability of our data. For example, it can be traced that the statement that 'rural area' can also be considered a narrative location of 'La religieuse' is documented in the BGRF, where it goes back to the original string 'province'.
-        </li>
-        <li>We use controlled vocabularies to formulate standardized statements. Our <a href="https://github.com/MiMoText/vocabularies" target="_blank" rel="noopener">vocabularies</a> are built up step by step with concepts that are relevant to all three source types. They are also multilingual (FR, EN, DE). In the case of our thematic vocabulary, we have chosen a domain-specific resource as a starting point, the <i>Dictionnaire européen des Lumières</i> (Delon 1997). The spatial vocabulary was created by named entities found in the resources. The general approach for these and all other vocabularies in development is that we create the concepts as items and, if possible, match them to Wikidata items.
-        </li>
-        <li>As we consider <a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener">MiMoTextBase</a> a part of the Wikibase ecosystem, we have focused on mappings and matchings with Wikidata identifiers where possible. We intend to establish further links with the LOD cloud in the future (VIAF, BNF, GND etc.).
-        </li>
-        <li>For MiMoText, works and authors are the central classes, i.e. item types, in the Wikibase. We have so far focused on those statement types for which we can extract statements from at least two source types, because this enables comparability and goes hand in hand with relevance for the domain. In a first pilot project we concentrated on thematic statements, followed by spatial statements.
-        The emphasis on the literary work implies that we partially reduce complexity (and thus increase interoperability and reusability) by also modeling the data from the bibliography exclusively on the work level and avoiding differentiations according to bibliographic standards (FRBR, SPAR ontologies). As with any reduction in complexity, you win some and you lose some, but for us the gain is more important.</li>
+          <li>
+            As already outlined, we reference via the property "stated in"
+            (orange), whereby statements can also be referenced by more than one
+            source. For example, the statement that 'Paris' is a place of action
+            in 'La religieuse' is referenced here by two sources (BGRF =
+            <i>Bibliographie du genre romanesque français</i> and the NER, i.e.
+            Named Entity Recognition related to locations).
+          </li>
+          <li>
+            Our approach relies on importing both the text strings as found in
+            the information source (green) and the abstract spatial items (blue)
+            into the
+            <a
+              href="http://data.mimotext.uni-trier.de/wiki/Main_Page"
+              target="_blank"
+              rel="noopener"
+              >MiMoTextBase</a
+            >. Combined with the fact that we reference all statements, this
+            ensures a high degree of verifiability of our data. For example, it
+            can be traced that the statement that 'rural area' can also be
+            considered a narrative location of 'La religieuse' is documented in
+            the BGRF, where it goes back to the original string 'province'.
+          </li>
+          <li>
+            We use controlled vocabularies to formulate standardized statements.
+            Our
+            <a
+              href="https://github.com/MiMoText/vocabularies"
+              target="_blank"
+              rel="noopener"
+              >vocabularies</a
+            >
+            are built up step by step with concepts that are relevant to all
+            three source types. They are also multilingual (FR, EN, DE). In the
+            case of our thematic vocabulary, we have chosen a domain-specific
+            resource as a starting point, the
+            <i>Dictionnaire européen des Lumières</i> (Delon 1997). The spatial
+            vocabulary was created by named entities found in the resources. The
+            general approach for these and all other vocabularies in development
+            is that we create the concepts as items and, if possible, match them
+            to Wikidata items.
+          </li>
+          <li>
+            As we consider
+            <a
+              href="http://data.mimotext.uni-trier.de"
+              target="_blank"
+              rel="noopener"
+              >MiMoTextBase</a
+            >
+            a part of the Wikibase ecosystem, we have focused on mappings and
+            matchings with Wikidata identifiers where possible. We intend to
+            establish further links with the LOD cloud in the future (VIAF, BNF,
+            GND etc.).
+          </li>
+          <li>
+            For MiMoText, works and authors are the central classes, i.e. item
+            types, in the Wikibase. We have so far focused on those statement
+            types for which we can extract statements from at least two source
+            types, because this enables comparability and goes hand in hand with
+            relevance for the domain. In a first pilot project we concentrated
+            on thematic statements, followed by spatial statements. The emphasis
+            on the literary work implies that we partially reduce complexity
+            (and thus increase interoperability and reusability) by also
+            modeling the data from the bibliography exclusively on the work
+            level and avoiding differentiations according to bibliographic
+            standards (FRBR, SPAR ontologies). As with any reduction in
+            complexity, you win some and you lose some, but for us the gain is
+            more important.
+          </li>
 
-        <li>In order to increase comprehensibility and usability, we have structured the ontology in modules, see <a href="https://github.com/MiMoText/ontology" target="_blank" rel="noopener">https://github.com/MiMoText/ontology</a></li>
-      </ol>
+          <li>
+            In order to increase comprehensibility and usability, we have
+            structured the ontology in modules, see
+            <a
+              href="https://github.com/MiMoText/ontology"
+              target="_blank"
+              rel="noopener"
+              >https://github.com/MiMoText/ontology</a
+            >
+          </li>
+        </ol>
       </div>
+    </div>
   </div>
-</div>
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-            <b>Our graph: an overview in numbers</b></a>
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseSix"
+        >
+          <b>Our graph: an overview in numbers</b></a
+        >
       </h4>
-  </div>
-  <div id="collapseSix" class="panel-collapse collapse">
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse">
       <div class="panel-body">
-        <img src="images/mimo_signet_rgb_500px.png" style="float: right;  width: 15%; height: 15%; padding: 5px;">
-        <p>In total, there are now (May 2022) <b>236.237 triples</b> in our graph.</p>
+        <img
+          src="images/mimo_signet_rgb_500px.png"
+          style="float: right; width: 15%; height: 15%; padding: 5px"
+        />
+        <p>
+          In total, there are now (May 2022) <b>236.237 triples</b> in our
+          graph.
+        </p>
         <p>You find information on 621 authors and on 1750 novels.</p>
-        <p>For example, for a property like “narrative location” (P32), there are <b>2183 statements</b> in the graph. </p>
-        <p>Concerning the properties in our graph, <a href="https://tinyurl.com/29br7evr" target="\_blank" rel="noopener noreferrer">this query </a> gives you an overview: </p>
-        <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/#%23%20This%20query%20lists%20all%20the%20properties%0ASELECT%20%20%3FpropertyLabel%20%3FpropertyDescription%20%3Fproperty%20%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-                </p>
-        <p>There are properties and items with a <code>close match (P16)</code> or an <code>exact match (P13)</code> on Wikidata. To have a look at these matches between the MiMoText knowledge graph and the Wikidata knowledge graph, we can query for items with the corresponding property: </p>
-        <p><a href="https://tinyurl.com/2b2vhk76" target="\_blank" rel="noopener noreferrer">Query to items with a close match (P58) on Wikidata, dimensions view</a></p>
-        <p><a href="https://tinyurl.com/26fvhrl9" target="\_blank" rel="noopener noreferrer">Query to items with exact match (P30) on Wikidata, limited to 40 results, dimensions view</a></p>
-        </div>
+        <p>
+          For example, for a property like “narrative location” (P32), there are
+          <b>2183 statements</b> in the graph.
+        </p>
+        <p>
+          Concerning the properties in our graph,
+          <a
+            href="https://tinyurl.com/29br7evr"
+            target="\_blank"
+            rel="noopener noreferrer"
+            >this query
+          </a>
+          gives you an overview:
+        </p>
+        <p>
+          <iframe
+            style="width: 100%; max-width: 100%; height: 450px"
+            frameborder="0"
+            allowfullscreen
+            src="https://query.mimotext.uni-trier.de/#%23%20This%20query%20lists%20all%20the%20properties%0ASELECT%20%20%3FpropertyLabel%20%3FpropertyDescription%20%3Fproperty%20%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29"
+            referrerpolicy="origin"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+          ></iframe>
+        </p>
+        <p>
+          There are properties and items with a
+          <code>close match (P16)</code> or an <code>exact match (P13)</code> on
+          Wikidata. To have a look at these matches between the MiMoText
+          knowledge graph and the Wikidata knowledge graph, we can query for
+          items with the corresponding property:
+        </p>
+        <p>
+          <a
+            href="https://tinyurl.com/2b2vhk76"
+            target="\_blank"
+            rel="noopener noreferrer"
+            >Query to items with a close match (P58) on Wikidata, dimensions
+            view</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://tinyurl.com/26fvhrl9"
+            target="\_blank"
+            rel="noopener noreferrer"
+            >Query to items with exact match (P30) on Wikidata, limited to 40
+            results, dimensions view</a
+          >
+        </p>
       </div>
+    </div>
   </div>
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-            <b>Future work</b></a>
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseSeven"
+        >
+          <b>Future work</b></a
+        >
       </h4>
-  </div>
-  <div id="collapseSeven" class="panel-collapse collapse">
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse">
       <div class="panel-body">
         <h4>Linking with the Wikidata-Graph & prefixes</h4>
-        <p>In the context of linking to the Wikidata cloud, we currently have several phases planned in the spirit of the 'Wikibase ecosystem', although we will probably not be able to realize all of them in the current project phase:</p>
+        <p>
+          In the context of linking to the Wikidata cloud, we currently have
+          several phases planned in the spirit of the 'Wikibase ecosystem',
+          although we will probably not be able to realize all of them in the
+          current project phase:
+        </p>
         <ul>
-        <li> mapping of thematic and spatial concepts in our controlled vocabularies (done).
-        </li>
-        <li>mapping of properties and classes (done)</li>
-        <li>mapping of author and work items (in progress)</li>
-        <li>creation of a MiMoText ID in Wikidata (future)</li>
-        <li>linking the literary works we could map from Wikidata to the work items in our MiMoTextBase (future)
-        </li>
-        <li>Importing the work items not yet available in Wikidata into Wikidata and also linking them to our MiMoTextBase. (future) An interesting model project for this approach is the WeChangEd project.
-        </li>
+          <li>
+            mapping of thematic and spatial concepts in our controlled
+            vocabularies (done).
+          </li>
+          <li>mapping of properties and classes (done)</li>
+          <li>mapping of author and work items (in progress)</li>
+          <li>creation of a MiMoText ID in Wikidata (future)</li>
+          <li>
+            linking the literary works we could map from Wikidata to the work
+            items in our MiMoTextBase (future)
+          </li>
+          <li>
+            Importing the work items not yet available in Wikidata into Wikidata
+            and also linking them to our MiMoTextBase. (future) An interesting
+            model project for this approach is the WeChangEd project.
+          </li>
         </ul>
-        <p>The default setting for each Wikibase instance are the Wikidata prefixes. We will soon change these prefixes currently available in Wikibase, to avoid (among other) confusion in the context of <a href="./federated.html" style="display: inline;">'federated queries'</a>. We will stay within the Wikidata logic of the prefix  labeling to increase usability for those who are already familiar with the Wikidata prefies (e.g. 'mmd' for the 'entities' with the prefix 'wd', 'mmdt' for the 'properties' with 'wdt').</p>
-        <br/>
+        <p>
+          The default setting for each Wikibase instance are the Wikidata
+          prefixes. We will soon change these prefixes currently available in
+          Wikibase, to avoid (among other) confusion in the context of
+          <a href="./federated.html" style="display: inline"
+            >'federated queries'</a
+          >. We will stay within the Wikidata logic of the prefix labeling to
+          increase usability for those who are already familiar with the
+          Wikidata prefies (e.g. 'mmd' for the 'entities' with the prefix 'wd',
+          'mmdt' for the 'properties' with 'wdt').
+        </p>
+        <br />
         <h4>Extensions of the MiMoTextBase & further modules</h4>
-        <p>In the further course of the project until the end of 2023 (consolidation and evaluation phase), further statement types will be modeled step by step, for which there is data in at least two of our three source types. We also plan to LODify additional data from our central source  that we have initially imported only as strings (e.g., distribution format, number of pages). Furthermore, we will increase interoperability with ELTeC and Wikidata by importing data on reusable properties ("language of work or name").</p>
-        <p>Furthermore, we plan to add the module "scholarly publication" and thus import data that have been manually annotated in INCEpTION so far, as well as automatically extracted statements (machine learning based on the annotated training data) in the future.
+        <p>
+          In the further course of the project until the end of 2023
+          (consolidation and evaluation phase), further statement types will be
+          modeled step by step, for which there is data in at least two of our
+          three source types. We also plan to LODify additional data from our
+          central source that we have initially imported only as strings (e.g.,
+          distribution format, number of pages). Furthermore, we will increase
+          interoperability with ELTeC and Wikidata by importing data on reusable
+          properties ("language of work or name").
         </p>
-        <p>We would like to further increase the usability and accessibility of our MiMoTextBase, for example by importing the wordles for the respective topics.
+        <p>
+          Furthermore, we plan to add the module "scholarly publication" and
+          thus import data that have been manually annotated in INCEpTION so
+          far, as well as automatically extracted statements (machine learning
+          based on the annotated training data) in the future.
         </p>
-          <p>For the future work concerning the MiMoText ontology, see: <a href="https://github.com/MiMoText/ontology" target="_blank" rel="noopener">github.com/MiMoText/ontology</a></p>
-        <br/>
+        <p>
+          We would like to further increase the usability and accessibility of
+          our MiMoTextBase, for example by importing the wordles for the
+          respective topics.
+        </p>
+        <p>
+          For the future work concerning the MiMoText ontology, see:
+          <a
+            href="https://github.com/MiMoText/ontology"
+            target="_blank"
+            rel="noopener"
+            >github.com/MiMoText/ontology</a
+          >
+        </p>
+        <br />
         <h4>Further features, explanation and documentation</h4>
-        <p>Multilinguality: Our vocabularies are already all trilingual (@en | @fr | @de). In the descriptions of our central Q-items and properties, we have currently limited these to English, but we do plan to make them trilingual as well.
+        <p>
+          Multilinguality: Our vocabularies are already all trilingual (@en |
+          @fr | @de). In the descriptions of our central Q-items and properties,
+          we have currently limited these to English, but we do plan to make
+          them trilingual as well.
         </p>
         <p>
-          Example queries: The Wikibase infrastructure offers the possibility to integrate sample queries directly in the SPARQLendpoint, with which users can explore the respective graph and at the same time have a kind of template of queries that can be adapted. We plan to provide this useful option soon.
-       </p>
-       <p>
-          Media files: To make our MiMoTextBase more illustrative, we will soon integrate image files. This concerns wordles of the topics, for example.
+          Example queries: The Wikibase infrastructure offers the possibility to
+          integrate sample queries directly in the SPARQLendpoint, with which
+          users can explore the respective graph and at the same time have a
+          kind of template of queries that can be adapted. We plan to provide
+          this useful option soon.
         </p>
         <p>
-        Documentation: We will gradually improve the documentation of the different resources and workflows in our project.
-        Analyses with the MiMoTextBase
-        The concrete value for research in literary studies and the humanities in general is very important in our view. We hope that researchers will be able to use the data for their studies, and at the same time we would like to examine the potentials of such data storage in our project by systematically exploring and statistically evaluating the relationships and interdepencies within the network (e.g. clustering, correlations).
-
+          Media files: To make our MiMoTextBase more illustrative, we will soon
+          integrate image files. This concerns wordles of the topics, for
+          example.
+        </p>
+        <p>
+          Documentation: We will gradually improve the documentation of the
+          different resources and workflows in our project. Analyses with the
+          MiMoTextBase The concrete value for research in literary studies and
+          the humanities in general is very important in our view. We hope that
+          researchers will be able to use the data for their studies, and at the
+          same time we would like to examine the potentials of such data storage
+          in our project by systematically exploring and statistically
+          evaluating the relationships and interdepencies within the network
+          (e.g. clustering, correlations).
         </p>
       </div>
+    </div>
   </div>
-</div>
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h4 class="panel-title">
-          <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
-            <b>References
-            </b></a>
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseEight"
+        >
+          <b>References </b></a
+        >
       </h4>
-  </div>
-  <div id="collapseEight" class="panel-collapse collapse">
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse">
       <div class="panel-body">
         For references, take a look
-        <a href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition" target="\_blank" rel="noopener noreferrer">here</a>.
+        <a
+          href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition"
+          target="\_blank"
+          rel="noopener noreferrer"
+          >here</a
+        >.
       </div>
+    </div>
   </div>
-</div>
-<!-- /.panel -->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4 class="panel-title">
-      <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
-          <b>Data & further MiMoText resources</b></a>
-          </h4>
-  </div>
-  <div id="collapseNine" class="panel-collapse collapse">
-    <div class="panel-body">
-<h4>MiMoTextBase data</h4>
-<p>For the provision of data as well as the infrastructure in the project, Open Science principles are fundamental. This concerns, among other things, the publication of FAIR data as well as the use of open source tools and software – in particular Wikibase.
-  </p>
- <p>All data of “Mining and Modeling Text” is made open as <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">Public Domain (CC-0)</a>. Data can be reused for any purpose.
-  </p>
-<h4>MiMoTextBase endpoint</h4>
-<table>
-    <tr>
-      <th>Description</th>
-      <th>Link</th>
-      <th>Data Type</th>
-    </tr>
-    <tr>
-    <td>SPARQL endpoint MiMoTextBase</td>
-    <td><a href="https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql" target="\_blank" rel="noopener noreferrer">https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a></td>
-    <td>RDF</td>
-    </tr>
- </table>
-  <p>
-  If you want to cite our knowledge graph, please credit it with:
-  </p>
-<p><b>Citation suggestion</b><br/>
-  Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann, Christof Schöch, Moritz Steffes: MiMoTextBase, Trier Center for Digital Humanities, data.mimotext.uni-trier.de, 07/2022.
-  </p>
-  <p>
-  <b>Reference paper</b><br/>
-  Schöch, Christof, Maria Hinzmann, Röttgermann Julia, Anne Klee, and Katharina Dietz. “Smart Modelling for Literary History.” IJHAC: International Journal of Humanities and Arts Computing [Special Issue on Linked Open Data] 16, no. 1 (2022): 78–93. <a href="https://doi.org/10.3366/ijhac.2022.0278">https://doi.org/10.3366/ijhac.2022.0278</a>.</p>
-  <br/>
-  <h4>The full corpus of roman18</h4>
-  <p>
-    Our full corpus of french novels in full text is available on GitHub in plaintext and in XML/TEI. The plaintext version is normalized and modernized.
-  </p>
-  <table>
-    <tr>
-      <th>Description</th>
-      <th>Link</th>
-      <th>Data Type</th>
-    </tr>
-    <tr>
-      <td>This folder contains the current corpus of French novels in full text 1751-1800</td>
-    <td><a href="https://github.com/MiMoText/roman18/tree/master/XML-TEI/files" target="\_blank" rel="noopener noreferrer">https://github.com/MiMoText/roman18/tree/master/XML-TEI/files</a></td>
-    <td>XML/TEI </td>
-    </tr>
-  <tr>
-    <td>This folder contains the current corpus of French novels in full text 1751-1800</td>
-    <td><a href="https://github.com/MiMoText/roman18/tree/master/plain/files" target="\_blank" rel="noopener noreferrer">https://github.com/MiMoText/roman18/tree/master/plain/files </a></td>
-    <td>TXT</td>
-  </tr>
-  <tr>
-    <td>This list contains metadata on the full texts. </td>
-    <td><a href="https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv" target="\_blank" rel="noopener noreferrer">https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv</a></td>
-    <td>TSV</td>
-  </tr>
-</table>
-<p>
-  <i>Collection de romans français du dix-huitième siècle (1750-1800) / Eighteenth-Century French Novels (1750-1800)</i>, edited by Julia Röttgermann, with contributions from Julia Dudar, Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL: <a href="https://github.com/mimotext/roman18">https://github.com/mimotext/roman18</a>. DOI: <a href="http://doi.org/10.5281/zenodo.5040855">http://doi.org/10.5281/zenodo.5040855</a>.
-  </p>
-  <br/>
-<h4>MiMoText subset in <i>European Literary text collection</i></h4>
-<p>A subset of 100 novels from the MiMoText corpus is published as an extension of the <a href="https://www.distant-reading.net/" target="\_blank" rel="noopener noreferrer">European Literary Text Collection (ELTeC)</a>.The corpus contains short, medium-length and long novels from this period. It includes epistolary novels, novels written in the first person, novels written in the third person as well as a small number of dialogical novels. The subset corpus includes 20 novels written by female authors. </p>
-  <table>
-    <tr>
-      <th>Description</th>
-      <th>Link</th>
-      <th>Data Type</th>
-    </tr>
-    <tr>
-    <td>Subset of 100 MiMoText novels in “European Literary Text Collection”</td>
-    <td><a href="https://distantreading.github.io/ELTeC/fra-ext2/" target="\_blank" rel="noopener noreferrer">https://distantreading.github.io/ELTeC/fra-ext2/</a></td>
-    <td>HTML</td>
-    </tr>
-  <tr>
-    <td>Metadata for the subset of 100 novels in “European Literary Text Collection”</td>
-    <td><a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv" target="\_blank" rel="noopener noreferrer">https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv </a></td>
-    <td>TSV</td>
-  </tr>
-</table>
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseNine"
+        >
+          <b>Data & further MiMoText resources</b></a
+        >
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse">
+      <div class="panel-body">
+        <h4>MiMoTextBase data</h4>
+        <p>
+          For the provision of data as well as the infrastructure in the
+          project, Open Science principles are fundamental. This concerns, among
+          other things, the publication of FAIR data as well as the use of open
+          source tools and software – in particular Wikibase.
+        </p>
+        <p>
+          All data of “Mining and Modeling Text” is made open as
+          <a
+            href="https://creativecommons.org/share-your-work/public-domain/cc0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Public Domain (CC-0)</a
+          >. Data can be reused for any purpose.
+        </p>
+        <h4>MiMoTextBase endpoint</h4>
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Link</th>
+            <th>Data Type</th>
+          </tr>
+          <tr>
+            <td>SPARQL endpoint MiMoTextBase</td>
+            <td>
+              <a
+                href="https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a
+              >
+            </td>
+            <td>RDF</td>
+          </tr>
+        </table>
+        <p>If you want to cite our knowledge graph, please credit it with:</p>
+        <p>
+          <b>Citation suggestion</b><br />
+          Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann,
+          Christof Schöch, Moritz Steffes: MiMoTextBase, Trier Center for
+          Digital Humanities, data.mimotext.uni-trier.de, 07/2022.
+        </p>
+        <p>
+          <b>Reference paper</b><br />
+          Schöch, Christof, Maria Hinzmann, Röttgermann Julia, Anne Klee, and
+          Katharina Dietz. “Smart Modelling for Literary History.” IJHAC:
+          International Journal of Humanities and Arts Computing [Special Issue
+          on Linked Open Data] 16, no. 1 (2022): 78–93.
+          <a href="https://doi.org/10.3366/ijhac.2022.0278"
+            >https://doi.org/10.3366/ijhac.2022.0278</a
+          >.
+        </p>
+        <br />
+        <h4>The full corpus of roman18</h4>
+        <p>
+          Our full corpus of french novels in full text is available on GitHub
+          in plaintext and in XML/TEI. The plaintext version is normalized and
+          modernized.
+        </p>
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Link</th>
+            <th>Data Type</th>
+          </tr>
+          <tr>
+            <td>
+              This folder contains the current corpus of French novels in full
+              text 1751-1800
+            </td>
+            <td>
+              <a
+                href="https://github.com/MiMoText/roman18/tree/master/XML-TEI/files"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://github.com/MiMoText/roman18/tree/master/XML-TEI/files</a
+              >
+            </td>
+            <td>XML/TEI</td>
+          </tr>
+          <tr>
+            <td>
+              This folder contains the current corpus of French novels in plain
+              text 1751-1800
+            </td>
+            <td>
+              <a
+                href="https://github.com/MiMoText/roman18/tree/master/plain/files"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://github.com/MiMoText/roman18/tree/master/plain/files
+              </a>
+            </td>
+            <td>TXT</td>
+          </tr>
+          <tr>
+            <td>This list contains metadata on the full texts.</td>
+            <td>
+              <a
+                href="https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv</a
+              >
+            </td>
+            <td>TSV</td>
+          </tr>
+        </table>
+        <p>
+          <i
+            >Collection de romans français du dix-huitième siècle (1750-1800) /
+            Eighteenth-Century French Novels (1750-1800)</i
+          >, edited by Julia Röttgermann, with contributions from Julia Dudar,
+          Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek
+          and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL:
+          <a href="https://github.com/mimotext/roman18"
+            >https://github.com/mimotext/roman18</a
+          >. DOI:
+          <a href="http://doi.org/10.5281/zenodo.5040855"
+            >http://doi.org/10.5281/zenodo.5040855</a
+          >.
+        </p>
+        <br />
+        <h4>MiMoText subset in <i>European Literary text collection</i></h4>
+        <p>
+          A subset of 100 novels from the MiMoText corpus is published as an
+          extension of the
+          <a
+            href="https://www.distant-reading.net/"
+            target="\_blank"
+            rel="noopener noreferrer"
+            >European Literary Text Collection (ELTeC)</a
+          >.The corpus contains short, medium-length and long novels from this
+          period. It includes epistolary novels, novels written in the first
+          person, novels written in the third person as well as a small number
+          of dialogical novels. The subset corpus includes 20 novels written by
+          female authors.
+        </p>
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Link</th>
+            <th>Data Type</th>
+          </tr>
+          <tr>
+            <td>
+              Subset of 100 MiMoText novels in “European Literary Text
+              Collection”
+            </td>
+            <td>
+              <a
+                href="https://distantreading.github.io/ELTeC/fra-ext2/"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://distantreading.github.io/ELTeC/fra-ext2/</a
+              >
+            </td>
+            <td>HTML</td>
+          </tr>
+          <tr>
+            <td>
+              Metadata for the subset of 100 novels in “European Literary Text
+              Collection”
+            </td>
+            <td>
+              <a
+                href="https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv"
+                target="\_blank"
+                rel="noopener noreferrer"
+                >https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv
+              </a>
+            </td>
+            <td>TSV</td>
+          </tr>
+        </table>
 
-  <div class="row" style="background-color: none; padding: 10px;">
+        <div class="row" style="background-color: none; padding: 10px"></div>
+        <div class="row">
+          <h4 style="margin-left: 20px">Further resources</h4>
+          <div
+            class="column"
+            style="
+              background-color: #f5f5f5;
+              margin-left: 15px;
+              min-height: 415px;
+            "
+          >
+            <h4 style="color: #005ca9">MiMoTextBot</h4>
+            <p>
+              We use the Python library Pywikibot for inclusion of the RDF
+              (Resource Description Framework) triples in our Wikibase instance.
+              Pywikibot is a tool for automating work on a MediaWiki. For this
+              process, we have developed an individual bot that allows us to
+              easily import and update our data via TSV files. In order for this
+              script to work, each TSV file has a self defined header. This
+              header makes the import expandable. It is possible to add new
+              properties, items and statements without further expenditure. The
+              script can be found on our
+              <a href="https://github.com/MiMoText/Wikibase-Bot"
+                >GitHub Repository Wikibase-Bot</a
+              >.
+            </p>
+            <!-- <button class="btn-primary">Learn more</button> -->
           </div>
-          <div class="row">
-            <h4 style="margin-left: 20px;">Further resources</h4>
-            <div class="column" style="background-color: #f5f5f5; margin-left: 15px; min-height: 415px;">
-              <h4 style="color:  #005CA9;">MiMoTextBot</h4>
-              <p>
-                We use the Python library Pywikibot for inclusion of the RDF (Resource Description Framework) triples in our Wikibase instance. Pywikibot is a tool for automating work
-on a MediaWiki. For this process, we have developed an individual bot that allows
-us to easily import and update our data via TSV files. In order for this script to work,
-each TSV file has a self defined header. This header makes the import expandable. It is possible to add new properties, items and statements without further expenditure. The script can be found on our <a href="https://github.com/MiMoText/Wikibase-Bot">GitHub Repository Wikibase-Bot</a>.
-              </p>
-              <!-- <button class="btn-primary">Learn more</button> -->
-            </div>
-            <div class="column" style="background-color: none; min-height: 415px;">
-              <h4 style="color:  #005CA9;">RDF Dump</h4>
-              <p>
-To come!
-              </p>
-              <!-- <button class="btn-primary">Learn more</button> -->
-            </div>
-            <div class="column" style="background-color: none; margin-left: 15px; min-height: 415px;">
-              <h4 style="color:  #005CA9;">Licence</h4>
-       <p>All texts are in the public domain and can be reused without restrictions. We don’t claim any copyright or other rights on the transcription, markup or metadata. If you use our texts, for example in research or teaching, please reference this collection using the citation suggestion below.</p>
-              <!-- <button class="btn-primary">Learn more</button> -->
-            </div>
-            <div class="column" style="background-color: #f5f5f5; min-height: 415px;">
-              <h4 style="color:  #005CA9;">Citation suggestion</h4>
-              <p>
-                Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann, Christof Schöch, Moritz Steffes: <i>MiMoTextBase</i>, Trier Center for Digital Humanities, 2022. URL: <a href="data.mimotext.uni-trier.de">data.mimotext.uni-trier.de</a>.
-              </p>
-              <!-- <button class="btn-primary">Learn more</button> -->
-            </div>
+          <div class="column" style="background-color: none; min-height: 415px">
+            <h4 style="color: #005ca9">RDF Dump</h4>
+            <p>To come!</p>
+            <!-- <button class="btn-primary">Learn more</button> -->
+          </div>
+          <div
+            class="column"
+            style="background-color: none; margin-left: 15px; min-height: 415px"
+          >
+            <h4 style="color: #005ca9">Licence</h4>
+            <p>
+              All texts are in the public domain and can be reused without
+              restrictions. We don’t claim any copyright or other rights on the
+              transcription, markup or metadata. If you use our texts, for
+              example in research or teaching, please reference this collection
+              using the citation suggestion below.
+            </p>
+            <!-- <button class="btn-primary">Learn more</button> -->
+          </div>
+          <div
+            class="column"
+            style="background-color: #f5f5f5; min-height: 415px"
+          >
+            <h4 style="color: #005ca9">Citation suggestion</h4>
+            <p>
+              Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann,
+              Christof Schöch, Moritz Steffes: <i>MiMoTextBase</i>, Trier Center
+              for Digital Humanities, 2022. URL:
+              <a href="data.mimotext.uni-trier.de">data.mimotext.uni-trier.de</a
+              >.
+            </p>
+            <!-- <button class="btn-primary">Learn more</button> -->
           </div>
         </div>
       </div>
-</div>
+    </div>
+  </div>
 
-
-<!-- 
+  <!-- 
   if ( window.location.hash != '' ) {
   openval = window.location.hash.slice(1);
   $('.' + openval).addClass('show');
@@ -366,16 +992,14 @@ To come!
   }
 -->
   <script>
-$(function(){
+    $(function () {
+      if (window.location.hash != "") {
+        // remove any accordion panels that are showing (they have a class of 'in')
+        $(".collapse").removeClass("in");
 
-  if ( window.location.hash != '' )
-  {
-      // remove any accordion panels that are showing (they have a class of 'in')
-      $('.collapse').removeClass('in');
-
-      // show the panel based on the hash now:
-      $(window.location.hash + '.collapse').collapse('show');
-  }
-
-});
-</script>
+        // show the panel based on the hash now:
+        $(window.location.hash + ".collapse").collapse("show");
+      }
+    });
+  </script>
+</div>

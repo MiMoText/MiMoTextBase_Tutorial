@@ -14,6 +14,7 @@
     width: 45%;
     padding: 10px;
     height: 300px;
+    overflow: auto;
 }
 
 /* Clear floats after the columns */

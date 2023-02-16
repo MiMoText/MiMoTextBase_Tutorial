@@ -1,6 +1,6 @@
 body {
     font-size:16px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .bs-callout {
@@ -117,6 +117,7 @@ margin-top: -40px
 
 table {
     background-color: transparent;
+    overflow:auto;
 }
 caption {
     padding-top: 8px;
@@ -131,6 +132,7 @@ table {
     max-width: 90%;
     margin-bottom: 20px;
     border: 1px solid #dedede;
+    overflow: auto;
 }
 
 table > thead > tr > th,
@@ -143,6 +145,7 @@ table > tfoot > tr > td {
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    overflow: auto;
 }
 table > thead > tr > th {
     vertical-align: bottom;
@@ -151,6 +154,7 @@ table > thead > tr > th {
     background-color: #777;
     color: white;
     text-align: left;
+    overflow: hidden;
 }
 table > caption + thead > tr:first-child > th,
 table > colgroup + thead > tr:first-child > th,
@@ -163,6 +167,7 @@ table > thead:first-child > tr:first-child > td {
 
 table > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
+    overflow: auto;
 }
 
 table col[class*="col-"] {
@@ -305,11 +310,15 @@ footer {
 /* FAQ page */
 #accordion .panel-heading {
     font-size: 12px;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 a.accordion-toggle, a.accordion-collapsed {
     font-size: 16px;
     text-decoration: none;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 /* navgoco sidebar styles (customized) */
@@ -810,6 +819,8 @@ dd {margin-left:20px;}
 
 a.accordion-toggle {
     font-style: normal;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 span.red {
@@ -1169,6 +1180,7 @@ h4.panel-title {
     font-size: large;
     padding-top: 0px;
     margin-top: 0px;
+    overflow: hidden;
 }
 
 /*set navbar breakpoint so that it converts to hamburger earlier */
