@@ -105,17 +105,23 @@
     padding-left: 10px;
   "
 >
-  <div style="float: left; margin-right: 1cm">
-    <img
-      src="images/bubble-icon-27.jpeg"
-      alt=""
-      style="height: 150px; opacity: 0.3"
-    />
-  </div>
-  <h2><!--<a href="./help.html">-->{{ include.title_5 }}<!--</a> --></h2>
-  {{ include.content_5 | markdownify }}
-  <a href="./faq.html"> <button class="btn-primary">FAQ</button></a>
+
+<div style="float: left; margin-right: 1cm">
+  <img src="images/bubble-icon-27.jpeg" alt="" style="height: 150px; opacity: 0.3" />
 </div>
+<h2><a href="./faq.html">{{ include.title_5 }}</a></h2>
+{{ include.content_5 | markdownify }}
+<a href="./faq.html"> <button class="btn-primary">FAQ</button></a>
+</div>
+
+  <div>
+    <h2>{{ include.content_6 | markdownify }}</h2>
+    <p>
+      <br /><iframe width="560" height="315" src="https://www.youtube.com/embed/kQj7tkWCNMM" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </p>
+  </div>
 
 <style>
   .navbar-inverse {
