@@ -13,3 +13,5 @@ topnav:
         external_url: https://query.mimotext.uni-trier.de
       - title: FAQ
         url: /faq.html
+      - title: Gallery
+        url: /gallery.html
