@@ -27,5 +27,208 @@ GROUP BY ?topLabel
 ORDER BY desc(?count)
 ```
 
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+```sql
+#defaultView:BubbleChart
+prefix wd:<http://data.mimotext.uni-trier.de/entity/>
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topLabel (count(*) as ?count)
+WHERE {
+ ?item wdt:P36 ?top .
+ ?top rdfs:label ?topLabel .
+ filter(lang(?topLabel) = "en")
+}
+GROUP BY ?topLabel
+ORDER BY desc(?count)
+```
+
+
+
 
 ### DH Abstract
