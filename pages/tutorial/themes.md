@@ -12,7 +12,7 @@ toc: false
 
 ### **Themes**
 
-A first module within our knowledge graph focused on the extraction of topics in the full texts and of literary themes in the bibliographic metadata, a controlled vocabulary of thematic concepts being the intermediate between these sources.
+One of the modules within our knowledge graph is focused on the extraction of topics in the full texts and of literary themes in the bibliographic metadata, a controlled vocabulary of thematic concepts being the intermediate between these sources.
 
 To get an overview of thematic concepts within the whole domain of French novels 1751-1800 within the knowledge graph, we can formulate a query for all themes and visualize the results in a bubble chart.
 
