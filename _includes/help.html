@@ -114,13 +114,13 @@ body {
         </div>
         <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                <p>If you are new to SPARQL, you can begin the (short) <a href="./tutorial_index.html" style="display: inline;">Tutorial</a>, which will give you an overview of how to write basic queries based on examples in the <a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a>. It’s supposed to help newbies to get an introduction on SPARQL, but it cannot give you a deep knowledge of SPARQL; maybe the <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" style="display: inline;">helpful resources</a> can help you with that.
+                <p>If you are new to SPARQL, you can go through the (short)<a href="./tutorial_index.html" style="display: inline-flex;">Tutorial,</a>which will give you an overview of how to write basic queries based on examples in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a>. It’s supposed to give newbies an introduction to SPARQL, but it cannot give you a deep knowledge of SPARQL; maybe the<a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" style="display: inline;">helpful resources</a>can help you with that.
                 </p>
-                <p>If you are interested in the MiMoTextBase and its content on the <a href="./authors.html" style="display: inline;">authors</a>, <a href="./novels.html" style="display: inline;">novels</a>, <a href="./spaces.html" style="display: inline;">spaces</a> or <a href="./themes.html" style="display: inline;">themes</a> of the French novel in 1751-1800 with already some SPARQL knowledge, you can have a look at the Links. 
+                <p>If you are interested in MiMoTextBase and its content on<a href="./authors.html" style="display: inline;">authors,</a><a href="./novels.html" style="display: inline;">novels,</a><a href="./spaces.html" style="display: inline;">spaces</a>or<a href="./themes.html" style="display: inline;">themes</a>of the French novel in 1751-1800 with already some SPARQL knowledge, you can have a look at the links. 
                 </p>
-                <p>Within <a href="./change_over_time.html" style="display: inline;">GOING FURTHER</a> there are some queries on the data containing overviews of items like dates of publication or themes changing over time and comparing the different sources of the data in the <a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a> together with some interpretation on the outcome which could show the potential of initial questions on further research.
+                <p>Within<a href="./change_over_time.html" style="display: inline;">GOING FURTHER</a> there are some queries on the data containing overviews of items like dates of publication or themes changing over time and comparing the different sources of the data in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a> together with some interpretation on the outcome which could show the potential of initial questions on further research.
                 </p>
-                <p>If you want more detailed information about the structure and the aims of our tutorial, you can find it in the <a href="./intro_sec_1.html" style="display: inline;">introduction of the tutorial</a>.Information on the infrastructure and the models behind the MiMoTextBase, you can find <a href="./aboutMiMoTextBase.html" style="display: inline;">here</a> .
+                <p>If you want more detailed information about the structure and the aims of our tutorial, you can find it in the<a href="./intro_sec_1.html" style="display: inline;">introduction of the tutorial.</a>Information on the infrastructure and the models behind MiMoTextBase you can find<a href="./aboutMiMoTextBase.html" style="display: inline;">here.</a>
                 </p>
             </div>
         </div>
@@ -135,9 +135,9 @@ body {
         </div>
         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                <p>Having no results in the result table can have different reasons. A simple solution is to check whether you have written the variables the same in the <code>SELECT</code> and the <code>WHERE</code> part of the query.
+                <p>Having no results in the result table can have different reasons. A simple solution is to check whether the variables are spelled the same in the <code>SELECT</code> and the <code>WHERE</code> part of the query.
                 </p>
-                <p>Another reason could be being too specific in the query. Not all items in the MiMoTextBase contain all information on all properties due to its sources. So it can be helpful to add the <code>OPTIONAL</code> function on some of the properties in your query, see <a href="./optional.html" style="display: inline;">here</a>    
+                <p>Another reason could be being too specific in the query. Not all items in MiMoTextBase contain all information on all properties due to its sources. So it can be helpful to add the <code>OPTIONAL</code> function on some of the properties in your query, see<a href="./optional.html" style="display: inline;">here.</a>    
                 </p>
                 </div>
         </div>
@@ -152,15 +152,14 @@ body {
         </div>
         <div id="collapseFour" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>If you run into this error message, you probably have to group items. In the example below, we use the count function, but did not add <code>GROUP BY</code>. <br/>
+                <p>If you run into this error message, you probably have to group items. In the example below, we use the <code>count</code> function, but forgot to add <code>GROUP BY</code><br/>
                 </p>
-                <p>Query to retrieve count of published works per author<br/>
+                <p>Query to retrieve count of published works per author:<br/>
                 </p>
                 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
-                <p>The solution is easy: We have to aggregate <code>?authorName</code> by grouping. We now can order the results descending via <code>order by desc(?count)</code> and set a limit of 20 to get the top 20.
+                <p>The solution is easy: We have to aggregate <code>?authorName</code> by grouping. We can now get the results in descending order via <code>order by desc(?count)</code> and set a limit of 20 to get the top 20.
                 </p>
-                <p><a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20)</a>https://tinyurl.com/2b9af2zt
-                </p>
+                <a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20):</a>
                   <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" src="https://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Agroup%20by%20%3FauthorName%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"  referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
             </div>
@@ -177,8 +176,8 @@ body {
         </div>
         <div id="collapseSix" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>Sometimes you can get many results on a query which can slow down the result generation or impair the readability of some visualizations. In those cases you could add the <code>LIMIT</code>-operation (see <a href="./limit.html" style="display: inline;">here</a>) to only get the TOP x-items or the <code>HAVING COUNT</code>-operation (see <a href="./count.html" style="display: inline;">here</a>) if you want only results that lie above a certain threshold.</p>
-                <p>If some of the items appear more often in the results than they should, make sure that you filter all labels for one language (FR, EN, DE) separately as the graph is multilingual and the output will represent all languages within the graph, see <a href="./select.html" style="display: inline;">here</a>.
+                <p>Sometimes you can get many results on a query which can slow down the result generation or impair the readability of some visualizations. In those cases you could add the <code>LIMIT</code>-operation (see<a href="./limit.html" style="display: inline;">here)</a>to only get the TOP x items or the <code>HAVING COUNT</code>-operation (see<a href="./count.html" style="display: inline;">here)</a>if you want only results that lie above a certain threshold.</p>
+                <p>If some of the items appear more often in the results than they should, make sure you filter all labels for one language (FR, EN, DE) separately as the graph is multilingual and the output will represent all languages within the graph, see<a href="./select.html" style="display: inline;">here.</a>
                 </p>
                 </div>
         </div>
@@ -193,9 +192,10 @@ body {
         </div>
         <div id="collapseSeven" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>You might look for the right identifier concerning the properties, novels, authors, themes or locations. The simplest way is to go on data.mimotext.uni-trier.de and use the search function typing in the label (for example “London” or “about” or “philosophy”). The numerical identifier of the property or the item is visible in the URL or behind the name of the item or the property:
+                <p>If you're looking for the right identifier for properties, novels, authors, themes or locations, the simplest way is to visit<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener"
+                    style="display: inline;">data.mimotext.uni-trier.de</a>and type in the label (for example “London” or “about” or “philosophy”) in the search bar. The numerical identifier of the property or the item is visible in the URL or behind the name of the item or the property.
                 </p>
-                <p>For your ease, we also provide you here with lists of themes, locations and properties and their numerical identifier in the knowledge graph.
+                <p>You can also consult our lists of themes, locations and properties and their numerical identifier in the knowledge graph below.
                 </p>
                 
 <h4>List of properties</h4>
@@ -237,7 +237,7 @@ body {
         </div>
         <div id="collapseEight" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>There are several possibilities for a slowdown or a time out of your query. It could be that the quantity of results is very high, so you might limit the results to check if the syntax of the query is ok. This is done by using the <a href="./limit.html" style="display: inline;">LIMIT</a> parameter . The <code>LIMIT</code> tells the algorithm where to stop, so if you insert for example <code>LIMIT 100</code> at the end of your query, it will stop after 100 results. This can be helpful for debugging. </p>
+                <p>There are several possible reasons for a slowdown or a timeout of your query. It could be that the quantity of results is very high, so you might limit the results to check if the syntax of the query is OK. This is done by using the<a href="./limit.html" style="display: inline;">LIMIT</a>parameter. The <code>LIMIT</code> tells the algorithm where to stop, so if you insert for example <code>LIMIT 100</code> at the end of your query, it will stop after 100 results. This can be helpful for debugging. </p>
                 <p>
 Parameters which potentially slow down the query are <code>DISTINCT</code> or <code>ORDER BY</code>. A strategy might be to comment them out to see if these slow down your query.
 </p>

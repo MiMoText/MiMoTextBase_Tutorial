@@ -68,7 +68,7 @@
   style="clear: both; padding-left: 5px; padding-top: 5px; padding-bottom: 10px"
 >
   <div style="float: right; margin-left: 1cm">
-    <img src="images/sparql.png" alt="" />
+    <img src="images/sparql.png" alt="" style="height: 170px; margin-top: 30px" />
   </div>
   <div>
     <h2>
@@ -80,20 +80,15 @@
       >
     </h2>
     {{ include.content_4 | markdownify }}
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="http://query.mimotext.uni-trier.de"
-    >
-      <button class="btn-primary">SPARQL-Endpoint</button></a
-    >
     {{ include.content_4a | markdownify}}
     <a
       target="_blank"
       rel="noopener noreferrer"
       href="https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql"
-    >https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a>
+      >https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a>
   </div>
+  <a target="_blank" rel="noopener noreferrer" href="http://query.mimotext.uni-trier.de">
+    <button class="btn-primary">SPARQL-Endpoint</button></a>
 </div>
 <br>
 <div
@@ -102,17 +97,26 @@
     background-color: #f5f5f5;
     min-height: 220px;
     padding-top: 20px;
-    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
   "
 >
-
 <div style="float: left; margin-right: 1cm">
+  <img src="images/gallery_icon.png" alt="" style="height: 150px; opacity: 0.3" />
+</div>
+<h2><a href="./gallery.html">{{ include.title_7 }}</a></h2>
+{{ include.content_7 | markdownify }}
+<a href="./gallery.html"> <button class="btn-primary">Gallery</button></a>
+</div>
+<br>
+
+<div style="float: right; margin-left: 1cm">
   <img src="images/bubble-icon-27.jpeg" alt="" style="height: 150px; opacity: 0.3" />
 </div>
 <h2><a href="./faq.html">{{ include.title_5 }}</a></h2>
 {{ include.content_5 | markdownify }}
 <a href="./faq.html"> <button class="btn-primary">FAQ</button></a>
-</div>
+
   <div>
     <h2>{{ include.title_6 | markdownify }}</h2>
     <p>
