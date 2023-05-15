@@ -114,13 +114,13 @@ body {
         </div>
         <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                <p>If you are new to SPARQL, you can go through the (short)<a href="./tutorial_index.html" style="display: inline-flex;">Tutorial,</a>which will give you an overview of how to write basic queries based on examples in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a>. It’s supposed to give newbies an introduction to SPARQL, but it cannot give you a deep knowledge of SPARQL; maybe the<a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" style="display: inline;">helpful resources</a>can help you with that.
+                <p>If you are new to SPARQL, you can go through the (short)<a href="./tutorial_index.html" target="_blank" rel="noopener" style="display: inline-flex;">Tutorial,</a>which will give you an overview of how to write basic queries based on examples in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a>. It’s supposed to give newbies an introduction to SPARQL, but it cannot give you a deep knowledge of SPARQL – maybe these<a href="./faq.html#other_tutorials" target="_blank" rel="noopener" style="display: inline;">resources</a>can help you with that.
                 </p>
-                <p>If you are interested in MiMoTextBase and its content on<a href="./authors.html" style="display: inline;">authors,</a><a href="./novels.html" style="display: inline;">novels,</a><a href="./spaces.html" style="display: inline;">spaces</a>or<a href="./themes.html" style="display: inline;">themes</a>of the French novel in 1751-1800 with already some SPARQL knowledge, you can have a look at the links. 
+                <p>If you are interested in MiMoTextBase and its content on<a href="./authors.html" target="_blank" rel="noopener" style="display: inline;">authors,</a><a href="./novels.html" target="_blank" rel="noopener" style="display: inline;">novels,</a><a href="./spaces.html" target="_blank" rel="noopener" style="display: inline;">spaces</a>or<a href="./themes.html" target="_blank" rel="noopener" style="display: inline;">themes</a>of the French novel in 1751-1800 with already some SPARQL knowledge, you can have a look at the links. 
                 </p>
-                <p>Within<a href="./change_over_time.html" style="display: inline;">GOING FURTHER</a> there are some queries on the data containing overviews of items like dates of publication or themes changing over time and comparing the different sources of the data in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a> together with some interpretation on the outcome which could show the potential of initial questions on further research.
+                <p>Within<a href="./change_over_time.html" target="_blank" rel="noopener" style="display: inline;">GOING FURTHER</a> there are some queries on the data containing overviews of items like dates of publication or themes changing over time and comparing the different sources of the data in<a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener" style="display: inline;">MiMoTextBase</a> together with some interpretation on the outcome which could show the potential of initial questions on further research.
                 </p>
-                <p>If you want more detailed information about the structure and the aims of our tutorial, you can find it in the<a href="./intro_sec_1.html" style="display: inline;">introduction of the tutorial.</a>Information on the infrastructure and the models behind MiMoTextBase you can find<a href="./aboutMiMoTextBase.html" style="display: inline;">here.</a>
+                <p>If you want more detailed information about the structure and the aims of our tutorial, you can find it in the<a href="./intro_sec_1.html" style="display: inline;">introduction of the tutorial.</a>Information on the infrastructure and the models behind MiMoTextBase you can find<a href="./aboutMiMoTextBase.html" target="_blank" rel="noopener" style="display: inline;">here.</a>
                 </p>
             </div>
         </div>
@@ -206,16 +206,16 @@ body {
 
 <h4>List of themes</h4>
 
-<p>For a list of all thematic concepts in the graph, see this query which lists all thematic concepts and their Q-Identifier, ordered by occurence.</p>
+<p>For a list of all thematic concepts in the graph, see this query which lists all thematic concepts and their Q-Identifier, ordered by occurrence.</p>
 
-<p>Query: <a href="https://tinyurl.com/27a2yrtz" target="_blank" rel="noopener" style="display: inline;">Show all themes with corresponding Q-Identifier and occurence in the graph</a></p>
+<p>Query: <a href="https://tinyurl.com/27a2yrtz" target="_blank" rel="noopener" style="display: inline;">Show all themes with corresponding Q-Identifier and occurrence in the graph</a></p>
 
 <p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://query.mimotext.uni-trier.de/#%23%20Show%20all%20themes%20with%20corresponding%20Q-Identifier%20%26%20occurrence%20%0Aprefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0ASELECT%20%20%3Ftheme%0A%20%20%20%20%20%20%20%20%28sample%28%3FthemeLabel%29%20as%20%3Fname%29%0A%20%20%20%20%20%20%20%20%28count%28%2a%29%20as%20%3Fcount%29%20%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme.%0A%20%20%3Ftheme%20rdfs%3Alabel%20%3FthemeLabel%20.%0A%20%20FILTER%20%28LANG%28%3FthemeLabel%29%20%3D%20%22en%22%29.%0A%7D%0AGROUP%20BY%20%3Ftheme%0AORDER%20BY%20DESC%28%3Fcount%29%0A%0ALIMIT%2035" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
 </p>
 
 <h4>List of locations</h4>
 
-<p>For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurence.</p>
+<p>For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurrence.</p>
 
 <p>Query: <a href="https://tinyurl.com/2ymyqm8e" target="_blank" rel="noopener" style="display: inline;">Show all narrative locations with corresponding Q-Identifier & occurrence</a>
 </p>
@@ -323,7 +323,7 @@ If you use want to cite our data, please credit it with:</p>
                     </div>
                     <div id="collapseEleven" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>If you have not used Wikidata, the SPARQL syntax or the RDF format before, we can recommend the <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial" style="display: inline;" target="_blank" rel="noopener">Wikidata SPARQL Tutorial</a>, <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples" style="display: inline;" target="_blank" rel="noopener">Wikidata:SPARQL queries examples</a>, the <a href="http://sparql-playground.sib.swiss//" style="display: inline;" target="_blank" rel="noopener">SPARQL Playground</a> or this <a href="https://wdqs-tutorial.toolforge.org/" style="display: inline;" target="_blank" rel="noopener">Wikidata Query Service Tutorial</a> by Wikimedia Israel as helpful resources. Furthermore, we can recommend Bob du Charme’s book Learning SPARQL as well as his blog.
+                            <p>If you have not used Wikidata, the SPARQL syntax or the RDF format before, we can recommend the <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial" style="display: inline;" target="_blank" rel="noopener">Wikidata SPARQL Tutorial</a>, <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples" style="display: inline;" target="_blank" rel="noopener">Wikidata:SPARQL queries examples</a> or this <a href="https://wdqs-tutorial.toolforge.org/" style="display: inline;" target="_blank" rel="noopener">Wikidata Query Service Tutorial</a> by Wikimedia Israel as helpful resources. Furthermore, we can recommend Bob du Charme’s book "Learning SPARQL" as well as his blog:
                             </p>
                             <p>DuCharme, Bob. Learning SPARQL. Sebastopol, UNITED STATES: O’Reilly Media, 2013. <a href="http://ebookcentral.proquest.com/lib/uni-trier/detail.action?docID=1250020" style="display: inline;" target="_blank" rel="noopener">http://ebookcentral.proquest.com/lib/uni-trier/detail.action?docID=1250020</a>.
                             </p>
