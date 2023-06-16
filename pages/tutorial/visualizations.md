@@ -101,6 +101,7 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
 ### Map
 
 <table>
+<!-- 
 <colgroup>
 <col width="20%"/>
 <col width="30%"/>
@@ -148,9 +149,11 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
+-->
 
 ### Line Chart
 
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -178,9 +181,9 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### Bar Chart
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -208,9 +211,9 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### Scatter Chart
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -238,9 +241,9 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### Area Chart
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -268,9 +271,10 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
+-->
 
 ### Bubble Chart
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -298,9 +302,9 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### TreeMap
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -328,9 +332,9 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### Tree
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -358,10 +362,10 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
-
+-->
 ### Timeline
 
-
+<!-- 
 <table>
 <colgroup>
 <col width="20%"/>
@@ -389,3 +393,4 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
     </tr>
   </tbody>
 </table>
+-->
