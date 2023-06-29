@@ -124,9 +124,6 @@ WHERE{
     </ul>
     <lb/>
       <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3AImageGrid%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0A%23%20show%20all%20author%20images%20that%20have%20an%20exact%20match%20with%20wikidata%20and%20where%20it%20contains%20images%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11%3B%0A%20%20%20%20%20%20%20%20%20%20wdt%3AP13%20%3FwikiLink.%0A%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FwikiLink%20widt%3AP18%20%3Fimg.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%20%20%20%20%20%20%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
-      <ul>
-      <li>example with hiding the file name <lb/><a href="https://query.mimotext.uni-trier.de/#%23defaultView%3AImageGrid%7B%22hide%22%3A%5B%22%3Fimg%22%5D%7D%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0A%23%20show%20all%20author%20images%20that%20have%20an%20exact%20match%20with%20wikidata%20and%20where%20it%20contains%20images%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11%3B%0A%20%20%20%20%20%20%20%20%20%20wdt%3AP13%20%3FwikiLink.%0A%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FwikiLink%20widt%3AP18%20%3Fimg.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%20%20%20%20%20%20%0A%7D" target="_blank" rel="noopener noreferrer">Show query</a></li>
-     </ul>
       </td>
     </tr>
   </tbody>
@@ -148,8 +145,21 @@ Select the author-Item <code>?author</code>, the labels <code>?authorLabel</code
 ```sparql
 SELECT ?author ?authorLabel ?img
 ```
-In the <code>WHERE</code>-part define authors by Items that have occupation <code>wdt:P11</code> author <code>wd:Q11</code>. By adding <code>wdt:P13 ?wikiLink</code>, restrict the query to those authors that have an exact match (P13) to wikidata and get the wikidata-Links. 
+In the <code>WHERE</code>-part define authors by Items that have occupation <code>wdt:P11</code> author <code>wd:Q11</code>. By adding <code>wdt:P13 ?wikiLink</code>, restrict the query to those authors that have an exact match (P13) to wikidata and get the wikidata-Links. Using the Wikidata-Link within `SERVICE <https://query.wikidata.org/sparql>{...} `, you have now access to all the statements within Wikidata. Keep in mind to use the defined wikidata-Prefixes. Via `widt:P18` you can now retrieve the images for the authors, where available.  
 
+```sparql
+WHERE {
+  ?author wdt:P11 wd:Q11;
+          wdt:P13 ?wikiLink.
+  SERVICE <https://query.wikidata.org/sparql>{
+    ?wikiLink widt:P18 ?img.
+  } 
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+```
+#### Adding options
+Example with hiding the file name:
+By adding `#defaultView:ImageGrid{"hide":["?img"]}` the Link to the image source is now hidden, [see](https://query.mimotext.uni-trier.de/#%23defaultView%3AImageGrid%7B%22hide%22%3A%5B%22%3Fimg%22%5D%7D%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0A%23%20show%20all%20author%20images%20that%20have%20an%20exact%20match%20with%20wikidata%20and%20where%20it%20contains%20images%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11%3B%0A%20%20%20%20%20%20%20%20%20%20wdt%3AP13%20%3FwikiLink.%0A%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FwikiLink%20widt%3AP18%20%3Fimg.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%20%20%20%20%20%20%0A%7D){:target="_blank"}.
 
 ### Map
 
@@ -190,24 +200,52 @@ In the <code>WHERE</code>-part define authors by Items that have occupation <cod
       <th>Example in the MiMoTextBase</th>
       <td>
       <ul>
-      <li> query for all publication places, their Wikidata match and geographic coordinates </li>
+      <li> query for all publication places, their Wikidata match and geographic coordinates, see query <a href="https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A" target="_blank" rel="noopener noreferrer" >here</a>. </li>
     </ul>
     <lb/>
       <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer" ></iframe> <lb/>
-      <ul>
-      <li>example with tonality layer <lb/><a href="https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3FtonalityLabel%20%28%3FtonalityLabel%20as%20%3Flayer%29%20%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP38%20%3Ftonality.%0A%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A" target="_blank" rel="noopener noreferrer">Show query</a></li>
-      <li>example for creating own layer based on a variable, eg. tokencount (be careful: layers can overlap, so you don’t see all of them immediately) and markerclusters <lb/>
-      <a href="https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A" target="_blank" rel="noopener noreferrer">Show query</a>
-</li>
-<li>
-Example with hiding coordinates <lb/>
-<a href="https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7B%22hide%22%3A%22%3FcoordinateLocation%22%2C%20%22markercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A" target="_blank" rel="noopener noreferrer">Show query</a>
-</li>
-     </ul>
       </td>
     </tr>
   </tbody>
 </table>
+
+#### Explanation of the query
+
+First, define the `#defaultView:Map` and the neccessary `PREFIXES` for the MiMoTextBase and Wikidata as you need it for the coordinates.
+
+```sparql
+#defaultView:Map
+PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd
+PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt
+PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+```
+Within the `SELECT`-part, you can select the desired variables, but for a Map-visualization you need coordinates.
+In the `WHERE`-clause we now choose all `?items`that have a place of publication `wdt:P10`. These in turn have a match to Wikidata `?loc wdt:P13 ?WikiDataEntity`. Using a federated query we now can retrieve the coordinates of those publication places.
+
+```sparql
+SELECT DISTINCT ?item ?itemLabel ?locLabel ?WikiDataEntity ?coordinateLocation
+WHERE { ?item wdt:P10 ?loc.
+  ?loc wdt:P13 ?WikiDataEntity.
+  #Federated Query -> Wikidata
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?WikiDataEntity widt:P625 ?coordinateLocation
+  }           
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+}
+```
+#### Adding options
+
+If you want to add a layer to your map, you can choose another variable, e.g. the tonality of the novels via `?item wdt:P38 ?tonaliy` in the `WHERE`-clause. Take the labels of the `?tonality`-variable and bind them to the variable `?layer` in the `SELECT`-part. In the map you now have different colors for the different tonalities, see example [here](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3FtonalityLabel%20%28%3FtonalityLabel%20as%20%3Flayer%29%20%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP38%20%3Ftonality.%0A%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
+
+
+You also can create layers on your own by binding variables to categories. Example for creating own layer based on a variable, eg. tokencount (be careful: layers can overlap, so you don’t see all of them immediately) and markerclusters [see](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
+
+
+Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7B%22hide%22%3A%22%3FcoordinateLocation%22%2C%20%22markercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
+
+
+
 
 ### Line Chart
 <table>
@@ -256,7 +294,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
-
+#### Explanation of the query
 
 ### Bar Chart
 <table>
@@ -311,7 +349,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
-
+#### Explanation of the query
 
 ### Scatter Chart
 <table>
@@ -360,7 +398,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
-
+#### Explanation of the query
 ### Area Chart
 
 <table>
@@ -411,6 +449,8 @@ Example with hiding coordinates <lb/>
 </table>
 
 
+#### Explanation of the query
+
 ### Bubble Chart
 
 <table>
@@ -460,6 +500,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
+#### Explanation of the query
 
 ### TreeMap
 
@@ -506,6 +547,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
+#### Explanation of the query
 
 ### Tree
 
@@ -555,7 +597,7 @@ Example with hiding coordinates <lb/>
   </tbody>
 </table>
 
-
+#### Explanation of the query
 
 ### Timeline
 
@@ -604,6 +646,8 @@ Example with hiding coordinates <lb/>
     </tr>
   </tbody>
 </table>
+
+#### Explanation of the query
 
 
 ### Dimensions
@@ -654,6 +698,9 @@ Example with hiding coordinates <lb/>
     </tr>
   </tbody>
 </table>
+
+#### Explanation of the query
+
 
 ### Graph
 
