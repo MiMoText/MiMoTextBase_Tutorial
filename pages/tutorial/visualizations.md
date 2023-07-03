@@ -239,7 +239,7 @@ WHERE { ?item wdt:P10 ?loc.
 If you want to add a layer to your map, you can choose another variable, e.g. the tonality of the novels via `?item wdt:P38 ?tonaliy` in the `WHERE`-clause. Take the labels of the `?tonality`-variable and bind them to the variable `?layer` in the `SELECT`-part. In the map you now have different colors for the different tonalities, see example [here](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3FtonalityLabel%20%28%3FtonalityLabel%20as%20%3Flayer%29%20%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP38%20%3Ftonality.%0A%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
 
 
-You also can create layers on your own by binding variables to categories. Example for creating own layer based on a variable, eg. tokencount (be careful: layers can overlap, so you don’t see all of them immediately) and markerclusters [see](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
+You also can create layers on your own by binding variables to categories. As you need a variable `?layer` within `SELECT`, you can use `BIND` to assign layer variables.  Example for creating own layer based on a variable, eg. tokencount (be careful: layers can overlap, so you don’t see all of them immediately) and markerclusters [see](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7Bmarkercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
 
 
 Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23query%20for%20all%20publication%20places%2C%20their%20Wikidata%20match%20and%20geographic%20coordinates%20%0A%23defaultView%3AMap%7B%22hide%22%3A%22%3FcoordinateLocation%22%2C%20%22markercluster%22%3A%22True%22%7D%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FlocLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%20%3Flayer%20%3Ftokencount%0AWHERE%20%7B%20%3Fitem%20wdt%3AP10%20%3Floc.%0A%20%20%3Floc%20wdt%3AP13%20%3FWikiDataEntity.%0A%20%20%20%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%0A%20%20%20%20%20%20%20%0A%20%20BIND%28%0A%20%20%20%20IF%28%3Ftokencount%20%3C%3D%2050000%2C%20%22short%22%2C%0A%20%20%20%20%20%20%20%20%09IF%28%3Ftokencount%20%3C%3D%20150000%2C%20%22medium%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%09%22long%22%29%29%0A%20%20%20%20%20%09AS%20%3Flayer%29.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiDataEntity%20widt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A){:target="_blank"}
@@ -285,7 +285,7 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       <th>Example in the MiMoTextBase</th>
       <td>
       <ul>
-      <li>get the average token count from each possible narrative Form per year </li>
+      <li>get the average token count from each possible narrative Form per year, see query <a href="https://query.mimotext.uni-trier.de/index.html#%23defaultView%3ALineChart%0A%23%20get%20the%20average%20token%20count%20from%20each%20possible%20narrative%20Form%20per%20year%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fyear%20%28avg%28%3Ftokencount%29%20as%20%3Favgtokencount%29%20%3FnarrForm%20%3FnarrFormLabel%0A%20%20WHERE%7B%0A%20%20%20%20%3Fitem%20wdt%3AP9%20%3Fpublicationdate.%20%23%20get%20publication%20date%0A%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%20%23%20get%20tokencount%0A%20%20%20%20BIND%28str%28YEAR%28%3Fpublicationdate%29%29%20as%20%3Fyear%29.%20%23%20extract%20year%20from%20pubdate%0A%20%20%20%20%3Fitem%20wdt%3AP33%20%3FnarrForm.%20%23%20get%20narrative%20form%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%7D%0AGROUP%20BY%20%3FnarrForm%20%3Fyear%20%3FnarrFormLabel%0AORDER%20BY%20%3Fyear" target="_blank" rel="noopener noreferrer">here</a> </li>
     </ul>
     <lb/>
       <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ALineChart%0A%23%20get%20the%20average%20token%20count%20from%20each%20possible%20narrative%20Form%20per%20year%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fyear%20%28avg%28%3Ftokencount%29%20as%20%3Favgtokencount%29%20%3FnarrForm%20%3FnarrFormLabel%0A%20%20WHERE%7B%0A%20%20%20%20%3Fitem%20wdt%3AP9%20%3Fpublicationdate.%20%23%20get%20publication%20date%0A%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%20%23%20get%20tokencount%0A%20%20%20%20BIND%28str%28YEAR%28%3Fpublicationdate%29%29%20as%20%3Fyear%29.%20%23%20extract%20year%20from%20pubdate%0A%20%20%20%20%3Fitem%20wdt%3AP33%20%3FnarrForm.%20%23%20get%20narrative%20form%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%7D%0AGROUP%20BY%20%3FnarrForm%20%3Fyear%20%3FnarrFormLabel%0AORDER%20BY%20%3Fyear" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
@@ -295,6 +295,29 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 </table>
 
 #### Explanation of the query
+
+As there are multiple functions provided, we can make use of them to get the average count of numbers, in this example the token count by calling `(avg(?tokencount) as ?avgtokencount)`. As we use this function, we have to `GROUP BY` all other variables called in the Select part, but the one we calculate the average (see line 14).
+For extracting the year, without showing the day and month (as these are all set to 1st of January by default in DataType DateTime only having a specific year), see line 10, where we extract the year via `YEAR(?publicationdate)`, turn it into a string variable `str(YEAR(...))` and assign it to a new variable name by `BIND(str(...))`.
+
+```sparql
+#defaultView:LineChart
+# get the average token count from each possible narrative Form per year
+PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+
+SELECT ?year (avg(?tokencount) as ?avgtokencount) ?narrForm ?narrFormLabel
+  WHERE{
+    ?item wdt:P9 ?publicationdate. # get publication date
+    ?item wdt:P40 ?tokencount. # get tokencount
+    BIND(str(YEAR(?publicationdate)) as ?year). # extract year from pubdate
+    ?item wdt:P33 ?narrForm. # get narrative form
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+  }
+GROUP BY ?narrForm ?year ?narrFormLabel
+ORDER BY ?year
+
+```
+
 
 ### Bar Chart
 <table>
@@ -338,18 +361,46 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
     </ul>
     <lb/>
       <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ABarChart%0A%23%20get%20the%20average%20token%20count%20from%20each%20possible%20narrative%20Form%20per%20year%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fyear%20%28avg%28%3Ftokencount%29%20as%20%3Favgtokencount%29%20%3FnarrFormLabel%0A%20%20WHERE%7B%0A%20%20%20%20%3Fitem%20wdt%3AP9%20%3Fpublicationdate.%20%23%20get%20publication%20date%0A%20%20%20%20%3Fitem%20wdt%3AP40%20%3Ftokencount.%20%23%20get%20tokencount%0A%20%20%20%20BIND%28str%28YEAR%28%3Fpublicationdate%29%29%20as%20%3Fyear%29.%20%23%20extract%20year%20from%20pubdate%0A%20%20%20%20%3Fitem%20wdt%3AP33%20%3FnarrForm.%20%23%20get%20narrative%20form%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%7D%0AGROUP%20BY%20%3FnarrForm%20%3Fyear%20%3FnarrFormLabel%0AORDER%20BY%20%3Fyear" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
-      <ul>
-      <li>
-      Show the tonality count per intentionality and year as an animated bar chart, for query see <a href="https://query.mimotext.uni-trier.de/index.html#PREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%23%20%28animated%29%0A%23%20Show%20the%20tonality%20count%20per%20intentionality%20and%20year%0A%23defaultView%3ABarChart%0ASELECT%20%3FintentionalityLabel%20%28COUNT%28%3Ftonality%29%20AS%20%3FtonalityCount%29%20%3FtonalityLabel%20%28SAMPLE%28%3Fyear%29%20AS%20%3FYEAR%29%0AWHERE%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2%3B%20%23%20item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20wdt%3AP9%20%3Fpubdate%3B%20%23%20get%20the%20publication%20date%0A%20%20%20%20%20%20%20%20wdt%3AP38%20%3Ftonality%3B%20%23%20get%20tonality%20of%20work-item%0A%20%20%20%20%20%20%20%20wdt%3AP39%20%3Fintentionality.%20%23%20get%20intentionality%20of%20work-item%0A%20%20%3Ftonality%20rdfs%3Alabel%20%3FtonalityLabel.%20%23%20get%20the%20tonality-label%0A%20%20%3Fintentionality%20rdfs%3Alabel%20%3FintentionalityLabel.%20%23%20get%20the%20intentionality-label%0A%20%20%0A%20%20FILTER%28LANG%28%3FtonalityLabel%29%20%3D%20%22en%22%29.%20%23%20filter%20for%20language%0A%20%20FILTER%28LANG%28%3FintentionalityLabel%29%3D%22en%22%29.%20%23%20filter%20for%20language%0A%20%20BIND%28str%28YEAR%28%3Fpubdate%29%29%20as%20%3Fyear%29.%20%23%20filter%20year%20of%20the%20publication%20date%0A%7D%0AGROUP%20BY%20%3Fpubdate%20%3FtonalityLabel%20%3FintentionalityLabel%20%0A" target="_blank" rel="noopener noreferrer">here</a>
-      </li><lb/>
-      </ul>
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#PREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%23%20%28animated%29%0A%23%20Show%20the%20tonality%20count%20per%20intentionality%20and%20year%0A%23defaultView%3ABarChart%0ASELECT%20%3FintentionalityLabel%20%28COUNT%28%3Ftonality%29%20AS%20%3FtonalityCount%29%20%3FtonalityLabel%20%28SAMPLE%28%3Fyear%29%20AS%20%3FYEAR%29%0AWHERE%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2%3B%20%23%20item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20wdt%3AP9%20%3Fpubdate%3B%20%23%20get%20the%20publication%20date%0A%20%20%20%20%20%20%20%20wdt%3AP38%20%3Ftonality%3B%20%23%20get%20tonality%20of%20work-item%0A%20%20%20%20%20%20%20%20wdt%3AP39%20%3Fintentionality.%20%23%20get%20intentionality%20of%20work-item%0A%20%20%3Ftonality%20rdfs%3Alabel%20%3FtonalityLabel.%20%23%20get%20the%20tonality-label%0A%20%20%3Fintentionality%20rdfs%3Alabel%20%3FintentionalityLabel.%20%23%20get%20the%20intentionality-label%0A%20%20%0A%20%20FILTER%28LANG%28%3FtonalityLabel%29%20%3D%20%22en%22%29.%20%23%20filter%20for%20language%0A%20%20FILTER%28LANG%28%3FintentionalityLabel%29%3D%22en%22%29.%20%23%20filter%20for%20language%0A%20%20BIND%28str%28YEAR%28%3Fpubdate%29%29%20as%20%3Fyear%29.%20%23%20filter%20year%20of%20the%20publication%20date%0A%7D%0AGROUP%20BY%20%3Fpubdate%20%3FtonalityLabel%20%3FintentionalityLabel%20%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe>
       </td>
     </tr>
   </tbody>
 </table>
 
 #### Explanation of the query
+
+For an explanation, see section of LineCharts.
+
+### Adding options
+
+For creating an animated bar chart, let's take another query: 
+Show the tonality count per intentionality and year as an animated bar chart, for query see [here](https://query.mimotext.uni-trier.de/index.html#PREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%23%20%28animated%29%0A%23%20Show%20the%20tone%20count%20per%20intention%20and%20year%0A%23defaultView%3ABarChart%0ASELECT%20%3FintentionLabel%20%28COUNT%28%3Ftone%29%20AS%20%3FtoneCount%29%20%3FtoneLabel%20%3Fyear%0AWHERE%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2%3B%20%23%20item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20wdt%3AP9%20%3Fpubdate%3B%20%23%20get%20the%20publication%20date%0A%20%20%20%20%20%20%20%20wdt%3AP38%20%3Ftone%3B%20%23%20get%20tone%20of%20work-item%0A%20%20%20%20%20%20%20%20wdt%3AP39%20%3Fintention.%20%23%20get%20intention%20of%20work-item%0A%20%20%3Ftone%20rdfs%3Alabel%20%3FtoneLabel.%20%23%20get%20the%20tonality-label%0A%20%20%3Fintention%20rdfs%3Alabel%20%3FintentionLabel.%20%23%20get%20the%20intentionality-label%0A%20%20%0A%20%20FILTER%28LANG%28%3FtoneLabel%29%20%3D%20%22en%22%29.%20%23%20filter%20for%20language%0A%20%20FILTER%28LANG%28%3FintentionLabel%29%3D%22en%22%29.%20%23%20filter%20for%20language%0A%20%20BIND%28str%28YEAR%28%3Fpubdate%29%29%20as%20%3Fyear%29.%20%23%20filter%20year%20of%20the%20publication%20date%0A%7D%0AGROUP%20BY%20%3Fyear%20%3FtoneLabel%20%3FintentionLabel%20%0A){:target="_blank"}
+ 
+<iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#PREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%23%20%28animated%29%0A%23%20Show%20the%20tone%20count%20per%20intention%20and%20year%0A%23defaultView%3ABarChart%0ASELECT%20%3FintentionLabel%20%28COUNT%28%3Ftone%29%20AS%20%3FtoneCount%29%20%3FtoneLabel%20%3Fyear%0AWHERE%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2%3B%20%23%20item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20wdt%3AP9%20%3Fpubdate%3B%20%23%20get%20the%20publication%20date%0A%20%20%20%20%20%20%20%20wdt%3AP38%20%3Ftone%3B%20%23%20get%20tone%20of%20work-item%0A%20%20%20%20%20%20%20%20wdt%3AP39%20%3Fintention.%20%23%20get%20intention%20of%20work-item%0A%20%20%3Ftone%20rdfs%3Alabel%20%3FtoneLabel.%20%23%20get%20the%20tonality-label%0A%20%20%3Fintention%20rdfs%3Alabel%20%3FintentionLabel.%20%23%20get%20the%20intentionality-label%0A%20%20%0A%20%20FILTER%28LANG%28%3FtoneLabel%29%20%3D%20%22en%22%29.%20%23%20filter%20for%20language%0A%20%20FILTER%28LANG%28%3FintentionLabel%29%3D%22en%22%29.%20%23%20filter%20for%20language%0A%20%20BIND%28str%28YEAR%28%3Fpubdate%29%29%20as%20%3Fyear%29.%20%23%20filter%20year%20of%20the%20publication%20date%0A%7D%0AGROUP%20BY%20%3Fyear%20%3FtoneLabel%20%3FintentionLabel%20%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe>
+
+For an animated chart we need four variables, in this case the intention, the count of the variable for the tone, the labels of the tone and the publication dates. The last one will be the variable, that the animation switched between. As we call the `COUNT(...)`, we also need to `GROUP BY` all other variables occuring in the select part. 
+
+```sparql
+PREFIX wd: <http://data.mimotext.uni-trier.de/entity/>
+PREFIX wdt: <http://data.mimotext.uni-trier.de/prop/direct/>
+# (animated)
+# Show the tone count per intention and year
+#defaultView:BarChart
+SELECT ?intentionLabel (COUNT(?tone) AS ?toneCount) ?toneLabel ?year
+WHERE{
+  ?item wdt:P2 wd:Q2; # item is instance of literary work
+        wdt:P9 ?pubdate; # get the publication date
+        wdt:P38 ?tone; # get tone of work-item
+        wdt:P39 ?intention. # get intention of work-item
+  ?tone rdfs:label ?toneLabel. # get the tonality-label
+  ?intention rdfs:label ?intentionLabel. # get the intentionality-label
+  
+  FILTER(LANG(?toneLabel) = "en"). # filter for language
+  FILTER(LANG(?intentionLabel)="en"). # filter for language
+  BIND(str(YEAR(?pubdate)) as ?year). # filter year of the publication date
+}
+GROUP BY ?year ?toneLabel ?intentionLabel 
+
+```
 
 ### Scatter Chart
 <table>
@@ -399,6 +450,9 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 </table>
 
 #### Explanation of the query
+
+See explanation for LineChart.
+
 ### Area Chart
 
 <table>
@@ -451,6 +505,28 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 
 #### Explanation of the query
 
+As we want to visualize the count of  occurrences of publication places, we need to use the `COUNT`-function for counting the publication places-variable. Therefore we need to use the `GROUP BY` on all other variables within the select part. Next, as we want to limit the occurrences to be at least 4, we can use `HAVING (count(?pubPlaceLabel) > 4)`. Another option would be to reuse the newly generated ?count variable via `HAVING (?count > 4)`
+
+```sparql
+#defaultView:AreaChart
+PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/>
+
+SELECT ?date (count(?pubPlace) as ?count) ?pubPlaceLabel
+WHERE{
+  ?item wdt:P2 wd:Q2;
+        wdt:P9 ?date;
+        wdt:P10 ?pubPlace.
+  ?pubPlace rdfs:label ?pubPlaceLabel.
+  FILTER(LANG(?pubPlaceLabel) = "en").
+}
+
+GROUP BY ?date ?pubPlaceLabel
+HAVING (count(?pubPlaceLabel) > 4)
+# other option:
+# HAVING (?count > 4)
+``` 
+
 ### Bubble Chart
 
 <table>
@@ -491,16 +567,34 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       <th>Example in the MiMoTextBase</th>
       <td>
       <ul>
-      <li>Show the thematic concepts per novel</li>
+      <li>Show the thematic concepts per novel, see query <a href="https://query.mimotext.uni-trier.de/#%23defaultView%3ABubbleChart%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20%3FtopicLabel%20%28COUNT%28%3FtopicLabel%29%20as%20%3Fcount%29%0AWHERE%20%7B%0A%20%3Fitem%20wdt%3AP2%20wd%3AQ2.%20%23%20get%20all%20instances%20of%20literary%20work%0A%20%3Fitem%20wdt%3AP36%20%3Ftopic%20.%20%23%20get%20the%20thematic%20concepts%20of%20the%20items%0A%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel%20.%0A%20FILTER%28LANG%28%3FtopicLabel%29%20%3D%20%22en%22%29%20.%20%0A%7D%0AGROUP%20BY%20%3FtopicLabel%0AORDER%20BY%20desc%28%3Fcount%29" target="_blank" rel="noopener noreferrer">here</a></li>
     </ul>
     <lb/>
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ABubbleChart%0Aprefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20%3FtopLabel%20%28count%28%2a%29%20as%20%3Fcount%29%0AWHERE%20%7B%0A%20%3Fitem%20wdt%3AP36%20%3Ftop%20.%0A%20%3Ftop%20rdfs%3Alabel%20%3FtopLabel%20.%0A%20filter%28lang%28%3FtopLabel%29%20%3D%20%22en%22%29%0A%7D%0AGROUP%20BY%20%3FtopLabel%0AORDER%20BY%20desc%28%3Fcount%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ABubbleChart%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20%3FtopicLabel%20%28COUNT%28%3FtopicLabel%29%20as%20%3Fcount%29%0AWHERE%20%7B%0A%20%3Fitem%20wdt%3AP2%20wd%3AQ2.%20%23%20get%20all%20instances%20of%20literary%20work%0A%20%3Fitem%20wdt%3AP36%20%3Ftopic%20.%20%23%20get%20the%20thematic%20concepts%20of%20the%20items%0A%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel%20.%0A%20FILTER%28LANG%28%3FtopicLabel%29%20%3D%20%22en%22%29%20.%20%0A%7D%0AGROUP%20BY%20%3FtopicLabel%0AORDER%20BY%20desc%28%3Fcount%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
 </table>
 
 #### Explanation of the query
+To generate a Bubble Chart, one need to use the `count`-function to get the count of a desired variable, as the size of the bubbles represent the number of occurrences of that variable. That in follows means, that you have to `GROUP BY` all the other variables used in the `SELECT`-part, in this case it only concerns the `?topicLabel`. To put the largest bubbles in the center of the visualization, one can add `ORDER BY DESC([count-variable])`.
+```sparql
+#defaultView:BubbleChart
+PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?topicLabel (COUNT(?topicLabel) as ?count)
+WHERE {
+ ?item wdt:P2 wd:Q2. # get all instances of literary work
+ ?item wdt:P36 ?topic . # get the thematic concepts of the items
+ ?topic rdfs:label ?topicLabel .
+ FILTER(LANG(?topicLabel) = "en") . 
+}
+GROUP BY ?topicLabel
+ORDER BY desc(?count)
+
+```
+
+
 
 ### TreeMap
 
@@ -538,16 +632,19 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       <th>Example in the MiMoTextBase</th>
       <td>
       <ul>
-      <li>Thematic concepts linked to the narrative location "rural area", see query <a href="https://query.mimotext.uni-trier.de/#%23defaultView%3ATreeMap%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%0ASELECT%20%3Ftheme%20%3FthemeLabel%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme%20.%0A%20%20%3Fitem%20wdt%3AP32%20wd%3AQ3243%20%23%20items%20with%20narrative%20location%20%28P32%29%3A%20rural%20area%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D" target="_blank" rel="noopener noreferrer">here</a></li>
+      <li>Thematic concepts linked to the narrative location "rural area", see query <a href="https://query.mimotext.uni-trier.de/#%23defaultView%3ATreeMap%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%0ASELECT%20%3Ftheme%20%3FthemeLabel%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2.%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme%20.%0A%20%20%3Fitem%20wdt%3AP32%20wd%3AQ3243%20%23%20items%20with%20narrative%20location%20%28P32%29%3A%20rural%20area%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D" target="_blank" rel="noopener noreferrer">here</a></li>
     </ul>
     <lb/>
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ATreeMap%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%0ASELECT%20%3Ftheme%20%3FthemeLabel%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme%20.%0A%20%20%3Fitem%20wdt%3AP32%20wd%3AQ3243%20%23%20items%20with%20narrative%20location%20%28P32%29%3A%20rural%20area%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ATreeMap%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%0ASELECT%20%3Ftheme%20%3FthemeLabel%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2.%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme%20.%0A%20%20%3Fitem%20wdt%3AP32%20wd%3AQ3243%20%23%20items%20with%20narrative%20location%20%28P32%29%3A%20rural%20area%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
 </table>
 
 #### Explanation of the query
+
+In order to retrieve a TreeMap one must consider the order of the variables within the `SELECT`-part as it will reflect the hierarchy of the Tree. As we chose `theme` as the first variable, all following variables will be clustered within the corresponding theme. 
+
 
 ### Tree
 
@@ -599,6 +696,15 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 
 #### Explanation of the query
 
+To create an expandable tree, one must select more than one variable. Within the `SELECT`-part the order of the variables will represent the hierarchy of the tree. Also each of the variables must be written in an own line (except the associated label variables).
+```sparql
+SELECT ?author ?authorLabel
+?item ?itemLabel 
+?topic ?topicLabel
+```
+This `SELECT`-part will therefore create a tree having the authors as nodes. For each author the novels and for each novel the thematic concepts will appear if expanded. 
+
+
 ### Timeline
 
 <table>
@@ -638,16 +744,41 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       <th>Example in the MiMoTextBase</th>
       <td>
       <ul>
-      <li>Visualize the point in time when authors of the MiMoTextBase received an ward. See <a href="https://query.mimotext.uni-trier.de/#PREFIX%20pq%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fqualifier%2F%3E%0APREFIX%20p%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2F%3E%0A%23defaultView%3ATimeline%0A%23%20visualize%20the%20point%20in%20time%20when%20authors%20got%20an%20award%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0A%0A%0ASELECT%20%3Fitem%20%3Faward%20%3FitemLabel%20%3FawardLabel%20%3FWikiLink%20%3Fpit%20%3Ftime%0AWHERE%20%7B%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20%20%3Fitem%20wdt%3AP11%20wd%3AQ11.%0A%20%20%3Fitem%20wdt%3AP13%20%3FWikiLink.%0A%20%20%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20p%3AP166%20%3FawardStatement.%0A%20%20%20%20%3FWikiLink%20widt%3AP166%20%3Faward.%0A%20%20%20%20%3Faward%20rdfs%3Alabel%20%3FawardLabel.%0A%20%20%20%20FILTER%28LANG%28%3FawardLabel%29%3D%22en%22%29.%0A%20%20%20%20OPTIONAL%7B%3FawardStatement%20pq%3AP585%20%3Ftime.%7D%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A%0A" target="_blank" rel="noopener noreferrer">here</a>. Please notice: if you switch to table view, you get more results. But as there is no point in time statement available, it is not shown in the TimeLine.</li>
+      <li>Visualize the point in time when authors of the MiMoTextBase received an award. See <a href="https://query.mimotext.uni-trier.de/#%23defaultView%3ATimeline%0APREFIX%20ps%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fstatement%2F%3E%0APREFIX%20pq%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fqualifier%2F%3E%0APREFIX%20p%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2F%3E%0A%0A%23%20visualize%20the%20point%20in%20time%20when%20authors%20got%20an%20award%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fitem%20%3Faward%20%3FitemLabel%20%3FawardLabel%20%3Ftime%0AWHERE%20%7B%0A%20%20%0A%20%20%3Fitem%20wdt%3AP11%20wd%3AQ11.%0A%20%20%3Fitem%20wdt%3AP13%20%3FWikiLink.%0A%20%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20p%3AP166%20%3FawardProperty.%20%23%20get%20the%20property%20%0A%20%20%20%20%3FawardProperty%20ps%3AP166%20%3Faward.%20%23%20get%20the%20statement%20of%20the%20propery%0A%20%20%20%20%3Faward%20rdfs%3Alabel%20%3FawardLabel.%20%23%20get%20the%20Label%0A%20%20%20%20FILTER%28LANG%28%3FawardLabel%29%20%3D%22en%22%29.%0A%20%20%20%20%0A%20%20%20%20OPTIONAL%7B%3FawardProperty%20pq%3AP585%20%3Ftime.%7D%20%23%20get%20the%20qualifiert%20point%20in%20time%20when%20available%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A%0A" target="_blank" rel="noopener noreferrer">here</a>. Please notice: if you switch to table view, you get more results. But as there is no point in time statement available, it is not shown in the TimeLine.</li>
     </ul>
     <lb/>
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#PREFIX%20pq%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fqualifier%2F%3E%0APREFIX%20p%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2F%3E%0A%23defaultView%3ATimeline%0A%23%20visualize%20the%20point%20in%20time%20when%20authors%20got%20an%20award%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0A%0A%0ASELECT%20%3Fitem%20%3Faward%20%3FitemLabel%20%3FawardLabel%20%3FWikiLink%20%3Fpit%20%3Ftime%0AWHERE%20%7B%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20%20%3Fitem%20wdt%3AP11%20wd%3AQ11.%0A%20%20%3Fitem%20wdt%3AP13%20%3FWikiLink.%0A%20%20%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20p%3AP166%20%3FawardStatement.%0A%20%20%20%20%3FWikiLink%20widt%3AP166%20%3Faward.%0A%20%20%20%20%3Faward%20rdfs%3Alabel%20%3FawardLabel.%0A%20%20%20%20FILTER%28LANG%28%3FawardLabel%29%3D%22en%22%29.%0A%20%20%20%20OPTIONAL%7B%3FawardStatement%20pq%3AP585%20%3Ftime.%7D%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3ATimeline%0APREFIX%20ps%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fstatement%2F%3E%0APREFIX%20pq%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fqualifier%2F%3E%0APREFIX%20p%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2F%3E%0A%0A%23%20visualize%20the%20point%20in%20time%20when%20authors%20got%20an%20award%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fitem%20%3Faward%20%3FitemLabel%20%3FawardLabel%20%3Ftime%0AWHERE%20%7B%0A%20%20%0A%20%20%3Fitem%20wdt%3AP11%20wd%3AQ11.%0A%20%20%3Fitem%20wdt%3AP13%20%3FWikiLink.%0A%20%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20p%3AP166%20%3FawardProperty.%20%23%20get%20the%20property%20%0A%20%20%20%20%3FawardProperty%20ps%3AP166%20%3Faward.%20%23%20get%20the%20statement%20of%20the%20propery%0A%20%20%20%20%3Faward%20rdfs%3Alabel%20%3FawardLabel.%20%23%20get%20the%20Label%0A%20%20%20%20FILTER%28LANG%28%3FawardLabel%29%20%3D%22en%22%29.%0A%20%20%20%20%0A%20%20%20%20OPTIONAL%7B%3FawardProperty%20pq%3AP585%20%3Ftime.%7D%20%23%20get%20the%20qualifiert%20point%20in%20time%20when%20available%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
 </table>
 
 #### Explanation of the query
+
+With this query we ask for the awards the authors within the MiMoTextBase received and when this happend to visualize it on a TimeLine. As we do not have this information in the MiMoTextBase, we can write a federated query to use the data within WikiData.
+Therefore we first retrieve all possible wikidata-matches via `?item wdt:P13 ?Wikilink`. Now calling the `SERVICE <https://query.wikidata.org/sparql>` we can query statements within WikiData. 
+If you have a look at the property `award received`[here](https://www.wikidata.org/wiki/Q15975), you can see that the value `award received` (P166) is the Item *Fellow of the Royal Society*. This Item itself has a so called `qualifier` `point in time` with the value *26 February 1730*. This is the data that we want to receive.
+In order to get all statements and qualifiers associated to a property, we first need to define new `PREFIXES`:
+```sparql
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX p: <http://www.wikidata.org/prop/>
+```
+Now, within in the wikidata-query, we first retrieve all values associated to `P166` (award received) via 
+```sparql 
+?WikiLink p:P166 ?awardProperty.
+```
+As we also want the label of the awards, we need to get the statements and the labels.
+```sparql
+?awardProperty ps:P166 ?award. # get the statement of the propery
+?award rdfs:label ?awardLabel. # get the Label
+FILTER(LANG(?awardLabel) ="en").
+```
+Not all og the statements have the qualifier `point in time`, so we use `OPTIONAL` to get all statement and for those, where available, a `point in time`.
+```sparql
+OPTIONAL{?awardProperty pq:P585 ?time.} # get the qualifiert point in time when available
+
+```
 
 
 ### Dimensions
@@ -672,7 +803,7 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       <th>Needed</th>
       <td >
       <ul>
-      <li>
+      <li>at least two variables to show their connection
       </li>
       </ul>
       </td>
@@ -700,6 +831,9 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 </table>
 
 #### Explanation of the query
+As the variables within `SELECT`are represented as dimension axes, the order will also be represented.
+
+
 
 
 ### Graph
@@ -746,10 +880,24 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
       </ul>
     <lb/>
       <iframe style="width: 100%; max-width:100%; max-height:100%; height:280px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://query.mimotext.uni-trier.de/embed.html#%23defaultView%3AGraph%0A%23%20get%20all%20authors%20that%20are%20a%20member%20of%20any%20organization%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fitem%20%3FmemberOf%20%3FitemLabel%20%20%3FmemberOfLabel%0AWHERE%20%7B%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20%20%3Fitem%20wdt%3AP11%20wd%3AQ11.%0A%20%20%3Fitem%20wdt%3AP13%20%3FWikiLink.%0A%20%20%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20widt%3AP463%20%3FmemberOf.%0A%20%20%20%20%3FmemberOf%20rdfs%3Alabel%20%3FmemberOfLabel.%0A%20%20%20%20FILTER%28LANG%28%3FmemberOfLabel%29%3D%22en%22%29.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
-      <ul><li>Now we can constrain the least number of members that were at the same organization to 2 and get the images of the authors where available. See <a href="https://query.mimotext.uni-trier.de/#%23defaultView%3AGraph%0A%23%20get%20all%20authors%20that%20are%20a%20member%20of%20any%20organization%20having%20at%20least%20two%20members%20in%20the%20MiMotextBase%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%20%3FmemberOf%20%3FmemberOfLabel%20%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11.%20%0A%20%20%3Fauthor%20wdt%3AP13%20%3FWikiLink.%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20widt%3AP463%20%3FmemberOf.%0A%20%20%20%20%3FmemberOf%20rdfs%3Alabel%20%3FmemberOfLabel.%0A%20%20%20%20OPTIONAL%7B%3FWikiLink%20widt%3AP18%20%3Fimg%7D.%0A%20%20%20%20FILTER%28LANG%28%3FmemberOfLabel%29%3D%22en%22%29.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%7B%20%0A%20%20%20%20SELECT%20%3FmemberOf%20%28COUNT%28%3Fauthor%29%20as%20%3Fcountmember%29%20%0A%20%20%20%20WHERE%20%7B%0A%20%20%20%20%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11.%0A%20%20%20%20%20%20%3Fauthor%20wdt%3AP13%20%3FWikiLink.%0A%20%20%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%20%20%20%20%3FWikiLink%20widt%3AP463%20%3FmemberOf.%0A%20%20%20%20%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%20%20GROUP%20BY%20%3FmemberOf%0A%20%20HAVING%20%28%3Fcountmember%20%3E%201%29%0A%20%20%7D%0A%7D%0A%0A%0A" target="_blank" rel="noopener noreferrer">here</a></li>
-    </ul>
       </td>
     </tr>
   </tbody>
 </table>
 
+#### Explanation of the query
+
+With this query we want to get all organizations that the authors in the MiMoTextBase were members of. This is an information we don't find in the MiMoTextBase, therefore we can use a federated query to WikiData to retrieve it. Asking for `item wdt:P13 ?WikiLink` we get the wikidata-matches of the authors. Using this variable, we can now call ` SERVICE <https://query.wikidata.org/sparql>` to query wikidata. Via `?WikiLink widt:P463 ?memberOf.` we get all organizations connected to the authors.
+In the graph, now edges occur between the authors and the associated organizations.
+
+#### Adding options
+
+Now we can constrain the least number of members that were at the same organization to 2 and get the images of the authors where available. See [here](https://query.mimotext.uni-trier.de/#%23defaultView%3AGraph%0A%23%20get%20all%20authors%20that%20are%20a%20member%20of%20any%20organization%20having%20at%20least%20two%20members%20in%20the%20MiMotextBase%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%20%3FmemberOf%20%3FmemberOfLabel%20%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11.%20%0A%20%20%3Fauthor%20wdt%3AP13%20%3FWikiLink.%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FWikiLink%20widt%3AP463%20%3FmemberOf.%0A%20%20%20%20%3FmemberOf%20rdfs%3Alabel%20%3FmemberOfLabel.%0A%20%20%20%20OPTIONAL%7B%3FWikiLink%20widt%3AP18%20%3Fimg%7D.%0A%20%20%20%20FILTER%28LANG%28%3FmemberOfLabel%29%3D%22en%22%29.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%7B%20%0A%20%20%20%20SELECT%20%3FmemberOf%20%28COUNT%28%3Fauthor%29%20as%20%3Fcountmember%29%20%0A%20%20%20%20WHERE%20%7B%0A%20%20%20%20%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11.%0A%20%20%20%20%20%20%3Fauthor%20wdt%3AP13%20%3FWikiLink.%0A%20%20%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%20%20%20%20%3FWikiLink%20widt%3AP463%20%3FmemberOf.%0A%20%20%20%20%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%20%20GROUP%20BY%20%3FmemberOf%0A%20%20HAVING%20%28%3Fcountmember%20%3E%201%29%0A%20%20%7D%0A%7D%0A%0A%0A){:target="_blank"} 
+
+
+To filter the result to those organizations that have at least two members from the MiMoTextBase, we can expand the query above by a second query within the first as nested query. After the first query, but before closing it, we are going to copy the same query with the exception that we add the `COUNT(?author)` to the `SELECT`-part. Therefore we need to add the `GROUP BY` to the end of the query. Via `HAVING ([count-variable] > 1)` we now can filter for those organizations having at least two members.
+
+<!-- 
+Wir brauchen 2 Abfragen, eine um wie oben die Mitgliedsschaften zu erhalten (mit der Option eines Bildes), und eine Abfrage um zu zählen, wie häufig Autor:innen mit Organisationen verbunden sind. Da wir nur die wollen, die mind. 2 Mitglieder aus der MiMoTextBase haben wollen, müssen wir Count und Group by anwenden und zusätzlich mit Having count > 1 filtern.
+
+-->
