@@ -5,7 +5,7 @@
 sidebar: mydoc_sidebar_tutorial
 permalink: visualizations.html
 folder: queries
-toc: True
+toc: False #True
 ---
 
 ### **Visualizations**
@@ -22,10 +22,49 @@ The DockerWikibaseQueryService offers various options for visualising the result
 There are two options to do so: Either via the eye-Icon that will appear when you run a query. Or one uses the default view keyword within a query as follows: `#defaultView:[chosen view]`. 
 
 
+<br/>
 
-### Table
 
-<table>
+<table style="width:100%" id="vistoc">
+<colgroup>
+<col width="25%"/>
+<col width="25%"/>
+<col width="25%"/>
+<col width="25%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><a href="#Table"><button style="width:100%" class="btn-primary">Table</button></a></td>
+<td><a href="#ImageGrid"><button style="width:100%" class="btn-primary">Image Grid</button></a></td>
+<td><a href="#Map"><button style="width:100%" class="btn-primary">Map</button></a></td>
+<td/>
+</tr>
+<tr>
+<td><a href="#Line"><button style="width:100%" class="btn-primary">Line Chart</button></a></td>
+<td><a href="#Bar"><button style="width:100%" class="btn-primary">Bar Chart</button></a></td>
+<td><a href="#Scatter"><button style="width:100%" class="btn-primary">Scatter Chart</button></a></td>
+<td><a href="#Area"><button style="width:100%" class="btn-primary">Area Chart</button></a></td>
+</tr>
+<tr>
+<td><a href="#Bubble"><button style="width:100%" class="btn-primary">Bubble Chart</button></a></td>
+<td><a href="#TreeMap"><button style="width:100%" class="btn-primary">Tree Map</button></a></td>
+<td><a href="#Tree"><button style="width:100%" class="btn-primary">Tree</button></a></td>
+<td><a href="#Timeline"><button style="width:100%" class="btn-primary">Timeline</button></a></td>
+</tr>
+<tr>
+<td><a href="#Dimensions"><button style="width:100%" class="btn-primary">Dimensions</button></a></td>
+<td><a href="#Graph"><button style="width:100%" class="btn-primary">Graph</button></a></td>
+<td/>
+<td/>
+</tr>
+</tbody>
+</table>
+
+
+
+### <a name="Table"/>Table 
+
+<table id="">
 <colgroup>
 <col width="15%"/>
 <col width="85%"/>
@@ -81,7 +120,7 @@ WHERE{
 } ORDER BY desc(?datatype)
 ```
 
-### Image Grid
+### <a name="ImageGrid"/>Image Grid
 
 <table>
 <colgroup>
@@ -161,7 +200,7 @@ WHERE {
 Example with hiding the file name:
 By adding `#defaultView:ImageGrid{"hide":["?img"]}` the Link to the image source is now hidden, [see](https://query.mimotext.uni-trier.de/#%23defaultView%3AImageGrid%7B%22hide%22%3A%5B%22%3Fimg%22%5D%7D%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20wid%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20widt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0A%23%20show%20all%20author%20images%20that%20have%20an%20exact%20match%20with%20wikidata%20and%20where%20it%20contains%20images%0A%0ASELECT%20%3Fauthor%20%3FauthorLabel%20%3Fimg%0AWHERE%20%7B%0A%20%20%3Fauthor%20wdt%3AP11%20wd%3AQ11%3B%0A%20%20%20%20%20%20%20%20%20%20wdt%3AP13%20%3FwikiLink.%0A%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3FwikiLink%20widt%3AP18%20%3Fimg.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%20%20%20%20%20%20%20%20%0A%7D){:target="_blank"}.
 
-### Map
+### <a name="Map"/>Map
 
 <table>
 <colgroup>
@@ -247,7 +286,7 @@ Example with hiding coordinates, [see](https://query.mimotext.uni-trier.de/#%23q
 
 
 
-### Line Chart
+### <a name="Line"/>Line Chart
 <table>
 <colgroup>
 <col width="15%"/>
@@ -319,7 +358,7 @@ ORDER BY ?year
 ```
 
 
-### Bar Chart
+### <a name="Bar"/>Bar Chart
 <table>
 <colgroup>
 <col width="15%"/>
@@ -370,7 +409,7 @@ ORDER BY ?year
 
 For an explanation, see section of LineCharts.
 
-### Adding options
+#### Adding options
 
 For creating an animated bar chart, let's take another query: 
 Show the tonality count per intentionality and year as an animated bar chart, for query see [here](https://query.mimotext.uni-trier.de/index.html#PREFIX%20wd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%23%20%28animated%29%0A%23%20Show%20the%20tone%20count%20per%20intention%20and%20year%0A%23defaultView%3ABarChart%0ASELECT%20%3FintentionLabel%20%28COUNT%28%3Ftone%29%20AS%20%3FtoneCount%29%20%3FtoneLabel%20%3Fyear%0AWHERE%7B%0A%20%20%3Fitem%20wdt%3AP2%20wd%3AQ2%3B%20%23%20item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20wdt%3AP9%20%3Fpubdate%3B%20%23%20get%20the%20publication%20date%0A%20%20%20%20%20%20%20%20wdt%3AP38%20%3Ftone%3B%20%23%20get%20tone%20of%20work-item%0A%20%20%20%20%20%20%20%20wdt%3AP39%20%3Fintention.%20%23%20get%20intention%20of%20work-item%0A%20%20%3Ftone%20rdfs%3Alabel%20%3FtoneLabel.%20%23%20get%20the%20tonality-label%0A%20%20%3Fintention%20rdfs%3Alabel%20%3FintentionLabel.%20%23%20get%20the%20intentionality-label%0A%20%20%0A%20%20FILTER%28LANG%28%3FtoneLabel%29%20%3D%20%22en%22%29.%20%23%20filter%20for%20language%0A%20%20FILTER%28LANG%28%3FintentionLabel%29%3D%22en%22%29.%20%23%20filter%20for%20language%0A%20%20BIND%28str%28YEAR%28%3Fpubdate%29%29%20as%20%3Fyear%29.%20%23%20filter%20year%20of%20the%20publication%20date%0A%7D%0AGROUP%20BY%20%3Fyear%20%3FtoneLabel%20%3FintentionLabel%20%0A){:target="_blank"}
@@ -402,7 +441,7 @@ GROUP BY ?year ?toneLabel ?intentionLabel
 
 ```
 
-### Scatter Chart
+### <a name="Scatter"/>Scatter Chart
 <table>
 <colgroup>
 <col width="15%"/>
@@ -453,7 +492,7 @@ GROUP BY ?year ?toneLabel ?intentionLabel
 
 See explanation for LineChart.
 
-### Area Chart
+### <a name="Area"/>Area Chart
 
 <table>
 <colgroup>
@@ -527,7 +566,7 @@ HAVING (count(?pubPlaceLabel) > 4)
 # HAVING (?count > 4)
 ``` 
 
-### Bubble Chart
+### <a name="Bubble"/>Bubble Chart
 
 <table>
 <colgroup>
@@ -596,7 +635,7 @@ ORDER BY desc(?count)
 
 
 
-### TreeMap
+### <a name="TreeMap"/>TreeMap
 
 <table>
 <colgroup>
@@ -646,7 +685,7 @@ ORDER BY desc(?count)
 In order to retrieve a TreeMap one must consider the order of the variables within the `SELECT`-part as it will reflect the hierarchy of the Tree. As we chose `theme` as the first variable, all following variables will be clustered within the corresponding theme. 
 
 
-### Tree
+### <a name="Tree"/>Tree
 
 <table>
 <colgroup>
@@ -705,7 +744,7 @@ SELECT ?author ?authorLabel
 This `SELECT`-part will therefore create a tree having the authors as nodes. For each author the novels and for each novel the thematic concepts will appear if expanded. 
 
 
-### Timeline
+### <a name="Timeline"/>Timeline
 
 <table>
 <colgroup>
@@ -781,7 +820,7 @@ OPTIONAL{?awardProperty pq:P585 ?time.} # get the qualifiert point in time when 
 ```
 
 
-### Dimensions
+### <a name="Dimensions"/>Dimensions
 
 
 <table>
@@ -836,7 +875,7 @@ As the variables within `SELECT`are represented as dimension axes, the order wil
 
 
 
-### Graph
+### <a name="Graph"/>Graph
 
 
 <table>

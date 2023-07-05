@@ -1158,7 +1158,33 @@ div.box.box1 {
         word-wrap: break-word;       /* Internet Explorer 5.5+ */
         font-size: 14px;
     }
+/* #vistoc .tr .td{
+    background-color: #f0f0f0;
+}
+    #vistoc tr:nth-child(even) td:nth-child(odd), 
+    #vistoc tr:nth-child(odd) td:nth-child(even)
+    {
+        background-color: #319596;
+    }
 
+*/
+#vistoc, #vistoc tr, #vistoc td{
+    background-color: white;
+    border:none !important;
+    border-top:none !important;
+}
+
+#vistoc > tbody > tr > td {
+border-top:none;
+}
+
+
+#vistoc > tbody > tr > td > button:hover {
+    background-color: #319596;
+    color: white;
+    
+}
+*/
 /*
  * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
  *
