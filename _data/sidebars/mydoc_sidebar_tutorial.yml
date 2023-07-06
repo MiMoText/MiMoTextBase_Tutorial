@@ -77,6 +77,10 @@ entries:
           - title: Themes
             output: web
             url: /themes.html
+          
+          - title: Visualizations
+            output: web
+            url: /visualizations.html
 
             subfolders:
               - title: Going Further
@@ -94,3 +98,4 @@ entries:
                   - title: Now it is up to you
                     output: web
                     url: /up_to_you.html
+      
