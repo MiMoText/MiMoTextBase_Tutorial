@@ -18,7 +18,7 @@ style="width: 100%; height:auto; border: none; padding:1%; position:relative; to
 
 ### **Overview**
 
-The DockerWikibaseQueryService offers various options for visualising the result of queries. 
+The Wikidata Query Service offers various options for visualising the result of queries. 
 There are two options to do so: Either via the eye-Icon that will appear when you run a query. Or one uses the default view keyword within a query as follows: `#defaultView:[chosen view]`. 
 
 
