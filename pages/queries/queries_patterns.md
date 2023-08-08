@@ -29,7 +29,9 @@ Query 4: Novels published in Paris between 1780 and 1790 that have theme 'philos
 - as [Tiny-URL](https://tinyurl.com/26z8dbc6)
 - as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3ANovels%20published%20in%20Paris%20between%201780%20and%201790%20that%20have%20theme%20%27philosophy%27%20%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fyear%0AWHERE%20%7B%0A%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%20%23item%20is%20instance%20of%20literary%20work%0A%20%20%20%20%20%20%20%20mmdt%3AP10%20mmd%3AQ3521%3B%20%23item%20was%20published%20in%20Paris%0A%20%20%20%20%20%20%20%20mmdt%3AP36%20mmd%3AQ3039%3B%20%23item%20is%20about%20philosophy%0A%20%20%20%20%20%20%20%20mmdt%3AP9%20%3Fdate.%20%23item%20has%20publication%20date.%0A%0A%20%20FILTER%28%3Fdate%20%3E%3D%20%221780%22%5E%5Exsd%3AdateTime%20%26%26%20%3Fdate%20%3C%3D%20%221790%22%5E%5Exsd%3AdateTime%29.%0A%20%20BIND%28YEAR%28%3Fdate%29%20as%20%3Fyear%29.%0A%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%20%0A%0A%7D%0A)
 
-Query: Query to retrieve some data about the MiMoTextBase such as Authors, Novels, publicationyears, tonality etc.
+
+#### 2.2 Further analysis and exploration
+Query ### : Query to retrieve some data about the MiMoTextBase such as Authors, Novels, publicationyears, tonality etc.
 
 - as [Tiny-URL](https://tinyurl.com/2bpl7qa6)
 - as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3AQuery%20to%20retrieve%20some%20data%20about%20the%20MiMoTextBase%20such%20as%20Authors%2C%20Novels%2C%20publicationyears%2C%20tonality%20etc.%0Aprefix%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0Aprefix%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%0ASELECT%20DISTINCT%20%3Fbgrf%20%3Fitem%20%3Fauthorlabel%20%3FitemLabel%20%3Fyear%20%3Fnarrpers%20%3Ftonality%20%3Fpages%20%3Fdist_format%20%3Fnormalized%20WHERE%20%7B%0A%20%3Fitem%20mmdt%3AP5%20%3Fauthor%3B%20%23%20who%20is%20the%20author%3F%0A%20%20%20%20%20%20%20mmdt%3AP4%20%3Ftitle%3B%20%23%20what%20is%20the%20title%3F%0A%20%20%20%20%20%20%20mmdt%3AP22%20%3Fbgrf%3B%20%20%23%20what%20is%20the%20identifier%20in%20the%20bibliographic%20metadata%3F%0A%20%20%20%20%20%20%20mmdt%3AP9%20%3Fdate%3B%20%23%20what%20is%20the%20publication%20date%3F%0A%20OPTIONAL%20%7B%20%3Fitem%20mmdt%3AP27%20%3Fnarrpers%7D%20%0A%20OPTIONAL%20%7B%20%3Fitem%20mmdt%3AP31%20%3Ftonality%7D%0A%20OPTIONAL%20%7B%20%3Fitem%20mmdt%3AP25%20%3Fpages%7D%0A%20OPTIONAL%20%7B%20%3Fitem%20mmdt%3AP26%20%3Fdist_format%7D%0A%20BIND%28YEAR%28%3Fdate%29%20as%20%3Fyear%29.%0A%20BIND%28if%28bound%28%3Fnarrpers%29%2C%20%3Fnarrpers%2C%20%22unbekannt%22%29%20as%20%3Fnormalized%29%0A%20%3Fauthor%20rdfs%3Alabel%20%3Fauthorlabel.%0A%20FILTER%28LANG%28%3Fauthorlabel%29%20%3D%20%22en%22%29%0A%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2C%20fr%22.%20%7D%0A%7D%20ORDER%20BY%20%3Fyear)
@@ -94,113 +96,36 @@ Query ###: Labels entered on wikidata-entry 'Voltaire'
 - as [Tiny-URL](https://tinyurl.com/23pv9yu7)
 - as [Full-URL](https://query.mimotext.uni-trier.de/index.html#%23title%3ALabels%20entered%20on%20wikidata-entry%20%27Voltaire%27%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20%28LANG%28%3FVoltaireLabels%29%20as%20%3Flang%29%20%3FVoltaireLabels%20%0AWHERE%20%7B%20%0A%20%20%0A%20%20mmd%3AQ981%20mmdt%3AP13%20%3FwikiDataEntity.%20%23%20Voltaire%20has%20a%20wikidata%20match.%0A%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%3FwikiDataEntity%20rdfs%3Alabel%20%3FVoltaireLabels.%0A%20%20%7D%20%20%20%20%20%20%09%20%0A%7D%0AORDER%20BY%20%3Flang)
 
+
+#### 2.3 Federated Queries
+
 Query 9 Narrative location with geo coordinate locations via federated query (fig. 9) 
-#defaultView:Map{"markercluster":"true"}
-PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd
-PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt
-PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
-PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/>
-SELECT DISTINCT ?item ?itemLabel ?narr_loc ?narr_locLabel ?WikiDataEntity ?coordinateLocation
-WHERE { ?item wdt:P32 ?narr_loc.
-  ?narr_loc wdt:P13 ?WikiDataEntity.
-  #Federated Query -> Wikidata
-  SERVICE <https://query.wikidata.org/sparql> {
-	?WikiDataEntity widt:P625 ?coordinateLocation
-  }      	 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
-}
 
+- as [Tiny-URL](https://tinyurl.com/24djgul3)
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3ANarrative%20locations%20of%20the%20novels%20on%20a%20map%0A%23defaultView%3AMap%7B%22markercluster%22%3A%22true%22%7D%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20wd%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20wdt%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3Fnarr_loc%20%3Fnarr_locLabel%20%3FWikiDataEntity%20%3FcoordinateLocation%0AWHERE%20%7B%20%3Fitem%20mmdt%3AP32%20%3Fnarr_loc.%0A%20%20%3Fnarr_loc%20mmdt%3AP13%20%3FWikiDataEntity.%0A%20%20%23Federated%20Query%20-%3E%20Wikidata%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%09%3FWikiDataEntity%20wdt%3AP625%20%3FcoordinateLocation%0A%20%20%7D%20%20%20%20%20%20%09%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0A)
 
-Query 10, Alternative Labels of author names via ‘federated’ queries’
-PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
-PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/>
-PREFIX wid:<http://www.wikidata.org/entity/> #wikidata entity
-PREFIX widt:<http://www.wikidata.org/prop/direct/> #wikidata property
+Query 10: Alternative Labels of author names via ‘federated’ queries’
 
-SELECT DISTINCT ?author ?authorLabel ?wikidataEntity ?altname
-WHERE {
-	 ?item wdt:P5 ?author.
-      ?author wdt:P13 ?wikidataEntity.  #exact match
- 
- 
-      #Federated Query -> Wikidata
-      
-SERVICE <https://query.wikidata.org/sparql> {
-   	 ?wikidataEntity skos:altLabel ?altname
-      }     
- 		 
-      SERVICE wikibase:label {
-   	 bd:serviceParam wikibase:language "en" .
-      }
-}
-LIMIT 1000
-
+- as [Tiny-URL](https://tinyurl.com/22qcoc8m)
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3AAlternative%20Labels%20of%20author%20names%20via%20%E2%80%98federated%E2%80%99%20queries%E2%80%99%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20DISTINCT%20%3Fauthor%20%3FauthorLabel%20%3FwikidataEntity%20%3Faltname%0AWHERE%20%7B%0A%09%20%3Fitem%20mmdt%3AP5%20%3Fauthor.%0A%20%20%20%20%20%20%3Fauthor%20mmdt%3AP13%20%3FwikidataEntity.%20%20%23exact%20match%0A%20%0A%20%20%20%20%20%20%23Federated%20Query%20-%3E%20Wikidata%0ASERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%09%20%3FwikidataEntity%20skos%3AaltLabel%20%3Faltname%0A%20%20%20%20%20%20%7D%20%20%20%20%20%0A%20%09%09%20%0A%20%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%09%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%20%20%20%20%7D%0A%7D%0ALIMIT%201000%0A)
 
 Query 11: Influence networks of authors via ‘federated query’ (fig. 10)
-defaultView:Graph
-PREFIX wid:<http://www.wikidata.org/entity/> #wikidata entity
-PREFIX widt:<http://www.wikidata.org/prop/direct/> #wikidata property
 
-PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
-PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/>
-
-SELECT DISTINCT ?item ?itemLabel ?authorLabel ?influencedby ?image ?name
-WHERE {
-      ?item wdt:P5 ?author.
-      ?author wdt:P13 ?WikidataEntity.  #exact match
-      
-#Federated Query -> Wikidata
-      SERVICE <https://query.wikidata.org/sparql> {
-   	 ?WikidataEntity widt:P737/widt:P737 ?influencedby.
-     	 # ?influencedby widt:P734 ?name.  
-  		 OPTIONAL {  ?influencedby widt:P18 ?image.}
-      }     
- 		 
-      SERVICE wikibase:label {
-   	 bd:serviceParam wikibase:language "en" .
-      }
-}
+- as [Tiny-URL](https://tinyurl.com/2aup2tfr)
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3AInfluence%20networks%20of%20authors%20via%20%27federated%20query%27%0A%23defaultView%3AGraph%0APREFIX%20wd%3A%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20entity%0APREFIX%20wdt%3A%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20property%0A%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FauthorLabel%20%3Finfluencedby%20%3Fimage%20%3Fname%0AWHERE%20%7B%0A%20%20%20%20%20%20%3Fitem%20mmdt%3AP5%20%3Fauthor.%0A%20%20%20%20%20%20%3Fauthor%20mmdt%3AP13%20%3FWikidataEntity.%20%20%23exact%20match%0A%20%20%20%20%20%20%0A%23Federated%20Query%20-%3E%20Wikidata%0A%20%20%20%20%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%09%20%3FWikidataEntity%20wdt%3AP737%2Fwdt%3AP737%20%3Finfluencedby.%0A%20%20%20%20%20%09%20%23%20%3Finfluencedby%20widt%3AP734%20%3Fname.%20%20%0A%20%20%09%09%20OPTIONAL%20%7B%20%20%3Finfluencedby%20wdt%3AP18%20%3Fimage.%7D%0A%20%20%20%20%20%20%7D%20%20%20%20%20%0A%20%09%09%20%0A%20%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%09%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%20%20%20%20%7D%0A%7D%0A%0A)
 
 
-Query 12 Proportions of different narrative perspectives (all novels) (fig 11., left)
-#defaultView:BarChart
-PREFIX wd:<http://data.mimotext.uni-trier.de/entity/>
-PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/>
+Query 12 Proportions of different narrative perspectives (all novels) (fig 11., left) [momentan nicht im Paper]
 
-SELECT ?topLabel (count(*) as ?count)
-WHERE {
-	 ?item wdt:P33 ?top . #narrative perspective
-	 ?top rdfs:label ?topLabel .
-	 FILTER(LANG(?topLabel) = "en")
-}
-GROUP BY ?topLabel
-ORDER BY desc(?count)
+- as [Tiny-URL](https://tinyurl.com/2dosbuze)
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23%20Counts%20of%20different%20narrative%20perspectives%0A%23defaultView%3ABarChart%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20%3FtopLabel%20%28count%28%2a%29%20as%20%3Fcount%29%0AWHERE%20%7B%0A%09%20%3Fitem%20mmdt%3AP33%20%3Ftop%20.%20%23narrative%20perspective%0A%09%20%3Ftop%20rdfs%3Alabel%20%3FtopLabel%20.%0A%09%20FILTER%28LANG%28%3FtopLabel%29%20%3D%20%22en%22%29%0A%7D%0AGROUP%20BY%20%3FtopLabel%0AORDER%20BY%20desc%28%3Fcount%29%0A%0A%0A%0A%0A)
 
 
 
+Query 13: Finding Identifiers on other Knowledge Graphs, for example Bibliothèque nationale de France ID
 
-Query 13: Finding Identifiers on other Knowledge Graphs, for example Bibliothèque nationale de France ID https://tinyurl.com/27ckm7y5 
+- as [Tiny-URL](https://tinyurl.com/25a2pqfn)
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3AMiMoText%20novels%20with%20URL%20to%20Biblioth%C3%A8que%20nationale%20de%20France%20%0A%23defaultView%3AImageGrid%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%23wikidata%20prefix%20definition%20for%20entity%0APREFIX%20wdt%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%20%23wikidata%20prefix%20definition%20for%20property%0APREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%0A%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fwikidata%20%3Fbnfurl%20%3Fimage%20%0AWHERE%20%7B%0A%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2.%0A%20%20%3Fitem%20mmdt%3AP13%20%3Fwikidata.%0A%20%20%3Fitem%20rdfs%3Alabel%20%3FitemLabel%20.%0A%20%20FILTER%28lang%28%3FitemLabel%29%20%3D%20%22en%22%29%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fquery.wikidata.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3Fwikidata%20wdt%3AP268%20%3Fbnfid.%0A%20%20%20%20OPTIONAL%7B%20%3Fwikidata%20wdt%3AP18%20%3Fimage.%7D%0A%20%20%20OPTIONAL%7B%20wd%3AP268%20wdt%3AP1630%20%3Fformatterurl.%7D%0A%20%20%20BIND%28IRI%28REPLACE%28%3Fbnfid%2C%20%27%5E%28.%2B%29%24%27%2C%20%3Fformatterurl%29%29%20AS%20%3Fbnfurl%29.%0A%20%20%7D%20%20%20%20%20%20%20%20%20%0A%7D%0A%0A)
  
 
-
-# MiMoText novels with URL to Bibliothèque nationale de France
-#defaultView:ImageGrid
-PREFIX wid: <http://www.wikidata.org/entity/> #wikidata prefix definition for entity
-PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata prefix definition for property
-PREFIX wd:<http://data.mimotext.uni-trier.de/entity/> #mimotext prefix for entity is wd
-PREFIX wdt:<http://data.mimotext.uni-trier.de/prop/direct/> #mimotext prefix for property is wdt
-
-SELECT ?item ?itemLabel ?wikidata ?bnfurl ?image
-WHERE {
-  ?item wdt:P2 wd:Q2.
-  ?item wdt:P13 ?wikidata.
-  ?item rdfs:label ?itemLabel .
-  FILTER(lang(?itemLabel) = "en")
-  SERVICE <https://query.wikidata.org/sparql> {
-	?wikidata widt:P268 ?bnfid.
-	OPTIONAL{ ?wikidata widt:P18 ?image.}
-   OPTIONAL{ wid:P268 widt:P1630 ?formatterurl.}
-   BIND(IRI(REPLACE(?bnfid, '^(.+)$', ?formatterurl)) AS ?bnfurl).
-  }    	 
-}
 
