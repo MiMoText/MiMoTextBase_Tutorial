@@ -9,9 +9,7 @@ toc: true
 ---
 ### Patterns
 
-# Query to retrieve the count of authors, novels, thematic concepts and spatial concepts within the MiMoTextBase
-
-Query 1: [Count of novels, authors, thematic concepts](https://purl.org/mimotext/pattern){:target="_blank"}
+Query 1: [Count of novels, authors, thematic concepts and spatial concepts](https://purl.org/mimotext/pattern){:target="_blank"}
 
 ```sparql
 PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
