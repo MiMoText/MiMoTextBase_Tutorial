@@ -504,7 +504,7 @@ WHERE {
 
 Queries 18: Topic labels in English, French and German
 
-a\) [using Filter](https://tinyurl.com/2avufdfo){:target="_blank"}
+a\) [using Filter](https://purl.org/mimotext/pattern/query18a){:target="_blank"}
 
 <!-- 
 - as [FULL-URL](https://query.mimotext.uni-trier.de/#%23title%3ATopic%20labels%20in%20English%2C%20French%20and%20German%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0A%0ASELECT%20DISTINCT%20%3Ftopic%20%3FtopicLabel_EN%20%3FtopicLabel_FR%20%3FtopicLabel_DE%20WHERE%20%7B%0A%20%20%0A%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%0A%20%20%20%20%20%20%20%20mmdt%3AP36%20%3Ftopic.%0A%20%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_EN.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_FR.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_DE.%0A%20%20%0A%20%20FILTER%28LANG%28%3FtopicLabel_EN%29%20%3D%20%22en%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_FR%29%20%3D%20%22fr%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_DE%29%20%3D%20%22de%22%29.%0A%0A%7D){:target="_blank"}
@@ -532,7 +532,7 @@ SELECT DISTINCT ?topic ?topicLabel_EN ?topicLabel_FR ?topicLabel_DE WHERE {
 
 }
 ```
-b\) [using Wikibase Label Service](https://tinyurl.com/23vmyjo6){:target="_blank"}
+b\) [using Wikibase Label Service](https://purl.org/mimotext/pattern/query18b){:target="_blank"}
 
 <!-- 
 
