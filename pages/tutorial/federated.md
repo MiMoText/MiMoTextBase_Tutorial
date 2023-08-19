@@ -12,24 +12,26 @@ toc: false
 
 ### **Federated queries**
 
-One major advantage of linked open data is that we can use not only the information stored within our graph. Instead, because we have matched most of our values to existing WikiData-Items (where possible), we are able to write queries linking to different Knowledge Bases like WikiData [or others that also link to WikiData-Items].
-As we have location information like places of publication or narrative locations of the novels and WikiData provides coordinates to many locations, we can write a federated query to retrieve those and visualize the locations on a map.
+One major advantage of linked open data is that we can use not only the information stored within our graph, but also write queries linking to different knowledge bases like Wikidata or others that link to Wikidata items. This is possible because we have matched most of our values to existing Wikidata items.
 
-We plan to change the prefixes in our MiMoTextBase soon, so that the wikidata prefixes do not have to be changed. However, the default setting for each Wikibase instance are the Wikidata prefixes, so we have so far changed the actual Wikidata prefixes as shown below. First you need to define the Prefixes you are going to use for the other knowledge base in the query as:
+Since we have location information like places of publication or narrative locations of the novels and Wikidata provides coordinates to many locations, we can write a federated query to retrieve those and visualize the locations on a map.
 
-`PREFIX wid: <http://www.wikidata.org/entity/> #wikidata wd PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata wdt`
+First you need to define the prefixes you are going to use for the other knowledge base in the query as:
 
-Within the `WHERE`-part you can query all items you want to as long as they have a `P13` (exact match with WikiData) property.
+`PREFIX wd: <http://www.wikidata.org/entity/> #wikidata wd 
+PREFIX wdt: <http://www.wikidata.org/prop/direct/> #wikidata wdt`
+
+Within the `WHERE`-part you can query all items you want to as long as they have a `P13` (exact match with Wikidata) property.
 So in our example
-`?item wdt:P32 ?nar_loc. #a novel has a narrative location ?nar_loc wdt:P13 ?WikiLink. #the narrative location has an exact match.`
+`?item mmdt:P32 ?nar_loc. #a novel has a narrative location ?nar_loc mmdt:P13 ?WikiLink. #the narrative location has an exact match.`
 
-Next using the `SERVICE` referring to the WikiData-SPARQL-Endpoint, we can get all information listed on the matching WikiData-entry. To write the triple, we now need to use the property-values of WikiData. Here `P625` is the coordinate location of the WikiData entity.
+Next using the `SERVICE` referring to the Wikidata SPARQL endpoint, we can get all information listed on the matching Wikidata entry. To write the triple, we now need to use the property values of Wikidata. Here `P625` is the coordinate location of the Wikidata entity.
 
 `SERVICE <https://query.wikidata.org/sparql> { ?wikidataEntityLink widt:P625 ?coordinateLocation. } `
 
-Example: [Show all narrative places (using the coordinate locations property of Wikidata)](https://tinyurl.com/2m4g32my){:target="\_blank", rel: "noopener noreferrer"}
+Example: [Show all narrative places (using the coordinate locations property of Wikidata)](https://tinyurl.com/26t7xv98){:target="\_blank", rel: "noopener noreferrer"}
 
-<p><iframe style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen  src="https://tinyurl.com/2m4g32my" referrerpolicy="origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" ></iframe></p>
+<p><iframe style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen  src="https://tinyurl.com/26t7xv98" referrerpolicy="origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" ></iframe></p>
 
 ```
 Federated query
