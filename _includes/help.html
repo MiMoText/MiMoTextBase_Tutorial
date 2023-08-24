@@ -152,15 +152,14 @@ body {
         </div>
         <div id="collapseFour" class="panel-collapse collapse">
             <div class="panel-body">
-                <p>If you run into this error message, you probably have to group items. In the example below, we use the <code>count</code> function, but forgot to add <code>GROUP BY</code><br/>
+                <p>If you run into this error message, you probably have to group items. In the example below, we use the <code>count</code> function, but forgot to add <code>GROUP BY</code>.<br/>
                 </p>
-                <p>Query to retrieve count of published works per author:<br/>
-                </p>
-                <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
+                <a href="https://tinyurl.com/25s6kst6" target="_blank" rel="noopener">Query to retrieve count of published works per author:</a>
+                <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/25s6kst6" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
                 <p>The solution is easy: We have to aggregate <code>?authorName</code> by grouping. We can now get the results in descending order via <code>order by desc(?count)</code> and set a limit of 20 to get the top 20.
                 </p>
-                <a href="https://tinyurl.com/2b9af2zt" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20):</a>
-                  <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" src="https://query.mimotext.uni-trier.de/#prefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0A%20SELECT%20%3FauthorName%20(count%20(%3FauthorName)%20as%20%3Fcount)%0A%20WHERE%20%7B%0A%20%20%20%3Fwork%20wdt%3AP5%20%3Fauthor%20.%20%23%20work%20has%20author.%0A%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorName%20.%20%23%20get%20author%20label%20(not%20only%20Link%20to%20author)%0A%20%20%20FILTER(LANG(%3FauthorName)%20%3D%20%22en%22)%20%23%20other%20options%3A%20%22fr%22%2C%20%22de%22.%20Filter%20is%20needed%20as%20there%20is%20more%20than%20one%20label%20(language%20dependent)%0A%20%7D%20%0Agroup%20by%20%3FauthorName%0Aorder%20by%20desc%20(%3Fcount)%0Alimit%2020"  referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+                <a href="https://tinyurl.com/2ypj3t2b" target="_blank" rel="noopener">Query to retrieve authors with most novels published (top 20):</a>
+                  <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" src="https://tinyurl.com/2ypj3t2b"  referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
             </div>
         </div>
@@ -200,29 +199,18 @@ body {
                 
 <h4>List of properties</h4>
 
-<p>Query: <a href="https://tinyurl.com/28wfbxdf" style="display: inline;" target="_blank" rel="noopener">This is a list of all the properties used in this graph</a></p>
-<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://query.mimotext.uni-trier.de/#SELECT%20%3Fproperty%20%3FpropertyLabel%20%3Fprop%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%22.%20%7D%0A%20%20%20%20BIND(STRAFTER(STR(%3Fproperty)%2C%20%22entity%2F%22)%20as%20%3Fprop)%0A%7D%0AORDER%20BY%20ASC(xsd%3Ainteger(STRAFTER(STR(%3Fproperty)%2C%20'P')))" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+<p>Query:<a href="https://tinyurl.com/2y6qvszc" style="display: inline;" target="_blank" rel="noopener">Retrieve a list of all the properties used in this graph</a></p>
+<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://tinyurl.com/23o6zb6m" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
 </p>
-
 <h4>List of themes</h4>
-
-<p>For a list of all thematic concepts in the graph, see this query which lists all thematic concepts and their Q-Identifier, ordered by occurrence.</p>
-
-<p>Query: <a href="https://tinyurl.com/27a2yrtz" target="_blank" rel="noopener" style="display: inline;">Show all themes with corresponding Q-Identifier and occurrence in the graph</a></p>
-
-<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://query.mimotext.uni-trier.de/#%23%20Show%20all%20themes%20with%20corresponding%20Q-Identifier%20%26%20occurrence%20%0Aprefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0ASELECT%20%20%3Ftheme%0A%20%20%20%20%20%20%20%20%28sample%28%3FthemeLabel%29%20as%20%3Fname%29%0A%20%20%20%20%20%20%20%20%28count%28%2a%29%20as%20%3Fcount%29%20%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP36%20%3Ftheme.%0A%20%20%3Ftheme%20rdfs%3Alabel%20%3FthemeLabel%20.%0A%20%20FILTER%20%28LANG%28%3FthemeLabel%29%20%3D%20%22en%22%29.%0A%7D%0AGROUP%20BY%20%3Ftheme%0AORDER%20BY%20DESC%28%3Fcount%29%0A%0ALIMIT%2035" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-</p>
-
+<p>For a list of all thematic concepts in the graph, see this<a href="https://tinyurl.com/2bus5lz9" target="_blank" rel="noopener" style="display: inline;">query</a>which lists all thematic concepts and their Q-identifier, ordered by occurrence:</p>
+<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://tinyurl.com/29vc76z7" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
 <h4>List of locations</h4>
-
-<p>For a list of all narrative places in the graph, see this query which lists all narrative places and their Q-Identifier, ordered by occurrence.</p>
-
-<p>Query: <a href="https://tinyurl.com/2ymyqm8e" target="_blank" rel="noopener" style="display: inline;">Show all narrative locations with corresponding Q-Identifier & occurrence</a>
-</p>
-<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://query.mimotext.uni-trier.de/#%23%20Show%20all%20narrative%20locations%20with%20corresponding%20Q-Identifier%20%26%20occurrence%20%0Aprefix%20wd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%20%23mimotext%20prefix%20for%20entity%20is%20wd%0Aprefix%20wdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%20%23mimotext%20prefix%20for%20property%20is%20wdt%0ASELECT%20%20%3FnarrativeLocation%0A%20%20%20%20%20%20%20%20%28sample%28%3FnarrativeLocationLabel%29%20as%20%3Fname%29%0A%20%20%20%20%20%20%20%20%28count%28%2a%29%20as%20%3Fcount%29%20%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP32%20%3FnarrativeLocation.%0A%20%20%3FnarrativeLocation%20rdfs%3Alabel%20%3FnarrativeLocationLabel%20.%0A%20%20FILTER%20%28LANG%28%3FnarrativeLocationLabel%29%20%3D%20%22en%22%29.%0A%7D%0AGROUP%20BY%20%3FnarrativeLocation%0AORDER%20BY%20DESC%28%3Fcount%29%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+<p>For a list of all narrative places in the graph, see this<a href="https://tinyurl.com/2bmwwqeh" target="_blank" rel="noopener" style="display: inline;">query</a>which lists all narrative places and their Q-Identifier, ordered by occurrence:</p>
+<p><iframe  style="width:100%;max-width:100%;height:450px;display: inline;" frameborder="0" src="https://tinyurl.com/2637l3wz" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
 </p>
 
-<p>These queries list themes or locations ordered by occurence. We would recommend items or properties which have a certain number of connections in the graph, in order to get good results (with enough data points in it).</p>
+<p>These queries list themes or locations ordered by occurrence. We recommend using items or properties which have a certain number of connections in the graph, in order to get good results (with enough data points).</p>
 
             </div>
         </div>
