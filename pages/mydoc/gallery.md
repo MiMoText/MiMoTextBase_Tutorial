@@ -9,4 +9,4 @@ toc: false
 topnav: topnav
 ---
 
-{% include index-color.html %}
+{% include gallery-color.html %}
