@@ -10,7 +10,7 @@ toc: False #True
 
 ### **Visualizations**
 
-Learn more about the different types of visualisations that the Wikibase Query Service is offering. Following the [Wikidata-documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views){:target="\_blank"}, we give an overview, specifying which types of datadtypes and sometimes additional data is needed in order to display the MiMoText data.
+Learn more about the different types of visualisations that the Wikibase Query Service is offering. Following the [Wikidata-documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views){:target="\_blank"}, we give an overview, specifying which types of datatypes and sometimes additional data is needed in order to display the MiMoText data.
 
 <!--
 style="width: 100%; height:auto; border: none; padding:1%; position:relative; top:0; left:0;"
