@@ -1091,3 +1091,5 @@ With this query we want to get all organisations of which the authors in the MiM
 We can add the condition that only authors of organisations with at least 2 members are shown and retrieve the images of the authors where available, see [here](https://tinyurl.com/2b5r4s96){:target="\_blank"}.
 
 To limit the result to those organisations that have at least two members from the MiMoTextBase, we can expand the query above by a second query within the first as nested query. After the first query, but before closing it, we are going to copy the same query with the exception of adding `COUNT(?author)` to `SELECT`. Therefore we need to add the `GROUP BY` to the end of the query. Via `HAVING ([count-variable] > 1)` we now can filter for those organisations having at least two members.
+
+[Previous](./themes.html){: .btn-primary} [Next](./secondary_literature.html){: .btn-primary}

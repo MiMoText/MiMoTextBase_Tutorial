@@ -45,6 +45,6 @@ Let’s see how the rather abstract location “rural area” is intertwined wit
 
 As a result, we see that the thematic concepts “sentimentalism”, “sentiment” and “unhappiness” are linked to the narrative location “rural area” (in aggregating all novels).
 
-[Previous](./spaces.html){: .btn-primary} [Next](./change_over_time.html){: .btn-primary}
+[Previous](./spaces.html){: .btn-primary} [Next](./visualizations.html){: .btn-primary}
 
 {% include help.html %}
