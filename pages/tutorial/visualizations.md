@@ -91,12 +91,12 @@ There are two ways to choose a visualisation, either via the "eye" icon that wil
       <tr>
       <td style="width:100%">
       <ul>
-      <li>show all datatypes of the objects under item Q1053 (“Les liaisons dangereuses”) and the connecting predicates. This <a href="https://tinyurl.com/27mgzc2d" target="_blank" rel="noopener noreferrer">query</a> will result in the following visualization:</li> </ul> <lb/>
+      <li>show all datatypes of the objects under item Q1053 (“Les liaisons dangereuses”) and the connecting predicates. This <a href="https://tinyurl.com/27mgzc2d" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer">query</a> will result in the following visualization:</li> </ul> <lb/>
           </td>
     </tr>
     <tr>
     <td tyle="width:100%">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/27mgzc2d" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/27mgzc2d" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe>
       </td>
     </tr>
   </tbody>
@@ -174,14 +174,14 @@ WHERE{
       <tr>
       <td style="width:100%">
       <ul>
-      <li>show all authors in the MiMoTextBase having an exact match with Wikidata and an image, see query <a href="https://tinyurl.com/267jcm5j" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer">here</a> </li>
+      <li>show all authors in the MiMoTextBase having an exact match with Wikidata and an image, see query <a href="https://tinyurl.com/267jcm5j" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer">here</a> </li>
     </ul>
     <lb/>
         </td>
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2djm5lax" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2djm5lax" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -276,7 +276,7 @@ By adding `#defaultView:ImageGrid{"hide":["?img"]}` the link to the image source
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/26uoz2jn" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer" ></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/26uoz2jn" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer" ></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -371,7 +371,7 @@ Same example with [hidden coordinates](https://tinyurl.com/2dnrb2lp){:target="\_
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2ctvt4zv" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2ctvt4zv" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -456,7 +456,7 @@ ORDER BY ?year
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/274z8tg8" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/274z8tg8" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -471,7 +471,7 @@ See line charts.
 For creating an animated bar chart, let's take another query:
 Count of different tones per intention and year as animated bar chart, see [here](https://tinyurl.com/2xkuu9xy){:target="\_blank"}
 
-<iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/288heaej" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe>
+<iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/288heaej" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe>
 
 For an animated chart we need four variables, in this case the intention, the count of the variable for the tone, the labels of the tone and the publication dates. The last one will be the variable the animation switches between. As we call the `COUNT(...)`, we also need to `GROUP BY` all other variables occurring in `SELECT`.
 
@@ -552,7 +552,7 @@ GROUP BY ?year ?toneLabel ?intentionLabel
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2yufgqbn" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2yufgqbn" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -617,7 +617,7 @@ See line chart.
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/26pdavmf" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/26pdavmf" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -702,7 +702,7 @@ HAVING (count(?pubPlaceLabel) > 4)
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/25wa753s" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/25wa753s" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -779,7 +779,7 @@ ORDER BY desc(?count)
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2as99wyy" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2as99wyy" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -843,7 +843,7 @@ In order to retrieve a tree map you must consider the order of the variables wit
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2284vy66" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/2284vy66" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -916,7 +916,7 @@ SELECT ?author ?authorLabel
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/24gds3z8" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/24gds3z8" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -1012,7 +1012,7 @@ OPTIONAL{?awardProperty pq:P585 ?time.} # get the qualifier 'point in time' wher
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/28a8zvtz" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/28a8zvtz" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
@@ -1076,7 +1076,7 @@ Since the variables within `SELECT`are represented as dimension axes, the order 
     </tr>
     <tr>
     <td colspan="2">
-      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/284mz8zc" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
+      <iframe style="width: 100%; max-width:100%; max-height:100%; height:370px; border: none; padding:1%; position:relative; top:0; left:0;" src="https://tinyurl.com/284mz8zc" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" target="_blank" rel="noopener noreferrer"></iframe> <lb/>
       </td>
     </tr>
   </tbody>
