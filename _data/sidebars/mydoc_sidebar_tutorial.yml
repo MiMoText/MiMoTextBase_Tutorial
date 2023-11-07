@@ -81,6 +81,10 @@ entries:
           - title: Visualizations
             output: web
             url: /visualizations.html
+          
+          - title: Secondary Literature
+            output: web
+            url: /secondary_literature.html
 
             subfolders:
               - title: Going Further
