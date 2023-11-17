@@ -1,0 +1,282 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style> 
+    * { 
+        margin-left: 2px; 
+        /* box-sizing: border-box; */ 
+    } 
+    #anchor_1{
+        border: 1px solid red;
+        height: 3%;
+        width:10%;
+        position:absolute;
+        left:20%;
+        top:52%;
+    }
+    
+    figure{
+        position: relative;
+        display: inline-block;
+    }
+    rect{
+      fill:red;
+      opacity:0.5;
+    }
+
+    #tooltipp_rect {
+      fill:bisque;
+      opacity: 0.9;
+
+    }
+
+    
+    .info {
+      opacity: 0;
+      font-size: 12px;
+      fill:black;
+      pointer-events: none;
+    }
+
+
+    .choose_option{
+
+      font-size:xx-large;
+      fill: green;
+
+    }
+
+    .data_rep {
+      opacity: 0;
+      font-size: 12px;
+      fill:black;
+      pointer-events: none;
+    }
+    
+
+    #simple_value:hover ~ #label_val,
+    #simple_value:focus ~ #label_val,
+    #simple_value:focus ~ #textval,
+    #simple_value:hover ~ #textval,
+    #simple_value:hover ~ #value,
+    #simple_value:focus ~ #value
+    {
+      opacity: 1;
+      transition: all 0.5s linear;
+      fill:black;
+    }
+
+    #how_to_retrieve_simple_vals:focus ~ #label_val,
+    #how_to_retrieve_simple_vals:hover ~ #label_val,
+    #how_to_retrieve_simple_vals:focus ~ #textval,
+    #how_to_retrieve_simple_vals:hover ~ #textval,
+    #how_to_retrieve_simple_vals:hover ~ #value,
+    #how_to_retrieve_simple_vals:focus ~ #value
+    {
+      opacity: 1;
+      transition: all 0.5s linear;
+      fill:green;
+    }
+
+    #how_to_retrieve_stmt_node:focus ~ #label_val_stmt,
+    #how_to_retrieve_stmt_node:hover ~ #label_val_stmt,
+    #how_to_retrieve_stmt_node:focus ~ #textval_stmt,
+    #how_to_retrieve_stmt_node:hover ~ #textval_stmt,
+    #how_to_retrieve_stmt_node:hover ~ #value_stmt,
+    #how_to_retrieve_stmt_node:focus ~ #value_stmt
+    {
+      opacity: 1;
+      transition: all 0.5s linear;
+      fill:green;
+    }
+
+
+    #simple_value{
+    opacity: 0;
+
+    }
+
+    #simple_value:hover{
+      opacity: 1;
+    }
+
+    #how_to_retrieve_simple_vals:hover ~ #simple_value,
+    #how_to_retrieve_simple_vals:focus ~ #simple_value
+    {
+
+      fill:aqua;
+      opacity: 1;
+    }
+    
+    #mmp, #stmt_node{
+      fill:blue;
+    }
+    </style> 
+
+
+
+<div class="panel-group" id="accordion">
+      <!--  
+
+    rect:hover ~ text{
+      opacity: 1;
+    }
+
+
+
+
+
+       -->
+   <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="noCrossRef accordion-toggle"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseTen"
+        >
+          <b>TEST</b></a
+        >
+      </h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Please click on any item / statement you want more information about how to retrieve
+        </p>
+        <div>
+          <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewbox="0 -150 2400 1500">
+            <defs>
+              <symbol id="tooltipp">
+                <rect id="tooltipp_rect" x="290" y="100" width="800" height="300" fill="#666" stroke="black"/>
+              </symbol>
+            </defs>
+            <image width="2381" height="1020" href="images/imgs_datarep/Q1053_data_rep_1.png">
+              <title>Q1053</title>
+            </image>
+
+
+            <g id="how_to_retrieve_simple_vals" aria-labelledby="label_val" tabindex="0">
+                <text x="10" y="-100"  class="choose_option">
+                <tspan>How to retrieve simple values</tspan> 
+              </text>
+            </g>
+            <!--SIMPLE VALUE -->
+            <a id="simple_value" aria-labelledby="label_val" tabindex="0">
+              <rect x="300" y="450" width="125" height="30" rx="10"/>
+             <!--  <text class="textlabel" x="200" y="600">NANANANANA</text> -->
+            </a>
+            <g class="info" id="label_val">
+              <use href="#tooltipp"/>
+              <text x="300" y="110" id="#textval_stmt" style="font-size:20px;">
+                <tspan x="300" dy="2em" >Retrieve simple value and its label </tspan>
+                <tspan x="300" dy="2em">“item is about [value]” = simple value</tspan>
+                <tspan x="300" dy="2em">mmd:Q1053 mmdt:P36 ?about.</tspan>
+                <tspan x="300" dy="2em">?about rdfs:label ?aboutLabel.</tspan>
+                <tspan x="300" dy="2em">FILTER(LANG(?aboutLabel) = “en”).</tspan>
+              </text>
+              <image x="310" y="250" width="750" height="200" href="images/imgs_datarep/result_simple_value_label.png">
+              </image>
+            </g>
+            <g class="data_rep" id="value">
+              <rect x="1230" y="430" width="220" height="75"/>
+              <rect x="1250" y="750" width="180" height="80"/>
+              <rect id="mmdt" x="1240" y="550" width="100" height="60"/>
+              
+              
+              <rect id="liaisons" x="10" y="25" width="600" height="55" rx="10"/>
+              <rect id="about" x="15" y="445" width="100" height="35"/>
+            </g>
+
+          <!-- retrieve statement node -->
+          <g id="how_to_retrieve_stmt_node" aria-labelledby="label_val_stmt" tabindex="0">
+            <text x="10" y="-50"  class="choose_option">
+            <tspan>How to retrieve statement node</tspan> 
+          </text>
+        </g>
+
+          <g class="info" id="label_val_stmt">
+            <use href="#tooltipp"/>
+            <text x="300" y="110" id="#textval" style="font-size:20px;">
+              <tspan x="300" dy="2em" >Retrieve statement node </tspan>
+              <tspan x="300" dy="2em">mmd:Q1053 mmp:P36 ?aboutStmt.</tspan>
+            </text>
+            <image x="310" y="180" width="750" height="200" href="images/imgs_datarep/result_stmt_node.png">
+            </image>
+          </g>
+          <g class="data_rep" id="value_stmt">
+            <rect x="1230" y="430" width="220" height="75"/>
+            <rect id="mmp" x="1450" y="440" width="100" height="60"/>
+            
+            <rect id="stmt_node" x="290" y="430" width="900" height="580"></rect>
+            <rect id="stmt_node_rep" x="1570" y="430" width="400" height="80"></rect>
+
+            <rect id="liaisons" x="10" y="25" width="600" height="55" rx="10"/>
+            <rect id="about" x="15" y="445" width="100" height="35"/>
+
+
+          </g>
+
+
+
+
+           <!-- retrieve simple value using statement node -->
+           <g id="how_to_retrieve_stmt_node" aria-labelledby="label_val_stmt" tabindex="0">
+            <text x="10" y="0"  class="choose_option">
+            <tspan>How to retrieve simple value using statement node</tspan> 
+          </text>
+        </g>
+
+          <g class="info" id="label_val_stmt">
+            <use href="#tooltipp"/>
+            <text x="300" y="110" id="#textval" style="font-size:20px;">
+              <tspan x="300" dy="2em" >Retrieve simple value using statement node </tspan>
+              <tspan x="300" dy="2em">mmd:Q1053 mmp:P36 ?aboutStmt.</tspan>
+              <tspan x="300" dy="2em">?aboutStmt mmps:P36 ?about.</tspan>
+            </text>
+            <image x="310" y="185" width="750" height="200" href="images/imgs_datarep/result_simple_val_via_stmt_node.png">
+            </image>
+          </g>
+          <g class="data_rep" id="value_stmt">
+            <rect x="1230" y="430" width="220" height="75"/>
+            <rect id="mmp" x="1450" y="440" width="100" height="60"/>
+            
+            <rect id="stmt_node" x="290" y="430" width="900" height="580"></rect>
+            <rect id="stmt_node_rep" x="1570" y="430" width="400" height="80"></rect>
+
+            <rect id="liaisons" x="10" y="25" width="600" height="55" rx="10"/>
+            <rect id="about" x="15" y="445" width="100" height="35"/>
+            <rect x="1250" y="750" width="180" height="80" style="fill:blue"/>
+            <rect x="300" y="450" width="125" height="30" rx="10" style="fill:white"/>
+          </g>
+
+
+
+
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    $(function () {
+      if (window.location.hash != "") {
+        // remove any accordion panels that are showing (they have a class of 'in')
+        $(".collapse").removeClass("in");
+
+        // show the panel based on the hash now:
+        $(window.location.hash + ".collapse").collapse("show");
+      }
+    });
+    $("#anchor_1").click(function() {
+        $("#value").css("display", "inline-block");
+    });
+  </script>
+</div>
