@@ -32,7 +32,7 @@ Once the result generation is finished, you will find some additional options in
 
 If you click on the </>Code-Button, a new window will open showing all options for embedding the recently run query in different coding languages.
 Now you can choose python and you will get the code that is necessary to run the query within a python script.
-![step3-2](images/sparql_python/sparql_python_step3-2.png)
+![step3-2](images/sparql_python/sparql_python_step3-2.PNG)
 
 #### Step 4 - Install libraries:
 Here you can also see all python libraries that are used for running the query, that is sys and SPARQLWrapper - the latter you may have to install if you are using it for the first time. For more information on how to do so, see the [documentation](https://sparqlwrapper.readthedocs.io/en/stable/main.html){:target="\_blank", rel: "noopener noreferrer"}.
