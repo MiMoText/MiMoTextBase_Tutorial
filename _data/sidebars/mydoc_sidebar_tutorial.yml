@@ -102,4 +102,7 @@ entries:
                   - title: Now it is up to you
                     output: web
                     url: /up_to_you.html
+                  - title: SPARQL in python
+                    output: web
+                    url: /sparql_in_python.html
       

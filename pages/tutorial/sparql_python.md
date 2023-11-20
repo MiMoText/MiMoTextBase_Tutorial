@@ -40,7 +40,7 @@ Here you can also see all python libraries that are used for running the query, 
 #### Step 5 - Copy and paste code:
 Now you are ready to copy the generated code into your python script. For this and the next steps, you can find our example in a jupyter notebook here:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiMoText/MiMoTextBase_Tutorial/gh-pages?labpath=jupyter_notebook%2Fsparql_in_python.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiMoText/MiMoTextBase_Tutorial/gh-pages?labpath=jupyter_notebook%2Fsparql_in_python.ipynb){:target="\_blank", rel: "noopener noreferrer"}
 
 
 
