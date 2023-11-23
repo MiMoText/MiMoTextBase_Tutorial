@@ -38,6 +38,6 @@ We can also query for narrative form from a diachronic perspective:
 [How have narrative forms changed over time?](https://tinyurl.com/276hon67){:target="\_blank", rel: "noopener noreferrer"}
 ![nar_form](images/change_nar_forms.png)
 
-[Previous](./themes.html){: .btn-primary} [Next](./comparing.html){: .btn-primary}
+[Previous](./secondary_literature.html){: .btn-primary} [Next](./comparing.html){: .btn-primary}
 
 {% include help.html %}
