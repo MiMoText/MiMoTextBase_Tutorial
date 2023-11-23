@@ -88,7 +88,10 @@ For example if you want to search for the mention of "Voltaire" in either `about
 </p>
 
 
+If you are interested in the temporal development of the topics written about in the secondary literature, this can be displayed as a bar chart. For this purpose, in addition to the topics of the primary texts and their referencing, the year of publication of the secondary literature is queried. As secondary literature is not available for every year in the period from 1902-2008, the year is additionally filtered from the `?date` variable using `BIND(STR(YEAR(?date)) as ?year)` and converted to a string in order to avoid larger gaps in the representation. See query [here](https://tinyurl.com/yrfj6ky9){:target="\_blank", rel: "noopener noreferrer"}.
 
+<p><iframe  style="width:100%;max-width:100%;height:800px" frameborder="0" allowfullscreen src="https://tinyurl.com/yrfj6ky9" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+</p>
 
 [Previous](./visualizations.html){: .btn-primary} [Next](./change_over_time.html){: .btn-primary}
 
