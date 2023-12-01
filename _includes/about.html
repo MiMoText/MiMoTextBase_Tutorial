@@ -1,16 +1,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+  * {
+    margin-left: 2px;
+    /* box-sizing: border-box; */
+  }
+
+  figure {
+    position: relative;
+    display: inline-block;
+  }
+
+  #tooltipp_rect {
+    fill: #31949673;
+    opacity: 0.9;
+  }
+
+  .info {
+    opacity: 0;
+    font-size: 12px;
+    fill: black;
+    pointer-events: none;
+  }
+
+  .choose_option {
+    font-size: xx-large;
+    fill: #248EC2;
+  }
+
+  .choose_option:hover {
+    cursor: pointer;
+    fill: #319596;
+  }
+
+  .data_rep {
+    opacity: 0;
+    font-size: 12px;
+    pointer-events: none;
+  }
+
+  #mmdref {
+    fill: None;
+  }
+
+  /*
+    #simple_value:hover ~ #label_val,
+    #simple_value:focus ~ #label_val,
+    #simple_value:focus ~ #textval,
+    #simple_value:hover ~ #textval,
+    #simple_value:hover ~ #value,
+    #simple_value:focus ~ #value
+    {
+      opacity: 1;
+      transition: all 0.5s linear;
+    }
+    */
+  #about,
+  #stated_schlueter {
+    opacity: 0;
+  }
+
+  #liaisons {
+    opacity: 0;
+  }
+
+  /*
+    #how_to_retrieve_simple_vals:focus ~ #label_val,
+    #how_to_retrieve_simple_vals:hover ~ #label_val,
+    #how_to_retrieve_simple_vals:focus ~ #textval,
+    #how_to_retrieve_simple_vals:hover ~ #textval
+    #how_to_retrieve_simple_vals:focus ~ #about,
+    #how_to_retrieve_simple_vals:hover ~ #about,
+    #how_to_retrieve_val_via_stmt_node:hover 
+    {
+      opacity: 1;
+      transition: all 0.5s linear;
+    }
+*/
+
+  #mmd_box {
+    stroke: black;
+  }
+
+  #mmd_box:hover,
+  #mmd_box:focus,
+  #mmd_box:hover~#textval {
+    fill: red;
+    opacity: 0.5;
+  }
+
+  #mmref_box {
+    fill: transparent;
+  }
+
+
+  /* test */
+
+  /*
+    #how_to_retrieve_simple_vals:focus ~ #label_val,
+    #how_to_retrieve_simple_vals:focus ~ #textval_stmt,
+    #how_to_retrieve_stmt_node:focus ~ #label_val_stmt,
+    #how_to_retrieve_stmt_node:focus ~ #textval_stmt,
+    #how_to_retrieve_stmt_node:focus ~ #value_stmt,
+    #how_to_retrieve_val_via_stmt_node:focus ~ #label_val_stmt_ref,
+    #how_to_retrieve_stated_in_ref:focus ~ #stated_in_ref
+    {
+      opacity: 1; */
+  /* transition: all 0.5s linear; */
+  /*  } 
+*/
+  #simple_value {
+    fill: red;
+    opacity: 0;
+  }
+
+  #how_to_retrieve_simple_vals:hover~#simple_value,
+  #how_to_retrieve_simple_vals:focus~#simple_value {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  /* 
+    #stmt_node{
+      stroke:blue;
+      stroke-width: 0.5%;
+      opacity: 0;
+    }
+*/
+  #mmdt_text_box,
+  #mmp_text_box {
+    opacity: 0;
+  }
+
+  .simple_val_path {
+    stroke: "black";
+  }
+</style>
+
 <div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="CrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseOne"
-        >
-          <b>Semantic Web, RDF, Linked Open Data, Wikidata</b></a
-        >
+        <a class="CrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <b>Semantic Web, RDF, Linked Open Data, Wikidata</b></a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse CrossRef">
@@ -31,10 +163,7 @@
           ([Voltaire] -> [author_of] -> [Candide]; [Candide] -> [is_about] ->
           [philosophy]) are illustrated in figure 1.
         </p>
-        <img
-          src="images/MiMoTextBase.png"
-          alt="RDF triples as elements of the MiMoText knowledge graph"
-        />
+        <img src="images/MiMoTextBase.png" alt="RDF triples as elements of the MiMoText knowledge graph" />
         <p>Fig. 1: RDF triples as elements of the MiMoText knowledge graph</p>
 
         <p>
@@ -56,14 +185,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseThree"
-        >
-          <b>The Wikibase ecosystem</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          <b>The Wikibase ecosystem</b></a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse noCrossRef">
@@ -74,9 +197,8 @@
           Wikibase is free and open for everyone. It is used for example by the
           project <a href="https://artbase.rhizome.org/wiki/Query">ArtBase</a>,
           the project <a href="https://enslaved.org/">Enslaved.org</a> or the
-          <a href="https://www.dnb.de/EN/Home/home_node.html"
-            >German National Library</a
-          >. We chose a local instance of Wikibase as the infrastructure for our
+          <a href="https://www.dnb.de/EN/Home/home_node.html">German National Library</a>. We chose a local instance of
+          Wikibase as the infrastructure for our
           data in “Mining and Modeling Text” for several reasons:
         </p>
         <ul>
@@ -103,8 +225,7 @@
           </li>
           <li>
             We see
-            <a href="http://data.mimotext.uni-trier.de" target="_blank"
-              >MiMoTextBase
+            <a href="http://data.mimotext.uni-trier.de" target="_blank">MiMoTextBase
             </a>
             as part of the Wikibase ecosystem. Accordingly, we hope to make
             interesting data available to other projects and, conversely, to
@@ -113,27 +234,18 @@
             significant the whole graph becomes.
           </li>
         </ul>
-        <img
-          src="images/wikibase_ecosystem_neu.png"
-          style="
+        <img src="images/wikibase_ecosystem_neu.png" style="
             width: 40%;
             height: 40%;
             display: block;
             margin-left: auto;
             margin-right: auto;
-          "
-          alt="A view of the MiMoTextBase within the Wikimedia Linked Open Data web."
-        />
+          " alt="A view of the MiMoTextBase within the Wikimedia Linked Open Data web." />
         <p>
           A view of the MiMoTextBase within the Wikimedia Linked Open Data web.
           Credit original visualization:
-          <a
-            href="https://blogs.tib.eu/wp/tib/2021/11/05/tib-at-wikidatacon-part-1/"
-            style="display: inline"
-            target="_blank"
-            rel="noopener"
-            >Dan Shick (WMDE) / CC-BY-SA 4.0.</a
-          >
+          <a href="https://blogs.tib.eu/wp/tib/2021/11/05/tib-at-wikidatacon-part-1/" style="display: inline"
+            target="_blank" rel="noopener">Dan Shick (WMDE) / CC-BY-SA 4.0.</a>
         </p>
       </div>
     </div>
@@ -145,32 +257,23 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseTwo"
-        >
-          <b>The MiMoText project</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <b>The MiMoText project</b></a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
       <div class="panel-body">
         <p id="MiMoTextProject">
           MiMoText stands for
-          <a href="https://www.mimotext.uni-trier.de/en" target="_blank"
-            >"Mining and Modeling Text: Interdisciplinary applications,
-            informational development, legal perspectives"</a
-          >. It is an interdisciplinary project in computational literary
+          <a href="https://www.mimotext.uni-trier.de/en" target="_blank">"Mining and Modeling Text: Interdisciplinary
+            applications,
+            informational development, legal perspectives"</a>. It is an interdisciplinary project in computational
+          literary
           studies conducted at the
-          <a href="https://tcdh.uni-trier.de/en" target="_blank"
-            >Trier Center for Digital Humanities (TCDH)</a
-          >
+          <a href="https://tcdh.uni-trier.de/en" target="_blank">Trier Center for Digital Humanities (TCDH)</a>
           at the
           <a href=" https://www.uni-trier.de/en/" target="_blank">
-            University of Trier</a
-          >. The project is funded by the Research Initiative (2019–2023) of the
+            University of Trier</a>. The project is funded by the Research Initiative (2019–2023) of the
           federal state of Rhineland-Palatinate (Forschungsinitiative
           Rheinland-Pfalz).
         </p>
@@ -186,17 +289,14 @@
           from the beginning.
         </p>
         <p>
-          <img
-            src="images/wissensnetzwerk_en.jpg"
-            style="
+          <img src="images/wissensnetzwerk_en.jpg" style="
               width: 40%;
               height: 40%;
               display: block;
               margin-left: auto;
               margin-right: auto;
             "
-            alt="Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure."
-          />
+            alt="Overview of the project structure with four research areas (RA 1–4) on mining, modeling, legal aspects and infrastructure." />
         </p>
         <p>
           Figure 1: Overview of the project structure with four research areas
@@ -221,13 +321,8 @@
           and is inspired by researchers such as Franco Moretti, Matthew
           Jockers, Katherine Bode or Ted Underwood. For a more detailed
           description of the project, see our paper
-          <a
-            href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278"
-            style="display: inline"
-            target="_blank"
-            rel="noopener"
-            >Smart Modelling for Literary History (2022)</a
-          >.
+          <a href="https://www.euppublishing.com/doi/10.3366/ijhac.2022.0278" style="display: inline" target="_blank"
+            rel="noopener">Smart Modelling for Literary History (2022)</a>.
         </p>
       </div>
     </div>
@@ -236,14 +331,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseFour"
-        >
-          <b>Our sources</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          <b>Our sources</b></a>
       </h4>
     </div>
     <div id="collapseFour" class="panel-collapse collapse">
@@ -271,9 +360,8 @@
             <a href="https://github.com/MiMoText/roman18">180 novels</a>, which
             are available as full texts (modeled according to the TEI standard).
             A subset is available as an extension of the
-            <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2"
-              >European Literary Text Collection (ELTeC)</a
-            >. The results of various quantitative analysis methods applied to
+            <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2">European Literary Text Collection (ELTeC)</a>. The
+            results of various quantitative analysis methods applied to
             primary works serve as the basis for new statements as well. So far,
             we have applied topic modeling (Schöch et al. 2022; Röttgermann et
             al. 2022), text mining of places (Hinzmann et al. 2022) as well as
@@ -300,23 +388,15 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseFive"
-        >
-          <b>Our modeling approach</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          <b>Our modeling approach</b></a>
       </h4>
     </div>
     <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
         <h4>
-          <i
-            >Some aspects of the Wikibase data model and our modeling
-            approach</i
-          >
+          <i>Some aspects of the Wikibase data model and our modeling
+            approach</i>
         </h4>
 
         <p>
@@ -329,12 +409,7 @@
           subject and object is called ‘property’.
         </p>
 
-        <img
-          src="images/subject_predicate_object.PNG"
-          alt="subject predicate object"
-          height="378"
-          width="669"
-        />
+        <img src="images/subject_predicate_object.PNG" alt="subject predicate object" height="378" width="669" />
 
         <p>
           In general, 'statements' in RDF are synonymous with triples (i.e.
@@ -342,14 +417,11 @@
           a slightly different meaning. Statement means not just a triple, but a
           bundle of multiple triples that refer to a core triple, which is
           called
-          <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim"
-            >claim</a
-          >. For an overview of the Wikidata & Wikibase terminology, take a look
+          <a href="https://www.wikidata.org/wiki/Wikidata:Glossary#Claim">claim</a>. For an overview of the Wikidata &
+          Wikibase terminology, take a look
           at the visual comments on item
-          <a
-            href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg"
-            >Q42 (Douglas Adams)</a
-          >. The ‘core triple’ or ‘claim’ in Wikibase can be ‘referenced’,
+          <a href="https://commons.wikimedia.org/wiki/File:Datamodel_in_Wikidata.svg">Q42 (Douglas Adams)</a>. The ‘core
+          triple’ or ‘claim’ in Wikibase can be ‘referenced’,
           ‘qualified’ and ‘ranked’, a feature that is very useful in terms of
           transparency, comprehensibility and comparability.
         </p>
@@ -412,12 +484,7 @@
         <br />
         <h4><i>Modeling decisions briefly outlined</i></h4>
 
-        <img
-          src="images/comparing_nar_loc.png"
-          alt="modeling decisions"
-          height="318"
-          width="701"
-        />
+        <img src="images/comparing_nar_loc.png" alt="modeling decisions" height="318" width="701" />
         <ol>
           <li>
             As already outlined, we reference via the property "stated in"
@@ -431,12 +498,8 @@
             Our approach relies on importing both the text strings as found in
             the information source (green) and the abstract spatial items (blue)
             into the
-            <a
-              href="http://data.mimotext.uni-trier.de/wiki/Main_Page"
-              target="_blank"
-              rel="noopener"
-              >MiMoTextBase</a
-            >. Combined with the fact that we reference all statements, this
+            <a href="http://data.mimotext.uni-trier.de/wiki/Main_Page" target="_blank" rel="noopener">MiMoTextBase</a>.
+            Combined with the fact that we reference all statements, this
             ensures a high degree of verifiability of our data. For example, it
             can be traced that the statement that 'rural area' can also be
             considered a narrative location of 'La religieuse' is documented in
@@ -445,12 +508,7 @@
           <li>
             We use controlled vocabularies to formulate standardized statements.
             Our
-            <a
-              href="https://github.com/MiMoText/vocabularies"
-              target="_blank"
-              rel="noopener"
-              >vocabularies</a
-            >
+            <a href="https://github.com/MiMoText/vocabularies" target="_blank" rel="noopener">vocabularies</a>
             are built up step by step with concepts that are relevant to all
             three source types. They are also multilingual (FR, EN, DE). In the
             case of our thematic vocabulary, we have chosen a domain-specific
@@ -463,12 +521,7 @@
           </li>
           <li>
             As we consider
-            <a
-              href="http://data.mimotext.uni-trier.de"
-              target="_blank"
-              rel="noopener"
-              >MiMoTextBase</a
-            >
+            <a href="http://data.mimotext.uni-trier.de" target="_blank" rel="noopener">MiMoTextBase</a>
             a part of the Wikibase ecosystem, we have focused on mappings and
             matchings with Wikidata identifiers where possible. We intend to
             establish further links with the LOD cloud in the future (VIAF, BNF,
@@ -493,12 +546,8 @@
           <li>
             In order to increase comprehensibility and usability, we have
             structured the ontology in modules, see
-            <a
-              href="https://github.com/MiMoText/ontology"
-              target="_blank"
-              rel="noopener"
-              >https://github.com/MiMoText/ontology</a
-            >
+            <a href="https://github.com/MiMoText/ontology" target="_blank"
+              rel="noopener">https://github.com/MiMoText/ontology</a>
           </li>
         </ol>
       </div>
@@ -508,22 +557,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseSix"
-        >
-          <b>Our graph: an overview in numbers</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+          <b>Our graph: an overview in numbers</b></a>
       </h4>
     </div>
     <div id="collapseSix" class="panel-collapse collapse">
       <div class="panel-body">
-        <img
-          src="images/mimo_signet_rgb_500px.png"
-          style="float: right; width: 15%; height: 15%; padding: 5px"
-        />
+        <img src="images/mimo_signet_rgb_500px.png" style="float: right; width: 15%; height: 15%; padding: 5px" />
         <p>
           In total, there are now <!-- (May 2022) <b>236.237 triples</b> --> (May 30, 2023) <b>331671 triples</b> in our
           graph.
@@ -535,23 +575,14 @@
         </p>
         <p>
           Concerning the properties in our graph,
-          <a
-            href="https://tinyurl.com/29br7evr"
-            target="\_blank"
-            rel="noopener noreferrer"
-            >this query
+          <a href="https://tinyurl.com/29br7evr" target="\_blank" rel="noopener noreferrer">this query
           </a>
           gives you an overview:
         </p>
         <p>
-          <iframe
-            style="width: 100%; max-width: 100%; height: 450px"
-            frameborder="0"
-            allowfullscreen
+          <iframe style="width: 100%; max-width: 100%; height: 450px" frameborder="0" allowfullscreen
             src="https://query.mimotext.uni-trier.de/#%23%20This%20query%20lists%20all%20the%20properties%0ASELECT%20%20%3FpropertyLabel%20%3FpropertyDescription%20%3Fproperty%20%0AWHERE%20%7B%0A%20%20%20%20%3Fproperty%20a%20wikibase%3AProperty%20.%20%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20ASC%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fproperty%29%2C%20%27P%27%29%29%29"
-            referrerpolicy="origin"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-          ></iframe>
+            referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
         </p>
         <p>
           There are properties and items with a
@@ -561,22 +592,14 @@
           items with the corresponding property:
         </p>
         <p>
-          <a
-            href="https://tinyurl.com/26gtkk3s"
-            target="\_blank"
-            rel="noopener noreferrer"
-            >Query to items with a close match (P58) on Wikidata, dimensions
-            view</a
-          >
+          <a href="https://tinyurl.com/26gtkk3s" target="\_blank" rel="noopener noreferrer">Query to items with a close
+            match (P58) on Wikidata, dimensions
+            view</a>
         </p>
         <p>
-          <a
-            href="https://tinyurl.com/269e6zhk"
-            target="\_blank"
-            rel="noopener noreferrer"
-            >Query to items with exact match (P30) on Wikidata, limited to 40
-            results, dimensions view</a
-          >
+          <a href="https://tinyurl.com/269e6zhk" target="\_blank" rel="noopener noreferrer">Query to items with exact
+            match (P30) on Wikidata, limited to 40
+            results, dimensions view</a>
         </p>
       </div>
     </div>
@@ -585,14 +608,735 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseSeven"
-        >
-          <b>Future work</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+          <b>MiMoText SPARQL data Representation and how to access different statement types</b></a>
+      </h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>
+          To access different information within a knowledge graph, you need to define the namespaces to define where to
+          find that information. The namespace is a URL pointing to the statement and looks like the following example:
+          <code>&lt;http://data.mimotext.uni-trier.de/entity/&gt;</code> These, of course, could be used within the
+          SPARQL query where-clause, but for a better readability, it is also possible to define prefixes for the
+          different namespaces used within a SPARQL query on the top of a query. In naming the prefixes, we followed the
+          Wikidata prefix convention, but turned them into MiMoTextBase specific prefixes.
+          <!-- A list of all prefixes in the MiMoTextBase can be found here: -->
+        </p>
+        <p>
+          Next to the prefixes for entities and properties, which are sufficient for most of the simple queries, there
+          are many more for e.g. accessing statement nodes, where you can find references and quantifiers etc. As this
+          can get quite complex, in this section we want to visualize different types of queries and the corresponding
+          path in the data representation schema for the most relevant query types we use within the project that is:
+          simple queries to access items at the object position and its label, statement nodes and the items within it,
+          such as the label, the reference node including the reference itself and a corresponding quotation.
+        </p>
+        <p>Please note: the example shown is a snippet of <a href="https://data.mimotext.uni-trier.de/wiki/Item:Q1053"
+            rel="noopener noreffer" target="_blank">this entity</a></p>
+        <p>In our example the starting point is the item Q1053 that has the label "Les liasisons dangereuses" which is a
+          MiMoTextBase entity. It will be the subject for the following queries. Therefore the query will start with
+          <code>mmd:Q1053</code> for referencing to this entity. Connected to it are different predicates and objects,
+          shown here is the predicate (property) "about" which has the ID P36. At the object position in our example
+          there is another entity having the label "libertinism" and the ID Q2969. Values at the object position can
+          themselves become a subject being connected to predicates and objects. This is called reification. In order to
+          access different levels of the statement group, we need to modify the prefixes used in the SPARQL queries.</p>
+        <p>
+          The SPARQL data representation was created based on the <a
+            href="https://commons.wikimedia.org/wiki/File:SPARQL_data_representation.png" rel="noopener noreffer"
+            target="_blank">SPARQL Wikidata data representation</a>, for further information, please have a look <a
+            href="https://en.wikibooks.org/wiki/SPARQL/WIKIDATA_Qualifiers,_References_and_Ranks#"
+            rel="noopener noreffer" target="_blank">here</a>.
+        </p>
+        <p>
+          In the following you can click on one of the query types and you will see how to access the wanted
+          information. Under the image you can find information about that query in more detail.
+        </p>
+        <div>
+          <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+            viewbox="0 0 2500 1400">
+
+            <image x="0" y="300" width="1684" height="1190" href="images/imgs_datarep/Q1053.svg">
+              <title>Q1053</title>
+            </image>
+            <defs>
+              <symbol id="tooltipp">
+                <rect id="tooltipp_rect" x="1200" y="10" width="1000" height="600" stroke="black" />
+              </symbol>
+            </defs>
+            <!--
+            <image width="2381" height="1020" href="images/imgs_datarep/Q1053_data_rep_1.png">
+            <title>Q1053</title>
+          </image>
+          -->
+            <g transform="translate(1200, 650) scale(1.2)" fill="white" stroke="black">
+
+              <!-- main box -->
+              <path d="m0 0l960.0 0l0 540.0l-960.0 0z"></path>
+
+              <!-- title box -->
+              <path d="m111.400856 19.697405l708.25195 0l0 58.015747l-708.25195 0z"></path>
+
+              <!-- mmd Q-ID box -->
+              <path class="simple_val_path stmt_node_path simple_val_via_ref stated_in_value" id="mmd_box"
+                d="m12.66346 206.0724l185.5433 0l0 58.01573l-185.5433 0z"></path>
+
+              <!-- mmd Q-ID text -->
+              <text x="50" y="240" font-size="15" fill="black">
+                <tspan>
+                  mmd:Q1053
+                </tspan>
+              </text>
+
+              <!-- VALUE box -->
+              <path d="m35.00357 451.9818l140.88188 0l0 58.015747l-140.88188 0z" id="value_text_box"
+                class="simple_val_path ref_node_value simple_val_via_ref"></path>
+
+              <!-- VALUE text-->
+              <text x="80" y="485" font-size="20" fill="black">
+                <tspan>
+                  Value
+                </tspan>
+              </text>
+
+              <!-- Arrow mmd to VALUE-->
+              <path fill="#000000" fill-opacity="0.0" d="m105.43511 264.08813l0 187.90552" class="simple_val_path">
+              </path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m103.78338 445.99365l1.6517334 4.538086l1.6517334 -4.538086z" class="simple_val_path"></path>
+
+              <!-- mmds box-->
+              <path d="m294.77466 206.06978l320.31494 0l0 58.015762l-320.31494 0z"
+                class="stmt_node_path simple_val_via_ref stated_in_value"></path>
+
+              <!-- mmds TEXT-->
+              <text x="360" y="235" font-size="20" fill="black">
+                <tspan x="370">
+                  Statement node
+                </tspan>
+                <tspan x="400" dy="1em">
+                  mmds
+                </tspan>
+              </text>
+
+              <!-- mmdref node -->
+              <g tabindex="0" id="mmdref_box" class="stated_in_value">
+                <rect x="776" y="206" width="163" height="58" />
+                <!-- <path  tabindex="0" d="l163.37006 0l0 58.015747l-163.37006 0z" class="stated_in_value" fill="transparent" ></path>-->
+
+                <!-- mmdref TEXT-->
+                <text x="760" y="235" font-size="20" fill="black" id="mmdref_box_text">
+                  <tspan x="790" fill="black" opacity="1">
+                    Reference node
+                  </tspan>
+                  <tspan x="810" dy="1em" fill="black">
+                    mmdref
+                  </tspan>
+                </text>
+
+              </g>
+
+              <!-- mdv box -->
+              <path d="m248.87534 332.46872l148.40945 0l0 58.015747l-148.40945 0z"></path>
+
+
+              <!-- Value node mdv TEXt -->
+              <text x="280" y="360" font-size="20" fill="black">
+                <tspan x="280">
+                  Value node
+                </tspan>
+                <tspan x="310" dy="1em">
+                  mdv
+                </tspan>
+              </text>
+
+              <!--additional value info box -->
+              <path d="m222.92361 451.9818l148.40945 0l0 58.015747l-148.40945 0z"></path>
+
+              <!--additional value info box TExT -->
+              <text x="245" y="480" font-size="15" fill="black">
+                <tspan x="245">
+                  Additional value
+                </tspan>
+                <tspan x="280" dy="1em">
+                  info
+                </tspan>
+              </text>
+
+              <!-- mdv qual value node-->
+              <path d="m498.94946 341.26483l148.40942 0l0 58.015747l-148.40942 0z"></path>
+
+              <!-- mdv qual value node TEXT -->
+
+              <text x="510" y="370" font-size="17" fill="black">
+                <tspan x="510">
+                  Qual value node
+                </tspan>
+                <tspan x="550" dy="1em">
+                  mdv
+                </tspan>
+              </text>
+
+              <!-- Qualifier value box-->
+              <path d="m377.63828 451.9818l115.055115 0l0 58.015747l-115.055115 0z"></path>
+              <!-- Qualifier value text -->
+              <text x="400" y="480" font-size="15" fill="black">
+                <tspan x="410">
+                  Qualifier
+                </tspan>
+                <tspan x="420" dy="1em">
+                  value
+                </tspan>
+              </text>
+
+              <!-- additional Qual value info box-->
+              <path d="m498.94946 451.9818l148.40942 0l0 58.015747l-148.40942 0z"></path>
+
+              <!-- additional Qual value info TEXT -->
+              <text x="500" y="480" font-size="15" fill="black">
+                <tspan x="520">
+                  Additional Qual
+                </tspan>
+                <tspan x="540" dy="1em">
+                  value info
+                </tspan>
+              </text>
+
+              <!-- Ref value node mdv -->
+              <path d="m792.91064 338.80823l131.05511 0l0 58.015747l-131.05511 0z"></path>
+              <text x="800" y="370" font-size="17" fill="black">
+                <tspan x="800">
+                  Ref value node
+                </tspan>
+                <tspan x="840" dy="1em">
+                  mdv
+                </tspan>
+              </text>
+
+              <!-- Reference value box-->
+              <path d="m658.2722 451.9818l115.055115 0l0 58.015747l-115.055115 0z" class="stated_in_value"
+                id="stated_in_value_box"></path>
+
+              <!-- Reference value text -->
+              <text x="680" y="480" font-size="15" fill="black">
+                <tspan x="680">
+                  Reference
+                </tspan>
+                <tspan x="700" dy="1em">
+                  value
+                </tspan>
+              </text>
+
+              <!-- additional ref value info box-->
+              <path d="m792.91064 451.9818l131.05511 0l0 58.015747l-131.05511 0z"></path>
+              <!-- additional ref value info text-->
+              <text x="810" y="480" font-size="15" fill="black">
+                <tspan x="810">
+                  Additional Ref
+                </tspan>
+                <tspan x="830" dy="1em">
+                  value info
+                </tspan>
+              </text>
+
+              <!-- Rank box -->
+              <path d="m294.96 93.403824l96.566925 0l0 44.283463l-96.566925 0z"></path>
+
+              <!-- rank text-->
+              <text x="300" y="120" font-size="20" fill="black">
+                <tspan x="320">
+                  Rank
+                </tspan>
+              </text>
+
+              <!-- ARROW mmd mmds -->
+              <path fill-opacity="0.0" d="m198.20677 235.08028l96.56691 0"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m288.7737 236.73201l4.538086 -1.6517334l-4.538086 -1.6517334z"></path>
+
+              <!-- ARROW mmds rank -->
+              <path fill="#000000" fill-opacity="0.0" d="m343.27496 206.82115l-0.03149414 -69.133865"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m344.89792 143.68654l-1.6538086 -4.5373535l-1.6496582 4.538849z"></path>
+
+              <!-- ARROW mmds value node mdv -->
+              <path fill="#000000" fill-opacity="0.0" d="m323.14304 264.90967l-0.06298828 67.55905"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m321.43393 326.4672l1.6474915 4.5396423l1.6559448 -4.53656z"></path>
+
+              <!-- ARROW mmds value -->
+              <path fill="#000000" fill-opacity="0.0" d="m320.8461 264.51724l-215.40158 187.46457"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m108.88614 446.7969l-2.3388672 4.225189l4.507576 -1.7332764z"></path>
+
+              <!-- ARROW value node mdv additional val info -->
+              <path fill="#000000" fill-opacity="0.0" d="m323.08005 390.48447l-0.25195312 61.858276"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m321.2008 446.33606l1.6332397 4.5447693l1.6701965 -4.531311z"></path>
+
+              <!-- ARROW value node mdv value -->
+              <path fill="#000000" fill-opacity="0.0" d="m323.08005 390.48447l-217.63779 61.51181"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m110.76684 448.77493l-3.9177856 2.8237305l4.8162613 0.3551941z"></path>
+
+              <!-- ARROW mmds qual value node -->
+              <path fill="#000000" fill-opacity="0.0" d="m573.4061 263.62704l-0.25195312 77.63779"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m571.5219 335.2595l1.6369629 4.5434265l1.6665039 -4.532715z"></path>
+
+              <!-- ARROW mmds qualifier value -->
+              <path fill="#000000" fill-opacity="0.0" d="m577.43353 263.82434l-142.2677 188.15747"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m437.467 446.1997l-1.4194641 4.616028l4.0545044 -2.6236572z"></path>
+
+              <!-- ARROW qual value node mdv additional qual value info -->
+              <path fill="#000000" fill-opacity="0.0" d="m573.1542 399.28058l0 52.6929"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m571.50244 445.9735l1.6517334 4.538086l1.6517334 -4.538086z"></path>
+
+              <!-- ARROW Qual value node - qualifier value -->
+              <path fill="#000000" fill-opacity="0.0" d="m573.1542 399.28058l-137.98425 52.6929"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m440.18585 448.28998l-3.650238 3.1619873l4.8287354 -0.07589722z"></path>
+
+              <!-- ARROW mmdref ref value node mdv-->
+              <path fill="purple" d="m858.4393 264.08636l0 74.70865"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m856.7876 332.79504l1.6517334 4.538086l1.6517334 -4.538086z"></path>
+
+              <!-- ARROW ref value node mdv additional ref value info -->
+              <path fill="#000000" fill-opacity="0.0" d="m858.4382 396.82397l0 55.149597"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m856.78644 445.9736l1.6517334 4.538086l1.6517334 -4.538086z"></path>
+
+              <!-- ARROW ref node mmdref reference value -->
+              <path fill="#000000" fill-opacity="0.0" d="m858.4393 264.08636l-142.64563 187.90552"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m718.1059 446.2142l-1.4283447 4.6132812l4.0595703 -2.6158447z"></path>
+
+              <!-- ARROW ref value node mdv  reference value -->
+              <path fill="#000000" fill-opacity="0.0" d="m858.4382 396.82397l-142.64563 55.149597"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m720.79315 448.26935l-3.637146 3.177063l4.82843 -0.09585571z"></path>
+
+              <!--  ARROW prov:wasDerivedFrom -->
+              <path fill="#000000" fill-opacity="0.0" d="m615.0771 236.8134l160.56696 0.4409485"></path>
+              <path fill="#595959" stroke="#595959" stroke-width="1.0" stroke-linecap="butt"
+                d="m769.6395 238.8896l4.5426025 -1.639267l-4.5335693 -1.6641846z"></path>
+
+              <!-- mimotextbase:rank -->
+              <path d="m198.21266 154.09973l138.01576 0l0 35.559067l-138.01576 0z" stroke="white"></path>
+              <!-- text -->
+              <text x="180" y="170" font-size="15" fill="black">
+                <tspan x="210">
+                  mimotextbase:rank
+                </tspan>
+              </text>
+
+              <!-- mmp text-->
+              <path fill="#000000" id="mmp_text_box" class="stmt_node_path simple_val_via_ref stated_in_value"
+                d="m204.99687 228.06299l71.30708 0l0 35.55905l-71.30708 0z" stroke="white"></path>
+              <text x="180" y="250" font-size="15" fill="black">
+                <tspan x="220">
+                  mmp:
+                </tspan>
+              </text>
+
+              <!-- mmdt text-->
+              <path fill="#000000" d="m39.566906 303.24933l65.85828 0l0 35.559082l-65.85828 0z" stroke="white"
+                class="simple_val_path" id="mmdt_text_box"></path>
+              <text x="50" y="330" font-size="15" fill="black">
+                <tspan x="50">
+                  mmdt:
+                </tspan>
+              </text>
+
+              <!-- mmps text -->
+              <path class="simple_val_via_ref"
+                d="M 178.09 307.422 L 240 308.102 L 240 343.661 L 178.09 343.661 L 178.09 307.422 Z" stroke="None"
+                fill="None"></path>
+              <text x="180" y="330" font-size="15" fill="black">
+                <tspan x="190">
+                  mmps:
+                </tspan>
+              </text>
+
+              <!-- mmpsv / mmpsn -->
+              <path fill="#000000" fill-opacity="0.0" d="m325.41486 269.33328l127.27557 0l0 51.716522l-127.27557 0z"
+                stroke="white"></path>
+              <text x="330" y="300" font-size="15" fill="black">
+                <tspan x="330">
+                  mmpsv:
+                </tspan>
+                <tspan x="330" dy="1em">
+                  mmpsn:
+                </tspan>
+              </text>
+
+              <!-- mmpr text -->
+              <path d="m715.7913 340.2533 l50 0 l0 35.55905 l-50 0z" stroke="white" class="stated_in_value"></path>
+              <text x="180" y="360" font-size="15" fill="black">
+                <tspan x="720">
+                  mmpr:
+                </tspan>
+              </text>
+
+              <!-- mmprv / mmprn text-->
+              <path fill="#000000"
+                d="m759.5658 358.70953l0 -0.8125l0.8125 0l0 0.8125l-0.8125 0zm0 3.34375l0 -0.796875l0.8125 0l0 0.796875l-0.8125 0z"
+                stroke="white"></path>
+              <path fill="#000000" fill-opacity="0.0" d="m866.46985 275.58923l80.44098 0l0 51.716553l-80.44098 0z"
+                stroke="white"></path>
+              <path fill="#000000"
+                d="m876.34485 297.38925l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102417 0l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102478 2.65625l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm6.3343506 3.421875l0 -6.90625l1.0625 0l0 1.046875q0.40625 -0.734375 0.734375 -0.96875q0.34375 -0.234375 0.765625 -0.234375q0.59375 0 1.203125 0.375l-0.40625 1.078125q-0.4375 -0.25 -0.859375 -0.25q-0.390625 0 -0.703125 0.234375q-0.296875 0.234375 -0.421875 0.640625q-0.203125 0.625 -0.203125 1.359375l0 3.625l-1.171875 0zm6.3758545 0l-2.625 -6.90625l1.234375 0l1.484375 4.140625q0.234375 0.65625 0.4375 1.390625q0.15625 -0.546875 0.4375 -1.3125l1.53125 -4.21875l1.21875 0l-2.625 6.90625l-1.09375 0zm5.0703125 -5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0z">
+              </path>
+              <path fill="#000000"
+                d="m876.34485 313.38925l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102417 0l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102478 2.65625l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm6.3343506 3.421875l0 -6.90625l1.0625 0l0 1.046875q0.40625 -0.734375 0.734375 -0.96875q0.34375 -0.234375 0.765625 -0.234375q0.59375 0 1.203125 0.375l-0.40625 1.078125q-0.4375 -0.25 -0.859375 -0.25q-0.390625 0 -0.703125 0.234375q-0.296875 0.234375 -0.421875 0.640625q-0.203125 0.625 -0.203125 1.359375l0 3.625l-1.171875 0zm4.4539795 0l0 -6.90625l1.0625 0l0 0.984375q0.75 -1.140625 2.1875 -1.140625q0.625 0 1.15625 0.21875q0.53125 0.21875 0.78125 0.59375q0.265625 0.359375 0.375 0.859375q0.0625 0.328125 0.0625 1.140625l0 4.25l-1.171875 0l0 -4.203125q0 -0.71875 -0.140625 -1.0625q-0.140625 -0.359375 -0.484375 -0.5625q-0.34375 -0.21875 -0.8125 -0.21875q-0.75 0 -1.296875 0.46875q-0.546875 0.46875 -0.546875 1.796875l0 3.78125l-1.171875 0zm7.7406006 -5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0z">
+              </path>
+
+
+
+              <!-- mmpq text  -->
+              <path fill="#000000" fill-opacity="0.0" d="m429.75888 352.49344l80.44092 0l0 35.55905l-80.44092 0z"
+                stroke="white"></path>
+              <path fill="#000000"
+                d="m439.63388 374.29343l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102417 0l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.1024475 2.65625l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm10.756226 6.078125l0 -3.390625q-0.265625 0.390625 -0.765625 0.640625q-0.484375 0.25 -1.046875 0.25q-1.21875 0 -2.109375 -0.984375q-0.890625 -0.984375 -0.890625 -2.6875q0 -1.046875 0.359375 -1.875q0.359375 -0.828125 1.046875 -1.25q0.6875 -0.421875 1.515625 -0.421875q1.28125 0 2.015625 1.078125l0 -0.921875l1.046875 0l0 9.5625l-1.171875 0zm-3.609375 -6.125q0 1.328125 0.5625 2.0q0.5625 0.65625 1.34375 0.65625q0.75 0 1.28125 -0.625q0.546875 -0.640625 0.546875 -1.9375q0 -1.375 -0.578125 -2.0625q-0.5625 -0.703125 -1.328125 -0.703125q-0.765625 0 -1.296875 0.65625q-0.53125 0.640625 -0.53125 2.015625zm6.9437256 -2.109375l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0z">
+              </path>
+
+
+              <!-- mmpqv / mmpqn -->
+              <path fill="#000000" fill-opacity="0.0" d="m575.6845 278.99176l127.275635 0l0 51.716522l-127.275635 0z"
+                stroke="white"></path>
+              <path fill="#000000"
+                d="m585.5595 300.79175l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102478 0l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102417 2.65625l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm10.756226 6.078125l0 -3.390625q-0.265625 0.390625 -0.765625 0.640625q-0.484375 0.25 -1.046875 0.25q-1.21875 0 -2.109375 -0.984375q-0.890625 -0.984375 -0.890625 -2.6875q0 -1.046875 0.359375 -1.875q0.359375 -0.828125 1.046875 -1.25q0.6875 -0.421875 1.515625 -0.421875q1.28125 0 2.015625 1.078125l0 -0.921875l1.046875 0l0 9.5625l-1.171875 0zm-3.609375 -6.125q0 1.328125 0.5625 2.0q0.5625 0.65625 1.34375 0.65625q0.75 0 1.28125 -0.625q0.546875 -0.640625 0.546875 -1.9375q0 -1.375 -0.578125 -2.0625q-0.5625 -0.703125 -1.328125 -0.703125q-0.765625 0 -1.296875 0.65625q-0.53125 0.640625 -0.53125 2.015625zm8.537476 3.46875l-2.625 -6.90625l1.234375 0l1.484375 4.140625q0.234375 0.65625 0.4375 1.390625q0.15625 -0.546875 0.4375 -1.3125l1.53125 -4.21875l1.21875 0l-2.625 6.90625l-1.09375 0zm5.0703125 -5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0z">
+              </path>
+              <path fill="#000000"
+                d="m585.5595 316.79175l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102478 0l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0zm11.102417 2.65625l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm10.756226 6.078125l0 -3.390625q-0.265625 0.390625 -0.765625 0.640625q-0.484375 0.25 -1.046875 0.25q-1.21875 0 -2.109375 -0.984375q-0.890625 -0.984375 -0.890625 -2.6875q0 -1.046875 0.359375 -1.875q0.359375 -0.828125 1.046875 -1.25q0.6875 -0.421875 1.515625 -0.421875q1.28125 0 2.015625 1.078125l0 -0.921875l1.046875 0l0 9.5625l-1.171875 0zm-3.609375 -6.125q0 1.328125 0.5625 2.0q0.5625 0.65625 1.34375 0.65625q0.75 0 1.28125 -0.625q0.546875 -0.640625 0.546875 -1.9375q0 -1.375 -0.578125 -2.0625q-0.5625 -0.703125 -1.328125 -0.703125q-0.765625 0 -1.296875 0.65625q-0.53125 0.640625 -0.53125 2.015625zm6.6156006 3.46875l0 -6.90625l1.0625 0l0 0.984375q0.75 -1.140625 2.1875 -1.140625q0.625 0 1.15625 0.21875q0.53125 0.21875 0.78125 0.59375q0.265625 0.359375 0.375 0.859375q0.0625 0.328125 0.0625 1.140625l0 4.25l-1.171875 0l0 -4.203125q0 -0.71875 -0.140625 -1.0625q-0.140625 -0.359375 -0.484375 -0.5625q-0.34375 -0.21875 -0.8125 -0.21875q-0.75 0 -1.296875 0.46875q-0.546875 0.46875 -0.546875 1.796875l0 3.78125l-1.171875 0zm7.7406006 -5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0z">
+              </path>
+
+
+              <!-- prov:wasDerivedFrom-->
+
+              <path d="m618.1158 206.07086l163.37006 0l0 35.559067l-163.37006 0z" stroke="None" fill="None"
+                class="stated_in_value"></path>
+              <path fill="#000000"
+                d="m627.9908 230.52711l0 -9.5625l1.078125 0l0 0.890625q0.375 -0.53125 0.84375 -0.78125q0.484375 -0.265625 1.15625 -0.265625q0.875 0 1.546875 0.453125q0.6875 0.453125 1.03125 1.28125q0.34375 0.828125 0.34375 1.828125q0 1.046875 -0.375 1.90625q-0.375 0.84375 -1.109375 1.296875q-0.71875 0.453125 -1.53125 0.453125q-0.578125 0 -1.046875 -0.25q-0.46875 -0.25 -0.765625 -0.625l0 3.375l-1.171875 0zm1.0625 -6.078125q0 1.34375 0.53125 1.984375q0.546875 0.625 1.3125 0.625q0.78125 0 1.34375 -0.65625q0.5625 -0.65625 0.5625 -2.046875q0 -1.3125 -0.546875 -1.96875q-0.546875 -0.671875 -1.296875 -0.671875q-0.75 0 -1.328125 0.703125q-0.578125 0.703125 -0.578125 2.03125zm6.3343506 3.421875l0 -6.90625l1.0625 0l0 1.046875q0.40625 -0.734375 0.734375 -0.96875q0.34375 -0.234375 0.765625 -0.234375q0.59375 0 1.203125 0.375l-0.40625 1.078125q-0.4375 -0.25 -0.859375 -0.25q-0.390625 0 -0.703125 0.234375q-0.296875 0.234375 -0.421875 0.640625q-0.203125 0.625 -0.203125 1.359375l0 3.625l-1.171875 0zm4.0164795 -3.453125q0 -1.921875 1.078125 -2.84375q0.890625 -0.765625 2.171875 -0.765625q1.421875 0 2.328125 0.9375q0.90625 0.921875 0.90625 2.578125q0 1.328125 -0.40625 2.09375q-0.390625 0.765625 -1.15625 1.1875q-0.765625 0.421875 -1.671875 0.421875q-1.453125 0 -2.359375 -0.921875q-0.890625 -0.9375 -0.890625 -2.6875zm1.203125 0q0 1.328125 0.578125 1.984375q0.59375 0.65625 1.46875 0.65625q0.875 0 1.453125 -0.65625q0.578125 -0.671875 0.578125 -2.03125q0 -1.28125 -0.59375 -1.9375q-0.578125 -0.65625 -1.4375 -0.65625q-0.875 0 -1.46875 0.65625q-0.578125 0.65625 -0.578125 1.984375zm8.568726 3.453125l-2.625 -6.90625l1.234375 0l1.484375 4.140625q0.234375 0.65625 0.4375 1.390625q0.15625 -0.546875 0.4375 -1.3125l1.53125 -4.21875l1.21875 0l-2.625 6.90625l-1.09375 0zm5.0703125 -5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm0 5.578125l0 -1.328125l1.328125 0l0 1.328125l-1.328125 0zm4.656128 0l-2.125 -6.90625l1.21875 0l1.09375 3.984375l0.421875 1.484375q0.015625 -0.109375 0.359375 -1.421875l1.09375 -4.046875l1.203125 0l1.03125 4.0l0.34375 1.328125l0.40625 -1.34375l1.171875 -3.984375l1.140625 0l-2.15625 6.90625l-1.21875 0l-1.09375 -4.140625l-0.265625 -1.171875l-1.40625 5.3125l-1.21875 0zm12.859497 -0.859375q-0.65625 0.5625 -1.265625 0.796875q-0.59375 0.21875 -1.28125 0.21875q-1.140625 0 -1.75 -0.546875q-0.609375 -0.5625 -0.609375 -1.4375q0 -0.5 0.21875 -0.921875q0.234375 -0.421875 0.609375 -0.671875q0.375 -0.25 0.84375 -0.390625q0.34375 -0.078125 1.046875 -0.171875q1.421875 -0.171875 2.09375 -0.40625q0 -0.234375 0 -0.296875q0 -0.71875 -0.328125 -1.015625q-0.453125 -0.390625 -1.34375 -0.390625q-0.8125 0 -1.21875 0.296875q-0.390625 0.28125 -0.578125 1.015625l-1.140625 -0.15625q0.15625 -0.734375 0.515625 -1.1875q0.359375 -0.453125 1.03125 -0.6875q0.671875 -0.25 1.5625 -0.25q0.890625 0 1.4375 0.203125q0.5625 0.203125 0.8125 0.53125q0.265625 0.3125 0.375 0.796875q0.046875 0.296875 0.046875 1.078125l0 1.5625q0 1.625 0.078125 2.0625q0.078125 0.4375 0.296875 0.828125l-1.21875 0q-0.1875 -0.359375 -0.234375 -0.859375zm-0.09375 -2.609375q-0.640625 0.265625 -1.921875 0.4375q-0.71875 0.109375 -1.015625 0.25q-0.296875 0.125 -0.46875 0.375q-0.15625 0.25 -0.15625 0.546875q0 0.46875 0.34375 0.78125q0.359375 0.3125 1.046875 0.3125q0.671875 0 1.203125 -0.296875q0.53125 -0.296875 0.78125 -0.8125q0.1875 -0.390625 0.1875 -1.171875l0 -0.421875zm2.5218506 1.40625l1.15625 -0.1875q0.109375 0.703125 0.546875 1.078125q0.453125 0.359375 1.25 0.359375q0.8125 0 1.203125 -0.328125q0.390625 -0.328125 0.390625 -0.765625q0 -0.390625 -0.359375 -0.625q-0.234375 -0.15625 -1.1875 -0.390625q-1.296875 -0.328125 -1.796875 -0.5625q-0.484375 -0.25 -0.75 -0.65625q-0.25 -0.421875 -0.25 -0.9375q0 -0.453125 0.203125 -0.84375q0.21875 -0.40625 0.578125 -0.671875q0.28125 -0.1875 0.75 -0.328125q0.46875 -0.140625 1.015625 -0.140625q0.8125 0 1.421875 0.234375q0.609375 0.234375 0.90625 0.640625q0.296875 0.390625 0.40625 1.0625l-1.140625 0.15625q-0.078125 -0.53125 -0.453125 -0.828125q-0.375 -0.3125 -1.0625 -0.3125q-0.8125 0 -1.15625 0.265625q-0.34375 0.265625 -0.34375 0.625q0 0.234375 0.140625 0.421875q0.15625 0.1875 0.453125 0.3125q0.171875 0.0625 1.03125 0.296875q1.25 0.328125 1.734375 0.546875q0.5 0.203125 0.78125 0.609375q0.28125 0.40625 0.28125 1.0q0 0.59375 -0.34375 1.109375q-0.34375 0.515625 -1.0 0.796875q-0.640625 0.28125 -1.453125 0.28125q-1.34375 0 -2.046875 -0.5625q-0.703125 -0.5625 -0.90625 -1.65625zm7.2890625 2.0625l0 -9.546875l3.28125 0q1.109375 0 1.703125 0.140625q0.8125 0.1875 1.390625 0.6875q0.765625 0.640625 1.140625 1.640625q0.375 0.984375 0.375 2.25q0 1.09375 -0.265625 1.9375q-0.25 0.828125 -0.65625 1.390625q-0.390625 0.546875 -0.859375 0.859375q-0.46875 0.3125 -1.140625 0.484375q-0.65625 0.15625 -1.53125 0.15625l-3.4375 0zm1.265625 -1.125l2.03125 0q0.9375 0 1.46875 -0.171875q0.546875 -0.1875 0.875 -0.5q0.4375 -0.453125 0.6875 -1.203125q0.25 -0.765625 0.25 -1.84375q0 -1.5 -0.5 -2.296875q-0.484375 -0.8125 -1.1875 -1.078125q-0.5 -0.203125 -1.625 -0.203125l-2.0 0l0 7.296875zm12.937683 -1.09375l1.203125 0.140625q-0.28125 1.0625 -1.0625 1.65625q-0.765625 0.578125 -1.96875 0.578125q-1.515625 0 -2.40625 -0.9375q-0.890625 -0.9375 -0.890625 -2.609375q0 -1.75 0.890625 -2.703125q0.90625 -0.96875 2.34375 -0.96875q1.390625 0 2.265625 0.9375q0.875 0.9375 0.875 2.65625q0 0.109375 0 0.3125l-5.15625 0q0.0625 1.140625 0.640625 1.75q0.578125 0.59375 1.4375 0.59375q0.65625 0 1.109375 -0.328125q0.453125 -0.34375 0.71875 -1.078125zm-3.84375 -1.90625l3.859375 0q-0.078125 -0.859375 -0.4375 -1.296875q-0.5625 -0.6875 -1.453125 -0.6875q-0.8125 0 -1.359375 0.546875q-0.546875 0.53125 -0.609375 1.4375zm6.5062256 4.125l0 -6.90625l1.0625 0l0 1.046875q0.40625 -0.734375 0.734375 -0.96875q0.34375 -0.234375 0.765625 -0.234375q0.59375 0 1.203125 0.375l-0.40625 1.078125q-0.4375 -0.25 -0.859375 -0.25q-0.390625 0 -0.703125 0.234375q-0.296875 0.234375 -0.421875 0.640625q-0.203125 0.625 -0.203125 1.359375l0 3.625l-1.171875 0zm6.3758545 0l-2.625 -6.90625l1.234375 0l1.484375 4.140625q0.234375 0.65625 0.4375 1.390625q0.15625 -0.546875 0.4375 -1.3125l1.53125 -4.21875l1.21875 0l-2.625 6.90625l-1.09375 0zm4.7578125 -8.1875l0 -1.359375l1.171875 0l0 1.359375l-1.171875 0zm0 8.1875l0 -6.90625l1.171875 0l0 6.90625l-1.171875 0zm7.6798706 -2.21875l1.203125 0.140625q-0.28125 1.0625 -1.0625 1.65625q-0.765625 0.578125 -1.96875 0.578125q-1.515625 0 -2.40625 -0.9375q-0.890625 -0.9375 -0.890625 -2.609375q0 -1.75 0.890625 -2.703125q0.90625 -0.96875 2.34375 -0.96875q1.390625 0 2.265625 0.9375q0.875 0.9375 0.875 2.65625q0 0.109375 0 0.3125l-5.15625 0q0.0625 1.140625 0.640625 1.75q0.578125 0.59375 1.4375 0.59375q0.65625 0 1.109375 -0.328125q0.453125 -0.34375 0.71875 -1.078125zm-3.84375 -1.90625l3.859375 0q-0.078125 -0.859375 -0.4375 -1.296875q-0.5625 -0.6875 -1.453125 -0.6875q-0.8125 0 -1.359375 0.546875q-0.546875 0.53125 -0.609375 1.4375zm11.006226 4.125l0 -0.875q-0.65625 1.03125 -1.9375 1.03125q-0.8125 0 -1.515625 -0.453125q-0.6875 -0.453125 -1.078125 -1.265625q-0.375 -0.828125 -0.375 -1.890625q0 -1.03125 0.34375 -1.875q0.34375 -0.84375 1.03125 -1.28125q0.703125 -0.453125 1.546875 -0.453125q0.625 0 1.109375 0.265625q0.5 0.25 0.796875 0.671875l0 -3.421875l1.171875 0l0 9.546875l-1.09375 0zm-3.703125 -3.453125q0 1.328125 0.5625 1.984375q0.5625 0.65625 1.328125 0.65625q0.765625 0 1.296875 -0.625q0.53125 -0.625 0.53125 -1.90625q0 -1.421875 -0.546875 -2.078125q-0.546875 -0.671875 -1.34375 -0.671875q-0.78125 0 -1.3125 0.640625q-0.515625 0.625 -0.515625 2.0zm6.8499756 3.453125l0 -9.546875l6.4375 0l0 1.125l-5.171875 0l0 2.96875l4.46875 0l0 1.125l-4.46875 0l0 4.328125l-1.265625 0zm7.9069824 0l0 -6.90625l1.0625 0l0 1.046875q0.40625 -0.734375 0.734375 -0.96875q0.34375 -0.234375 0.765625 -0.234375q0.59375 0 1.203125 0.375l-0.40625 1.078125q-0.4375 -0.25 -0.859375 -0.25q-0.390625 0 -0.703125 0.234375q-0.296875 0.234375 -0.421875 0.640625q-0.203125 0.625 -0.203125 1.359375l0 3.625l-1.171875 0zm4.0164795 -3.453125q0 -1.921875 1.078125 -2.84375q0.890625 -0.765625 2.171875 -0.765625q1.421875 0 2.328125 0.9375q0.90625 0.921875 0.90625 2.578125q0 1.328125 -0.40625 2.09375q-0.390625 0.765625 -1.15625 1.1875q-0.765625 0.421875 -1.671875 0.421875q-1.453125 0 -2.359375 -0.921875q-0.890625 -0.9375 -0.890625 -2.6875zm1.203125 0q0 1.328125 0.578125 1.984375q0.59375 0.65625 1.46875 0.65625q0.875 0 1.453125 -0.65625q0.578125 -0.671875 0.578125 -2.03125q0 -1.28125 -0.59375 -1.9375q-0.578125 -0.65625 -1.4375 -0.65625q-0.875 0 -1.46875 0.65625q-0.578125 0.65625 -0.578125 1.984375zm6.6468506 3.453125l0 -6.90625l1.046875 0l0 0.96875q0.328125 -0.515625 0.859375 -0.8125q0.546875 -0.3125 1.234375 -0.3125q0.78125 0 1.265625 0.3125q0.484375 0.3125 0.6875 0.890625q0.828125 -1.203125 2.140625 -1.203125q1.03125 0 1.578125 0.578125q0.5625 0.5625 0.5625 1.734375l0 4.75l-1.171875 0l0 -4.359375q0 -0.703125 -0.125 -1.0q-0.109375 -0.3125 -0.40625 -0.5q-0.296875 -0.1875 -0.703125 -0.1875q-0.71875 0 -1.203125 0.484375q-0.484375 0.484375 -0.484375 1.546875l0 4.015625l-1.171875 0l0 -4.484375q0 -0.78125 -0.296875 -1.171875q-0.28125 -0.390625 -0.921875 -0.390625q-0.5 0 -0.921875 0.265625q-0.421875 0.25 -0.609375 0.75q-0.1875 0.5 -0.1875 1.453125l0 3.578125l-1.171875 0z">
+              </path>
+            </g>
+
+
+            <text x="1475" y="710" font-size="30">
+              <tspan>
+                SPARQL MiMoTextBase data representation
+              </tspan>
+            </text>
+            <g id="how_to_retrieve_simple_vals" aria-labelledby="label_val" tabindex="0">
+              <text x="10" y="100" class="choose_option">
+                <tspan font-size="35px">How to retrieve simple values and their labels</tspan>
+              </text>
+            </g>
+
+            <!--SIMPLE VALUE  -->
+            <a id="simple_value" class="ref_node_value simple_val_via_ref simple_val_path" aria-labelledby="label_val"
+              tabindex="0">
+              <rect x="300" y="900" width="125" height="30" rx="10" />
+            </a>
+            <g class="info" id="label_val">
+              <use href="#tooltipp" />
+              <text x="1250" y="30" id="#textval_stmt" style="font-size:200%;">
+                <tspan x="1250" dy="2em" font-weight="bold">Retrieve simple value and its label </tspan>
+                <!-- 
+              <tspan x="250" dy="2em">“item is about [value]” = simple value</tspan>
+              <tspan x="250" dy="2em">mmd:Q1053 mmdt:P36 ?about.</tspan>
+              <tspan x="250" dy="2em">?about rdfs:label ?aboutLabel.</tspan>
+              <tspan x="250" dy="2em">FILTER(LANG(?aboutLabel) = “en”).</tspan>
+              
+            Query: https://tinyurl.com/ynl7ctpc  -->
+              </text>
+              <image x="1230" y="100" width="722" height="237" href="images/imgs_datarep/simple_values_and_label.PNG">
+              </image>
+              <image x="1230" y="380" width="750" height="200" href="images/imgs_datarep/result_simple_value_label.png">
+              </image>
+            </g>
+
+            <g id="value" class="simple_val_path stmt_node_path">
+              <rect id="liaisons" x="10" y="420" width="600" height="60" rx="10"
+                class="simple_val_path stmt_node_path how_to_retrieve_val_via_stmt_node simple_val_via_ref stated_in_value" />
+              <rect id="about" x="30" y="895" width="100" height="35"
+                class="simple_val_path stmt_node_path simple_val_via_ref stated_in_value" />
+            </g>
+
+            <!-- retrieve statement node 
+        https://tinyurl.com/ywhqbdeg
+        -->
+            <g id="how_to_retrieve_stmt_node" aria-labelledby="label_val_stmt" tabindex="0">
+              <text x="10" y="180" class="choose_option">
+                <tspan font-size="35px">How to retrieve statement node</tspan>
+              </text>
+            </g>
+            <g class="info" id="label_val_stmt">
+              <use href="#tooltipp" />
+              <text x="1250" y="30" id="#textval" style="font-size:200%;">
+                <tspan x="1250" dy="2em" font-weight="bold">Retrieve statement node </tspan>
+                <!--
+            <tspan x="250" dy="2em">mmd:Q1053 mmp:P36 ?aboutStmt.</tspan>
+            -->
+              </text>
+              <image x="1230" y="100" width="663" height="192" href="images/imgs_datarep/retrieve_stmt_node.PNG">
+              </image>
+              <image x="1230" y="380" width="750" height="200" href="images/imgs_datarep/result_stmt_node.png">
+              </image>
+            </g>
+
+            <!-- retrieve simple value using statement node   
+          https://tinyurl.com/ykmxlhxh   -->
+            <g id="how_to_retrieve_val_via_stmt_node" aria-labelledby="label_val_stmt" tabindex="0">
+              <text x="10" y="260" class="choose_option">
+                <tspan font-size="35px">How to retrieve simple value using statement node</tspan>
+              </text>
+            </g>
+            <g class="info" id="label_val_stmt_ref">
+              <use href="#tooltipp" />
+              <text x="1250" y="30" id="#textval" style="font-size:200%;">
+                <tspan x="1250" dy="2em" font-weight="bold">Retrieve simple value using statement node </tspan>
+                <!-- 
+            <tspan x="250" dy="2em">mmd:Q1053 mmp:P36 ?aboutStmt.</tspan>
+            <tspan x="250" dy="2em">?aboutStmt mmps:P36 ?about.</tspan>
+            -->
+              </text>
+              <image x="1230" y="100" width="694" height="225" href="images/imgs_datarep/simple_value_via_stmtNode.PNG">
+              </image>
+              <image x="1230" y="380" width="650" height="100"
+                href="images/imgs_datarep/result_simple_val_via_stmt_node.png">
+              </image>
+            </g>
+            <g class="stmt_node_path simple_val_via_ref stated_in_value" id="stmt_node">
+              <rect x="260" y="880" width="890" height="500" fill="None"></rect>
+            </g>
+
+            <!-- How to retrieve reference values and quotations
+      
+      https://tinyurl.com/yskd56cd -->
+            <g id="how_to_retrieve_stated_in_ref" aria-labelledby="label_val_stmt" tabindex="0">
+              <text x="10" y="350" class="choose_option">
+                <tspan font-size="35px">How to retrieve reference values and quotations</tspan>
+              </text>
+            </g>
+            <g class="info" id="stated_in_ref">
+              <use href="#tooltipp" />
+              <text x="1250" y="30" id="#textval" style="font-size:200%;">
+                <tspan x="1250" dy="2em" font-weight="bold">Retrieve reference value and quotation</tspan>
+              </text>
+              <image x="1230" y="100" width="950" height="350" href="images/imgs_datarep/ref_values_and_quot_1.PNG">
+              </image>
+              <image x="1230" y="420" width="750" height="200" href="images/imgs_datarep/ref_and_quot_results.PNG">
+              </image>>
+            </g>
+            <g class="stated_in_value" id="ref_node">
+              <rect x="300" y="1110" width="750" height="260" fill="None"></rect>
+            </g>
+            <a id="stated_schlueter" class="stated_in_value" aria-labelledby="label_val" tabindex="0">
+              <rect x="320" y="1120" width="500" height="30" rx="10" />
+            </a>
+          </svg>
+        </div>
+        <div class="panel-group" id="accordion2">
+          <!-- /.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                  href="#collapseTen1">
+                  <b>Explanation: How to retrieve simple values and their label</b></a>
+              </h4>
+            </div>
+            <div id="collapseTen1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>To retrieve <a href="simple_values()" target="_blank" onclick="return false;" id="ex1">simple values
+                    and their labels</a> such as <code>Q1053 (is) about &lt;topic&gt; </code>, you need the prefixes for
+                  the entities and properties:<br>
+                  <code>PREFIX mmd: &lt;http://data.mimotext.uni-trier.de/entity/&gt;</code><br>
+                  <code>PREFIX mmdt: &lt;http://data.mimotext.uni-trier.de/prop/direct/&gt;</code>
+                  <br>
+                  That means to get the (simple) value of the propery "about" (P36) we can use the direct path (within
+                  the data representation) connecting the entity via mmdt (prop/direct) and assign a new variable at the
+                  object position called "?topic". To this variable the value will be bound and returned in the result
+                  table. You can execute the query in the SPARQL endpoint interface <a
+                    href="https://tinyurl.com/ynl7ctpc" rel="noopener noreffer" target="_blank">here</a>.
+                </p>
+                <!-- {% capture p1.first_section %}{% include test.md %}{% endcapture %}
+        {{ p1 | markdownify}} -->
+              </div>
+            </div>
+          </div>
+          <!-- /.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                  href="#collapseTen2">
+                  <b>Explanation: How to retrieve statement node</b></a>
+              </h4>
+            </div>
+            <div id="collapseTen2" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>The <a href="stmt_nodes()" target="_blank" onclick="return false;" id="ex2">statement node</a> in
+                  this query is at the object position and can be retrieved using the prefix
+                  <code>PREFIX mmp: &lt;http://data.mimotext.uni-trier.de/prop/&gt;</code>. It represents the whole node
+                  and is connected to various different statements itself as you can see in the data representation.
+                  Since we also want to get the statement connected to the property "about", we define the predicate as
+                  <code>mmp:P36</code>
+                  As this is the starting point for retrieving further information such as the references for a value,
+                  it is shown separately here. Though if you run the query, you will notice that the result value is a
+                  URL that only points to the statement internally.</p>
+                <p>You can try the query <a href="https://tinyurl.com/ywhqbdeg" rel="noopener noreffer"
+                    target="_blank">here</a>. Please note: the result table will contain more statement nodes, one for
+                  each "about" statement.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                  href="#collapseTen3">
+                  <b>Explanation: How to retrieve simple value using the statement node</b></a>
+              </h4>
+            </div>
+            <div id="collapseTen3" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>In this query we want to illustrate the <a href="simple_val_via_stmt_f()" target="_blank"
+                    onclick="return false;" id="ex3">path to the simple value via the statement node</a>. First we are
+                  going to retrieve the statement node the same way as before:
+                  <code>mmdt:Q1053 mmp:P36 ?stmtNode.</code> In the second part of the query the ?stmtNode itself
+                  becomes the subject and is connected to the simple value via the property <code>mmps</code> which then
+                  looks as follows: <code>?stmtNode mmps:P36 ?topic.</code>
+                  To retrieve the label of the topic you then could again either use the rdfs:label or the wikibase
+                  label service.</p>
+                <p>You can try the query <a href="https://tinyurl.com/ykmxlhxh" rel="noopener noreffer"
+                    target="_blank">here</a>. Please note: the result table will contain more topic items, that is all
+                  topic items connected to the item Q1053.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                  href="#collapseTen4">
+                  <b>Explanation: How to retrieve reference values and quotations</b></a>
+              </h4>
+            </div>
+            <div id="collapseTen4" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>
+                  To query the reference value (and its label, e.g. "Schlüter_2014a"), you first have to acceess the statement node. In this example we further define the statement node using mmps:P36 mmd:Q2969 (="libertinism"). Using the statement node we can retrieve the reference node using <code>prov:wasDerivedFrom</code> and bind it to a new variable "?refNode". The reference node itself is connected with different properties, such as "stated in" (P18) and "quotation" (P42), both of which can be queried via the <code>mmpr</code> prefix.</p>
+                  <p>To run the query in your browser, please click <a
+                  href="https://tinyurl.com/yskd56cd" rel="noopener noreffer" target="_blank">here</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function () {
+        if (window.location.hash != "") {
+          // remove any accordion panels that are showing (they have a class of 'in')
+          $(".collapse").removeClass("in");
+  
+          // show the panel based on the hash now:
+          $(window.location.hash + ".collapse").collapse("show");
+        }
+      });
+      $("#anchor_1").click(function () {
+        $("#value").css("display", "inline-block");
+      });
+      $(function simple_values() {
+        $("#how_to_retrieve_simple_vals, #ex1")
+          .on("focus", function () {
+            $(".simple_val_path").css({ "fill": "red", "opacity": "0.5" });
+            $("#simple_value").css({ "fill": "red" });
+            $("#label_val").css({ "opacity": "1" })
+          })
+          .on("focusout", function () {
+            $(".simple_val_path").css({ "fill": "transparent" });
+            $("#label_val").css({ "opacity": "0" });
+          });
+  
+      });
+      $(function stmt_nodes() {
+        $("#how_to_retrieve_stmt_node, #ex2")
+          .on("focus", function () {
+            $(".stmt_node_path").css({ "fill": "blue", "opacity": "0.5" });
+            $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
+            $("#label_val_stmt").css({ "opacity": "1" });
+          })
+          .on("focusout", function () {
+            $(".stmt_node_path").css({ "fill": "transparent" });
+            $("#stmt_node").css({ "stroke": "None", "fill": "transparent" });
+            $("#label_val_stmt").css({ "opacity": "0" })
+          });
+  
+      });
+      $(function simple_val_via_stmt_f() {
+        $("#how_to_retrieve_val_via_stmt_node, #ex3")
+          .on("focus", function () {
+            $(".simple_val_via_ref").css({ "fill": "blue", "opacity": "0.5" });
+            $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
+            $("#label_val_stmt_ref").css({ "opacity": "1" })
+          })
+          .on("focusout", function () {
+            /* $(".simple_val_via_ref").css({"fill":"None"}); */
+            $("#mmd_box").css("stroke", "black");
+            $("#stmt_node").css({ "stroke": "None", "fill": "transparent" });
+            $(".simple_val_via_ref").css({ "fill": "transparent" });
+            $("#label_val_stmt_ref").css({ "opacity": "0" })
+          });
+  
+      });
+      $(function () {
+        $("#how_to_retrieve_stated_in_ref, .stated_in_value")
+          .on("focus", function () {
+  
+            $(".stated_in_value").css({ "fill": "green", "opacity": "0.5" });
+            $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
+            $("#ref_node").css({ "stroke": "green", "stroke-width": "4" });
+            $("#stated_in_ref").css({ "opacity": "1" });
+            $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" });
+  
+          })
+          .on("focusout", function () {
+            /* $(".simple_val_via_ref").css({"fill":"None"}); */
+            $("#mmd_box").css("stroke", "black");
+            $("#stmt_node").css({ "stroke": "None", "fill": "transparent" });
+            $(".stated_in_value").css({ "fill": "transparent" });
+            $("#ref_node").css({ "stroke": "None" });
+            $("#stated_in_ref").css({ "opacity": "0" });
+            $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" });
+          });
+      });
+  
+      /*
+      TO DO:
+    
+      stmt aus toolbox in functions einfügen! 
+      Kästchen markieren, die man anklicken kann + klichbar machen
+      Beschreibung ex 4
+      
+      
+      */
+    </script>
+  </div>
+ 
+  <!-- /.panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+          <b>Future work</b></a>
       </h4>
     </div>
     <div id="collapseSeven" class="panel-collapse collapse">
@@ -626,9 +1370,8 @@
           The default setting for each Wikibase instance are the Wikidata
           prefixes. We will soon change these prefixes currently available in
           Wikibase, to avoid (among other) confusion in the context of
-          <a href="./federated.html" style="display: inline"
-            >'federated queries'</a
-          >. We will stay within the Wikidata logic of the prefix labeling to
+          <a href="./federated.html" style="display: inline">'federated queries'</a>. We will stay within the Wikidata
+          logic of the prefix labeling to
           increase usability for those who are already familiar with the
           Wikidata prefies (e.g. 'mmd' for the 'entities' with the prefix 'wd',
           'mmdt' for the 'properties' with 'wdt').
@@ -658,12 +1401,7 @@
         </p>
         <p>
           For the future work concerning the MiMoText ontology, see:
-          <a
-            href="https://github.com/MiMoText/ontology"
-            target="_blank"
-            rel="noopener"
-            >github.com/MiMoText/ontology</a
-          >
+          <a href="https://github.com/MiMoText/ontology" target="_blank" rel="noopener">github.com/MiMoText/ontology</a>
         </p>
         <br />
         <h4>Further features, explanation and documentation</h4>
@@ -703,25 +1441,15 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseEight"
-        >
-          <b>References </b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+          <b>References </b></a>
       </h4>
     </div>
     <div id="collapseEight" class="panel-collapse collapse">
       <div class="panel-body">
         For references, take a look
-        <a
-          href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition"
-          target="\_blank"
-          rel="noopener noreferrer"
-          >here</a
-        >.
+        <a href="https://api.zotero.org/groups/2342956/collections/SV72MEVT/items?format=bib&style=chicago-fullnote-bibliography-16th-edition"
+          target="\_blank" rel="noopener noreferrer">here</a>.
       </div>
     </div>
   </div>
@@ -729,14 +1457,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a
-          class="noCrossRef accordion-toggle"
-          data-toggle="collapse"
-          data-parent="#accordion"
-          href="#collapseNine"
-        >
-          <b>Data & further MiMoText resources</b></a
-        >
+        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+          <b>Data & further MiMoText resources</b></a>
       </h4>
     </div>
     <div id="collapseNine" class="panel-collapse collapse">
@@ -750,12 +1472,8 @@
         </p>
         <p>
           All data of “Mining and Modeling Text” is made open as
-          <a
-            href="https://creativecommons.org/share-your-work/public-domain/cc0/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Public Domain (CC-0)</a
-          >. Data can be reused for any purpose.
+          <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank"
+            rel="noopener noreferrer">Public Domain (CC-0)</a>. Data can be reused for any purpose.
         </p>
         <br />
         <h4>MiMoTextBase endpoint</h4>
@@ -768,12 +1486,8 @@
           <tr>
             <td width="40%">SPARQL endpoint MiMoTextBase</td>
             <td width="40%">
-              <a
-                href="https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql"
-                target="\_blank"
-                rel="noopener noreferrer"
-                >https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a
-              >
+              <a href="https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql" target="\_blank"
+                rel="noopener noreferrer">https://query.mimotext.uni-trier.de/proxy/wdqs/bigdata/namespace/wdq/sparql</a>
             </td>
             <td>RDF</td>
           </tr>
@@ -791,9 +1505,7 @@
           Katharina Dietz. “Smart Modelling for Literary History.” IJHAC:
           International Journal of Humanities and Arts Computing [Special Issue
           on Linked Open Data] 16, no. 1 (2022): 78–93. DOI:
-          <a href="https://doi.org/10.3366/ijhac.2022.0278"
-            >https://doi.org/10.3366/ijhac.2022.0278</a
-          >
+          <a href="https://doi.org/10.3366/ijhac.2022.0278">https://doi.org/10.3366/ijhac.2022.0278</a>
         </p>
         <br />
         <h4>The full corpus of roman18</h4>
@@ -814,12 +1526,8 @@
               text 1751-1800
             </td>
             <td width="40%">
-              <a
-                href="https://github.com/MiMoText/roman18/tree/master/XML-TEI/files"
-                target="\_blank"
-                rel="noopener noreferrer"
-                >https://github.com/MiMoText/roman18/tree/master/XML-TEI/files</a
-              >
+              <a href="https://github.com/MiMoText/roman18/tree/master/XML-TEI/files" target="\_blank"
+                rel="noopener noreferrer">https://github.com/MiMoText/roman18/tree/master/XML-TEI/files</a>
             </td>
             <td>XML/TEI</td>
           </tr>
@@ -829,11 +1537,8 @@
               text 1751-1800
             </td>
             <td width="40%">
-              <a
-                href="https://github.com/MiMoText/roman18/tree/master/plain/files"
-                target="\_blank"
-                rel="noopener noreferrer"
-                >https://github.com/MiMoText/roman18/tree/master/plain/files
+              <a href="https://github.com/MiMoText/roman18/tree/master/plain/files" target="\_blank"
+                rel="noopener noreferrer">https://github.com/MiMoText/roman18/tree/master/plain/files
               </a>
             </td>
             <td>TXT</td>
@@ -841,42 +1546,29 @@
           <tr>
             <td width="40%">This list contains metadata on the full texts.</td>
             <td width="40%">
-              <a
-                href="https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv"
-                target="\_blank"
-                rel="noopener noreferrer"
-                >https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv</a
-              >
+              <a href="https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv" target="\_blank"
+                rel="noopener noreferrer">https://github.com/MiMoText/roman18/blob/master/XML-TEI/xml-tei_metadata.tsv</a>
             </td>
             <td>TSV</td>
           </tr>
         </table>
         <p>
-          <i
-            >Collection de romans français du dix-huitième siècle (1750-1800) /
-            Eighteenth-Century French Novels (1750-1800)</i
-          >, edited by Julia Röttgermann, with contributions from Julia Dudar,
+          <i>Collection de romans français du dix-huitième siècle (1750-1800) /
+            Eighteenth-Century French Novels (1750-1800)</i>, edited by Julia Röttgermann, with contributions from Julia
+          Dudar,
           Anne Klee, Johanna Konstanciak, Amelie Probst, Sarah Rebecca Ondraszek
           and Christof Schöch. Release v0.2.0. Trier: TCDH, 2021. URL:
-          <a href="https://github.com/mimotext/roman18"
-            >https://github.com/mimotext/roman18</a
-          >
+          <a href="https://github.com/mimotext/roman18">https://github.com/mimotext/roman18</a>
           DOI:
-          <a href="http://doi.org/10.5281/zenodo.5040855"
-            >http://doi.org/10.5281/zenodo.5040855</a
-          >
+          <a href="http://doi.org/10.5281/zenodo.5040855">http://doi.org/10.5281/zenodo.5040855</a>
         </p>
         <br />
         <h4>MiMoText subset in <i>European Literary text collection</i></h4>
         <p>
           A subset of 100 novels from the MiMoText corpus is published as an
           extension of the
-          <a
-            href="https://www.distant-reading.net/"
-            target="\_blank"
-            rel="noopener noreferrer"
-            >European Literary Text Collection (ELTeC)</a
-          >.The corpus contains short, medium-length and long novels from this
+          <a href="https://www.distant-reading.net/" target="\_blank" rel="noopener noreferrer">European Literary Text
+            Collection (ELTeC)</a>.The corpus contains short, medium-length and long novels from this
           period. It includes epistolary novels, novels written in the first
           person, novels written in the third person as well as a small number
           of dialogical novels. The subset corpus includes 20 novels written by
@@ -894,12 +1586,8 @@
               Collection”
             </td>
             <td width="40%">
-              <a
-                href="https://distantreading.github.io/ELTeC/fra-ext2/"
-                target="\_blank"
-                rel="noopener noreferrer"
-                >https://distantreading.github.io/ELTeC/fra-ext2/</a
-              >
+              <a href="https://distantreading.github.io/ELTeC/fra-ext2/" target="\_blank"
+                rel="noopener noreferrer">https://distantreading.github.io/ELTeC/fra-ext2/</a>
             </td>
             <td>HTML</td>
           </tr>
@@ -909,11 +1597,9 @@
               Collection”
             </td>
             <td width="40%">
-              <a
-                href="https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv"
+              <a href="https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv"
                 target="\_blank"
-                rel="noopener noreferrer"
-                >https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv
+                rel="noopener noreferrer">https://github.com/COST-ELTeC/ELTeC-fra-ext2/blob/main/ELTeC-fra-ext2_metadata.tsv
               </a>
             </td>
             <td>TSV</td>
@@ -923,10 +1609,7 @@
         <div class="row" style="background-color: none; padding: 10px"></div>
         <div class="row">
           <h4 style="margin-left: 20px">Further resources</h4>
-          <div
-            class="column"
-            style="background-color: #f5f5f5; margin-left: 15px"
-          >
+          <div class="column" style="background-color: #f5f5f5; margin-left: 15px">
             <h4 style="color: #005ca9">MiMoTextBot</h4>
             <p>
               We use the Python library Pywikibot for inclusion of the RDF
@@ -938,9 +1621,7 @@
               header makes the import expandable. It is possible to add new
               properties, items and statements without further expenditure. The
               script can be found on our
-              <a href="https://github.com/MiMoText/Wikibase-Bot"
-                >GitHub Repository Wikibase-Bot</a
-              >.
+              <a href="https://github.com/MiMoText/Wikibase-Bot">GitHub Repository Wikibase-Bot</a>.
             </p>
             <!-- <button class="btn-primary">Learn more</button> -->
           </div>
@@ -949,9 +1630,7 @@
             <p>
               Click to
               <a href="https://mimotext.github.io/MiMoTextBase_Tutorial/rdf/wikibase_rdf_dump_20230530.rdf"
-              target="\_blank"
-                rel="noopener noreferrer"
-              >download</a>.
+                target="\_blank" rel="noopener noreferrer">download</a>.
             </p>
             <!-- <button class="btn-primary">Learn more</button> -->
           </div>
@@ -972,8 +1651,7 @@
               Maria Hinzmann, Anne Klee, Johanna Konstanciak, Julia Röttgermann,
               Christof Schöch, Moritz Steffes: <i>MiMoTextBase</i>, Trier Center
               for Digital Humanities, 2022. URL:
-              <a href="data.mimotext.uni-trier.de">data.mimotext.uni-trier.de</a
-              >.
+              <a href="data.mimotext.uni-trier.de">data.mimotext.uni-trier.de</a>.
             </p>
             <!-- <button class="btn-primary">Learn more</button> -->
           </div>
@@ -981,6 +1659,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- 
   if ( window.location.hash != '' ) {

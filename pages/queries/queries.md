@@ -7,6 +7,8 @@ permalink: queries.html
 folder: queries
 toc: true
 ---
+<!-- ### Patterns -->
+
 
 ### DH Abstract
 

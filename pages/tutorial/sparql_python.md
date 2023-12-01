@@ -43,4 +43,5 @@ Now you are ready to copy the generated code into your python script. For this a
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiMoText/MiMoTextBase_Tutorial/gh-pages?labpath=jupyter_notebook%2Fsparql_in_python.ipynb){:target="\_blank", rel: "noopener noreferrer"}
 
 
-
+Binder in main
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiMoText/MiMoTextBase_Tutorial/main?labpath=jupyter_notebook%2Fsparql_in_python.ipynb)
