@@ -5,135 +5,74 @@
     margin-left: 2px;
     /* box-sizing: border-box; */
   }
-
   figure {
     position: relative;
     display: inline-block;
   }
-
   #tooltipp_rect {
     fill: #31949673;
     opacity: 0.9;
   }
-
   .info {
     opacity: 0;
     font-size: 12px;
     fill: black;
     pointer-events: none;
   }
-
   .choose_option {
     font-size: xx-large;
     fill: #248EC2;
   }
-
   .choose_option:hover {
     cursor: pointer;
     fill: #319596;
   }
-
   .data_rep {
     opacity: 0;
     font-size: 12px;
     pointer-events: none;
   }
-
   #mmdref {
     fill: None;
   }
-
-  /*
-    #simple_value:hover ~ #label_val,
-    #simple_value:focus ~ #label_val,
-    #simple_value:focus ~ #textval,
-    #simple_value:hover ~ #textval,
-    #simple_value:hover ~ #value,
-    #simple_value:focus ~ #value
-    {
-      opacity: 1;
-      transition: all 0.5s linear;
-    }
-    */
   #about,
   #stated_schlueter {
     opacity: 0;
   }
-
-  #liaisons {
-    opacity: 0;
-  }
-
-  /*
-    #how_to_retrieve_simple_vals:focus ~ #label_val,
-    #how_to_retrieve_simple_vals:hover ~ #label_val,
-    #how_to_retrieve_simple_vals:focus ~ #textval,
-    #how_to_retrieve_simple_vals:hover ~ #textval
-    #how_to_retrieve_simple_vals:focus ~ #about,
-    #how_to_retrieve_simple_vals:hover ~ #about,
-    #how_to_retrieve_val_via_stmt_node:hover 
-    {
-      opacity: 1;
-      transition: all 0.5s linear;
-    }
-*/
-
   #mmd_box {
     stroke: black;
   }
-
   #mmd_box:hover,
   #mmd_box:focus,
   #mmd_box:hover~#textval {
     fill: red;
     opacity: 0.5;
   }
-
   #mmref_box {
     fill: transparent;
   }
-
-
-  /* test */
-
-  /*
-    #how_to_retrieve_simple_vals:focus ~ #label_val,
-    #how_to_retrieve_simple_vals:focus ~ #textval_stmt,
-    #how_to_retrieve_stmt_node:focus ~ #label_val_stmt,
-    #how_to_retrieve_stmt_node:focus ~ #textval_stmt,
-    #how_to_retrieve_stmt_node:focus ~ #value_stmt,
-    #how_to_retrieve_val_via_stmt_node:focus ~ #label_val_stmt_ref,
-    #how_to_retrieve_stated_in_ref:focus ~ #stated_in_ref
-    {
-      opacity: 1; */
-  /* transition: all 0.5s linear; */
-  /*  } 
-*/
+#label_val{
+  opacity: 1;
+}
   #simple_value {
     fill: red;
-    opacity: 0;
+    opacity: 0.5;
   }
-
   #how_to_retrieve_simple_vals:hover~#simple_value,
   #how_to_retrieve_simple_vals:focus~#simple_value {
     opacity: 0.5;
     cursor: pointer;
   }
-
-  /* 
-    #stmt_node{
-      stroke:blue;
-      stroke-width: 0.5%;
-      opacity: 0;
-    }
-*/
-  #mmdt_text_box,
   #mmp_text_box {
     opacity: 0;
   }
-
-  .simple_val_path {
+  .simple_val_path,
+  #mmdt_text_box, 
+  #about, 
+  #liaisons{
     stroke: "black";
+    opacity: 0.5;
+    fill: red;
   }
 </style>
 
@@ -719,8 +658,7 @@
               </text>
 
               <!-- mmdref node -->
-              <g tabindex="0" id="mmdref_box" class="stated_in_value">
-                <rect x="776" y="206" width="163" height="58" />
+                <rect x="776" y="206" width="163" height="58"  tabindex="0" id="mmdref_box" class="stated_in_value"/>
                 <!-- <path  tabindex="0" d="l163.37006 0l0 58.015747l-163.37006 0z" class="stated_in_value" fill="transparent" ></path>-->
 
                 <!-- mmdref TEXT-->
@@ -732,8 +670,6 @@
                     mmdref
                   </tspan>
                 </text>
-
-              </g>
 
               <!-- mdv box -->
               <path d="m248.87534 332.46872l148.40945 0l0 58.015747l-148.40945 0z"></path>
@@ -1229,7 +1165,8 @@
             <div id="collapseTen4" class="panel-collapse collapse">
               <div class="panel-body">
                 <p>
-                  To query the reference value (and its label, e.g. "Schlüter_2014a"), you first have to acceess the statement node. In this example we further define the statement node using mmps:P36 mmd:Q2969 (="libertinism"). Using the statement node we can retrieve the reference node using <code>prov:wasDerivedFrom</code> and bind it to a new variable "?refNode". The reference node itself is connected with different properties, such as "stated in" (P18) and "quotation" (P42), both of which can be queried via the <code>mmpr</code> prefix.</p>
+                  To <a href="simple_val_via_stmt_f()" target="_blank"
+                  onclick="return false;" id="ex4">query the reference value</a> (and its label, e.g. "Schlüter_2014a"), you first have to acceess the statement node. In this example we further define the statement node using mmps:P36 mmd:Q2969 (="libertinism"). Using the statement node we can retrieve the reference node using <code>prov:wasDerivedFrom</code> and bind it to a new variable "?refNode". The reference node itself is connected with different properties, such as "stated in" (P18) and "quotation" (P42), both of which can be queried via the <code>mmpr</code> prefix.</p>
                   <p>To run the query in your browser, please click <a
                   href="https://tinyurl.com/yskd56cd" rel="noopener noreffer" target="_blank">here</a>
                 </p>
@@ -1253,7 +1190,7 @@
         $("#value").css("display", "inline-block");
       });
       $(function simple_values() {
-        $("#how_to_retrieve_simple_vals, #ex1")
+        $("#how_to_retrieve_simple_vals, #ex1, #collapseTen")
           .on("focus", function () {
             $(".simple_val_path").css({ "fill": "red", "opacity": "0.5" });
             $("#simple_value").css({ "fill": "red" });
@@ -1271,6 +1208,8 @@
             $(".stmt_node_path").css({ "fill": "blue", "opacity": "0.5" });
             $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
             $("#label_val_stmt").css({ "opacity": "1" });
+            $("#mmdt_text_box, #simple_value, #value_text_box").css({"fill":"transparent"});
+            $("#label_val").css({"opacity": "0"})
           })
           .on("focusout", function () {
             $(".stmt_node_path").css({ "fill": "transparent" });
@@ -1284,7 +1223,9 @@
           .on("focus", function () {
             $(".simple_val_via_ref").css({ "fill": "blue", "opacity": "0.5" });
             $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
-            $("#label_val_stmt_ref").css({ "opacity": "1" })
+            $("#label_val_stmt_ref").css({ "opacity": "1" });
+            $("#mmdt_text_box").css({"fill":"transparent"});
+            $("#label_val").css({"opacity": "0"})
           })
           .on("focusout", function () {
             /* $(".simple_val_via_ref").css({"fill":"None"}); */
@@ -1296,14 +1237,16 @@
   
       });
       $(function () {
-        $("#how_to_retrieve_stated_in_ref, .stated_in_value")
+        $("#how_to_retrieve_stated_in_ref, .stated_in_value, #ex4, #mmdref_box_text")
           .on("focus", function () {
   
             $(".stated_in_value").css({ "fill": "green", "opacity": "0.5" });
             $("#stmt_node").css({ "stroke": "blue", "stroke-width": "4" });
             $("#ref_node").css({ "stroke": "green", "stroke-width": "4" });
             $("#stated_in_ref").css({ "opacity": "1" });
-            $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" });
+           /*  $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" }); */
+            $("#mmdt_text_box, #simple_value, #value_text_box").css({"fill":"transparent"});
+            $("#label_val").css({"opacity": "0"})
   
           })
           .on("focusout", function () {
@@ -1313,7 +1256,7 @@
             $(".stated_in_value").css({ "fill": "transparent" });
             $("#ref_node").css({ "stroke": "None" });
             $("#stated_in_ref").css({ "opacity": "0" });
-            $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" });
+          /*  $("#mmdref_box_text").css({ "fill": "black", "opacity": "1" }); */
           });
       });
   
