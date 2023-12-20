@@ -1,15 +1,50 @@
 ---
-title: Queries used in different publications
+#title: Queries used in different publications
 #keywords:
 #summary: Queries used in different publications
 sidebar: false
 permalink: queries_patterns.html
 folder: queries
-toc: true
+toc: False
 ---
-### Patterns
+### Patterns in modeling and querying a knowledge graph for literary history
 
-Query 1: [Count of novels, authors, thematic concepts and spatial concepts](https://purl.org/mimotext/pattern){:target="_blank"}
+Queries that are shown in the paper "Patterns in modeling and querying a knowledge graph for literary history".
+
+
+Query 0, Fig 3: [Authors (here: ‘Voltaire’) and works (here: ‘Le Micromégas’) in subject position shown as Graph](http://tinyurl.com/29hylegs){:target="_blank"}
+<!-- 
+as Tiny URL: http://tinyurl.com/yq96bxrz
+as FUll URL: https://query.mimotext.uni-trier.de/#PREFIX%20mmd%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0A%0A%23defaultView%3AGraph%0ASELECT%20%3Fitem1%20%3Fitem1Label%20%3Fitem2%20%3Fitem2Label%20%3FedgeLabel%20%0AWITH%20%7B%0A%20%20SELECT%20%3Fitem1%20WHERE%20%7B%0A%20%20%20%20VALUES%20%3Fitem1%20%7B%20mmd%3AQ1011%20mmd%3AQ981%20mmd%3AQ2%20mmd%3AQ3039%20mmd%3AQ38%20mmd%3AQ3126%20mmd%3AQ3335%20mmd%3AQ3259%20mmd%3AQ3906%7D%0A%20%20%7D%0A%7D%20AS%20%25item1%0AWITH%20%7B%0A%20%20SELECT%20%28%3Fitem1%20AS%20%3Fitem2%29%20WHERE%20%7B%0A%20%20%20%20INCLUDE%20%25item1.%0A%20%20%7D%0A%7D%20AS%20%25item2%0AWHERE%20%7B%0A%20%20INCLUDE%20%25item1.%0A%20%20INCLUDE%20%25item2.%0A%20%20%3Fitem1%20%3Fwdt%20%3Fitem2.%0A%20%20%3Fedge%20wikibase%3AdirectClaim%20%3Fwdt%3B%0A%20%20%20%20%20%20%20%20a%20wikibase%3AProperty.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D
+-->
+```sparql
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/>
+
+#defaultView:Graph
+SELECT ?item1 ?item1Label ?item2 ?item2Label ?edgeLabel 
+WITH {
+  SELECT ?item1 WHERE {
+    VALUES ?item1 { mmd:Q1011 mmd:Q981 mmd:Q2 mmd:Q3039 mmd:Q38 mmd:Q3126 mmd:Q3335 mmd:Q3259 mmd:Q3906}
+  }
+} AS %item1
+WITH {
+  SELECT (?item1 AS ?item2) WHERE {
+    INCLUDE %item1.
+  }
+} AS %item2
+WHERE {
+  INCLUDE %item1.
+  INCLUDE %item2.
+  ?item1 ?wdt ?item2.
+  ?edge wikibase:directClaim ?wdt;
+        a wikibase:Property.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+```
+
+Query 1: [Count of novels, authors, thematic concepts and spatial concepts](https://purl.org/mimotext/pattern/query1){:target="_blank"}
 
 ```sparql
 PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
@@ -338,7 +373,70 @@ ORDER BY ?year
 ```
 
 
-Query 13: [Labels entered on wikidata-entry 'Voltaire'](https://purl.org/mimotext/pattern/query13){:target="_blank"}
+
+Query 13: [Topic labels in English, French and German using rdfs:label and Filter](https://purl.org/mimotext/pattern/query13){:target="_blank"}
+
+<!-- 
+- as [FULL-URL](https://query.mimotext.uni-trier.de/#%23title%3ATopic%20labels%20in%20English%2C%20French%20and%20German%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0A%0ASELECT%20DISTINCT%20%3Ftopic%20%3FtopicLabel_EN%20%3FtopicLabel_FR%20%3FtopicLabel_DE%20WHERE%20%7B%0A%20%20%0A%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%0A%20%20%20%20%20%20%20%20mmdt%3AP36%20%3Ftopic.%0A%20%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_EN.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_FR.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_DE.%0A%20%20%0A%20%20FILTER%28LANG%28%3FtopicLabel_EN%29%20%3D%20%22en%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_FR%29%20%3D%20%22fr%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_DE%29%20%3D%20%22de%22%29.%0A%0A%7D){:target="_blank"}
+
+--> 
+
+
+```sparql
+#title:Topic labels in English, French and German
+PREFIX mmdt: <http://data.mimotext.uni-trier.de/prop/direct/>
+PREFIX mmd: <http://data.mimotext.uni-trier.de/entity/>
+
+SELECT DISTINCT ?topic ?topicLabel_EN ?topicLabel_FR ?topicLabel_DE WHERE {
+  
+  ?item mmdt:P2 mmd:Q2;
+        mmdt:P36 ?topic.
+ 
+  ?topic rdfs:label ?topicLabel_EN.
+  ?topic rdfs:label ?topicLabel_FR.
+  ?topic rdfs:label ?topicLabel_DE.
+  
+  FILTER(LANG(?topicLabel_EN) = "en").
+  FILTER(LANG(?topicLabel_FR) = "fr").
+  FILTER(LANG(?topicLabel_DE) = "de").
+
+}
+```
+Query 14: [Topic labels in English, French and German using Wikibase Label Service](https://purl.org/mimotext/pattern/query14){:target="_blank"}
+
+<!-- 
+
+- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3A%20Topic%20labels%20in%20English%2C%20French%20and%20German%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20DISTINCT%20%3Ftopic%20%3FtopicLabel_EN%20%3FtopicLabel_FR%20%3FtopicLabel_DE%0A%20%20%20WHERE%20%7B%0A%20%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%20%0A%20%20%20%20%20%20%20%20%20mmdt%3AP36%20%3Ftopic.%20%20%0A%20%20%20%20%20%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_EN.%0A%20%20%20%20%20%7D%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22de%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_DE.%0A%20%20%20%20%20%7D%20%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22fr%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_FR.%0A%20%20%20%20%20%7D%20%0A%20%20%20%0A%20%20%20%7D){:target="_blank"}
+
+-->
+
+```sparql
+#title: Topic labels in English, French and German
+PREFIX mmd: <http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt: <http://data.mimotext.uni-trier.de/prop/direct/>
+
+SELECT DISTINCT ?topic ?topicLabel_EN ?topicLabel_FR ?topicLabel_DE
+   WHERE {
+   ?item mmdt:P2 mmd:Q2; 
+         mmdt:P36 ?topic.  
+     
+     SERVICE wikibase:label { bd:serviceParam wikibase:language "en".
+            ?topic rdfs:label ?topicLabel_EN.
+     }
+     SERVICE wikibase:label { bd:serviceParam wikibase:language "de".
+            ?topic rdfs:label ?topicLabel_DE.
+     } 
+     SERVICE wikibase:label { bd:serviceParam wikibase:language "fr".
+            ?topic rdfs:label ?topicLabel_FR.
+     } 
+   
+   }
+```
+
+
+
+
+Query 15: [Labels entered on wikidata-entry 'Voltaire'](https://purl.org/mimotext/pattern/query15){:target="_blank"}
 
 <!-- 
 
@@ -368,7 +466,7 @@ ORDER BY ?lang
 
 #### 2.3 Federated Queries
 
-Query 14, Fig. 9: [Narrative location with geo coordinate locations via federated query](https://purl.org/mimotext/pattern/query14){:target="_blank"}
+Query 16, Fig. 9: [Narrative location with geo coordinate locations via federated query](https://purl.org/mimotext/pattern/query16){:target="_blank"}
 
 <!-- 
 - as [Tiny-URL](https://tinyurl.com/24djgul3){:target="_blank"}
@@ -395,7 +493,7 @@ WHERE { ?item mmdt:P32 ?narr_loc.
 }
 ```
 
-Query 15: [Alternative Labels of author names via ‘federated’ queries’](https://purl.org/mimotext/pattern/query15){:target="_blank"}
+Query 17: [Alternative Labels of author names via ‘federated’ queries’](https://purl.org/mimotext/pattern/query17){:target="_blank"}
 
 <!-- 
 
@@ -429,7 +527,7 @@ LIMIT 1000
 
 
 
-Query 16: [Finding Identifiers on other Knowledge Graphs, for example Bibliothèque nationale de France ID](https://purl.org/mimotext/pattern/query16){:target="_blank"}
+Query 18: [Finding Identifiers on other Knowledge Graphs, for example Bibliothèque nationale de France ID](https://purl.org/mimotext/pattern/query18){:target="_blank"}
 
 <!-- 
 
@@ -463,7 +561,7 @@ WHERE {
 ```
 
 
-Query 17, Fig. 10: [Influence networks of authors via ‘federated query’](https://purl.org/mimotext/pattern/query17){:target="_blank"}
+Query 19, Fig. 10: [Influence networks of authors via ‘federated query’](https://purl.org/mimotext/pattern/query19){:target="_blank"}
 
 <!-- 
 
@@ -501,64 +599,3 @@ WHERE {
 
 ```
 
-
-Queries 18: Topic labels in English, French and German
-
-a\) [using Filter](https://purl.org/mimotext/pattern/query18a){:target="_blank"}
-
-<!-- 
-- as [FULL-URL](https://query.mimotext.uni-trier.de/#%23title%3ATopic%20labels%20in%20English%2C%20French%20and%20German%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0A%0ASELECT%20DISTINCT%20%3Ftopic%20%3FtopicLabel_EN%20%3FtopicLabel_FR%20%3FtopicLabel_DE%20WHERE%20%7B%0A%20%20%0A%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%0A%20%20%20%20%20%20%20%20mmdt%3AP36%20%3Ftopic.%0A%20%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_EN.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_FR.%0A%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_DE.%0A%20%20%0A%20%20FILTER%28LANG%28%3FtopicLabel_EN%29%20%3D%20%22en%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_FR%29%20%3D%20%22fr%22%29.%0A%20%20FILTER%28LANG%28%3FtopicLabel_DE%29%20%3D%20%22de%22%29.%0A%0A%7D){:target="_blank"}
-
---> 
-
-
-```sparql
-#title:Topic labels in English, French and German
-PREFIX mmdt: <http://data.mimotext.uni-trier.de/prop/direct/>
-PREFIX mmd: <http://data.mimotext.uni-trier.de/entity/>
-
-SELECT DISTINCT ?topic ?topicLabel_EN ?topicLabel_FR ?topicLabel_DE WHERE {
-  
-  ?item mmdt:P2 mmd:Q2;
-        mmdt:P36 ?topic.
- 
-  ?topic rdfs:label ?topicLabel_EN.
-  ?topic rdfs:label ?topicLabel_FR.
-  ?topic rdfs:label ?topicLabel_DE.
-  
-  FILTER(LANG(?topicLabel_EN) = "en").
-  FILTER(LANG(?topicLabel_FR) = "fr").
-  FILTER(LANG(?topicLabel_DE) = "de").
-
-}
-```
-b\) [using Wikibase Label Service](https://purl.org/mimotext/pattern/query18b){:target="_blank"}
-
-<!-- 
-
-- as [Full-URL](https://query.mimotext.uni-trier.de/#%23title%3A%20Topic%20labels%20in%20English%2C%20French%20and%20German%0APREFIX%20mmd%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fentity%2F%3E%0APREFIX%20mmdt%3A%20%3Chttp%3A%2F%2Fdata.mimotext.uni-trier.de%2Fprop%2Fdirect%2F%3E%0A%0ASELECT%20DISTINCT%20%3Ftopic%20%3FtopicLabel_EN%20%3FtopicLabel_FR%20%3FtopicLabel_DE%0A%20%20%20WHERE%20%7B%0A%20%20%20%3Fitem%20mmdt%3AP2%20mmd%3AQ2%3B%20%0A%20%20%20%20%20%20%20%20%20mmdt%3AP36%20%3Ftopic.%20%20%0A%20%20%20%20%20%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_EN.%0A%20%20%20%20%20%7D%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22de%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_DE.%0A%20%20%20%20%20%7D%20%0A%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22fr%22.%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3FtopicLabel_FR.%0A%20%20%20%20%20%7D%20%0A%20%20%20%0A%20%20%20%7D){:target="_blank"}
-
--->
-
-```sparql
-#title: Topic labels in English, French and German
-PREFIX mmd: <http://data.mimotext.uni-trier.de/entity/>
-PREFIX mmdt: <http://data.mimotext.uni-trier.de/prop/direct/>
-
-SELECT DISTINCT ?topic ?topicLabel_EN ?topicLabel_FR ?topicLabel_DE
-   WHERE {
-   ?item mmdt:P2 mmd:Q2; 
-         mmdt:P36 ?topic.  
-     
-     SERVICE wikibase:label { bd:serviceParam wikibase:language "en".
-            ?topic rdfs:label ?topicLabel_EN.
-     }
-     SERVICE wikibase:label { bd:serviceParam wikibase:language "de".
-            ?topic rdfs:label ?topicLabel_DE.
-     } 
-     SERVICE wikibase:label { bd:serviceParam wikibase:language "fr".
-            ?topic rdfs:label ?topicLabel_FR.
-     } 
-   
-   }
-```
