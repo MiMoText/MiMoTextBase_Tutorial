@@ -7,9 +7,9 @@ permalink: queries_patterns.html
 folder: queries
 toc: False
 ---
-### Patterns in modeling and querying a knowledge graph for literary history
+#### Patterns in modeling and querying a knowledge graph for literary history
 
-Queries that are shown in the paper "Patterns in modeling and querying a knowledge graph for literary history".
+Here you can find the queries that are shown in the paper "Patterns in modeling and querying a knowledge graph for literary history" (in print).
 
 
 Query 0, Fig 3: [Authors (here: ‘Voltaire’) and works (here: ‘Le Micromégas’) in subject position shown as Graph](http://tinyurl.com/29hylegs){:target="_blank"}
