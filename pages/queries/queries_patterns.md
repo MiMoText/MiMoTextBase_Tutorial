@@ -340,7 +340,7 @@ ORDER BY DESC(?count)
 ```
 
 
-Query 12: [Combinations of narrative Form and intention per year](https://purl.org/mimotext/pattern/query12){:target="_blank"}
+Query 12: [Combinations of narrative Form and intention per year](https://purl.org/mmt/patterns/query12){:target="_blank"}
 
 <!-- 
 
