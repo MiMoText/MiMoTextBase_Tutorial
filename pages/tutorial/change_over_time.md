@@ -16,11 +16,11 @@ The MiMoText graph contains information on first publication dates of all of the
 
 Let’s start with a simple example: The following query shows the `first publication date` (`P9`) of all the novel items in the corpus.
 
-[Query to retrieve the first publication dates of all French novels 1751-1800](https://tinyurl.com/23rwhob8){:target="\_blank", rel: "noopener noreferrer"}
+[Query to retrieve the first publication dates of all French novels 1751-1800](http://tinyurl.com/yt7rnwrw){:target="\_blank", rel: "noopener noreferrer"}
 
-<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/23rwhob8" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
+<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="http://tinyurl.com/yt7rnwrw" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
 
-We can observe an [augmentation of novel production](https://tinyurl.com/28kgxaw4){:target="\_blank", rel: "noopener noreferrer"} in the later decades, a finding also backed by secondary literature (see for example Franco Moretti on the rise of the novel: Moretti 2005: 9).
+We can observe an [augmentation of novel production](http://tinyurl.com/yt7rnwrw){:target="\_blank", rel: "noopener noreferrer"} in the later decades, a finding also backed by secondary literature (see for example Franco Moretti on the rise of the novel: Moretti 2005: 9).
 
 Furthermore, we can also combine information on first publication dates and a certain topic. Let's see how the thematic concept "travel" evolved over time:
 
