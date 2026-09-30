@@ -21,6 +21,25 @@ All novels are stored as items in our graph, comparable to a Wikidata item in th
 Follow the URL and let the query run by clicking on the "play"-Button. The results are visualized in a table as a default. Above the table, you can click on the arrow next to the eye. In the drop-down menu that pops up, you can choose different visualization options from the menu in order to display the results on a timeline, as a barchart, as a bubble chart and so on. Another way to display the results in a certain view is to specify it in the query itself. You can simply insert `#defaultView:Timeline` (for a timeline) or `#defaultView:BarChart` (for a barchart) or `#defaultView:Bubblechart` (for a bubble chart) in your SPARQL query.
 
 [Query to get an overview over the MiMoText data](https://tinyurl.com/25rt89cw){:target="\_blank", rel: "noopener noreferrer"}
+```sparql
+#title:Some data about the MiMoTextBase such as Authors, Novels, publication years, tone etc.
+prefix mmd:<http://data.mimotext.uni-trier.de/entity/>
+prefix mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT DISTINCT ?bgrf ?item ?authorlabel ?itemLabel ?year ?narrpers ?tonality ?pages ?normalized WHERE {
+ ?item mmdt:P5 ?author; # who is the author?
+       mmdt:P4 ?title; # what is the title?
+       mmdt:P22 ?bgrf;  # what is the identifier in the bibliographic metadata?
+       mmdt:P9 ?date; # what is the publication date?
+ OPTIONAL {
+   ?item mmdt:P27 ?narrpers; mmdt:P31 ?tonality; mmdt:P25 ?pages. 
+ }
+ BIND(YEAR(?date) as ?year).
+ BIND(if(bound(?narrpers), ?narrpers, "unbekannt") as ?normalized)
+ ?author rdfs:label ?authorlabel.
+ FILTER(LANG(?authorlabel) = "en")
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE], fr". }
+} ORDER BY ?year
+```
 
 <!-- 
 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/25rt89cw" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
