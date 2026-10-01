@@ -16,8 +16,22 @@ We can start by a very basic SPARQL query, which lists all of the novels of a ce
 
 Example: [SELECT all the items WHERE the author is Tiphaigne de la Roche ](https://tinyurl.com/2b8m9m7b){:target="\_blank", rel: "noopener noreferrer"}
 
+<!-- 
 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/2b8m9m7b" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
+-->
+```sparql
+#title:novels by Tiphaigne de la Roche
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+
+SELECT ?item
+WHERE 
+{
+  ?item mmdt:P5 mmd:Q940.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+```
 
 If you have a look at the results, you see the items, but you might be looking for the names of the novels, which are the labels of the items.
 
@@ -25,8 +39,23 @@ In order to display labels, we have to use `SERVICE wikibase:label { bd:serviceP
 
 Example: [SELECT all the items and their labels WHERE the author is Tiphaigne de la Roche ](https://tinyurl.com/2ddclspa){:target="\_blank", rel: "noopener noreferrer"}
 
+<!--
 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/2ddclspa" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
+-->
+
+```sparql
+#title:novels by Tiphaigne de la Roche, with labels
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+
+SELECT ?item ?itemLabel
+WHERE 
+{
+  ?item mmdt:P5 mmd:Q940.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+```
 
 Note:
 The name of the variables can be chosen freely, but they always need the “?” at the beginning and need to stay the same in the whole query.
