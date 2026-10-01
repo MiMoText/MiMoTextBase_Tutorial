@@ -18,7 +18,23 @@ In the example query, we want to retrieve all novels written by François-Thomas
 
 Example: [Get all novels written by François-Thomas-Marie de Baculard d’ARNAUD and their tone](https://tinyurl.com/2xk2426o){:target="\_blank", rel: "noopener noreferrer"}
 
+<!--
 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/2xk2426o" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
+-->
+
+```sparql
+#title:Novels by François-Thomas-Marie de Baculard d’ARNAUD
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT ?work ?workLabel ?tonality 
+WHERE
+{
+  ?work mmdt:P5 mmd:Q68 # work has author François-Thomas-Marie de Baculard d’ARNAUD  
+  OPTIONAL { ?work mmdt:P31 ?tonality. }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+}
+```
+
 
 ```
 OPTIONAL
