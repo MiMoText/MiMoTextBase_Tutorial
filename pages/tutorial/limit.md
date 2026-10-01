@@ -17,7 +17,25 @@ The last part of the count operation limited the results by the count variable. 
 
 Example: [Limit the result to top 10](https://tinyurl.com/29qcyffc){:target="\_blank", rel: "noopener noreferrer"}
 
-<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/29qcyffc" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
+<!--<p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/29qcyffc" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe></p>
+-->
+
+```sparql
+#tile:Authors and their count of novels limited to top 10
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/>
+
+SELECT ?authorName (count (?authorName) as ?count)
+WHERE {
+   ?work mmdt:P5 ?author . # work has author.
+   ?author rdfs:label ?authorName . # get author label (not only Link to author)
+   FILTER(LANG(?authorName) = "en") . # other options: "fr", "de". Filter is needed as there is more than one label (language dependent)
+}
+
+group by ?authorName
+order by desc (?count)
+limit 10
+```
 
 ```
 LIMIT
