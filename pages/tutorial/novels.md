@@ -20,8 +20,32 @@ To get an overview of the narrative perspective the novels are written in, you c
 
 [Query to retrieve the narrative perspective of all novels by count](https://tinyurl.com/2d5xo7re){:target="\_blank", rel: "noopener noreferrer"}
 
+
+<!--
 <p><iframe  style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen src="https://tinyurl.com/2d5xo7re" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
                 </p>
+-->
+
+```sparql
+#title:Narrative perspectives of the novels
+prefix mmd:<http://data.mimotext.uni-trier.de/entity/>
+prefix mmdt:<http://data.mimotext.uni-trier.de/prop/direct/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (count(?narrativePerspectiveLabel) as ?count) ?narrativePerspectiveLabel 
+WHERE
+{
+  ?work mmdt:P33 ?narrativePerspective. # work (novel) has property P33 (narrative perspective)
+  ?narrativePerspective rdfs:label ?narrativePerspectiveLabel. # using of rdfs:label to display labels
+  
+  FILTER(lang(?narrativePerspectiveLabel) = "en") # filter is neccessary to display only one occurence. Other possibilites would be "en" or "de".
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE], en". }
+ 
+}
+
+group by ?narrativePerspectiveLabel
+#defaultView:BarChart
+```
+
 
 In order to get the narrative perspective of each novel, you can simply replace the `COUNT`-operation with `?work` (to get the link to the respective novel or `?workLabel` to display the titles of the novels within the results list (or both if you want). (Please note: the value behind a `?` is freely selectable, but it has to stay the same within each query.)
 
@@ -43,7 +67,31 @@ Those interested in book history will find data on publishing places of first ed
 
 [Query: In which distribution formats were the novels published?](https://tinyurl.com/2dea7qjy){:target="\_blank", rel: "noopener noreferrer"}
 
+
+<!--
 <p><iframe style="width: 80vw; height: 50vh; border: none;" src="https://tinyurl.com/2dea7qjy" ></iframe></p>
+-->
+
+```sparql
+#title:Distribution formats of publications
+#defaultView:BarChart
+prefix mmd:<http://data.mimotext.uni-trier.de/entity/>
+prefix mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+Select  (str(SAMPLE(year(?date))) as ?year) (count(?format) as ?count) ?format 
+   WHERE{
+   ?item mmdt:P26 ?format.
+   ?item mmdt:P9 ?date .
+  FILTER(lang(?format) = "fr")
+# FILTER(lcase(?format) = "12-in"@fr)
+      Filter (regex(lcase(?format), "in-\\d+[\\s\\S]"))
+   BIND(str(year(?date)) as ?year)
+   SERVICE wikibase:label {bd:serviceParam wikibase:language "{AUTO_LANGUAGE}","fr" .}
+  }
+
+GROUP BY ?format ?year ?count
+```
+
+
 
 We can observe a diversification of small formats: in-12 and even in-18 and in-24. Smaller book formats enable the reader to read in a clandestine setting, on travels and individually, making their way out of the libraries and reading cabinets (cf. Sacquin n.d.).
 
