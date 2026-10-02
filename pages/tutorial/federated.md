@@ -31,7 +31,28 @@ Next using the `SERVICE` referring to the Wikidata SPARQL endpoint, we can get a
 
 Example: [Show all narrative places (using the coordinate locations property of Wikidata)](https://tinyurl.com/26t7xv98){:target="\_blank", rel: "noopener noreferrer"}
 
+<!--
 <p><iframe style="width:100%;max-width:100%;height:450px" frameborder="0" allowfullscreen  src="https://tinyurl.com/26t7xv98" referrerpolicy="origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups" ></iframe></p>
+-->
+
+```sparql
+#title:Narrative places (using Wikidata coordinate locations)
+#defaultView:Map{"hide": ["?nar_loc"], "markercluster":"true"}
+PREFIX wd: <http://www.wikidata.org/entity/> #wikidata wd
+PREFIX wdt: <http://www.wikidata.org/prop/direct/> #wikidata wdt
+PREFIX mmd:<http://data.mimotext.uni-trier.de/entity/>
+PREFIX mmdt:<http://data.mimotext.uni-trier.de/prop/direct/> 
+SELECT DISTINCT ?item ?itemLabel ?nar_loc ?nar_locLabel ?WikiDataEntity ?coordinateLocation
+WHERE { ?item mmdt:P32 ?nar_loc.
+  ?nar_loc mmdt:P13 ?WikiDataEntity.
+  #Federated Query -> Wikidata
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?WikiDataEntity wdt:P625 ?coordinateLocation
+  }           
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+}
+```
+
 
 ```
 Federated query
